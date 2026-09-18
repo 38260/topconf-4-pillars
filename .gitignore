@@ -1,0 +1,17 @@
+# 官方源原始响应缓存（体积大，可由脚本重新抓取）
+data/raw/
+
+*.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
