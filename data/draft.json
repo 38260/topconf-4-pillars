@@ -54,9 +54,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "CVPR2026-p1164"
-    },
-    "citations": null,
-    "citations_source": null
+    }
   },
   {
     "id": "cvpr-002-CVPR2026-p69",
@@ -113,9 +111,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "CVPR2026-p69"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7139147327"
+    }
   },
   {
     "id": "cvpr-003-CVPR2026-p613",
@@ -172,9 +168,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "CVPR2026-p613"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W4416338815"
+    }
   },
   {
     "id": "cvpr-004-CVPR2026-p2342",
@@ -226,9 +220,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "CVPR2026-p2342"
-    },
-    "citations": null,
-    "citations_source": null
+    }
   },
   {
     "id": "cvpr-005-CVPR2026-p356",
@@ -280,9 +272,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "CVPR2026-p356"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7126281815"
+    }
   },
   {
     "id": "cvpr-006-CVPR2026-p376",
@@ -337,9 +327,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "CVPR2026-p376"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W4416767042"
+    }
   },
   {
     "id": "cvpr-007-CVPR2026-p1054",
@@ -394,9 +382,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "CVPR2026-p1054"
-    },
-    "citations": null,
-    "citations_source": null
+    }
   },
   {
     "id": "cvpr-008-CVPR2026-p757",
@@ -448,9 +434,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "CVPR2026-p757"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7140345886"
+    }
   },
   {
     "id": "cvpr-009-CVPR2026-p2509",
@@ -504,9 +488,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "CVPR2026-p2509"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7131385655"
+    }
   },
   {
     "id": "cvpr-010-CVPR2026-p224",
@@ -560,9 +542,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "CVPR2026-p224"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7153671044"
+    }
   },
   {
     "id": "cvpr-011-CVPR2026-p3875",
@@ -622,9 +602,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "CVPR2026-p3875"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W4416764916"
+    }
   },
   {
     "id": "cvpr-012-CVPR2026-p2534",
@@ -676,9 +654,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "CVPR2026-p2534"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7117631709"
+    }
   },
   {
     "id": "aaai-013-aaai-2026-w1632",
@@ -721,7 +697,7 @@
     "curator_note": "端侧大模型解码高效推理加速方案",
     "links": {
       "official": "https://doi.org/10.1609/aaai.v40i31.39789",
-      "pdf": "https://doi.org/10.1609/aaai.v40i31.39789",
+      "pdf": "",
       "doi": "10.1609/aaai.v40i31.39789",
       "extra": "",
       "record": "https://openalex.org/W7137858023"
@@ -733,9 +709,7 @@
       "abstract_source": "OpenAlex",
       "retrieved_at": "2026-09-18T18:38:58",
       "paper_id": "aaai-2026-w1632"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7137858023"
+    }
   },
   {
     "id": "aaai-014-aaai-2026-w3487",
@@ -773,7 +747,7 @@
     "curator_note": "动态 KV Cache 量化实现高效多模态大模型",
     "links": {
       "official": "https://doi.org/10.1609/aaai.v40i25.39241",
-      "pdf": "https://doi.org/10.1609/aaai.v40i25.39241",
+      "pdf": "",
       "doi": "10.1609/aaai.v40i25.39241",
       "extra": "",
       "record": "https://openalex.org/W7138345393"
@@ -785,9 +759,7 @@
       "abstract_source": "OpenAlex",
       "retrieved_at": "2026-09-18T18:38:58",
       "paper_id": "aaai-2026-w3487"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7138345393"
+    }
   },
   {
     "id": "aaai-015-aaai-2026-w4812",
@@ -838,9 +810,7 @@
       "abstract_source": "OpenAlex",
       "retrieved_at": "2026-09-18T18:38:59",
       "paper_id": "aaai-2026-w4812"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7139057687"
+    }
   },
   {
     "id": "aaai-016-aaai-2026-w1223",
@@ -885,7 +855,7 @@
     "curator_note": "以因果推理机制缓解大模型幻觉",
     "links": {
       "official": "https://doi.org/10.1609/aaai.v40i38.40454",
-      "pdf": "https://doi.org/10.1609/aaai.v40i38.40454",
+      "pdf": "",
       "doi": "10.1609/aaai.v40i38.40454",
       "extra": "",
       "record": "https://openalex.org/W7138460157"
@@ -897,9 +867,7 @@
       "abstract_source": "OpenAlex",
       "retrieved_at": "2026-09-18T18:38:57",
       "paper_id": "aaai-2026-w1223"
-    },
-    "citations": 1,
-    "citations_source": "OpenAlex W7138460157"
+    }
   },
   {
     "id": "aaai-017-aaai-2026-w996",
@@ -940,7 +908,7 @@
     "curator_note": "轻量的重排序推理策略框架改进 RAG 检索增强生成",
     "links": {
       "official": "https://doi.org/10.1609/aaai.v40i36.40270",
-      "pdf": "https://doi.org/10.1609/aaai.v40i36.40270",
+      "pdf": "",
       "doi": "10.1609/aaai.v40i36.40270",
       "extra": "",
       "record": "https://openalex.org/W7138120984"
@@ -952,9 +920,7 @@
       "abstract_source": "OpenAlex",
       "retrieved_at": "2026-09-18T18:38:57",
       "paper_id": "aaai-2026-w996"
-    },
-    "citations": 1,
-    "citations_source": "OpenAlex W7138120984"
+    }
   },
   {
     "id": "aaai-018-aaai-2026-w3928",
@@ -1007,9 +973,7 @@
       "abstract_source": "OpenAlex",
       "retrieved_at": "2026-09-18T18:38:59",
       "paper_id": "aaai-2026-w3928"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7138459771"
+    }
   },
   {
     "id": "aaai-019-aaai-2026-w489",
@@ -1055,7 +1019,7 @@
     "curator_note": "分层 tokenizer 配合自回归大模型改进文生视频",
     "links": {
       "official": "https://doi.org/10.1609/aaai.v40i16.38399",
-      "pdf": "https://doi.org/10.1609/aaai.v40i16.38399",
+      "pdf": "",
       "doi": "10.1609/aaai.v40i16.38399",
       "extra": "",
       "record": "https://openalex.org/W7138045497"
@@ -1067,9 +1031,7 @@
       "abstract_source": "OpenAlex",
       "retrieved_at": "2026-09-18T18:38:57",
       "paper_id": "aaai-2026-w489"
-    },
-    "citations": 2,
-    "citations_source": "OpenAlex W7138045497"
+    }
   },
   {
     "id": "aaai-020-aaai-2026-w662",
@@ -1112,7 +1074,7 @@
     "curator_note": "人类操作数据增强双臂机器人操作",
     "links": {
       "official": "https://doi.org/10.1609/aaai.v40i22.38875",
-      "pdf": "https://doi.org/10.1609/aaai.v40i22.38875",
+      "pdf": "",
       "doi": "10.1609/aaai.v40i22.38875",
       "extra": "",
       "record": "https://openalex.org/W7138414178"
@@ -1124,9 +1086,7 @@
       "abstract_source": "OpenAlex",
       "retrieved_at": "2026-09-18T18:38:57",
       "paper_id": "aaai-2026-w662"
-    },
-    "citations": 1,
-    "citations_source": "OpenAlex W7138414178"
+    }
   },
   {
     "id": "aaai-021-aaai-2026-w787",
@@ -1186,9 +1146,7 @@
       "abstract_source": "OpenAlex",
       "retrieved_at": "2026-09-18T18:38:57",
       "paper_id": "aaai-2026-w787"
-    },
-    "citations": 1,
-    "citations_source": "OpenAlex W7137854397"
+    }
   },
   {
     "id": "aaai-022-aaai-2026-w1569",
@@ -1241,9 +1199,7 @@
       "abstract_source": "OpenAlex",
       "retrieved_at": "2026-09-18T18:38:58",
       "paper_id": "aaai-2026-w1569"
-    },
-    "citations": null,
-    "citations_source": null
+    }
   },
   {
     "id": "aaai-023-aaai-2026-w627",
@@ -1285,7 +1241,7 @@
     "curator_note": "多智能体强化学习的分层指挥者策略优化",
     "links": {
       "official": "https://doi.org/10.1609/aaai.v40i35.40199",
-      "pdf": "https://doi.org/10.1609/aaai.v40i35.40199",
+      "pdf": "",
       "doi": "10.1609/aaai.v40i35.40199",
       "extra": "",
       "record": "https://openalex.org/W7138296248"
@@ -1297,9 +1253,7 @@
       "abstract_source": "OpenAlex",
       "retrieved_at": "2026-09-18T18:38:57",
       "paper_id": "aaai-2026-w627"
-    },
-    "citations": 1,
-    "citations_source": "OpenAlex W7138296248"
+    }
   },
   {
     "id": "aaai-024-aaai-2026-w1169",
@@ -1337,7 +1291,7 @@
     "curator_note": "Dual Mamba 选择性状态空间建模缓解图网络过平滑",
     "links": {
       "official": "https://doi.org/10.1609/aaai.v40i26.39317",
-      "pdf": "https://doi.org/10.1609/aaai.v40i26.39317",
+      "pdf": "",
       "doi": "10.1609/aaai.v40i26.39317",
       "extra": "",
       "record": "https://openalex.org/W7138379861"
@@ -1349,9 +1303,7 @@
       "abstract_source": "OpenAlex",
       "retrieved_at": "2026-09-18T18:38:57",
       "paper_id": "aaai-2026-w1169"
-    },
-    "citations": 1,
-    "citations_source": "OpenAlex W7138379861"
+    }
   },
   {
     "id": "iccv-025-ICCV2025-p959",
@@ -1405,9 +1357,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "ICCV2025-p959"
-    },
-    "citations": 1,
-    "citations_source": "OpenAlex W4417183307"
+    }
   },
   {
     "id": "iccv-026-ICCV2025-p217",
@@ -1463,9 +1413,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "ICCV2025-p217"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7160125469"
+    }
   },
   {
     "id": "iccv-027-ICCV2025-p175",
@@ -1518,9 +1466,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "ICCV2025-p175"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W4416284578"
+    }
   },
   {
     "id": "iccv-028-ICCV2025-p1834",
@@ -1575,9 +1521,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "ICCV2025-p1834"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W4416510437"
+    }
   },
   {
     "id": "iccv-029-ICCV2025-p275",
@@ -1637,9 +1581,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "ICCV2025-p275"
-    },
-    "citations": 1,
-    "citations_source": "OpenAlex W4405655761"
+    }
   },
   {
     "id": "iccv-030-ICCV2025-p604",
@@ -1692,9 +1634,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "ICCV2025-p604"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W4417119972"
+    }
   },
   {
     "id": "iccv-031-ICCV2025-p2522",
@@ -1744,9 +1684,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "ICCV2025-p2522"
-    },
-    "citations": 4,
-    "citations_source": "OpenAlex W7160092569"
+    }
   },
   {
     "id": "iccv-032-ICCV2025-p578",
@@ -1800,9 +1738,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "ICCV2025-p578"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W4405095593"
+    }
   },
   {
     "id": "iccv-033-ICCV2025-p132",
@@ -1859,9 +1795,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "ICCV2025-p132"
-    },
-    "citations": 6,
-    "citations_source": "OpenAlex W4407571388"
+    }
   },
   {
     "id": "iccv-034-ICCV2025-p1515",
@@ -1912,9 +1846,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "ICCV2025-p1515"
-    },
-    "citations": 5,
-    "citations_source": "OpenAlex W7160035753"
+    }
   },
   {
     "id": "iccv-035-ICCV2025-p102",
@@ -1968,9 +1900,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "ICCV2025-p102"
-    },
-    "citations": 3,
-    "citations_source": "OpenAlex W7160137999"
+    }
   },
   {
     "id": "iccv-036-ICCV2025-p422",
@@ -2029,9 +1959,7 @@
       "abstract_source": "CVF Open Access 论文页",
       "retrieved_at": "2026-09-18T18:38:50",
       "paper_id": "ICCV2025-p422"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W4417266314"
+    }
   },
   {
     "id": "acl-037-acl-2026.acl-long.1454",
@@ -2086,9 +2014,7 @@
       "abstract_source": "ACL Anthology 论文页",
       "retrieved_at": "2026-09-18T18:38:51",
       "paper_id": "acl-2026.acl-long.1454"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7168536026"
+    }
   },
   {
     "id": "acl-038-acl-2026.acl-industry.51",
@@ -2153,9 +2079,7 @@
       "abstract_source": "ACL Anthology 论文页",
       "retrieved_at": "2026-09-18T18:38:52",
       "paper_id": "acl-2026.acl-industry.51"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7168500916"
+    }
   },
   {
     "id": "acl-039-acl-2026.acl-long.376",
@@ -2208,9 +2132,7 @@
       "abstract_source": "ACL Anthology 论文页",
       "retrieved_at": "2026-09-18T18:38:51",
       "paper_id": "acl-2026.acl-long.376"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7168425329"
+    }
   },
   {
     "id": "acl-040-acl-2026.acl-long.756",
@@ -2264,9 +2186,7 @@
       "abstract_source": "ACL Anthology 论文页",
       "retrieved_at": "2026-09-18T18:38:51",
       "paper_id": "acl-2026.acl-long.756"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7168429071"
+    }
   },
   {
     "id": "acl-041-acl-2026.findings-acl.917",
@@ -2317,9 +2237,7 @@
       "abstract_source": "ACL Anthology 论文页",
       "retrieved_at": "2026-09-18T18:38:53",
       "paper_id": "acl-2026.findings-acl.917"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7166882537"
+    }
   },
   {
     "id": "acl-042-acl-2026.acl-long.444",
@@ -2377,9 +2295,7 @@
       "abstract_source": "ACL Anthology 论文页",
       "retrieved_at": "2026-09-18T18:38:51",
       "paper_id": "acl-2026.acl-long.444"
-    },
-    "citations": null,
-    "citations_source": null
+    }
   },
   {
     "id": "acl-043-acl-2026.acl-long.1251",
@@ -2432,9 +2348,7 @@
       "abstract_source": "ACL Anthology 论文页",
       "retrieved_at": "2026-09-18T18:38:51",
       "paper_id": "acl-2026.acl-long.1251"
-    },
-    "citations": 1,
-    "citations_source": "OpenAlex W7138315846"
+    }
   },
   {
     "id": "acl-044-acl-2026.acl-long.743",
@@ -2485,9 +2399,7 @@
       "abstract_source": "ACL Anthology 论文页",
       "retrieved_at": "2026-09-18T18:38:51",
       "paper_id": "acl-2026.acl-long.743"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7168407957"
+    }
   },
   {
     "id": "acl-045-acl-2026.acl-long.1944",
@@ -2539,9 +2451,7 @@
       "abstract_source": "ACL Anthology 论文页",
       "retrieved_at": "2026-09-18T18:38:51",
       "paper_id": "acl-2026.acl-long.1944"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7169153999"
+    }
   },
   {
     "id": "acl-046-acl-2026.acl-long.470",
@@ -2597,9 +2507,7 @@
       "abstract_source": "ACL Anthology 论文页",
       "retrieved_at": "2026-09-18T18:38:51",
       "paper_id": "acl-2026.acl-long.470"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7168374849"
+    }
   },
   {
     "id": "acl-047-acl-2026.acl-long.647",
@@ -2655,9 +2563,7 @@
       "abstract_source": "ACL Anthology 论文页",
       "retrieved_at": "2026-09-18T18:38:51",
       "paper_id": "acl-2026.acl-long.647"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7166829077"
+    }
   },
   {
     "id": "acl-048-acl-2026.findings-acl.2116",
@@ -2712,8 +2618,6 @@
       "abstract_source": "ACL Anthology 论文页",
       "retrieved_at": "2026-09-18T18:38:54",
       "paper_id": "acl-2026.findings-acl.2116"
-    },
-    "citations": 0,
-    "citations_source": "OpenAlex W7168500086"
+    }
   }
 ]

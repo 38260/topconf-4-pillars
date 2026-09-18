@@ -1,13 +1,13 @@
 # 数据核验报告
 
-- 核验时间：2026-09-18 21:47:40
+- 核验时间：2026-09-18 21:56:09
 - 核验方式：对每篇精选论文**绕过本地缓存**重新读取官方页面，把官方摘要与仓库内 `data/papers.json` 做规范化后逐字比对；同时请求论文页与 PDF 链接确认可达。
-- 结果：48 篇中，摘要逐字一致 **48** 篇，论文页可达 **36** 篇，PDF 可达 **48** 篇，异常 **12** 篇。
+- 结果：48 篇中，摘要逐字一致 **48** 篇，论文页可达 **48** 篇，PDF 可达 **40** 篇，异常 **0** 篇。
 
 | 会议 | 语料规模（官方全量） | 精选 | 摘要一致 | 论文页可达 | PDF 可达 |
 |---|---|---|---|---|---|
 | CVPR 2026 | 4,042 | 12 | 12/12 | 12/12 | 12/12 |
-| AAAI 2026 | 4,976 | 12 | 12/12 | 0/12 | 12/12 |
+| AAAI 2026 | 4,976 | 12 | 12/12 | 12/12 | 4/12（8 篇不适用） |
 | ICCV 2025 | 2,701 | 12 | 12/12 | 12/12 | 12/12 |
 | ACL 2026 | 4,809 | 12 | 12/12 | 12/12 | 12/12 |
 
@@ -27,18 +27,18 @@
 | 10 | Direct Segmentation without Logits Optimization for Traini | `CVPR2026-p224` | ✅ | 1420 | ok | ok |
 | 11 | VideoChat-M1: Collaborative Policy Planning for Video Unde | `CVPR2026-p3875` | ✅ | 1531 | ok | ok |
 | 12 | Global-Graph Guided and Local-Graph Weighted Contrastive L | `CVPR2026-p2534` | ✅ | 1486 | ok | ok |
-| 13 | DIAA: A Decoding-Efficient Inference Acceleration Approach | `aaai-2026-w1632` | ✅ | 1523 | fail | ok |
-| 14 | Efficient Multimodal Large Language Model via Dynamic KV C | `aaai-2026-w3487` | ✅ | 1364 | fail | ok |
-| 15 | SPAN: Benchmarking and Improving Cross-Calendar Temporal R | `aaai-2026-w4812` | ✅ | 2028 | fail | ok |
-| 16 | Mitigating Hallucinations in Large Language Models via Cau | `aaai-2026-w1223` | ✅ | 1413 | fail | ok |
-| 17 | LiR3AG: A Lightweight Rerank Reasoning Strategy Framework  | `aaai-2026-w996` | ✅ | 1478 | fail | ok |
-| 18 | Extracting Multimodal Learngene in CLIP: Unveiling the Mul | `aaai-2026-w3928` | ✅ | 1703 | fail | ok |
-| 19 | HiTVideo: Hierarchical Tokenizers for Enhancing Text-to-Vi | `aaai-2026-w489` | ✅ | 1686 | fail | ok |
-| 20 | H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipu | `aaai-2026-w662` | ✅ | 1928 | fail | ok |
-| 21 | PulseMind: A Multi-Modal Medical Model for Real-World Clin | `aaai-2026-w787` | ✅ | 1554 | fail | ok |
-| 22 | Injection, Attack and Erasure: Revocable Backdoor Attacks  | `aaai-2026-w1569` | ✅ | 1465 | fail | ok |
-| 23 | HCPO: Hierarchical Conductor-Based Policy Optimization in  | `aaai-2026-w627` | ✅ | 1241 | fail | ok |
-| 24 | Dual Mamba for Node-Specific Representation Learning: Tack | `aaai-2026-w1169` | ✅ | 1376 | fail | ok |
+| 13 | DIAA: A Decoding-Efficient Inference Acceleration Approach | `aaai-2026-w1632` | ✅ | 1523 | ok | skip |
+| 14 | Efficient Multimodal Large Language Model via Dynamic KV C | `aaai-2026-w3487` | ✅ | 1364 | ok | skip |
+| 15 | SPAN: Benchmarking and Improving Cross-Calendar Temporal R | `aaai-2026-w4812` | ✅ | 2028 | ok | ok |
+| 16 | Mitigating Hallucinations in Large Language Models via Cau | `aaai-2026-w1223` | ✅ | 1413 | ok | skip |
+| 17 | LiR3AG: A Lightweight Rerank Reasoning Strategy Framework  | `aaai-2026-w996` | ✅ | 1478 | ok | skip |
+| 18 | Extracting Multimodal Learngene in CLIP: Unveiling the Mul | `aaai-2026-w3928` | ✅ | 1703 | ok | ok |
+| 19 | HiTVideo: Hierarchical Tokenizers for Enhancing Text-to-Vi | `aaai-2026-w489` | ✅ | 1686 | ok | skip |
+| 20 | H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipu | `aaai-2026-w662` | ✅ | 1928 | ok | skip |
+| 21 | PulseMind: A Multi-Modal Medical Model for Real-World Clin | `aaai-2026-w787` | ✅ | 1554 | ok | ok |
+| 22 | Injection, Attack and Erasure: Revocable Backdoor Attacks  | `aaai-2026-w1569` | ✅ | 1465 | ok | ok |
+| 23 | HCPO: Hierarchical Conductor-Based Policy Optimization in  | `aaai-2026-w627` | ✅ | 1241 | ok | skip |
+| 24 | Dual Mamba for Node-Specific Representation Learning: Tack | `aaai-2026-w1169` | ✅ | 1376 | ok | skip |
 | 25 | MobileIE: An Extremely Lightweight and Effective ConvNet f | `ICCV2025-p959` | ✅ | 1053 | ok | ok |
 | 26 | METEOR: Multi-Encoder Collaborative Token Pruning for Effi | `ICCV2025-p217` | ✅ | 1572 | ok | ok |
 | 27 | Corvid: Improving Multimodal Large Language Models Towards | `ICCV2025-p175` | ✅ | 1418 | ok | ok |
@@ -63,21 +63,6 @@
 | 46 | An Exploration of Mamba for Speech Self-Supervised Models | `acl-2026.acl-long.470` | ✅ | 1053 | ok | ok |
 | 47 | DPWriter: Reinforcement Learning with Diverse Planning Bra | `acl-2026.acl-long.647` | ✅ | 959 | ok | ok |
 | 48 | SceneLM: 3D-Aware Language Models for Editable 3D Scene Sy | `acl-2026.findings-acl.2116` | ✅ | 1668 | ok | ok |
-
-## 异常明细
-
-- `aaai-013-aaai-2026-w1632`：title=True abs=True page=fail HTTP Error 403: Forbidden
-- `aaai-014-aaai-2026-w3487`：title=True abs=True page=fail HTTP Error 403: Forbidden
-- `aaai-015-aaai-2026-w4812`：title=True abs=True page=fail HTTP Error 403: Forbidden
-- `aaai-016-aaai-2026-w1223`：title=True abs=True page=fail HTTP Error 403: Forbidden
-- `aaai-017-aaai-2026-w996`：title=True abs=True page=fail HTTP Error 403: Forbidden
-- `aaai-018-aaai-2026-w3928`：title=True abs=True page=fail HTTP Error 403: Forbidden
-- `aaai-019-aaai-2026-w489`：title=True abs=True page=fail HTTP Error 403: Forbidden
-- `aaai-020-aaai-2026-w662`：title=True abs=True page=fail HTTP Error 403: Forbidden
-- `aaai-021-aaai-2026-w787`：title=True abs=True page=fail HTTP Error 403: Forbidden
-- `aaai-022-aaai-2026-w1569`：title=True abs=True page=fail HTTP Error 403: Forbidden
-- `aaai-023-aaai-2026-w627`：title=True abs=True page=fail HTTP Error 403: Forbidden
-- `aaai-024-aaai-2026-w1169`：title=True abs=True page=fail HTTP Error 403: Forbidden
 
 ## 说明
 
