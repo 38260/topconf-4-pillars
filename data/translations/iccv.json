@@ -1,0 +1,163 @@
+{
+  "venue": "ICCV 2025",
+  "translated_by": "本项目逐篇人工翻译（对照 CVF Open Access 官方摘要页）",
+  "translated_at": "2026-09-18",
+  "papers": [
+    {
+      "id": "iccv-025-ICCV2025-p959",
+      "title_zh": "MobileIE：面向移动设备实时图像增强的极轻量高效卷积网络",
+      "abstract_zh": "深度神经网络的最新进展推动了图像增强（IE）领域的显著进步。然而由于计算与显存需求高昂，把深度学习模型部署到移动设备等资源受限平台仍然困难。为应对这些挑战并让移动端实现实时图像增强，我们提出一个参数量仅约 4K 的极轻量卷积神经网络（CNN）框架。我们的方法将重参数化与「增量权重优化」策略相结合以保证效率；并通过特征自变换模块与分层双路注意力机制提升性能，配合局部方差加权损失进行优化。借助这一高效框架，我们首次实现在保证有竞争力图像质量的前提下最高 1,100 FPS 的实时图像增强推理，并在多项 IE 任务上取得速度与性能之间的最佳折衷。代码将开源：https://github.com/AVC2-UESTC/MobileIE.git。",
+      "topics": ["edge-efficiency", "perception", "architectures"],
+      "keywords": [
+        {"en": "image enhancement", "zh": "图像增强"},
+        {"en": "mobile deployment", "zh": "移动端部署"},
+        {"en": "extremely lightweight CNN", "zh": "极轻量卷积网络"},
+        {"en": "re-parameterization", "zh": "重参数化"},
+        {"en": "real-time inference", "zh": "实时推理"}
+      ]
+    },
+    {
+      "id": "iccv-026-ICCV2025-p217",
+      "title_zh": "METEOR：面向高效视觉语言模型的多编码器协同 token 剪枝",
+      "abstract_zh": "视觉编码器是多模态理解的基石。CLIP 这类单编码器架构在跨多样多模态任务泛化时存在固有局限，而近期的多编码器融合方法虽能利用多个视觉编码器的互补表征取得更优性能，却带来令人却步的计算开销。为此我们提出渐进式剪枝框架——多编码器协同 token 剪枝（METEOR），在编码、融合、解码三个阶段为多编码器 MLLM 剔除冗余视觉 token。在多视觉编码阶段，我们用秩引导的协同 token 分配策略在每个编码器内部丢弃冗余 token；随后在多视觉融合阶段，融合不同编码器的视觉特征并以协同剪枝削减跨编码器冗余；最后我们提出 LLM 解码阶段的自适应 token 剪枝方法，依据文本提示进一步丢弃无关 token，并针对具体任务需求动态调整剪枝率。据我们所知，这是首个通过多阶段剪枝策略实现高效多编码器视觉语言模型的成功尝试。在 11 个基准上的大量实验证明了本方法的有效性：与典型多编码器 MLLM——EAGLE 相比，METEOR 减少 76% 的视觉 token，而平均性能仅下降 0.3%。代码见 https://github.com/YuchenLiu98/METEOR。",
+      "topics": ["edge-efficiency", "multimodal", "perception"],
+      "keywords": [
+        {"en": "visual token pruning", "zh": "视觉 token 剪枝"},
+        {"en": "multi-encoder MLLM", "zh": "多编码器多模态大模型"},
+        {"en": "progressive pruning", "zh": "渐进式剪枝"},
+        {"en": "cross-encoder redundancy", "zh": "跨编码器冗余"},
+        {"en": "efficient VLM", "zh": "高效视觉语言模型"}
+      ]
+    },
+    {
+      "id": "iccv-027-ICCV2025-p175",
+      "title_zh": "Corvid：改进多模态大语言模型以支持思维链推理",
+      "abstract_zh": "多模态大语言模型（MLLM）的最新进展在模态感知与理解上表现出色。然而领先的开源 MLLM 在复杂结构化推理上仍有明显短板，尤其缺乏为决策与解决问题所需的深度推理。本工作提出 Corvid——一个具备增强思维链（CoT）推理能力的 MLLM。架构上，Corvid 采用混合视觉编码器以获得信息量充足的视觉表征，并设计了一个精巧的连接模块（GateMixer）促进跨模态对齐。为增强 Corvid 的 CoT 推理能力，我们构建了 MCoT-Instruct-287K——一个由多样公开推理数据源精炼、标准化而成的高质量多模态 CoT 指令跟随数据集。借助该数据集，我们用两阶段的 CoT 格式化训练对 Corvid 微调，循序渐进地强化其逐步推理能力。此外我们提出有效的推理时扩展策略，使 Corvid 能通过自我校验缓解「过度推理」与「推理不足」。大量实验表明，在相近参数规模下 Corvid 优于现有的类 o1 MLLM 与最先进 MLLM，并在数学推理与科学问题求解上表现突出。项目页：https://mm-vl.github.io/corvid。",
+      "topics": ["llm", "multimodal", "architectures"],
+      "keywords": [
+        {"en": "chain-of-thought reasoning", "zh": "思维链推理"},
+        {"en": "multimodal LLM", "zh": "多模态大语言模型"},
+        {"en": "hybrid vision encoder", "zh": "混合视觉编码器"},
+        {"en": "instruction tuning dataset", "zh": "指令微调数据集"},
+        {"en": "test-time scaling", "zh": "推理时扩展"}
+      ]
+    },
+    {
+      "id": "iccv-028-ICCV2025-p1834",
+      "title_zh": "通过推理式分割增强多模态大模型的空间推理能力",
+      "abstract_zh": "点云感知的最新进展表明，借助大语言模型（LLM）进行视觉—语言对齐已能在场景理解上取得可观成果。然而即便三维点云数据提供了尺寸、位置等用于识别目标的精细空间线索，现有方法在处理需要准确空间推理的复杂指令时仍会遇到困难。为解决该问题，我们提出相关推理分割框架 R²S——一个基于推理的分割框架。它模仿人类认知过程，把空间推理拆解为先后两个阶段：先识别相关要素，再在其关联视觉先验的引导下处理指令。此外，考虑到现有数据集在复杂推理任务上的不足，我们构建 3D ReasonSeg——一个基于推理的分割数据集，含 25,185 个训练样本与 3,966 个验证样本，标注精确。定量与定性实验均表明，R²S 与 3D ReasonSeg 能有效赋予三维点云感知更强的空间推理能力；我们希望它们能为后续工作提供新的基线与基准。",
+      "topics": ["3d-embodied", "multimodal", "perception"],
+      "keywords": [
+        {"en": "spatial reasoning", "zh": "空间推理"},
+        {"en": "point cloud perception", "zh": "点云感知"},
+        {"en": "reasoning segmentation", "zh": "推理式分割"},
+        {"en": "referring expression", "zh": "指代表达"},
+        {"en": "3D benchmark dataset", "zh": "三维基准数据集"}
+      ]
+    },
+    {
+      "id": "iccv-029-ICCV2025-p275",
+      "title_zh": "Prompt-A-Video：用偏好对齐的大语言模型为视频扩散模型写提示",
+      "abstract_zh": "文本生成视频模型通过在高质量「文本—视频」配对数据上优化已取得长足进步，其中文本提示对输出视频质量起着关键作用。然而要得到满意的输出，往往需要多轮修改与迭代推理来打磨用户提供的提示。现有的提示自动改写方法应用于文生视频扩散模型时，面临模态不一致、成本不对等与模型不可知等难题。为此我们提出基于 LLM 的提示自适应框架 Prompt-A-Video，它擅长为特定的视频扩散模型量身打造「以视频为中心、免人工、偏好对齐」的提示。我们的方法包含一套精心设计的两阶段优化与对齐系统：首先执行奖励引导的提示演化流程，自动构建最优提示池并用其对 LLM 做监督微调（SFT）；随后用多维奖励为 SFT 模型生成成对比较数据，再以直接偏好优化（DPO）算法进一步完成偏好对齐。通过大量实验与对比分析，我们在多种生成模型上验证了 Prompt-A-Video 的有效性，展现其推进视频生成边界的潜力。",
+      "topics": ["generative", "llm", "multimodal"],
+      "keywords": [
+        {"en": "text-to-video diffusion", "zh": "文生视频扩散模型"},
+        {"en": "prompt adaptation", "zh": "提示自适应"},
+        {"en": "preference alignment", "zh": "偏好对齐"},
+        {"en": "direct preference optimization", "zh": "直接偏好优化"},
+        {"en": "reward-guided evolution", "zh": "奖励引导演化"}
+      ]
+    },
+    {
+      "id": "iccv-030-ICCV2025-p604",
+      "title_zh": "Dense2MoE：把扩散 Transformer 重构为混合专家以实现高效文生图",
+      "abstract_zh": "扩散 Transformer（DiT）在文生图任务上表现卓越，但其庞大的参数量带来可观的推理开销。现有参数压缩方法多以剪枝为主，而激进剪枝会因模型容量下降导致严重性能退化。为解决这一局限，我们率先把稠密 DiT 转换为混合专家（MoE）以实现结构化稀疏：在保留模型容量的同时减少被激活的参数数量。具体而言，我们把 DiT 模块中的前馈网络（FFN）替换为 MoE 层，使 FFN 中被激活的参数减少 62.5%；进而提出「模块混合」（MoB）以选择性激活 DiT 模块，进一步提升稀疏度。为保证稠密到 MoE 的有效转换，我们设计了多步蒸馏流程，包含基于泰勒度量的专家初始化、带负载均衡的知识蒸馏，以及用于 MoB 优化的分组特征损失。我们把大型扩散 Transformer（如 FLUX.1 [dev]）改造为 MoE 结构，在激活参数减少 60% 的同时保持原有性能，并在大量实验中超越基于剪枝的方法。总体上，Dense2MoE 为高效文生图确立了新范式。",
+      "topics": ["generative", "edge-efficiency", "architectures"],
+      "keywords": [
+        {"en": "diffusion transformer", "zh": "扩散 Transformer"},
+        {"en": "mixture of experts", "zh": "混合专家"},
+        {"en": "structured sparsification", "zh": "结构化稀疏"},
+        {"en": "activated parameters", "zh": "激活参数量"},
+        {"en": "knowledge distillation", "zh": "知识蒸馏"}
+      ]
+    },
+    {
+      "id": "iccv-031-ICCV2025-p2522",
+      "title_zh": "SEGS-SLAM：外观嵌入驱动的结构增强三维高斯泼溅 SLAM",
+      "abstract_zh": "三维高斯泼溅（3D-GS）近期在同步定位与建图（SLAM）的新视角合成任务上带来变革。然而多数现有算法无法充分刻画底层结构，导致结构不一致；此外它们难以应对突变的表观变化，造成视觉质量不稳定。为解决这些问题，我们提出 SEGS-SLAM——一个结构增强的三维高斯泼溅 SLAM，可实现高质量的照片级建图。我们的贡献有二：其一，提出结构增强照片级建图（SEPM）框架，首次利用高度结构化的点云初始化结构化三维高斯，显著提升渲染质量；其二，提出「由运动还原外观」嵌入（AfME），使三维高斯能更好地建模不同相机位姿下的图像外观变化。在单目、双目与 RGB-D 数据集上的大量实验表明，SEGS-SLAM 在照片级建图质量上显著优于最先进方法，例如在 TUM RGB-D 数据集单相机设定下 PSNR 较 MonoGS 提升 19.86%。项目页：https://segs-slam.github.io/。",
+      "topics": ["3d-embodied", "generative", "perception"],
+      "keywords": [
+        {"en": "3D Gaussian splatting", "zh": "三维高斯泼溅"},
+        {"en": "SLAM", "zh": "同步定位与建图"},
+        {"en": "photorealistic mapping", "zh": "照片级建图"},
+        {"en": "appearance embedding", "zh": "外观嵌入"},
+        {"en": "novel view synthesis", "zh": "新视角合成"}
+      ]
+    },
+    {
+      "id": "iccv-032-ICCV2025-p578",
+      "title_zh": "EmbodiedOcc：面向视觉在线场景理解的具身三维占据预测",
+      "abstract_zh": "三维占据预测能完整描述周边场景，已成为三维感知的核心任务之一。现有方法多聚焦于单视图或少量视图的离线感知，无法用于需要具身智能体通过渐进式探索逐步感知场景的实际情形。本文把这一实用场景形式化为「具身三维占据预测」任务，并提出基于高斯的 EmbodiedOcc 框架来完成它。我们用均匀的三维语义高斯初始化全局场景，并随具身智能体的观测渐进更新局部区域；每次更新时，从观测图像中提取语义与结构特征，通过可变形交叉注意力高效融合以细化区域高斯；最后用「高斯体素泼溅」从更新后的三维高斯得到全局三维占据。EmbodiedOcc 假设环境未知（即初始为均匀分布），并用三维高斯维护对其显式的全局记忆，通过区域高斯的局部细化逐步获得认知——这与人类通过具身探索理解新场景的方式一致。我们基于局部标注重构了 EmbodiedOcc-ScanNet 基准，以支撑具身三维占据预测任务的评测。EmbodiedOcc 大幅超越现有方法，以高精度与高效率完成了具身占据预测。代码：https://github.com/YkiWu/EmbodiedOcc。",
+      "topics": ["3d-embodied", "perception", "architectures"],
+      "keywords": [
+        {"en": "3D occupancy prediction", "zh": "三维占据预测"},
+        {"en": "embodied exploration", "zh": "具身探索"},
+        {"en": "semantic Gaussians", "zh": "语义高斯"},
+        {"en": "deformable cross-attention", "zh": "可变形交叉注意力"},
+        {"en": "online scene understanding", "zh": "在线场景理解"}
+      ]
+    },
+    {
+      "id": "iccv-033-ICCV2025-p132",
+      "title_zh": "PathFinder：应用于组织病理学的多模态多智能体辅助诊断决策系统",
+      "abstract_zh": "通过组织病理全切片图像（WSI）诊断疾病是现代病理学的基石，但 WSI 的吉像素尺度与复杂性带来严峻挑战。受过训练病理医生的做法是：在全切片中导航、寻找相关图块、做笔记，并把它们汇总成最终的整体诊断。传统 AI 方法（如多示例学习与基于 Transformer 的模型）达不到这种整体性、迭代式、多尺度的诊断流程，限制了其在真实场景中的应用。我们提出 PathFinder——一个模仿专家病理医生决策过程的多模态、多智能体框架。PathFinder 整合四个 AI 智能体：分诊智能体、导航智能体、描述智能体与诊断智能体，它们协作在全切片中导航、收集证据，并给出带有自然语言解释的完整诊断。分诊智能体先把 WSI 判定为良性或高危；若为高危，导航与描述智能体迭代聚焦关键区域，生成重要性图谱并对采样图块给出描述性洞见；最后诊断智能体综合所获发现给出患者的诊断分类。实验表明，PathFinder 在皮肤黑色素瘤诊断上超越最先进方法 8%，并通过对诊断相关图块的自然语言描述天然具备可解释性。病理医生的定性分析显示，描述智能体的输出质量高、与 GPT-4o 相当。PathFinder 还是首个在这一高难黑色素瘤分类任务上平均表现超过病理医生的 AI 系统（高出 9%），为高效、准确、可解释的病理 AI 辅助诊断树立了新纪录。数据、代码与模型将公开发布。",
+      "topics": ["medical-science", "multimodal", "llm"],
+      "keywords": [
+        {"en": "whole slide image", "zh": "全切片图像"},
+        {"en": "multi-agent system", "zh": "多智能体系统"},
+        {"en": "histopathology diagnosis", "zh": "组织病理诊断"},
+        {"en": "melanoma classification", "zh": "黑色素瘤分类"},
+        {"en": "explainability", "zh": "可解释性"}
+      ]
+    },
+    {
+      "id": "iccv-034-ICCV2025-p1515",
+      "title_zh": "TrustMark：适用于任意分辨率图像的鲁棒水印与水印去除",
+      "abstract_zh": "不可感知的数字水印对版权保护、虚假信息防范与负责任的生成式 AI 都至关重要。我们提出 TrustMark——一种利用「空域—频域」联合损失函数与 1×1 卷积层来提升编码质量的水印方法。TrustMark 对原位扰动与离位扰动都保持鲁棒，同时图像质量维持在 43 dB 以上。此外我们提出 ReMark——一个为「重新加水印」设计的水印去除方法，并给出一套简洁而有效的算法，使 TrustMark 与 ReMark 都能在任意分辨率上运行。我们的方法在 3 个基准上取得当前最优表现。",
+      "topics": ["trustworthy", "generative"],
+      "keywords": [
+        {"en": "digital watermarking", "zh": "数字水印"},
+        {"en": "watermark removal", "zh": "水印去除"},
+        {"en": "spatio-spectral loss", "zh": "空频联合损失"},
+        {"en": "arbitrary resolution", "zh": "任意分辨率"},
+        {"en": "copyright protection", "zh": "版权保护"}
+      ]
+    },
+    {
+      "id": "iccv-035-ICCV2025-p102",
+      "title_zh": "特征提纯至关重要：抑制离群值传播的免训练开放词表语义分割",
+      "abstract_zh": "以 CLIP 这类视觉语言模型为代表的免训练开放词表语义分割已取得进展，它们展现出强大的零样本能力。然而 CLIP 的注意力机制常常错误地强调某些图像 token（即离群值），造成无关的过度激活。现有方法难以处理这些在中间层产生、并在网络中不断传播的离群值，最终损害空间感知能力。本文提出自适应特征提纯框架 SFP，用于抑制被传播的离群值并增强面向开放词表语义分割的语义表征。具体而言，在深入分析图像 token 与类别 token 之间注意力响应的基础上，我们设计自适应离群值抑制器，在每一层检测并削弱离群值，实现传播特征的逐层提纯；同时引入语义感知注意力增强器，提升语义相关区域的注意力强度，使提纯后的特征更聚焦于目标；进一步提出分层注意力整合器，聚合多层注意力图以细化空间连贯的特征表征，服务最终分割。SFP 能稳健抑制离群值并形成以目标为中心的特征表征，从而获得更精确的分割。大量实验显示本方法达到当前最优水平，在八个分割基准上平均 mIoU 超越现有方法 4.6%。代码将开源。",
+      "topics": ["perception", "multimodal", "architectures"],
+      "keywords": [
+        {"en": "open-vocabulary segmentation", "zh": "开放词表分割"},
+        {"en": "outlier suppression", "zh": "离群值抑制"},
+        {"en": "training-free", "zh": "免训练"},
+        {"en": "attention modulation", "zh": "注意力调制"},
+        {"en": "mIoU", "zh": "平均交并比"}
+      ]
+    },
+    {
+      "id": "iccv-036-ICCV2025-p422",
+      "title_zh": "EA-ViT：弹性视觉 Transformer 的高效适配",
+      "abstract_zh": "视觉 Transformer（ViT）已成为计算机视觉的基础模型，在下游任务的泛化与适配上表现出色。然而要让 ViT 服务多样的资源约束，通常不得不针对每种尺寸分别重训多个模型，既耗时又耗能。为解决该问题，我们提出一个高效的 ViT 适配框架：只需一次适配过程，即可生成多种尺寸的模型，部署到不同资源约束的平台上。方法分两阶段。第一阶段，我们为预训练 ViT 叠加嵌套式弹性架构，使其在 MLP 扩张比、注意力头数、嵌入维度与网络深度四个维度上具备结构柔性；为保留预训练知识并保证适配稳定，采用课程式训练策略逐步提升弹性程度。第二阶段，我们设计一个轻量路由器，按算力预算与下游任务需求选择子模型；路由器以定制 NSGA-II 算法求得的帕累托最优配置初始化，随后与主干网络联合优化。在多个基准上的大量实验证明了 EA-ViT 的有效性与通用性。代码见 https://github.com/zcxcf/EA-ViT。",
+      "topics": ["architectures", "edge-efficiency"],
+      "keywords": [
+        {"en": "Vision Transformer", "zh": "视觉 Transformer"},
+        {"en": "elastic architecture", "zh": "弹性架构"},
+        {"en": "submodel routing", "zh": "子模型路由"},
+        {"en": "NSGA-II", "zh": "NSGA-II 多目标优化"},
+        {"en": "resource-constrained deployment", "zh": "受限资源部署"}
+      ]
+    }
+  ]
+}

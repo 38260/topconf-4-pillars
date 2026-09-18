@@ -24,7 +24,7 @@ ALLOW = {
     "query", "key", "value", "node", "nodes", "graph", "codebook", "codebooks",
     "checkpoint", "checkpoints", "benchmark", "baseline", "baselines", "dataset",
     "hop", "hops", "wiki", "web", "chat", "app", "apps", "e-commerce", "x",
-    "tokenizer", "tokenizers",
+    "tokenizer", "tokenizers", "miou", "iou", "dev", "psnr",
 }
 
 WORD = re.compile(r"[A-Za-z][A-Za-z\-']*")
