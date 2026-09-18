@@ -1,5 +1,7 @@
 # 官方源原始响应缓存（体积大，可由脚本重新抓取）
 data/raw/
+data/corpus.json
+logs_fetch.txt
 
 *.tmp
 

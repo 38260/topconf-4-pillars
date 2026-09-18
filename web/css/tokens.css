@@ -1,0 +1,146 @@
+/* ============================================================
+   tokens.css —— 单一真源（模式取自 Trace Light：改配色只改这里）
+   表面风格：Claude（象牙底 / 陶土强调 / 衬线标题 / 低饱和分隔线）
+   结构模式：Trace Light（token 分层、状态→--st 映射、4 档圆角、4pt 网格）
+   ============================================================ */
+:root {
+  /* ---- 基础面：Claude 象牙色板 ---- */
+  --bg: #faf9f5;
+  --bg-sunk: #f2f0ea;
+  --panel: #ffffff;
+  --panel-2: #f5f3ee;
+  --panel-glass: rgba(250, 249, 245, .82);
+  --text: #1f1e1b;
+  --text-2: #52504a;
+  --muted: #83807a;
+  --border: #e3e0d8;
+  --border-strong: #cfcbC0;
+
+  /* 玻璃上沿亮边：光线感（Trace Light --edge） */
+  --edge: rgba(255, 255, 255, .7);
+
+  --accent: #d97757;
+  --accent-strong: #b8532f;
+  --accent-soft: rgba(217, 119, 87, .12);
+  --accent-ring: rgba(217, 119, 87, .28);
+
+  --ok: #3f7d5c;
+  --warn: #a06b12;
+  --danger: #b23c3c;
+  --info: #4a6fa5;
+
+  /* ---- 双层阴影：环境 + 投影 ---- */
+  --shadow-sm: 0 1px 2px rgba(31, 30, 27, .05), 0 1px 3px rgba(31, 30, 27, .07);
+  --shadow: 0 2px 4px rgba(31, 30, 27, .05), 0 10px 28px rgba(31, 30, 27, .1);
+  --shadow-lg: 0 4px 8px rgba(31, 30, 27, .07), 0 24px 56px rgba(31, 30, 27, .18);
+
+  /* ---- 字体 ---- */
+  --serif: "Newsreader", "Source Han Serif SC", "Noto Serif SC", Songti SC,
+           Georgia, "Times New Roman", serif;
+  --sans: -apple-system, "Segoe UI", "Microsoft YaHei", "PingFang SC",
+          "Hiragino Sans GB", sans-serif;
+  --mono: ui-monospace, "Cascadia Code", Consolas, "JetBrains Mono", monospace;
+
+  /* ---- 圆角 4 档 ---- */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 18px;
+
+  /* ---- 间距：4pt 网格 ---- */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+
+  --topbar-h: 62px;
+  --maxw: 1680px;
+
+  /* ---- 语义色对：明暗只覆盖这两行一组 ---- */
+  --c-clay-bg: rgba(217, 119, 87, .13);   --c-clay-fg: #a9532f;
+  --c-indigo-bg: rgba(79, 90, 168, .12);  --c-indigo-fg: #444e93;
+  --c-teal-bg: rgba(20, 132, 122, .13);   --c-teal-fg: #0f6f66;
+  --c-amber-bg: rgba(191, 133, 22, .15);  --c-amber-fg: #8a5d0b;
+  --c-violet-bg: rgba(124, 77, 178, .12); --c-violet-fg: #65399a;
+  --c-rose-bg: rgba(190, 62, 94, .11);    --c-rose-fg: #9c2f4f;
+  --c-green-bg: rgba(63, 125, 92, .13);   --c-green-fg: #2f6849;
+  --c-cyan-bg: rgba(30, 130, 154, .13);   --c-cyan-fg: #14657a;
+  --c-orange-bg: rgba(208, 111, 44, .13); --c-orange-fg: #9c5017;
+  --c-purple-bg: rgba(146, 74, 156, .12); --c-purple-fg: #7d3a86;
+  --c-slate-bg: rgba(96, 106, 120, .13);  --c-slate-fg: #4b5563;
+
+  /* ---- 支柱主色：--st 消费映射的源（Trace Light --st-doing 同构） ---- */
+  --pillar-CVPR: #d97757;
+  --pillar-AAAI: #4f5aa8;
+  --pillar-ICCV: #14847a;
+  --pillar-ACL: #bf8516;
+}
+
+[data-theme="dark"] {
+  --bg: #1a1915;
+  --bg-sunk: #141310;
+  --panel: #211f1b;
+  --panel-2: #2a2823;
+  --panel-glass: rgba(26, 25, 21, .84);
+  --text: #f0eee6;
+  --text-2: #c8c4ba;
+  --muted: #96918a;
+  --border: #38352e;
+  --border-strong: #4b473e;
+  --edge: rgba(255, 255, 255, .07);
+
+  --accent: #d97757;
+  --accent-strong: #e08a6d;
+  --accent-soft: rgba(217, 119, 87, .17);
+  --accent-ring: rgba(217, 119, 87, .34);
+
+  --ok: #6fae86;
+  --warn: #d0a04a;
+  --danger: #e07a72;
+  --info: #8aa8d8;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .5), 0 1px 3px rgba(0, 0, 0, .45);
+  --shadow: 0 2px 4px rgba(0, 0, 0, .5), 0 10px 28px rgba(0, 0, 0, .5);
+  --shadow-lg: 0 4px 10px rgba(0, 0, 0, .55), 0 24px 56px rgba(0, 0, 0, .6);
+
+  --c-clay-bg: rgba(217, 119, 87, .18);   --c-clay-fg: #e79c7d;
+  --c-indigo-bg: rgba(122, 134, 214, .17); --c-indigo-fg: #a3ade8;
+  --c-teal-bg: rgba(45, 176, 162, .17);    --c-teal-fg: #5ec9bc;
+  --c-amber-bg: rgba(214, 158, 51, .18);   --c-amber-fg: #e0b866;
+  --c-violet-bg: rgba(163, 118, 214, .18); --c-violet-fg: #bfa0e0;
+  --c-rose-bg: rgba(222, 106, 132, .16);   --c-rose-fg: #eb96ab;
+  --c-green-bg: rgba(111, 174, 134, .17);  --c-green-fg: #8fc9a7;
+  --c-cyan-bg: rgba(64, 170, 194, .17);    --c-cyan-fg: #6bc0d6;
+  --c-orange-bg: rgba(226, 142, 76, .17);  --c-orange-fg: #eda877;
+  --c-purple-bg: rgba(186, 118, 196, .17); --c-purple-fg: #cb98d3;
+  --c-slate-bg: rgba(148, 158, 172, .16);  --c-slate-fg: #a8b1bd;
+
+  --pillar-CVPR: #d97757;
+  --pillar-AAAI: #7a86d6;
+  --pillar-ICCV: #2db0a2;
+  --pillar-ACL: #d69e33;
+}
+
+/* ---- 状态 → --st 变量映射（Trace Light 同构：选择器只声明 --st） ---- */
+[data-pillar="CVPR"] { --st: var(--pillar-CVPR); }
+[data-pillar="AAAI"] { --st: var(--pillar-AAAI); }
+[data-pillar="ICCV"] { --st: var(--pillar-ICCV); }
+[data-pillar="ACL"]  { --st: var(--pillar-ACL); }
+
+/* ---- 主题色 → --tc 消费映射 ---- */
+[data-accent="clay"]   { --tc-bg: var(--c-clay-bg);   --tc-fg: var(--c-clay-fg); }
+[data-accent="indigo"] { --tc-bg: var(--c-indigo-bg); --tc-fg: var(--c-indigo-fg); }
+[data-accent="teal"]   { --tc-bg: var(--c-teal-bg);   --tc-fg: var(--c-teal-fg); }
+[data-accent="amber"]  { --tc-bg: var(--c-amber-bg);  --tc-fg: var(--c-amber-fg); }
+[data-accent="violet"] { --tc-bg: var(--c-violet-bg); --tc-fg: var(--c-violet-fg); }
+[data-accent="rose"]   { --tc-bg: var(--c-rose-bg);   --tc-fg: var(--c-rose-fg); }
+[data-accent="green"]  { --tc-bg: var(--c-green-bg);  --tc-fg: var(--c-green-fg); }
+[data-accent="cyan"]   { --tc-bg: var(--c-cyan-bg);   --tc-fg: var(--c-cyan-fg); }
+[data-accent="orange"] { --tc-bg: var(--c-orange-bg); --tc-fg: var(--c-orange-fg); }
+[data-accent="purple"] { --tc-bg: var(--c-purple-bg); --tc-fg: var(--c-purple-fg); }
+[data-accent="slate"]  { --tc-bg: var(--c-slate-bg);  --tc-fg: var(--c-slate-fg); }

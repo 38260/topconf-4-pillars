@@ -15,7 +15,7 @@ import urllib.parse
 import urllib.request
 import zlib
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 RAW_DIR = os.path.join(ROOT, "data", "raw")
 
 USER_AGENT = (
@@ -105,12 +105,12 @@ def _inflate(raw: bytes, encoding: str | None) -> bytes:
 
 
 def _decode(body: bytes, url: str) -> str:
-    for enc in ("utf-8", "cp1252", "latin-1"):
-        try:
-            return body.decode(enc)
-        except UnicodeDecodeError:
-            continue
-    return body.decode("utf-8", errors="replace")
+    # official sources here are UTF-8; never fall back to a single-byte codec,
+    # which would silently mangle maths and CJK in abstracts
+    try:
+        return body.decode("utf-8")
+    except UnicodeDecodeError:
+        return body.decode("utf-8", errors="replace")
 
 
 def _write_meta(url: str, tag: str, path: str, size: int) -> None:

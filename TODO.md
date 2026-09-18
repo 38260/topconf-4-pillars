@@ -28,11 +28,13 @@
 
 - [x] 2.1 连通性验证：CVF Open Access、ACL Anthology、OpenAlex 三源 HTTP 200
 - [x] 2.2 `fetchlib/http.py`：缓存、重试、UA 规范、限速、原始响应落盘 `data/raw/`
-- [ ] 2.3 `fetchlib/cvf.py`：CVPR 2026 + ICCV 2025 全量目录（`?day=all`）+ 单篇官方摘要页
-- [ ] 2.4 `fetchlib/acl_anthology.py`：ACL 2026 卷级 MODS 目录 + 单篇 MODS 摘要
-- [ ] 2.5 `fetchlib/openalex.py`：AAAI 2026（Proceedings of AAAI, S4210191458）摘要/作者/DOI
-- [ ] 2.6 归一化为 `data/corpus.json`，统一 schema + 抓取时间戳
-- [ ] 2.7 语料体检：四会议条目数、摘要缺失率、重复 DOI 检查
+- [x] 2.3 `fetchlib/cvf.py`：CVPR 2026 + ICCV 2025 全量目录（`?day=all`）+ 单篇官方摘要页
+- [x] 2.4 `fetchlib/acl_anthology.py`：ACL 2026 卷级 MODS 目录 + 单篇论文页官方摘要
+      （实测：卷级/单篇 MODS XML 均无 `<abstract>`，摘要只在渲染页 `card-body acl-abstract` 内）
+- [x] 2.5 `fetchlib/openalex.py`：AAAI 2026（Proceedings of AAAI, S4210191458）摘要/作者/DOI
+- [x] 2.6 归一化为 `data/corpus.json`，统一 schema + 抓取时间戳
+- [x] 2.7 语料体检：四会议条目数、摘要缺失率、重复 DOI 检查
+- [x] 2.8 `rank_candidates.py`：按主题给 16,528 篇打分 → `data/candidates.md` 供人工精选
 
 ## 阶段 3 · 精选与中文翻译（R5 / R6 / R7）
 
@@ -68,6 +70,17 @@
 - 2026-09-18 技术选型：抓取仅用 Python 标准库（urllib / html.parser / xml.etree），零第三方依赖。
 - 2026-09-18 Semantic Scholar 无 key 时返回 429、DBLP 触发反爬验证，故不作为主数据源；AAAI 走 OpenAlex（实测摘要覆盖 25/25）。
 - 2026-09-18 「原生连接」解释为两层：(a) 数据侧直连官方源并可刷新；(b) 界面侧无 CDN、无外部请求，`file://` 亦可离线打开。
+
+## 语料体检（2026-09-18 实抓）
+
+| 支柱 | 官方语料量 | 目录级摘要 | DOI | PDF | 备注 |
+|------|-----------|-----------|-----|-----|------|
+| CVPR 2026 | 4,042 | 0%（摘要在单篇页） | CVF 目录不给 DOI | 4,042 | 标题/作者/bibtex 页码齐全 |
+| ICCV 2025 | 2,701 | 0%（同上） | 同上 | 2,701 | |
+| ACL 2026 | 4,809 | 0%（摘要在论文页） | 4,809 | 4,809 | 卷分布 long 2221 / findings 2163 / industry 155 / srw 110 / demo 86 / short 74 |
+| AAAI 2026 | 4,976 | 100% | 4,976 | 4,976 | OpenAlex 有 63 条同名重复，精选时按 DOI 去重 |
+
+合计 16,528 篇真实论文进入 `data/corpus.json`（21.7 MB，已 gitignore，可由脚本重放）。
 
 ## 风险
 

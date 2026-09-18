@@ -1,0 +1,86 @@
+{
+  "stats": {
+    "CVPR": {
+      "papers": 4042,
+      "with_abstract": 0,
+      "abstract_coverage": 0.0,
+      "duplicate_titles": 0,
+      "with_doi": 0,
+      "with_pdf": 4042,
+      "with_authors": 4042
+    },
+    "ICCV": {
+      "papers": 2701,
+      "with_abstract": 0,
+      "abstract_coverage": 0.0,
+      "duplicate_titles": 0,
+      "with_doi": 0,
+      "with_pdf": 2701,
+      "with_authors": 2701
+    },
+    "ACL": {
+      "papers": 4809,
+      "with_abstract": 0,
+      "abstract_coverage": 0.0,
+      "duplicate_titles": 0,
+      "with_doi": 4809,
+      "with_pdf": 4809,
+      "with_authors": 4809
+    },
+    "AAAI": {
+      "papers": 4976,
+      "with_abstract": 4976,
+      "abstract_coverage": 1.0,
+      "duplicate_titles": 63,
+      "with_doi": 4976,
+      "with_pdf": 4976,
+      "with_authors": 4976
+    }
+  },
+  "pillars": [
+    {
+      "key": "CVPR",
+      "label": "CVPR",
+      "year": 2026,
+      "full_name": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "full_name_zh": "IEEE/CVF 计算机视觉与模式识别会议",
+      "field": "视觉",
+      "source": "CVF Open Access",
+      "source_url": "https://openaccess.thecvf.com/CVPR2026",
+      "accent": "clay"
+    },
+    {
+      "key": "AAAI",
+      "label": "AAAI",
+      "year": 2026,
+      "full_name": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "full_name_zh": "AAAI 人工智能会议",
+      "field": "通用 AI",
+      "source": "OpenAlex (Proceedings of AAAI, S4210191458)",
+      "source_url": "https://api.openalex.org/sources/S4210191458",
+      "accent": "indigo"
+    },
+    {
+      "key": "ICCV",
+      "label": "ICCV",
+      "year": 2025,
+      "full_name": "IEEE/CVF International Conference on Computer Vision",
+      "full_name_zh": "IEEE/CVF 国际计算机视觉会议",
+      "field": "视觉",
+      "source": "CVF Open Access",
+      "source_url": "https://openaccess.thecvf.com/ICCV2025",
+      "accent": "teal"
+    },
+    {
+      "key": "ACL",
+      "label": "ACL",
+      "year": 2026,
+      "full_name": "Annual Meeting of the Association for Computational Linguistics",
+      "full_name_zh": "国际计算语言学协会年会",
+      "field": "语言 / NLP",
+      "source": "ACL Anthology",
+      "source_url": "https://aclanthology.org/events/acl-2026/",
+      "accent": "amber"
+    }
+  ]
+}
