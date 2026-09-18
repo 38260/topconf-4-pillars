@@ -87,6 +87,9 @@ def index(year: int = 2026, use_cache: bool = True) -> list[dict]:
                 "oa_url": _best_pdf(w),
                 "landing_url_openalex": clean(w.get("id") or ""),
                 "publisher_url": (f"https://doi.org/{doi}" if doi else ""),
+                # publisher-side subject tags: real signals for keyword extraction
+                "concepts": [c for c in concepts if c][:12],
+                "n_authors": len([a for a in authors if a]),
             },
         ))
     return records
