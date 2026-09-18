@@ -49,3 +49,25 @@ TODO.md             全局待办真源，每次完成同步并随代码提交
 | AAAI 2026 | api.openalex.org（Proceedings of AAAI, S4210191458） | 标题 / 作者 / 摘要 / DOI（指向 ojs.aaai.org） |
 
 主题标签（`topics`）是基于真实标题、摘要与关键词的项目内派生分类，**不是**出版方官方学科分类，界面已标注。
+
+## 如何自行核验真实性
+
+每条记录都带 `provenance.paper_id`（官方系统内的记录号）与 `links`，可三路交叉复核：
+
+1. **点链接复核**：卡片详情 → 「论文页」直达 CVF Open Access / ACL Anthology / AAAI DOI 落地页，
+   「PDF」直达官方全文；AAAI 另给「OpenAlex 记录」链接。
+2. **跑核验脚本**：`python scripts/verify.py` 会**绕过本地缓存**重新读取 48 篇官方页面，
+   把摘要规范化后与仓库内 `data/papers.json` 逐字比对，并检查论文页/PDF 可达性，
+   结果写入 `docs/verification-report.md`（含逐篇表格）。
+3. **重放全量语料**：`python scripts/fetch_corpus.py --no-cache` 重新拉取四会议官方目录，
+   与 `data/corpus_meta.json` 的体检数字对比（当前：CVPR 4,042 · ICCV 2,701 · ACL 4,809 · AAAI 4,976）。
+
+数据口径的三条坦白：
+
+- 精选清单是人挑的（`data/selection.json` 每篇都写了策展理由），不是自动排行榜；
+  候选范围由 `scripts/rank_candidates.py` 对 16,528 篇官方语料按主题打分产生。
+- 中文摘要＝人工逐句翻译，英文原文一字未改且保留在详情页可展开对照；
+  `scripts/check_translations.py` 会拦下英文残留、主题误标与截断。
+- 引用次数（`citations`）来自 OpenAlex，只在该库能按标题/DOI 精确匹配时才写，
+  匹配不上就留空并在界面隐藏，不估算、不填充。
+

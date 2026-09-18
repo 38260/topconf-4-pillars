@@ -81,19 +81,34 @@ def find_citations(rec: dict) -> dict:
     return {"citations": None, "citations_source": None}
 
 
-def official_abstract(rec: dict) -> tuple[str, str]:
+def official_abstract(rec: dict, use_cache: bool = True) -> tuple[str, str]:
     venue = rec["venue"]
     try:
         if venue in ("CVPR", "ICCV"):
-            return cvf.abstract(rec["landing_url"]), "CVF Open Access 论文页"
+            return cvf.abstract(rec["landing_url"], use_cache), "CVF Open Access 论文页"
         if venue == "ACL":
-            return acl_anthology.abstract(rec["landing_url"]), "ACL Anthology 论文页"
+            return acl_anthology.abstract(rec["landing_url"], use_cache), "ACL Anthology 论文页"
     except Exception as exc:  # noqa: BLE001
         print(f"  ! abstract failed {rec['paper_id']}: {exc}")
     return rec.get("abstract") or "", rec["provenance"]["source"]
 
 
-def resolve() -> list[dict]:
+def _draft_is_fresh(draft_path: str) -> bool:
+    """The draft caches resolved records, so any change that alters record shape
+    (this script, the selection list, the corpus) must invalidate it."""
+    try:
+        made = os.path.getmtime(draft_path)
+    except OSError:
+        return False
+    for dep in (__file__, os.path.join(DATA, "selection.json"),
+                os.path.join(DATA, "corpus.json")):
+        if os.path.exists(dep) and os.path.getmtime(dep) > made:
+            print(f"  · draft 早于 {os.path.basename(dep)}，重新回源")
+            return False
+    return True
+
+
+def resolve(use_cache: bool = True) -> list[dict]:
     corpus = json.load(open(os.path.join(DATA, "corpus.json"), encoding="utf-8"))
     sel = json.load(open(os.path.join(DATA, "selection.json"), encoding="utf-8"))
     by_ref = {}
@@ -107,10 +122,16 @@ def resolve() -> list[dict]:
         if rec is None:
             print(f"  ! unresolved ref {pick['ref']}")
             continue
-        if not rec.get("abstract"):
-            abs_text, abs_src = official_abstract(rec)
+        if rec["venue"] == "AAAI":
+            # OpenAlex holds the AAAI record; on refresh re-query by DOI so an
+            # upstream correction is picked up instead of frozen in corpus.json.
+            abs_text = rec["abstract"]
+            if not use_cache:
+                abs_text = (openalex.abstract_by_doi(rec.get("doi") or "")
+                            or rec["abstract"])
+            abs_src = rec["provenance"]["source"]
         else:
-            abs_text, abs_src = rec["abstract"], rec["provenance"]["source"]
+            abs_text, abs_src = official_abstract(rec, use_cache)
         if not abs_text:
             print(f"  ! no official abstract for {pick['ref']} -> dropped")
             continue
@@ -131,10 +152,15 @@ def resolve() -> list[dict]:
             "topic_rule_agree": primary in rule_topics,
             "curator_note": pick.get("rationale", ""),
             "links": {
-                "official": rec["landing_url"],
-                "pdf": rec.get("pdf_url") or "",
+                # AAAI: official page is the DOI landing (ojs.aaai.org); OpenAlex id
+                # is only the record we read it from, so expose it as a second link.
+                "official": rec.get("publisher_url") or rec["landing_url"],
+                "pdf": (rec.get("pdf_url") or "")
+                       if (rec.get("pdf_url") or "") != (rec.get("publisher_url") or rec["landing_url"])
+                       else "",   # OA url that is just the landing page isn't a PDF
                 "doi": rec.get("doi") or "",
                 "extra": rec.get("supp_url") or rec.get("code_url") or "",
+                "record": (rec["landing_url"] if rec.get("publisher_url") else ""),
             },
             "pages": rec.get("pages") or "",
             "track": rec.get("volume") or "",
@@ -156,7 +182,8 @@ def main() -> int:
     args = ap.parse_args()
 
     draft_path = os.path.join(DATA, "draft.json")
-    if not args.draft and os.path.exists(draft_path) and not args.force_refetch:
+    if not args.draft and os.path.exists(draft_path) and not args.force_refetch \
+            and _draft_is_fresh(draft_path):
         # draft.json already carries the official abstracts + OpenAlex citation counts
         papers = json.load(open(draft_path, encoding="utf-8"))
         print(f"reuse {draft_path} ({len(papers)} papers; --force-refetch 可重新回源)")

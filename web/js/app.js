@@ -265,12 +265,13 @@
     if (p.links.pdf) links.push(["PDF", p.links.pdf]);
     if (p.links.doi) links.push(["DOI", "https://doi.org/" + p.links.doi]);
     if (p.links.extra) links.push(["补充材料", p.links.extra]);
+    if (p.links.record) links.push(["OpenAlex 记录", p.links.record]);
 
     var html = '<div class="modal-scrim" data-act="close-scrim"><div class="modal" data-pillar="' +
       p.venue + '" role="dialog" aria-modal="true" aria-labelledby="m-title">' +
       '<button type="button" class="modal-close" data-act="close" aria-label="关闭">×</button>' +
       '<div class="modal-head"><h2 id="m-title">' + TL.esc(p.title) + "</h2>" +
-      '<p class="tzh">' + TL.esc(p.title_zh) + "</p><div class="meta>" +
+      '<p class="tzh">' + TL.esc(p.title_zh) + "</p><div class='meta'>" +
       "<span>" + TL.esc(p.venue) + " " + p.year + "</span>" +
       "<span>" + TL.esc(pl.full_name_zh) + "</span>" +
       (p.pages ? "<span>pp. " + TL.esc(p.pages) + "</span>" : "") +

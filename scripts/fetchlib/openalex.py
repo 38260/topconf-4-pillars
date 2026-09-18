@@ -95,6 +95,27 @@ def index(year: int = 2026, use_cache: bool = True) -> list[dict]:
     return records
 
 
+def abstract_by_doi(doi: str, use_cache: bool = False) -> str:
+    """Fresh single-record read: used when refreshing AAAI metadata."""
+    if not doi:
+        return ""
+    import urllib.parse
+    q = urllib.parse.urlencode({
+        "filter": f"doi:{doi}", "select": "abstract_inverted_index",
+        "mailto": MAILTO,
+    })
+    try:
+        payload = http.get_json(f"{API}/works?{q}", tag="openalex_one",
+                                use_cache=use_cache)
+    except Exception:  # noqa: BLE001
+        return ""
+    for w in payload.get("results", []):
+        text = _restore(w.get("abstract_inverted_index"))
+        if text:
+            return text
+    return ""
+
+
 def concepts_for(title: str, limit: int = 5) -> list[str]:
     """Cross-check helper: ask OpenAlex what a titled work is about."""
     import urllib.parse

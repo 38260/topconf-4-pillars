@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": 1,
-    "generated_at": "2026-09-18T21:33:29",
+    "generated_at": "2026-09-18T21:52:20",
     "pillars": [
       {
         "key": "CVPR",
@@ -237,7 +237,8 @@
         "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhu_Seele_A_Unified_Acceleration_Framework_for_Real-Time_Gaussian_Splatting_on_CVPR_2026_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhu_Seele_A_Unified_Acceleration_Framework_for_Real-Time_Gaussian_Splatting_on_CVPR_2026_paper.pdf",
         "doi": "",
-        "extra": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Zhu_Seele_A_Unified_CVPR_2026_supplemental.pdf"
+        "extra": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Zhu_Seele_A_Unified_CVPR_2026_supplemental.pdf",
+        "record": ""
       },
       "pages": "25979-25989",
       "track": "",
@@ -320,7 +321,8 @@
         "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Xiang_Fine-Grained_Post-Training_Quantization_for_Large_Vision_Language_Models_with_Quantization-Aware_CVPR_2026_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Xiang_Fine-Grained_Post-Training_Quantization_for_Large_Vision_Language_Models_with_Quantization-Aware_CVPR_2026_paper.pdf",
         "doi": "",
-        "extra": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Xiang_Fine-Grained_Post-Training_Quantization_CVPR_2026_supplemental.pdf"
+        "extra": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Xiang_Fine-Grained_Post-Training_Quantization_CVPR_2026_supplemental.pdf",
+        "record": ""
       },
       "pages": "3500-3510",
       "track": "",
@@ -403,7 +405,8 @@
         "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Yu_Visual_Document_Understanding_and_Reasoning_A_Multi-Agent_Collaboration_Framework_with_CVPR_2026_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yu_Visual_Document_Understanding_and_Reasoning_A_Multi-Agent_Collaboration_Framework_with_CVPR_2026_paper.pdf",
         "doi": "",
-        "extra": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Yu_Visual_Document_Understanding_CVPR_2026_supplemental.pdf"
+        "extra": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Yu_Visual_Document_Understanding_CVPR_2026_supplemental.pdf",
+        "record": ""
       },
       "pages": "12300-12311",
       "track": "",
@@ -481,7 +484,8 @@
         "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Fang_TaskIT_Memory-Efficient_Fine-Tuning_of_Multi-LoRA_LLMs_via_Cross-Task_Importance_Transfer_CVPR_2026_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Fang_TaskIT_Memory-Efficient_Fine-Tuning_of_Multi-LoRA_LLMs_via_Cross-Task_Importance_Transfer_CVPR_2026_paper.pdf",
         "doi": "",
-        "extra": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Fang_TaskIT_Memory-Efficient_Fine-Tuning_CVPR_2026_supplemental.pdf"
+        "extra": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Fang_TaskIT_Memory-Efficient_Fine-Tuning_CVPR_2026_supplemental.pdf",
+        "record": ""
       },
       "pages": "37010-37021",
       "track": "",
@@ -559,7 +563,8 @@
         "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Chung_MAD_Modality-Adaptive_Decoding_for_Mitigating_Cross-Modal_Hallucinations_in_Multimodal_Large_CVPR_2026_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Chung_MAD_Modality-Adaptive_Decoding_for_Mitigating_Cross-Modal_Hallucinations_in_Multimodal_Large_CVPR_2026_paper.pdf",
         "doi": "",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "40175-40185",
       "track": "",
@@ -640,7 +645,8 @@
         "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Yang_HiCoGen_Hierarchical_Compositional_Text-to-Image_Generation_in_Diffusion_Models_via_Reinforcement_CVPR_2026_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_HiCoGen_Hierarchical_Compositional_Text-to-Image_Generation_in_Diffusion_Models_via_Reinforcement_CVPR_2026_paper.pdf",
         "doi": "",
-        "extra": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Yang_HiCoGen_Hierarchical_Compositional_CVPR_2026_supplemental.pdf"
+        "extra": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Yang_HiCoGen_Hierarchical_Compositional_CVPR_2026_supplemental.pdf",
+        "record": ""
       },
       "pages": "36793-36802",
       "track": "",
@@ -721,7 +727,8 @@
         "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_DiffuView_Multi-View_Diffusion_Pretraining_for_3D_Aware_Robotic_Manipulation_CVPR_2026_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_DiffuView_Multi-View_Diffusion_Pretraining_for_3D_Aware_Robotic_Manipulation_CVPR_2026_paper.pdf",
         "doi": "",
-        "extra": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Zhang_DiffuView_Multi-View_Diffusion_CVPR_2026_supplemental.pdf"
+        "extra": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Zhang_DiffuView_Multi-View_Diffusion_CVPR_2026_supplemental.pdf",
+        "record": ""
       },
       "pages": "23601-23611",
       "track": "",
@@ -799,7 +806,8 @@
         "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Lu_PGR-Net_Prior-Guided_ROI_Reasoning_Network_for_Brain_Tumor_MRI_Segmentation_CVPR_2026_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Lu_PGR-Net_Prior-Guided_ROI_Reasoning_Network_for_Brain_Tumor_MRI_Segmentation_CVPR_2026_paper.pdf",
         "doi": "",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "22816-22825",
       "track": "",
@@ -879,7 +887,8 @@
         "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Chen_Decoupling_Defense_Strategies_for_Robust_Image_Watermarking_CVPR_2026_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_Decoupling_Defense_Strategies_for_Robust_Image_Watermarking_CVPR_2026_paper.pdf",
         "doi": "",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "3316-3325",
       "track": "",
@@ -959,7 +968,8 @@
         "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_Direct_Segmentation_without_Logits_Optimization_for_Training-Free_Open-Vocabulary_Semantic_Segmentation_CVPR_2026_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_Direct_Segmentation_without_Logits_Optimization_for_Training-Free_Open-Vocabulary_Semantic_Segmentation_CVPR_2026_paper.pdf",
         "doi": "",
-        "extra": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Li_Direct_Segmentation_without_CVPR_2026_supplemental.pdf"
+        "extra": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Li_Direct_Segmentation_without_CVPR_2026_supplemental.pdf",
+        "record": ""
       },
       "pages": "13168-13178",
       "track": "",
@@ -1045,7 +1055,8 @@
         "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Chen_VideoChat-M1_Collaborative_Policy_Planning_for_Video_Understanding_via_Multi-Agent_Reinforcement_CVPR_2026_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_VideoChat-M1_Collaborative_Policy_Planning_for_Video_Understanding_via_Multi-Agent_Reinforcement_CVPR_2026_paper.pdf",
         "doi": "",
-        "extra": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Chen_VideoChat-M1_Collaborative_Policy_CVPR_2026_supplemental.pdf"
+        "extra": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Chen_VideoChat-M1_Collaborative_Policy_CVPR_2026_supplemental.pdf",
+        "record": ""
       },
       "pages": "33772-33783",
       "track": "",
@@ -1123,7 +1134,8 @@
         "official": "https://openaccess.thecvf.com/content/CVPR2026/html/He_Global-Graph_Guided_and_Local-Graph_Weighted_Contrastive_Learning_for_Unified_Clustering_CVPR_2026_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/CVPR2026/papers/He_Global-Graph_Guided_and_Local-Graph_Weighted_Contrastive_Learning_for_Unified_Clustering_CVPR_2026_paper.pdf",
         "doi": "",
-        "extra": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/He_Global-Graph_Guided_and_CVPR_2026_supplemental.pdf"
+        "extra": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/He_Global-Graph_Guided_and_CVPR_2026_supplemental.pdf",
+        "record": ""
       },
       "pages": "24813-24822",
       "track": "",
@@ -1202,10 +1214,11 @@
       "topic_rule_agree": true,
       "curator_note": "端侧大模型解码高效推理加速方案",
       "links": {
-        "official": "https://openalex.org/W7137858023",
-        "pdf": "https://doi.org/10.1609/aaai.v40i31.39789",
+        "official": "https://doi.org/10.1609/aaai.v40i31.39789",
+        "pdf": "",
         "doi": "10.1609/aaai.v40i31.39789",
-        "extra": ""
+        "extra": "",
+        "record": "https://openalex.org/W7137858023"
       },
       "pages": "",
       "track": "",
@@ -1278,10 +1291,11 @@
       "topic_rule_agree": true,
       "curator_note": "动态 KV Cache 量化实现高效多模态大模型",
       "links": {
-        "official": "https://openalex.org/W7138345393",
-        "pdf": "https://doi.org/10.1609/aaai.v40i25.39241",
+        "official": "https://doi.org/10.1609/aaai.v40i25.39241",
+        "pdf": "",
         "doi": "10.1609/aaai.v40i25.39241",
-        "extra": ""
+        "extra": "",
+        "record": "https://openalex.org/W7138345393"
       },
       "pages": "",
       "track": "",
@@ -1355,10 +1369,11 @@
       "topic_rule_agree": true,
       "curator_note": "跨日历时间推理基准，考察大模型时间常识",
       "links": {
-        "official": "https://openalex.org/W7139057687",
+        "official": "https://doi.org/10.1609/aaai.v40i42.40884",
         "pdf": "https://ojs.aaai.org/index.php/AAAI/article/download/40884/44845",
         "doi": "10.1609/aaai.v40i42.40884",
-        "extra": ""
+        "extra": "",
+        "record": "https://openalex.org/W7139057687"
       },
       "pages": "",
       "track": "",
@@ -1439,10 +1454,11 @@
       "topic_rule_agree": true,
       "curator_note": "以因果推理机制缓解大模型幻觉",
       "links": {
-        "official": "https://openalex.org/W7138460157",
-        "pdf": "https://doi.org/10.1609/aaai.v40i38.40454",
+        "official": "https://doi.org/10.1609/aaai.v40i38.40454",
+        "pdf": "",
         "doi": "10.1609/aaai.v40i38.40454",
-        "extra": ""
+        "extra": "",
+        "record": "https://openalex.org/W7138460157"
       },
       "pages": "",
       "track": "",
@@ -1518,10 +1534,11 @@
       "topic_rule_agree": false,
       "curator_note": "轻量的重排序推理策略框架改进 RAG 检索增强生成",
       "links": {
-        "official": "https://openalex.org/W7138120984",
-        "pdf": "https://doi.org/10.1609/aaai.v40i36.40270",
+        "official": "https://doi.org/10.1609/aaai.v40i36.40270",
+        "pdf": "",
         "doi": "10.1609/aaai.v40i36.40270",
-        "extra": ""
+        "extra": "",
+        "record": "https://openalex.org/W7138120984"
       },
       "pages": "",
       "track": "",
@@ -1597,10 +1614,11 @@
       "topic_rule_agree": true,
       "curator_note": "从 CLIP 中抽取多模态 Learngene 以复用可泛化知识",
       "links": {
-        "official": "https://openalex.org/W7138459771",
+        "official": "https://doi.org/10.1609/aaai.v40i24.39111",
         "pdf": "https://ojs.aaai.org/index.php/AAAI/article/download/39111/43073",
         "doi": "10.1609/aaai.v40i24.39111",
-        "extra": ""
+        "extra": "",
+        "record": "https://openalex.org/W7138459771"
       },
       "pages": "",
       "track": "",
@@ -1681,10 +1699,11 @@
       "topic_rule_agree": true,
       "curator_note": "分层 tokenizer 配合自回归大模型改进文生视频",
       "links": {
-        "official": "https://openalex.org/W7138045497",
-        "pdf": "https://doi.org/10.1609/aaai.v40i16.38399",
+        "official": "https://doi.org/10.1609/aaai.v40i16.38399",
+        "pdf": "",
         "doi": "10.1609/aaai.v40i16.38399",
-        "extra": ""
+        "extra": "",
+        "record": "https://openalex.org/W7138045497"
       },
       "pages": "",
       "track": "",
@@ -1762,10 +1781,11 @@
       "topic_rule_agree": true,
       "curator_note": "人类操作数据增强双臂机器人操作",
       "links": {
-        "official": "https://openalex.org/W7138414178",
-        "pdf": "https://doi.org/10.1609/aaai.v40i22.38875",
+        "official": "https://doi.org/10.1609/aaai.v40i22.38875",
+        "pdf": "",
         "doi": "10.1609/aaai.v40i22.38875",
-        "extra": ""
+        "extra": "",
+        "record": "https://openalex.org/W7138414178"
       },
       "pages": "",
       "track": "",
@@ -1848,10 +1868,11 @@
       "topic_rule_agree": true,
       "curator_note": "面向真实临床诊断的多模态医疗大模型",
       "links": {
-        "official": "https://openalex.org/W7137854397",
+        "official": "https://doi.org/10.1609/aaai.v40i13.38106",
         "pdf": "https://ojs.aaai.org/index.php/AAAI/article/download/38106/42068",
         "doi": "10.1609/aaai.v40i13.38106",
-        "extra": ""
+        "extra": "",
+        "record": "https://openalex.org/W7137854397"
       },
       "pages": "",
       "track": "",
@@ -1926,10 +1947,11 @@
       "topic_rule_agree": true,
       "curator_note": "借机器遗忘实现可撤销后门攻击，攻防一体",
       "links": {
-        "official": "https://openalex.org/W7137842083",
+        "official": "https://doi.org/10.1609/aaai.v40i30.39747",
         "pdf": "https://ojs.aaai.org/index.php/AAAI/article/download/39747/43708",
         "doi": "10.1609/aaai.v40i30.39747",
-        "extra": ""
+        "extra": "",
+        "record": "https://openalex.org/W7137842083"
       },
       "pages": "",
       "track": "",
@@ -2006,10 +2028,11 @@
       "topic_rule_agree": true,
       "curator_note": "多智能体强化学习的分层指挥者策略优化",
       "links": {
-        "official": "https://openalex.org/W7138296248",
-        "pdf": "https://doi.org/10.1609/aaai.v40i35.40199",
+        "official": "https://doi.org/10.1609/aaai.v40i35.40199",
+        "pdf": "",
         "doi": "10.1609/aaai.v40i35.40199",
-        "extra": ""
+        "extra": "",
+        "record": "https://openalex.org/W7138296248"
       },
       "pages": "",
       "track": "",
@@ -2082,10 +2105,11 @@
       "topic_rule_agree": true,
       "curator_note": "Dual Mamba 选择性状态空间建模缓解图网络过平滑",
       "links": {
-        "official": "https://openalex.org/W7138379861",
-        "pdf": "https://doi.org/10.1609/aaai.v40i26.39317",
+        "official": "https://doi.org/10.1609/aaai.v40i26.39317",
+        "pdf": "",
         "doi": "10.1609/aaai.v40i26.39317",
-        "extra": ""
+        "extra": "",
+        "record": "https://openalex.org/W7138379861"
       },
       "pages": "",
       "track": "",
@@ -2166,7 +2190,8 @@
         "official": "https://openaccess.thecvf.com/content/ICCV2025/html/Yan_MobileIE_An_Extremely_Lightweight_and_Effective_ConvNet_for_Real-Time_Image_ICCV_2025_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_MobileIE_An_Extremely_Lightweight_and_Effective_ConvNet_for_Real-Time_Image_ICCV_2025_paper.pdf",
         "doi": "",
-        "extra": "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Yan_MobileIE_An_Extremely_ICCV_2025_supplemental.pdf"
+        "extra": "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Yan_MobileIE_An_Extremely_ICCV_2025_supplemental.pdf",
+        "record": ""
       },
       "pages": "21949-21960",
       "track": "",
@@ -2248,7 +2273,8 @@
         "official": "https://openaccess.thecvf.com/content/ICCV2025/html/Liu_METEOR_Multi-Encoder_Collaborative_Token_Pruning_for_Efficient_Vision_Language_Models_ICCV_2025_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_METEOR_Multi-Encoder_Collaborative_Token_Pruning_for_Efficient_Vision_Language_Models_ICCV_2025_paper.pdf",
         "doi": "",
-        "extra": "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Liu_METEOR_Multi-Encoder_Collaborative_ICCV_2025_supplemental.pdf"
+        "extra": "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Liu_METEOR_Multi-Encoder_Collaborative_ICCV_2025_supplemental.pdf",
+        "record": ""
       },
       "pages": "21492-21504",
       "track": "",
@@ -2327,7 +2353,8 @@
         "official": "https://openaccess.thecvf.com/content/ICCV2025/html/Jiang_Corvid_Improving_Multimodal_Large_Language_Models_Towards_Chain-of-Thought_Reasoning_ICCV_2025_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Jiang_Corvid_Improving_Multimodal_Large_Language_Models_Towards_Chain-of-Thought_Reasoning_ICCV_2025_paper.pdf",
         "doi": "",
-        "extra": "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Jiang_Corvid_Improving_Multimodal_ICCV_2025_supplemental.pdf"
+        "extra": "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Jiang_Corvid_Improving_Multimodal_ICCV_2025_supplemental.pdf",
+        "record": ""
       },
       "pages": "3034-3046",
       "track": "",
@@ -2408,7 +2435,8 @@
         "official": "https://openaccess.thecvf.com/content/ICCV2025/html/Ning_Enhancing_Spatial_Reasoning_in_Multimodal_Large_Language_Models_through_Reasoning-based_ICCV_2025_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Ning_Enhancing_Spatial_Reasoning_in_Multimodal_Large_Language_Models_through_Reasoning-based_ICCV_2025_paper.pdf",
         "doi": "",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "7851-7860",
       "track": "",
@@ -2494,7 +2522,8 @@
         "official": "https://openaccess.thecvf.com/content/ICCV2025/html/Ji_Prompt-A-Video_Prompt_Your_Video_Diffusion_Model_via_Preference-Aligned_LLM_ICCV_2025_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Ji_Prompt-A-Video_Prompt_Your_Video_Diffusion_Model_via_Preference-Aligned_LLM_ICCV_2025_paper.pdf",
         "doi": "",
-        "extra": "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Ji_Prompt-A-Video_Prompt_Your_ICCV_2025_supplemental.pdf"
+        "extra": "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Ji_Prompt-A-Video_Prompt_Your_ICCV_2025_supplemental.pdf",
+        "record": ""
       },
       "pages": "18725-18735",
       "track": "",
@@ -2573,7 +2602,8 @@
         "official": "https://openaccess.thecvf.com/content/ICCV2025/html/Zheng_Dense2MoE_Restructuring_Diffusion_Transformer_to_MoE_for_Efficient_Text-to-Image_Generation_ICCV_2025_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zheng_Dense2MoE_Restructuring_Diffusion_Transformer_to_MoE_for_Efficient_Text-to-Image_Generation_ICCV_2025_paper.pdf",
         "doi": "",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "18661-18670",
       "track": "",
@@ -2650,7 +2680,8 @@
         "official": "https://openaccess.thecvf.com/content/ICCV2025/html/Wen_SEGS-SLAM_Structure-enhanced_3D_Gaussian_Splatting_SLAM_with_Appearance_Embedding_ICCV_2025_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Wen_SEGS-SLAM_Structure-enhanced_3D_Gaussian_Splatting_SLAM_with_Appearance_Embedding_ICCV_2025_paper.pdf",
         "doi": "",
-        "extra": "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Wen_SEGS-SLAM_Structure-enhanced_3D_ICCV_2025_supplemental.pdf"
+        "extra": "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Wen_SEGS-SLAM_Structure-enhanced_3D_ICCV_2025_supplemental.pdf",
+        "record": ""
       },
       "pages": "28103-28113",
       "track": "",
@@ -2730,7 +2761,8 @@
         "official": "https://openaccess.thecvf.com/content/ICCV2025/html/Wu_EmbodiedOcc_Embodied_3D_Occupancy_Prediction_for_Vision-based_Online_Scene_Understanding_ICCV_2025_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Wu_EmbodiedOcc_Embodied_3D_Occupancy_Prediction_for_Vision-based_Online_Scene_Understanding_ICCV_2025_paper.pdf",
         "doi": "",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "26360-26370",
       "track": "",
@@ -2813,7 +2845,8 @@
         "official": "https://openaccess.thecvf.com/content/ICCV2025/html/Ghezloo_PathFinder_A_Multi-Modal_Multi-Agent_System_for_Medical_Diagnostic_Decision-Making_Applied_ICCV_2025_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Ghezloo_PathFinder_A_Multi-Modal_Multi-Agent_System_for_Medical_Diagnostic_Decision-Making_Applied_ICCV_2025_paper.pdf",
         "doi": "",
-        "extra": "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Ghezloo_PathFinder_A_Multi-Modal_ICCV_2025_supplemental.pdf"
+        "extra": "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Ghezloo_PathFinder_A_Multi-Modal_ICCV_2025_supplemental.pdf",
+        "record": ""
       },
       "pages": "23431-23441",
       "track": "",
@@ -2889,7 +2922,8 @@
         "official": "https://openaccess.thecvf.com/content/ICCV2025/html/Bui_TrustMark_Robust_Watermarking_and_Watermark_Removal_for_Arbitrary_Resolution_Images_ICCV_2025_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Bui_TrustMark_Robust_Watermarking_and_Watermark_Removal_for_Arbitrary_Resolution_Images_ICCV_2025_paper.pdf",
         "doi": "",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "18629-18639",
       "track": "",
@@ -2969,7 +3003,8 @@
         "official": "https://openaccess.thecvf.com/content/ICCV2025/html/Jin_Feature_Purification_Matters_Suppressing_Outlier_Propagation_for_Training-Free_Open-Vocabulary_Semantic_ICCV_2025_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Jin_Feature_Purification_Matters_Suppressing_Outlier_Propagation_for_Training-Free_Open-Vocabulary_Semantic_ICCV_2025_paper.pdf",
         "doi": "",
-        "extra": "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Jin_Feature_Purification_Matters_ICCV_2025_supplemental.pdf"
+        "extra": "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Jin_Feature_Purification_Matters_ICCV_2025_supplemental.pdf",
+        "record": ""
       },
       "pages": "20291-20300",
       "track": "",
@@ -3053,7 +3088,8 @@
         "official": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhu_EA-Vit_Efficient_Adaptation_for_Elastic_Vision_Transformer_ICCV_2025_paper.html",
         "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zhu_EA-Vit_Efficient_Adaptation_for_Elastic_Vision_Transformer_ICCV_2025_paper.pdf",
         "doi": "",
-        "extra": "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Zhu_EA-Vit_Efficient_Adaptation_ICCV_2025_supplemental.pdf"
+        "extra": "https://openaccess.thecvf.com/content/ICCV2025/supplemental/Zhu_EA-Vit_Efficient_Adaptation_ICCV_2025_supplemental.pdf",
+        "record": ""
       },
       "pages": "1038-1047",
       "track": "",
@@ -3134,7 +3170,8 @@
         "official": "https://aclanthology.org/2026.acl-long.1454/",
         "pdf": "https://aclanthology.org/2026.acl-long.1454.pdf",
         "doi": "10.18653/v1/2026.acl-long.1454",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "31527-31543",
       "track": "2026.acl-long",
@@ -3225,7 +3262,8 @@
         "official": "https://aclanthology.org/2026.acl-industry.51/",
         "pdf": "https://aclanthology.org/2026.acl-industry.51.pdf",
         "doi": "10.18653/v1/2026.acl-industry.51",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "749-760",
       "track": "2026.acl-industry",
@@ -3304,7 +3342,8 @@
         "official": "https://aclanthology.org/2026.acl-long.376/",
         "pdf": "https://aclanthology.org/2026.acl-long.376.pdf",
         "doi": "10.18653/v1/2026.acl-long.376",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "8310-8328",
       "track": "2026.acl-long",
@@ -3384,7 +3423,8 @@
         "official": "https://aclanthology.org/2026.acl-long.756/",
         "pdf": "https://aclanthology.org/2026.acl-long.756.pdf",
         "doi": "10.18653/v1/2026.acl-long.756",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "16601-16619",
       "track": "2026.acl-long",
@@ -3461,7 +3501,8 @@
         "official": "https://aclanthology.org/2026.findings-acl.917/",
         "pdf": "https://aclanthology.org/2026.findings-acl.917.pdf",
         "doi": "10.18653/v1/2026.findings-acl.917",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "18423-18442",
       "track": "2026.findings-acl",
@@ -3545,7 +3586,8 @@
         "official": "https://aclanthology.org/2026.acl-long.444/",
         "pdf": "https://aclanthology.org/2026.acl-long.444.pdf",
         "doi": "10.18653/v1/2026.acl-long.444",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "9786-9805",
       "track": "2026.acl-long",
@@ -3624,7 +3666,8 @@
         "official": "https://aclanthology.org/2026.acl-long.1251/",
         "pdf": "https://aclanthology.org/2026.acl-long.1251.pdf",
         "doi": "10.18653/v1/2026.acl-long.1251",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "27170-27183",
       "track": "2026.acl-long",
@@ -3701,7 +3744,8 @@
         "official": "https://aclanthology.org/2026.acl-long.743/",
         "pdf": "https://aclanthology.org/2026.acl-long.743.pdf",
         "doi": "10.18653/v1/2026.acl-long.743",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "16338-16364",
       "track": "2026.acl-long",
@@ -3779,7 +3823,8 @@
         "official": "https://aclanthology.org/2026.acl-long.1944/",
         "pdf": "https://aclanthology.org/2026.acl-long.1944.pdf",
         "doi": "10.18653/v1/2026.acl-long.1944",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "41975-41994",
       "track": "2026.acl-long",
@@ -3861,7 +3906,8 @@
         "official": "https://aclanthology.org/2026.acl-long.470/",
         "pdf": "https://aclanthology.org/2026.acl-long.470.pdf",
         "doi": "10.18653/v1/2026.acl-long.470",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "10337-10350",
       "track": "2026.acl-long",
@@ -3944,7 +3990,8 @@
         "official": "https://aclanthology.org/2026.acl-long.647/",
         "pdf": "https://aclanthology.org/2026.acl-long.647.pdf",
         "doi": "10.18653/v1/2026.acl-long.647",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "14224-14250",
       "track": "2026.acl-long",
@@ -4025,7 +4072,8 @@
         "official": "https://aclanthology.org/2026.findings-acl.2116/",
         "pdf": "https://aclanthology.org/2026.findings-acl.2116.pdf",
         "doi": "10.18653/v1/2026.findings-acl.2116",
-        "extra": ""
+        "extra": "",
+        "record": ""
       },
       "pages": "42615-42624",
       "track": "2026.findings-acl",

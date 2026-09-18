@@ -19,3 +19,6 @@ Thumbs.db
 desktop.ini
 logs_draft.txt
 review_*.txt
+logs_refetch.txt
+logs_verify.txt
+logs_*.txt
