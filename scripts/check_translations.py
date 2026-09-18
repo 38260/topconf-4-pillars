@@ -25,6 +25,7 @@ ALLOW = {
     "checkpoint", "checkpoints", "benchmark", "baseline", "baselines", "dataset",
     "hop", "hops", "wiki", "web", "chat", "app", "apps", "e-commerce", "x",
     "tokenizer", "tokenizers", "miou", "iou", "dev", "psnr",
+    "prefill", "decode", "post-hoc", "zero-shot", "bit",
 }
 
 WORD = re.compile(r"[A-Za-z][A-Za-z\-']*")
@@ -35,6 +36,8 @@ URL = re.compile(r"https?://\S+")
 def check(text: str) -> list[str]:
     """Flag lowercase English runs -- the shape an untranslated word takes."""
     text = URL.sub("", text)
+    # （original term） after a Chinese term is intentional, not a leak
+    text = re.sub(r"（[^（）]*）", " ", text)
     bad = []
     for w in WORD.findall(text):
         if w[0].isupper():            # proper nouns, method names, acronyms
@@ -80,6 +83,21 @@ def main() -> int:
                     print(f"  ! {fn} {t['id']} 关键词缺中英项")
                     errors += 1
     print(f"译文条目 {len(seen_ids)} 篇，问题 {errors} 处")
+
+    # second gate: the English source text must itself be complete
+    dpath = os.path.join(DATA, "draft.json")
+    if os.path.exists(dpath):
+        draft = json.load(open(dpath, encoding="utf-8"))
+        trunc = [p["id"] for p in draft
+                 if not re.search(r"[.!?\u201d\u2019)\]]\s*$", p["abstract"].strip())]
+        short = [p["id"] for p in draft if len(p["abstract"]) < 250]
+        if trunc:
+            print(f"  ! 英文摘要疑似被截断（{len(trunc)}）: {', '.join(trunc)}")
+            errors += len(trunc)
+        if short:
+            print(f"  ! 英文摘要异常偏短（{len(short)}）: {', '.join(short)}")
+            errors += len(short)
+        print(f"英文原文体检：{len(draft)} 篇，截断 {len(trunc)}，偏短 {len(short)}")
     return 1 if errors else 0
 
 

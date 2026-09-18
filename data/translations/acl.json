@@ -1,0 +1,163 @@
+{
+  "venue": "ACL 2026",
+  "translated_by": "本项目逐篇人工翻译（对照 ACL Anthology 论文页官方摘要）",
+  "translated_at": "2026-09-18",
+  "papers": [
+    {
+      "id": "acl-037-acl-2026.acl-long.1454",
+      "title_zh": "VecInfer：以离群值抑制向量量化实现低比特 KV 缓存的高效大模型推理",
+      "abstract_zh": "键值（KV）缓存在大语言模型（LLM）推理过程中带来可观的显存开销。尽管已有的向量量化（VQ）方法能降低 KV 缓存占用，并在不同位宽之间提供灵活的表征能力，但由于 Key 缓存中的离群值会妨碍码本的有效利用，这些方法在极低比特位宽下会出现严重的性能退化。为应对该挑战，我们提出 VecInfer——一种在实现激进 KV 缓存压缩的同时保持高效推理的新型 VQ 方法。通过施加平滑变换与 Hadamard 变换，VecInfer 抑制 Key 缓存中的离群值，使码本得以完整覆盖原始数据分布，从而降低量化难度。为便于高效部署，我们设计了优化的 CUDA 核函数，把计算与反量化融合，以最小化访存开销。大量评测表明，在长上下文理解与数学推理两类任务上，VecInfer 一致优于现存的量化基线。仅需 2 比特量化，VecInfer 即可取得与全精度相当的表现，同时在大批量自注意力计算中带来最高 2.7× 的加速，并在 Llama-3.1-8B、196k 序列长度下单批端到端延迟降低 8.3×。",
+      "topics": ["edge-efficiency", "llm", "architectures"],
+      "keywords": [
+        {"en": "KV cache compression", "zh": "KV 缓存压缩"},
+        {"en": "vector quantization", "zh": "向量量化"},
+        {"en": "outlier suppression", "zh": "离群值抑制"},
+        {"en": "low-bit inference", "zh": "低比特推理"},
+        {"en": "CUDA kernel fusion", "zh": "CUDA 核融合"}
+      ]
+    },
+    {
+      "id": "acl-038-acl-2026.acl-industry.51",
+      "title_zh": "MobileLLM-Flash：面向工业级部署的延迟引导端侧大模型设计",
+      "abstract_zh": "实时 AI 体验需要在资源受限硬件上高效部署的端侧大语言模型（OD-LLM）。最有用的端侧模型应当产出接近实时的响应，并具备广泛的硬件兼容性以覆盖最多用户。我们提出一套在移动端延迟约束下、借助「硬件在环」架构搜索来设计此类模型的方法论。该体系适合工业级部署：产出的模型无需定制核函数即可部署，并兼容 Executorch 等标准移动推理运行时。我们的方法论回避专用注意力机制，转而在长上下文加速中使用注意力跳跃。方法联合优化模型架构（层数、维度）与注意力模式。为高效评估候选模型，我们把每个候选视为预训练主干的一个剪枝版本并继承其权重，从而只需极少的继续预训练即可达到高精度。我们利用延迟评估成本低这一特点设计分阶段流程：先学习一个精确的延迟模型，再在延迟—质量两个维度上搜索帕累托前沿。最终得到 MobileLLM-Flash 系列基座模型（350M、650M、1.4B），在具备强劲能力的同时支持端侧高效使用，最长支持 8k 上下文。在质量相当或更优的前提下，MobileLLM-Flash 在移动 CPU 上的 prefill 与 decode 速度分别最高提升 1.8 倍与 1.6 倍。我们对帕累托前沿设计选择的分析，为端侧大模型设计提供了可操作的原则。",
+      "topics": ["edge-efficiency", "llm", "architectures"],
+      "keywords": [
+        {"en": "on-device LLM", "zh": "端侧大语言模型"},
+        {"en": "hardware-in-the-loop search", "zh": "硬件在环架构搜索"},
+        {"en": "latency model", "zh": "延迟模型"},
+        {"en": "Pareto frontier", "zh": "帕累托前沿"},
+        {"en": "mobile runtime (Executorch)", "zh": "移动推理运行时（Executorch）"}
+      ]
+    },
+    {
+      "id": "acl-039-acl-2026.acl-long.376",
+      "title_zh": "推理陷阱：增强大模型推理能力如何放大工具幻觉",
+      "abstract_zh": "增强大语言模型（LLM）的推理能力，是构建「先思考后行动」智能体的关键策略。但近期的观察（如 OpenAI 的 o3）揭示了一个悖论：更强的推理往往伴随更多的幻觉，然而此前没有工作系统考察过「推理增强本身是否会导致工具幻觉」。我们以核心问题填补这一空白：强化推理是否会增加工具幻觉？为此我们提出 SimpleToolHalluBench，一个诊断性基准，从两种失效模式度量工具幻觉：（i）根本没有可用工具；（ii）只有干扰项工具可用。通过受控实验我们得到三点关键结论。第一，我们证实了因果关系：用强化学习逐步增强推理，工具幻觉会随任务性能的提升而同比例增加。第二，该效应并非过拟合——即使在非工具任务（如数学）上训练，仍会放大后续的工具幻觉。第三，该效应与方法无关：无论用监督微调注入推理能力，还是仅在推理时通过从直接作答切换为逐步思考来激发推理，效应都会出现。我们还评测了提示工程与直接偏好优化（DPO）等缓解策略，发现存在根本性的「可靠性—能力」权衡：降低幻觉总是以牺牲实用性为代价。从机制上看，推理强化学习会不成比例地压垮与工具可靠性相关的表征，而幻觉表现为集中在后段层残差流中被放大的分歧。这些发现表明：当前的推理增强方法会内生地放大工具幻觉，因此需要能同时优化能力与可靠性的新训练目标。实现见 https://github.com/albert-y1n/Reasoning_Trap。",
+      "topics": ["llm", "trustworthy", "rl-decision"],
+      "keywords": [
+        {"en": "tool hallucination", "zh": "工具幻觉"},
+        {"en": "reasoning enhancement", "zh": "推理能力增强"},
+        {"en": "diagnostic benchmark", "zh": "诊断性基准"},
+        {"en": "reliability–capability trade-off", "zh": "可靠性—能力权衡"},
+        {"en": "residual stream", "zh": "残差流"}
+      ]
+    },
+    {
+      "id": "acl-040-acl-2026.acl-long.756",
+      "title_zh": "微调后大模型安全护栏为何崩塌：对齐数据与微调数据的相似度分析",
+      "abstract_zh": "大语言模型（LLM）的最新进展凸显了其在安全对齐层面的脆弱性——越狱攻击频发，尤其在经历下游微调之后。然而现有缓解策略主要是在安全护栏已被突破之后被动应对越狱事件、在微调过程中移除有害梯度，或在整个微调期间持续强化安全对齐。这些做法往往忽视了一个关键的上游因素：原始安全对齐数据所扮演的角色。因此本文从「上游对齐数据集与下游微调任务之间的表征相似度」这一视角审视安全护栏的退化。实验表明，两类数据集之间的高相似度会显著削弱安全护栏，使模型更易被越狱；相反，二者相似度较低时得到的模型稳健性明显更强，有害性得分最多降低 10.33%。这些发现凸显了上游数据集设计对于构建持久安全护栏、降低真实世界越狱脆弱性的重要意义，也为微调服务提供方提供了可操作的建议：优先选择越狱风险低的上游模型。",
+      "topics": ["trustworthy", "llm"],
+      "keywords": [
+        {"en": "safety alignment", "zh": "安全对齐"},
+        {"en": "jailbreak attack", "zh": "越狱攻击"},
+        {"en": "representation similarity", "zh": "表征相似度"},
+        {"en": "fine-tuning degradation", "zh": "微调退化"},
+        {"en": "harmfulness score", "zh": "有害性得分"}
+      ]
+    },
+    {
+      "id": "acl-041-acl-2026.findings-acl.917",
+      "title_zh": "SEMA-RAG：面向医学推理的自演化多智能体检索增强生成框架",
+      "abstract_zh": "检索增强生成（RAG）被广泛用于缓解医学问答中的幻觉与知识过时等风险，但其以单轮、静态检索为主的范式与临床推理的多阶段过程并不匹配。这种被压缩的工作流程带来两个结构性缺陷：从问题到查询的转换往往缺乏有临床依据的语义解释；检索也没有充分的迭代反馈，难以形成可靠的证据链。我们认为这两个问题源于同一深层原因——把解释、探索、裁断这三类异质任务压在同一条推理链上；解决之道在于通过任务解耦与动态多轮探索重建工作流程。为此我们提出自演化多智能体框架 SEMA-RAG，把这三类角色分配给三个专职智能体：解释智能体负责临床方案解读，探索智能体负责以「充分性」驱动的自演化检索，裁断智能体负责证据裁定与答案选择。在五个基准与五种 LLM 主干上，SEMA-RAG 相对最强基线平均提升 6.46 个准确率百分点（按各主干分别度量）。",
+      "topics": ["medical-science", "llm", "language-nlp"],
+      "keywords": [
+        {"en": "retrieval-augmented generation", "zh": "检索增强生成"},
+        {"en": "clinical reasoning", "zh": "临床推理"},
+        {"en": "self-evolving multi-agent", "zh": "自演化多智能体"},
+        {"en": "evidence adjudication", "zh": "证据裁定"},
+        {"en": "medical QA", "zh": "医学问答"}
+      ]
+    },
+    {
+      "id": "acl-042-acl-2026.acl-long.444",
+      "title_zh": "「我看出你的巧思了」：大型视觉语言模型能理解多模态双关吗？",
+      "abstract_zh": "双关是一种常见的修辞性文字游戏，利用一词多义与语音相似制造幽默。在多模态双关中，视觉与文本元素协同作用，同时接地字面义并唤起引申义。尽管视觉语言模型（VLM）已广泛用于多模态理解与生成，但由于缺乏严谨基准，其理解双关的能力尚未被系统研究。为此，我们首先提出一条多模态双关生成流水线；随后发布 MultiPun 数据集，包含多样的双关类型以及对抗性的「非双关」干扰样本。评测显示，多数模型难以把真正的双关与这些干扰项区分开。此外我们提出提示层面与模型层面两类策略来增强双关理解，F1 分数平均提升 16.5%。我们的发现为未来研发能凭跨模态推理掌握类人幽默微妙之处的 VLM 提供了有价值的洞见。",
+      "topics": ["multimodal", "language-nlp", "trustworthy"],
+      "keywords": [
+        {"en": "multimodal pun", "zh": "多模态双关"},
+        {"en": "visual language model", "zh": "视觉语言模型"},
+        {"en": "wordplay understanding", "zh": "文字游戏理解"},
+        {"en": "adversarial distractors", "zh": "对抗干扰样本"},
+        {"en": "humor evaluation", "zh": "幽默评测"}
+      ]
+    },
+    {
+      "id": "acl-043-acl-2026.acl-long.1251",
+      "title_zh": "LADR：面向扩散大语言模型高效文生图的局部感知动态救援",
+      "abstract_zh": "离散扩散语言模型已成为统一多模态生成的一种颇具吸引力的范式，但其迭代解码带来的高推理延迟阻碍了部署。现有加速策略要么需要代价高昂的重新训练，要么未能利用视觉数据固有的二维空间冗余。为此我们提出局部感知动态救援（LADR），一种免训练方法，通过利用图像的「空间马尔可夫性质」加速推理。LADR 优先恢复位于「生成前沿」的 token——即与已观测像素在空间上相邻的区域，从而最大化信息增益。具体而言，本方法整合形态学邻域识别以定位候选 token，采用风险有界的筛选机制以阻止误差传播，并使用流形一致的逆序调度使扩散轨迹与加速后的掩码密度相对齐。在四个文生图基准上的大量实验表明，LADR 相比标准基线取得约 4× 的加速；值得注意的是，它保持甚至提升了生成保真度，在空间推理任务上尤其如此，在效率与质量之间给出了当前最优的折衷。",
+      "topics": ["generative", "edge-efficiency", "multimodal"],
+      "keywords": [
+        {"en": "discrete diffusion model", "zh": "离散扩散模型"},
+        {"en": "text-to-image generation", "zh": "文本生成图像"},
+        {"en": "training-free acceleration", "zh": "免训练加速"},
+        {"en": "spatial Markov property", "zh": "空间马尔可夫性质"},
+        {"en": "mask density scheduling", "zh": "掩码密度调度"}
+      ]
+    },
+    {
+      "id": "acl-044-acl-2026.acl-long.743",
+      "title_zh": "基于局部知识图谱多层摘要的生物医药问答",
+      "abstract_zh": "在问答（QA）领域，检索增强生成（RAG）已革命性地提升了多个领域的表现。但如何有效捕捉多文档之间的关系仍是悬而未决的问题；由于生物医药任务依赖散落在多篇文档中的信息，这一点尤为关键。本文提出新方法 CLAIMS：利用命题式陈述（claim）从检索到的文档构建局部知识图谱，再从知识图谱出发逐层摘要，为小语言模型提供上下文以完成问答。这类结构化摘要能有效捕捉文档中实体之间的显式与隐式关系，因此可以为大语言模型提供更完整的上下文。CLAIMS 在多个生物医药问答基准上取得与 RAG 基线相当或更优的表现。我们还用一组有针对性的指标评估了它的泛化能力以及方法中每一个步骤，验证了其有效性。",
+      "topics": ["language-nlp", "medical-science", "llm"],
+      "keywords": [
+        {"en": "knowledge graph", "zh": "知识图谱"},
+        {"en": "biomedical question answering", "zh": "生物医药问答"},
+        {"en": "multi-level summarization", "zh": "多层摘要"},
+        {"en": "propositional claims", "zh": "命题式陈述"},
+        {"en": "small language model", "zh": "小语言模型"}
+      ]
+    },
+    {
+      "id": "acl-045-acl-2026.acl-long.1944",
+      "title_zh": "从节点到叙事：用大语言模型与图上下文解释图神经网络",
+      "abstract_zh": "图神经网络（GNN）已成为在结构化数据上学习的有力工具，其中包括引文网络、社交平台与知识图谱等领域常见的文本属性图（TAG）。GNN 本身并不具备可解释性，因此学界提出了许多解释方法。然而现有解释方法往往难以生成可理解、细粒度的判定依据，当节点属性包含丰富自然语言时尤其如此。本文提出 GSPELL——一个轻量的事后（post-hoc）框架，用大语言模型（LLM）为 GNN 的预测生成忠实且可理解的解释。GSPELL 把 GNN 的节点嵌入投影到 LLM 的嵌入空间，并构造把软提示与来自图结构的文本输入交替编排的混合提示。这使得 LLM 能够针对 GNN 的内部表征进行推理，产出自然语言解释，同时给出简明的解释子图。在真实世界 TAG 数据集上的实验表明，GSPELL 在忠实度与稀疏性之间取得良好折衷，并提升了「启发性」等以人为中心的指标。通过把 GNN 内部机理与人类推理方式对齐，GSPELL 为图学习中基于 LLM 的可解释性开辟了新方向。",
+      "topics": ["architectures", "trustworthy", "language-nlp"],
+      "keywords": [
+        {"en": "graph neural network", "zh": "图神经网络"},
+        {"en": "post-hoc explanation", "zh": "事后解释"},
+        {"en": "text-attributed graph", "zh": "文本属性图"},
+        {"en": "soft prompt", "zh": "软提示"},
+        {"en": "faithfulness", "zh": "忠实度"}
+      ]
+    },
+    {
+      "id": "acl-046-acl-2026.acl-long.470",
+      "title_zh": "Mamba 用于语音自监督模型的探索",
+      "abstract_zh": "Mamba 已在语言建模上展现出强劲表现，但它作为语音自监督学习（SSL）模型的潜力仍未被充分探索，已有研究局限于孤立任务。为解决这一空白，我们探索基于 Mamba 的 HuBERT 模型，作为基于 Transformer 的 SSL 架构的替代方案。得益于线性时间的选择性状态空间，这些模型能以显著更低的算力在长上下文语音识别（ASR）上做微调；在面向流式 ASR 微调时，它们也表现出更优的性能。除微调之外，这些模型在 SUPERB 探测基准上同样具备竞争力，在因果设定下尤为突出。我们的分析显示，相比基于 Transformer 的模型，它们能产出质量更高的量化表征，并更清晰地区分出与说话人相关的特征。这些发现说明，基于 Mamba 的 SSL 是长序列建模、实时语音建模与语音单元抽取方向上一个有前景且可互补的选择。代码库见 https://github.com/hckuo145/Mamba-based-HuBERT。",
+      "topics": ["architectures", "language-nlp", "edge-efficiency"],
+      "keywords": [
+        {"en": "speech self-supervised learning", "zh": "语音自监督学习"},
+        {"en": "Mamba / selective state space", "zh": "Mamba / 选择性状态空间"},
+        {"en": "streaming ASR", "zh": "流式语音识别"},
+        {"en": "HuBERT", "zh": "HuBERT 语音模型"},
+        {"en": "linear-time modeling", "zh": "线性时间建模"}
+      ]
+    },
+    {
+      "id": "acl-047-acl-2026.acl-long.647",
+      "title_zh": "DPWriter：以多样化规划分支做强化学习的创意写作",
+      "abstract_zh": "基于强化学习（RL）增强大语言模型（LLM）往往导致输出多样性下降，从而削弱其在创意写作等开放式任务上的效用。现有方法缺乏引导多样化探索的显式机制，而是把优化效率与性能置于多样性之上。本文提出一个围绕「半结构化长思维链（CoT）」组织的 RL 框架：把生成过程分解为显式规划的中间步骤。我们引入多样化规划分支方法，依据多样性变化在规划阶段策略性地引入分歧，并配合组感知多样性奖励以鼓励彼此不同的轨迹。在创意写作基准上的实验表明，本方法在不牺牲生成质量的前提下显著提升输出多样性，稳定优于现有基线。",
+      "topics": ["rl-decision", "generative", "llm"],
+      "keywords": [
+        {"en": "creative writing", "zh": "创意写作"},
+        {"en": "output diversity", "zh": "输出多样性"},
+        {"en": "planning branching", "zh": "规划分支"},
+        {"en": "reinforcement learning", "zh": "强化学习"},
+        {"en": "chain-of-thought", "zh": "思维链"}
+      ]
+    },
+    {
+      "id": "acl-048-acl-2026.findings-acl.2116",
+      "title_zh": "SceneLM：面向可编辑三维场景合成的三维感知语言模型",
+      "abstract_zh": "从单张 RGB 图像合成可编辑的三维场景，是内容创作、具身智能体数据生成与 AR/VR 的核心环节，但同时做到高保真重建与便捷的交互式编辑仍然很难。现有的几何流水线能产出高质量的三维结果，但若不重跑整个流程往往难以细化；而由 LLM 驱动的程序化系统虽支持交互式工具调用，却大多以文本驱动，缺乏从图像获得的精确度量三维理解。我们提出 SceneLM——一个基于语言模型的框架，通过直接从单张图像恢复「可执行的度量三维布局」，把三维场景合成锚定在视觉证据之上。给定一张 RGB 图像（以及可用时的相机内参），SceneLM 输出 JSON 格式的布局，指明每个物体的类别、三维中心、尺寸与离散化偏航角，随后用一套工具以确定性方式执行该布局，实例化、摆放并编辑物体以迭代打磨。为了大规模训练度量布局恢复，我们整理了覆盖室内外与桌面等多样场景的五个数据集，并把异构的三维标注统一转换为指令微调格式。为在保留文本接口的前提下提升数值稳定性与度量精度，我们为自回归 JSON 生成增设一个轻量几何预测分支并施加双重监督。实验表明，SceneLM 在单图三维布局估计上显著优于强大的开源与专有 MLLM 基线，并在几何一致性、物理合理性、语义对齐与真实感方面带来更高质量的端到端场景生成。",
+      "topics": ["3d-embodied", "multimodal", "generative"],
+      "keywords": [
+        {"en": "3D scene synthesis", "zh": "三维场景合成"},
+        {"en": "metric layout recovery", "zh": "度量布局恢复"},
+        {"en": "editable 3D scene", "zh": "可编辑三维场景"},
+        {"en": "single-image 3D understanding", "zh": "单图三维理解"},
+        {"en": "tool-augmented LLM", "zh": "工具增强大模型"}
+      ]
+    }
+  ]
+}

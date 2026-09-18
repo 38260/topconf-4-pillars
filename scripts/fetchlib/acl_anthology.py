@@ -122,7 +122,8 @@ def index(volume_ids: list[str] | None = None, use_cache: bool = True) -> list[d
     return records
 
 
-_ABS_BLOCK = re.compile(r'card-body acl-abstract">.*?<span>(.*?)</span>', re.S)
+_ABS_START = 'card-body acl-abstract">'
+_ABS_END_MARKS = ("<dt>Anthology ID", "</div></div><dl>", "</div></div>")
 _TITLE_BLOCK = re.compile(r'<h4[^>]*id="Title"[^>]*>(.*?)</h4>', re.S)
 
 
@@ -132,13 +133,25 @@ def _paper_page(landing_url: str, use_cache: bool = True) -> str:
 
 
 def abstract(landing_url: str, use_cache: bool = True) -> str:
-    """Official abstract as rendered by the ACL Anthology paper page."""
+    """Official abstract as rendered by the ACL Anthology paper page.
+
+    The Anthology nests <span class=tex-math> inside the abstract, so a lazy
+    </span> match truncates it; slice down to the metadata list instead.
+    """
     page = _paper_page(landing_url, use_cache)
-    m = _ABS_BLOCK.search(page)
-    if not m:
+    i = page.find(_ABS_START)
+    if i < 0:
         return ""
-    text = re.sub(r"<[^>]+>", " ", m.group(1))
-    return clean(_html.unescape(text))
+    body = page[i + len(_ABS_START):]
+    cut = len(body)
+    for mark in _ABS_END_MARKS:
+        j = body.find(mark)
+        if 0 <= j < cut:
+            cut = j
+    body = body[:cut]
+    body = re.sub(r"<h5[^>]*>.*?</h5>", " ", body, flags=re.S)
+    body = re.sub(r"<[^>]+>", " ", body)
+    return clean(_html.unescape(body))
 
 
 def official_title(landing_url: str, use_cache: bool = True) -> str:
