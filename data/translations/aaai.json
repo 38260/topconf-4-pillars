@@ -1,0 +1,163 @@
+{
+ "venue": "AAAI 2026",
+ "translated_by": "本项目逐篇人工翻译（对照 OpenAlex 收录的 AAAI 官方记录摘要）",
+ "translated_at": "2026-09-18",
+ "papers": [
+ {
+ "id": "aaai-013-aaai-2026-w1632",
+ "title_zh": "DIAA：面向端侧大语言模型的解码高效推理加速方法",
+ "abstract_zh": "大语言模型（LLM）革新了智能交互方式，使边缘设备上的个人助手等移动应用得以本地运行。投机解码（SD）作为一种在不牺牲生成质量的前提下、以「先起草后验证」方式加速 LLM 推理的范式而备受关注。然而由于边缘设备的算力与显存受限，现有 SD 工作严重依赖一个辅助草稿模型，既带来额外显存负担、妨碍适配性，又使用静态 token 树导致次优的推理性能。为此我们提出 DIAA——面向端侧 LLM 的解码高效推理加速方法。DIAA 为边缘设备提供即插即用、与模型无关的推理加速，同时兼顾显存与计算效率。具体而言，通过 Top-K token 采样构建一对轻量查找表（LUT），缓存历史 token 及其概率以快速起草候选；DIAA 将动态 token 树与先验 LUT 相结合以支持并行验证，并在解码过程中持续更新以适配在线上下文；随后采用计算重叠，把 token 树、LUT 与 KV 缓存的更新操作流水化以提升计算效率。最终，在边缘平台 NVIDIA Jetson 上的大量实验表明，DIAA 在生成速度与推理实测时间上均优于现有基线，而显存开销极小。",
+ "topics": ["edge-efficiency", "llm", "architectures"],
+ "keywords": [
+ {"en": "speculative decoding", "zh": "投机解码"},
+ {"en": "on-device LLM", "zh": "端侧大语言模型"},
+ {"en": "edge platform (Jetson)", "zh": "边缘平台（Jetson）"},
+ {"en": "look-up table", "zh": "查找表"},
+ {"en": "dynamic token tree", "zh": "动态 token 树"}
+ ]
+ },
+ {
+ "id": "aaai-014-aaai-2026-w3487",
+ "title_zh": "通过动态 KV 缓存量化实现高效多模态大语言模型",
+ "abstract_zh": "多模态大语言模型（LMM）在图像描述、视觉问答、图文检索等多种视觉—语言任务上表现出众。但其计算复杂度与显存占用——尤其是推理过程中的键值（KV）缓存——给实时部署带来严峻挑战，在资源受限设备上更是如此。本文提出动态 KV 缓存量化，一种为多模态 LMM 量身定制的量化策略：对 Key 施加按通道量化、对 Value 施加按 token 量化，利用二者各自的统计分布优化精度分配。此外我们引入自适应的 token 与通道记录机制，基于实时分布跟踪动态调整量化参数，有效缓解离群值的影响。为进一步提升压缩效率，我们实现细粒度分组，把 KV 张量切分为局部子组以支持更自适应的量化。在 LLaVA-1.5（7B/13B）与 Qwen-VL 上跨多个多模态基准的实验表明，本方法显著优于现有 KV 缓存量化方案，在显存效率与模型精度之间取得更好的折衷。",
+ "topics": ["edge-efficiency", "multimodal", "llm"],
+ "keywords": [
+ {"en": "KV cache quantization", "zh": "KV 缓存量化"},
+ {"en": "multimodal LLM", "zh": "多模态大语言模型"},
+ {"en": "per-channel / per-token", "zh": "按通道 / 按 token 量化"},
+ {"en": "outlier mitigation", "zh": "离群值抑制"},
+ {"en": "memory-efficient inference", "zh": "显存高效推理"}
+ ]
+ },
+ {
+ "id": "aaai-015-aaai-2026-w4812",
+ "title_zh": "SPAN：大语言模型跨历法时间推理的评测与改进",
+ "abstract_zh": "时间推理是大语言模型（LLM）理解现实世界动态的基础能力。现有关于时间推理的研究大多聚焦格里高利历（公历）。然而许多国家和地区同时使用多种历法，在全球化与多元文化语境下，跨历法时间推理对 LLM 至关重要。遗憾的是该方向仍少有人研究，也缺乏专门评测这一能力的基准。为填补空白，我们提出 SPAN——一个跨历法时间推理基准，要求 LLM 完成历法内时间推理与历法间时间换算。SPAN 覆盖六种历法，包含十个跨历法推理方向、两种推理类型与两种题型。为实现随时间变化且不受数据污染的评测，我们提出模板驱动协议以动态生成样例，可在用户指定的公历日期上进行测评。我们在 1960 至 2060 跨越 一百年的多个日期上，对开源与闭源的最先进 LLM 做了大量实验：这些模型平均准确率仅 34.5%，无一超过 80%，说明该任务仍然困难。通过对推理类型、题型与推理方向的深入分析，我们识别出 LLM 的两个关键障碍：未来日期退化（Future-Date Degradation）与历法不对称偏置（Calendar Asymmetry Bias）。为增强 LLM 的跨历法时间推理能力，我们进一步构建了借助工具增强代码生成的 LLM 时间智能体（Time Agent）。实验显示 Time Agent 平均准确率达 95.31%，超过多个有竞争力的基线，凸显工具增强代码生成在推进跨历法时间推理上的潜力。我们希望本工作能启发更多面向时间与文化自适应的 LLM 研究。",
+ "topics": ["llm", "trustworthy", "language-nlp"],
+ "keywords": [
+ {"en": "temporal reasoning", "zh": "时间推理"},
+ {"en": "cross-calendar benchmark", "zh": "跨历法基准"},
+ {"en": "data contamination", "zh": "数据污染"},
+ {"en": "tool-augmented code generation", "zh": "工具增强代码生成"},
+ {"en": "LLM agent", "zh": "大模型智能体"}
+ ]
+ },
+ {
+ "id": "aaai-016-aaai-2026-w1223",
+ "title_zh": "借助因果推理缓解大语言模型幻觉",
+ "abstract_zh": "大语言模型会表现出「逻辑不一致」的幻觉：看似连贯却违反推理准则。近期研究表明因果推理能力与此类幻觉呈负相关。然而 LLM 现有的推理方法——如思维链（CoT）及其图结构变体——都在语言 token 层面运作，并未对变量之间底层的因果关系建模，既无法表达条件独立性，也不满足因果识别假设。为弥补这一缺口，我们提出因果 DAG 构建与推理框架 CDCR-SFT：一种监督微调方法，训练 LLM 显式构建变量级有向无环图（DAG），并在其上进行推理。我们还发布了包含 25,368 条样本的数据集 CausalDR，每条样本包括输入问题、显式因果 DAG、基于图的推理轨迹以及经过验证的答案。在四个 LLM、八项任务上的实验表明，CDCR-SFT 提升了因果推理能力，在 CLADDER 上以 95.33% 的准确率取得当前最优（首次超过人类水平 94.8%），并在 HaluEval 上把幻觉降低 10% 以上。这说明在 LLM 中显式建模因果结构，能有效缓解其输出的逻辑不一致。",
+ "topics": ["llm", "trustworthy", "language-nlp"],
+ "keywords": [
+ {"en": "hallucination mitigation", "zh": "幻觉缓解"},
+ {"en": "causal DAG", "zh": "因果有向无环图"},
+ {"en": "supervised fine-tuning", "zh": "监督微调"},
+ {"en": "chain-of-thought", "zh": "思维链"},
+ {"en": "causal identification", "zh": "因果识别"}
+ ]
+ },
+ {
+ "id": "aaai-017-aaai-2026-w996",
+ "title_zh": "LiR3AG：面向检索增强生成的轻量重排序推理策略框架",
+ "abstract_zh": "检索增强生成（RAG）通过把检索到的外部知识融入生成过程，有效增强了大语言模型（LLM）。推理模型在需要跨文档整合并推理多条证据来回答复杂问题的多跳问答任务上提升了 LLM 表现，但往往带来可观的计算开销，包括 token 消耗增加与推理延迟上升。为理解并缓解这一折衷，我们对 RAG 多跳问答任务中推理模型的推理策略做了系统研究。我们发现推理模型会以结构化策略整合检索知识与内部知识，主要遵循两种模式：依托检索内容的「情境接地推理」，以及用内部知识化解冲突或缺口的「知识调适推理」。据此我们提出面向 RAG 的轻量重排序推理策略框架 LiR3AG，通过重构检索证据、将其组织为连贯推理链，使非推理模型也能迁移运用推理策略。LiR3AG 平均减少 98% 的输出 token 开销与 58.6% 的推理时间，同时把一个 8B 非推理模型在 RAG 上的 F1 提升 6.2% 至 22.5%，从而超过 32B 推理模型的表现，为 RAG 系统提供了一条务实而高效的路径。",
+ "topics": ["language-nlp", "llm", "edge-efficiency"],
+ "keywords": [
+ {"en": "retrieval-augmented generation", "zh": "检索增强生成"},
+ {"en": "multi-hop QA", "zh": "多跳问答"},
+ {"en": "rerank reasoning strategy", "zh": "重排序推理策略"},
+ {"en": "token overhead", "zh": "token 开销"},
+ {"en": "non-reasoning model", "zh": "非推理模型"}
+ ]
+ },
+ {
+ "id": "aaai-018-aaai-2026-w3928",
+ "title_zh": "在 CLIP 中抽取多模态学习基因：揭示可泛化的多模态知识",
+ "abstract_zh": "CLIP（对比语言—图像预训练）因其可泛化的多模态知识而广受关注，这类知识对下游任务意义重大。然而海量参数与大规模预训练带来的计算开销，使「训练不同规模 CLIP」成为难题。学习基因（Learngene）从祖先模型中抽取可泛化组件（称为 Learngene），并用它初始化多样的子代模型。此前的 Learngene 范式无法处理多模态场景下的可泛化知识。本文提出用多模态模块抽取多模态可泛化知识的思想，并据此提出 MM-LG（多模态学习基因）——一个从 CLIP 中抽取并利用可泛化组件的新框架。具体地，我们先建立多模态与单模态两类模块，以加权和方式抽取多模态与单模态的可泛化知识；随后用这些组件对不同规模、不同模态的子代模型进行数值化初始化。大量实验证明了 MM-LG 的有效性：相对已有 Learngene 方法取得性能提升（Oxford-IIIT PET 上 +3.1%，Flickr30k 上 +4.13%），并与「预训练—微调」范式相当或更优（+1.9% 与 +3.65%）。值得注意的是，与预训练—微调范式相比，MM-LG 只需约 25% 的参数存储，并为不同模型规模削减约 2.8× 的预训练成本，特别适合在多样下游任务上高效部署。",
+ "topics": ["multimodal", "architectures", "edge-efficiency"],
+ "keywords": [
+ {"en": "CLIP", "zh": "CLIP 对比语言—图像预训练"},
+ {"en": "learngene", "zh": "学习基因"},
+ {"en": "generalizable knowledge", "zh": "可泛化知识"},
+ {"en": "model initialization", "zh": "模型初始化"},
+ {"en": "pre-training cost", "zh": "预训练成本"}
+ ]
+ },
+ {
+ "id": "aaai-019-aaai-2026-w489",
+ "title_zh": "HiTVideo：用层级化 tokenizer 增强自回归大模型的文本生成视频",
+ "abstract_zh": "文本生成视频因视频数据固有的复杂性而极具挑战：视频同时跨越时间与空间两个维度，带来额外冗余、剧烈变化，以及生成时语言 token 与视觉 token 之间的领域鸿沟。应对这些挑战需要一个有效的视频 tokenizer，既能高效编码视频，又保留关键的语义与时空信息，充当文本与视觉之间的桥梁。受 VQ-VAE-2 的启发，我们提出 HiTVideo——一种用层级化 tokenizer 做文本生成视频的新方法。它采用带多层离散 token 框架的三维因果 VAE，把视频内容编码为层级结构的码本：较高层以更高压缩率捕捉语义信息，较低层专注细粒度时空细节，从而在压缩效率与重建质量之间取得平衡。我们的方法可高效编码更长的视频序列（如 8 秒、64 帧），相比此前的 tokenizer 把每像素比特数（bpp）降低约 70%，同时保持有竞争力的重建质量。我们探讨了压缩与重建之间的权衡，并强调高压缩语义 token 在文生视频任务中的优势。HiTVideo 旨在突破现有视频 tokenizer 在文生视频任务上的局限，追求更高压缩率、更好 token 质量，并在语言引导下简化大模型建模，为推进文本生成视频提供一个可扩展且有前景的框架。",
+ "topics": ["generative", "llm", "multimodal"],
+ "keywords": [
+ {"en": "text-to-video generation", "zh": "文本生成视频"},
+ {"en": "hierarchical tokenizer", "zh": "层级化分词器"},
+ {"en": "3D causal VAE", "zh": "三维因果变分自编码器"},
+ {"en": "vector-quantized codebook", "zh": "向量量化码本"},
+ {"en": "bits per pixel", "zh": "每像素比特数"}
+ ]
+ },
+ {
+ "id": "aaai-020-aaai-2026-w662",
+ "title_zh": "H-RDT：以人类操作数据增强的双臂机器人操作",
+ "abstract_zh": "机器人操作的模仿学习面临一个根本难题：大规模高质量机器人示范数据稀缺。近期的机器人基础模型多在跨本体机器人数据集上预训练以扩大数据规模，但不同机器人本体的多样形态与动作空间使统一训练非常困难，因此这类模型存在明显局限。本文提出 H-RDT（Human to Robotics Diffusion Transformer），一种利用人类操作数据增强机器人操作能力的新方法。我们的关键洞见是：带有配对三维手部姿态标注的大规模第一视角人类操作视频，蕴含刻画自然操作策略的丰富行为先验，能够助力机器人策略学习。我们引入两阶段训练范式：（1）在大规模第一视角人类操作数据上预训练；（2）使用模块化的动作编码器与解码器，在机器人专属数据上做跨本体微调。H-RDT 建立在 20 亿参数的扩散 Transformer 架构之上，用流匹配建模复杂的动作分布。动作编码/解码组件的模块化设计，使知识能从统一的人类本体高效迁移到多样机器人平台。评测涵盖仿真与真实实验、单任务与多任务场景、小样本学习与鲁棒性测试，结果表明 H-RDT 优于从零训练以及包括 π0、RDT 在内的现有最先进方法：在仿真与真实实验中相比从零训练分别取得 13.9% 与 40.5% 的显著提升。结果验证了我们的核心假设——人类操作数据可以成为学习双臂机器人操作策略的有力基座。",
+ "topics": ["3d-embodied", "generative", "rl-decision"],
+ "keywords": [
+ {"en": "bimanual manipulation", "zh": "双臂操作"},
+ {"en": "diffusion transformer", "zh": "扩散 Transformer"},
+ {"en": "egocentric human video", "zh": "第一视角人类视频"},
+ {"en": "cross-embodiment transfer", "zh": "跨本体迁移"},
+ {"en": "flow matching", "zh": "流匹配"}
+ ]
+ },
+ {
+ "id": "aaai-021-aaai-2026-w787",
+ "title_zh": "PulseMind：面向真实临床诊断的多模态医疗模型",
+ "abstract_zh": "医学多模态模型的最新进展集中在皮肤科、病理科、放射科等专项图像分析上，未能充分刻画真实临床诊断的复杂性——后者涉及异构输入，并要求在医患交互过程中持续理解上下文。为弥补这一差距，我们提出 PulseMind 系列多模态诊断模型，它整合了系统化整理的数据集、完整的评测基准与量身定制的训练框架。具体地，我们首先构建诊断数据集 MediScope，包含 98,000 例真实多轮问诊与 601,500 张医学影像，覆盖 10 余个主要临床科室与 200 多个亚专科。随后，为更贴合真实临床诊断的要求，我们研制 PulseMind Benchmark——一个多轮诊断问诊基准，采用包含主动性、准确性、有用性与语言质量四个维度的评测协议。最后我们为多模态临床诊断设计了定制训练框架，其核心组件是对比式强化策略优化（CRPO）。与绝对分数奖励不同，CRPO 使用来自多维比较的相对偏好信号，从而提供稳定且符合人类偏好的训练引导。大量实验表明，PulseMind 在诊断问诊基准与公开医学基准上均取得有竞争力的表现。",
+ "topics": ["medical-science", "multimodal", "llm"],
+ "keywords": [
+ {"en": "clinical diagnosis", "zh": "临床诊断"},
+ {"en": "multi-turn consultation", "zh": "多轮问诊"},
+ {"en": "medical multimodal model", "zh": "医学多模态模型"},
+ {"en": "preference-based RL (CRPO)", "zh": "基于偏好的强化优化（CRPO）"},
+ {"en": "evaluation benchmark", "zh": "评测基准"}
+ ]
+ },
+ {
+ "id": "aaai-022-aaai-2026-w1569",
+ "title_zh": "注入、攻击与抹除：基于机器遗忘的可撤销后门攻击",
+ "abstract_zh": "后门攻击因隐蔽且持久，对深度神经网络（DNN）构成持续的安全威胁。近期研究尝试利用模型遗忘机制增强后门的隐蔽性，但现有攻击策略仍会留下可被静态分析检出的持久痕迹。本工作首次提出可撤销后门攻击范式：在达成攻击目标后，攻击者可以主动、彻底地把后门移除。我们把可撤销后门攻击中的触发器优化建模为一个双层优化问题：同时模拟后门注入与后门遗忘过程，优化触发器生成器，使其在保持高攻击成功率（ASR）的同时确保后门能通过遗忘被轻易抹除。为缓解「注入」与「移除」两个目标之间的优化冲突，我们对投毒样本与遗忘样本做确定性划分以降低采样带来的方差，并进一步采用投影冲突梯度（PCGrad）技术化解残余的梯度冲突。在 CIFAR-10 与 ImageNet 上的实验表明，我们的方法保持与最先进后门攻击相当的攻击成功率，同时能在遗忘后有效移除后门行为。本工作为后门攻击研究开辟了新方向，也给机器学习系统的安全性提出了新挑战。",
+ "topics": ["trustworthy", "architectures"],
+ "keywords": [
+ {"en": "revocable backdoor attack", "zh": "可撤销后门攻击"},
+ {"en": "machine unlearning", "zh": "机器遗忘"},
+ {"en": "bilevel optimization", "zh": "双层优化"},
+ {"en": "trigger optimization", "zh": "触发器优化"},
+ {"en": "PCGrad", "zh": "投影冲突梯度"}
+ ]
+ },
+ {
+ "id": "aaai-023-aaai-2026-w627",
+ "title_zh": "HCPO：多智能体强化学习中的分层指挥者策略优化",
+ "abstract_zh": "在协作型多智能体强化学习（MARL）中，高效探索对优化联合策略性能至关重要。然而现有方法通常让各智能体独立探索来更新联合策略，智能体之间缺乏协调，这从本质上限制了联合策略的表达能力与探索范围。为解决该问题，我们提出一个基于「指挥者」的联合策略框架，直接增强联合策略的表达能力并协调探索；进而提出分层指挥者策略优化算法 HCPO，沿性能提升方向同时指挥者与各智能体的策略更新。严格的理论保证进一步确立了联合策略优化过程的单调性。通过部署局部指挥者，HCPO 在保留集中训练优势的同时，消除了执行阶段的智能体间通信。最后在三个高难基准上评测 HCPO：星际争霸 II 多智能体挑战、Multi-agent MuJoCo 与 Multi-agent Particle Environment。结果表明 HCPO 在协作效率与稳定性上优于有竞争力的 MARL 基线。",
+ "topics": ["rl-decision", "architectures"],
+ "keywords": [
+ {"en": "multi-agent reinforcement learning", "zh": "多智能体强化学习"},
+ {"en": "joint policy expressivity", "zh": "联合策略表达能力"},
+ {"en": "hierarchical conductor", "zh": "分层指挥者"},
+ {"en": "exploration", "zh": "探索"},
+ {"en": "StarCraft II benchmark", "zh": "星际争霸 II 基准"}
+ ]
+ },
+ {
+ "id": "aaai-024-aaai-2026-w1169",
+ "title_zh": "双 Mamba 节点专属表征学习：以选择性状态空间建模应对过平滑",
+ "abstract_zh": "过平滑仍是深层图神经网络（GNN）的根本难题：重复的消息传递会使节点表征变得难以区分。现有解法（如残差连接与跳跃层）虽能一定程度缓解，却没有显式刻画节点表征如何以「节点专属、逐层渐进」的方式演化；同时它们也未考虑全局信息，而全局信息对缓解过平滑同样关键。为此我们提出双 Mamba 增强图卷积网络 DMbaGCN，把 Mamba 融入 GNN，从局部与全局两个视角解决过平滑。DMbaGCN 由两个模块构成：局部状态演化 Mamba（LSEMba）负责邻域聚合，利用 Mamba 的选择性状态空间建模捕捉跨层的节点专属表征动态；全局上下文感知 Mamba（GCAMba）则借助 Mamba 的全局注意力能力为每个节点引入全局上下文。两部分结合提升了深层 GNN 中节点的判别性，从而缓解过平滑。在多个基准上的大量实验证明了本方法的有效性与高效性。",
+ "topics": ["architectures"],
+ "keywords": [
+ {"en": "graph neural network", "zh": "图神经网络"},
+ {"en": "over-smoothing", "zh": "过平滑"},
+ {"en": "Mamba / state space model", "zh": "Mamba / 状态空间模型"},
+ {"en": "node-specific dynamics", "zh": "节点专属动态"},
+ {"en": "global context", "zh": "全局上下文"}
+ ]
+ }
+ ]
+}

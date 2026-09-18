@@ -40,8 +40,9 @@
 
 - [x] 3.1 定义主题体系（11 类 + 「深度学习」总览透镜，见 `scripts/topics.py`）
 - [x] 3.2 每会精选 12 篇（`data/selection.json`，含策展理由，ref 全部指向官方真实记录号）
-- [~] 3.3 逐篇人工翻译摘要为中文（48 篇）：CVPR 12/12 ✔ · AAAI 0/12 · ICCV 0/12 · ACL 0/12
+- [~] 3.3 逐篇人工翻译摘要为中文（48 篇）：CVPR 12/12 ✔ · AAAI 12/12 ✔ · ICCV 0/12 · ACL 0/12
 - [~] 3.4 逐篇抽取中英文关键词（随译文一并产出）
+- [x] 3.4b `check_translations.py` QA 闸门：中文域英文残留、未知主题、缺关键词、译文过短（当前 24 篇 0 问题）
 - [ ] 3.5 产出 `data/papers.json`（含 provenance）
 - [ ] 3.6 `build_data.py`：把 JSON 注入 `web/data/papers.js`，使 `file://` 双击可开
 
