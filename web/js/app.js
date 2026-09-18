@@ -9,7 +9,8 @@
     venue: null,            // 单支柱下钻
     topic: null,            // 主题下钻
     paperId: null,          // 模态框
-    source: null            // inline | api
+    source: null,           // inline | api
+    tocOpen: localStorage.getItem("topconf.toc") !== "0"
   };
 
   var el = {};
@@ -83,6 +84,8 @@
     renderStats();
     renderFilterbar();
     renderView();
+    renderToc();
+    syncToc();
   }
 
   function renderFacts() {
@@ -221,9 +224,98 @@
     root.innerHTML = html;
   }
 
+  /* ---------------- 目录侧栏 ---------------- */
+  function tocLabel(p) {
+    var s = p.title_zh || p.title || "";
+    var i = Math.max(s.indexOf("："), s.indexOf(":"));
+    if (i > 1 && i <= 20) return s.slice(0, i);
+    return s.length > 20 ? s.slice(0, 19) + "…" : s;
+  }
+
+  function renderToc() {
+    var rows = filtered();
+    var nav = $("toc");
+    if (!rows.length) { nav.innerHTML = '<div class="toc-head"><b>目录</b><span>无结果</span></div>'; return; }
+    var head = '<div class="toc-head"><b>目录</b><span>' + rows.length + " 篇</span></div>";
+    var secs = [];
+
+    if (state.view === "pillars") {
+      state.data.pillars.forEach(function (pl) {
+        if (state.venue && state.venue !== pl.key) return;
+        var items = rows.filter(function (p) { return p.venue === pl.key; });
+        if (!items.length) return;
+        secs.push('<div class="toc-sec" data-pillar="' + pl.key + '">' +
+          '<a class="h" href="#pillar-' + pl.key + '" data-act="jump" data-val="pillar-' + pl.key + '">' +
+          '<i class="dot" aria-hidden="true"></i>' + pl.label + " " + pl.year +
+          '<span class="n">' + items.length + "</span></a>" +
+          items.map(function (p) {
+            return '<a class="toc-item" href="#card-' + p.id + '" data-act="jump" data-val="card-' + p.id +
+              '" data-card="' + p.id + '"><span class="rk">' + String(p.rank).padStart(2, "0") + "</span>" +
+              TL.esc(tocLabel(p)) + "</a>";
+          }).join("") + "</div>");
+      });
+    } else {
+      state.data.topics.forEach(function (t) {
+        var items = rows.filter(function (p) { return p.topics.indexOf(t.id) >= 0; });
+        if (!items.length) return;
+        /* 一篇可属多个主题，全展开会重复；只在选中该主题时才列出其论文 */
+        var expand = state.topic === t.id;
+        secs.push('<div class="toc-sec" data-accent="' + t.accent + '">' +
+          '<a class="h" href="#topic-' + t.id + '" data-act="jump" data-val="topic-' + t.id + '">' +
+          '<i class="dot" aria-hidden="true" style="--st:var(--tc-fg)"></i>' + TL.esc(t.label) +
+          '<span class="n">' + items.length + "</span></a>" +
+          (expand ? items.map(function (p) {
+            return '<a class="toc-item" href="#card-' + p.id + '" data-act="jump" data-val="card-' + p.id +
+              '" data-card="' + p.id + '"><span class="rk">' + p.venue + "</span>" +
+              TL.esc(tocLabel(p)) + "</a>";
+          }).join("") : "") + "</div>");
+      });
+    }
+    nav.innerHTML = head + secs.join("");
+    spy();
+  }
+
+  function jumpTo(target) {
+    var node = document.getElementById(target);
+    if (!node) return;
+    node.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (node.classList.contains("pcard")) {
+      node.classList.remove("flash");
+      void node.offsetWidth;                       /* restart the animation */
+      node.classList.add("flash");
+      setTimeout(function () { node.classList.remove("flash"); }, 1200);
+    }
+  }
+
+  function syncToc() {
+    document.body.classList.toggle("toc-closed", !state.tocOpen);
+    var b = $("btn-toc");
+    if (b) b.setAttribute("aria-expanded", String(state.tocOpen));
+  }
+
+  /* 滚动时同步目录高亮：取最靠近顶栏下沿的那张卡/组 */
+  function spy() {
+    var nav = $("toc");
+    if (!nav || !state.tocOpen) return;
+    var line = (parseInt(getComputedStyle(document.documentElement).getPropertyValue("--topbar-h"), 10) || 62) + 90;
+    var best = null, bestTop = -Infinity;
+    nav.querySelectorAll("[data-card]").forEach(function (a) {
+      var card = document.getElementById("card-" + a.dataset.card);
+      if (!card) return;
+      var top = card.getBoundingClientRect().top;
+      if (top <= line && top > bestTop) { bestTop = top; best = a; }
+    });
+    if (!best) {
+      var first = nav.querySelector("[data-card]");
+      if (first) { best = first; }
+    }
+    nav.querySelectorAll(".toc-item.on").forEach(function (a) { a.classList.remove("on"); });
+    if (best) best.classList.add("on");
+  }
+
   function card(p) {
     var kws = (p.keywords || []).slice(0, 3);
-    return '<article ' + TL.pillarBadge(p.venue) + ' tabindex="0" role="button" ' +
+    return '<article id="card-' + p.id + '" ' + TL.pillarBadge(p.venue) + ' tabindex="0" role="button" ' +
       'data-act="open" data-val="' + p.id + '" aria-label="查看 ' + TL.esc(p.title) + '">' +
       '<span class="idx">' + String(p.rank).padStart(2, "0") + "</span>" +
       "<h4>" + TL.highlight(p.title, state.q) + "</h4>" +
@@ -331,6 +423,7 @@
     if (!t) return;
     var act = t.dataset.act, val = t.dataset.val;
     if (act === "open") { e.preventDefault(); openModal(val); return; }
+    if (act === "jump") { e.preventDefault(); jumpTo(val); return; }
     if (act === "close" || act === "close-scrim") { if (e.target === t) closeModal(); return; }
     if (act === "venue") { state.venue = state.venue === val ? null : val; state.topic = null; renderAll(); return; }
     if (act === "topic") {
@@ -357,9 +450,21 @@
       b.addEventListener("click", function () {
         state.view = b.dataset.view;
         if (state.view === "pillars") state.topic = null;
-        syncViewTabs(); renderView(); renderFilterbar();
+        syncViewTabs(); renderView(); renderFilterbar(); renderToc();
       });
     });
+    $("btn-toc").addEventListener("click", function () {
+      state.tocOpen = !state.tocOpen;
+      localStorage.setItem("topconf.toc", state.tocOpen ? "1" : "0");
+      syncToc();
+      if (state.tocOpen) spy();
+    });
+    var spyQueued = false;
+    window.addEventListener("scroll", function () {
+      if (spyQueued) return;
+      spyQueued = true;
+      requestAnimationFrame(function () { spyQueued = false; spy(); });
+    }, { passive: true });
     var timer = null;
     el.q.addEventListener("input", function () {
       clearTimeout(timer);
