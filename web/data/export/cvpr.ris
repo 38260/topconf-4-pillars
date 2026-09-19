@@ -200,3 +200,382 @@ EP  - 24822
 UR  - https://openaccess.thecvf.com/content/CVPR2026/html/He_Global-Graph_Guided_and_Local-Graph_Weighted_Contrastive_Learning_for_Unified_Clustering_CVPR_2026_paper.html
 L1  - https://openaccess.thecvf.com/content/CVPR2026/papers/He_Global-Graph_Guided_and_Local-Graph_Weighted_Contrastive_Learning_for_Unified_Clustering_CVPR_2026_paper.pdf
 ER  - 
+
+TY  - CPRO
+TI  - MoPE-CLIP: Structured Pruning for Efficient Vision-Language Models with Module-wise Pruning Error Metric
+AU  - Haokun Lin
+AU  - Haoli Bai
+AU  - Zhili Liu
+AU  - Lu Hou
+AU  - Muyi Sun
+AU  - Linqi Song
+AU  - Ying Wei
+AU  - Zhenan Sun
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 27370
+EP  - 27380
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Lin_MoPE-CLIP_Structured_Pruning_for_Efficient_Vision-Language_Models_with_Module-wise_Pruning_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Lin_MoPE-CLIP_Structured_Pruning_for_Efficient_Vision-Language_Models_with_Module-wise_Pruning_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - HMD-Poser: On-Device Real-time Human Motion Tracking from Scalable Sparse Observations
+AU  - Peng Dai
+AU  - Yang Zhang
+AU  - Tao Liu
+AU  - Zhen Fan
+AU  - Tianyuan Du
+AU  - Zhuo Su
+AU  - Xiaozheng Zheng
+AU  - Zeming Li
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 874
+EP  - 884
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Dai_HMD-Poser_On-Device_Real-time_Human_Motion_Tracking_from_Scalable_Sparse_Observations_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Dai_HMD-Poser_On-Device_Real-time_Human_Motion_Tracking_from_Scalable_Sparse_Observations_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - PromptCoT: Align Prompt Distribution via Adapted Chain-of-Thought
+AU  - Junyi Yao
+AU  - Yijiang Liu
+AU  - Zhen Dong
+AU  - Mingfei Guo
+AU  - Helan Hu
+AU  - Kurt Keutzer
+AU  - Li Du
+AU  - Daquan Zhou
+AU  - Shanghang Zhang
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 7027
+EP  - 7037
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Yao_PromptCoT_Align_Prompt_Distribution_via_Adapted_Chain-of-Thought_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Yao_PromptCoT_Align_Prompt_Distribution_via_Adapted_Chain-of-Thought_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Alpha-CLIP: A CLIP Model Focusing on Wherever You Want
+AU  - Zeyi Sun
+AU  - Ye Fang
+AU  - Tong Wu
+AU  - Pan Zhang
+AU  - Yuhang Zang
+AU  - Shu Kong
+AU  - Yuanjun Xiong
+AU  - Dahua Lin
+AU  - Jiaqi Wang
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 13019
+EP  - 13029
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Sun_Alpha-CLIP_A_CLIP_Model_Focusing_on_Wherever_You_Want_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Sun_Alpha-CLIP_A_CLIP_Model_Focusing_on_Wherever_You_Want_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - AV2AV: Direct Audio-Visual Speech to Audio-Visual Speech Translation with Unified Audio-Visual Speech Representation
+AU  - Jeongsoo Choi
+AU  - Se Jin Park
+AU  - Minsu Kim
+AU  - Yong Man Ro
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 27325
+EP  - 27337
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Choi_AV2AV_Direct_Audio-Visual_Speech_to_Audio-Visual_Speech_Translation_with_Unified_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Choi_AV2AV_Direct_Audio-Visual_Speech_to_Audio-Visual_Speech_Translation_with_Unified_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - UFOGen: You Forward Once Large Scale Text-to-Image Generation via Diffusion GANs
+AU  - Yanwu Xu
+AU  - Yang Zhao
+AU  - Zhisheng Xiao
+AU  - Tingbo Hou
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 8196
+EP  - 8206
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Xu_UFOGen_You_Forward_Once_Large_Scale_Text-to-Image_Generation_via_Diffusion_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Xu_UFOGen_You_Forward_Once_Large_Scale_Text-to-Image_Generation_via_Diffusion_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - SuGaR: Surface-Aligned Gaussian Splatting for Efficient 3D Mesh Reconstruction and High-Quality Mesh Rendering
+AU  - Antoine Guédon
+AU  - Vincent Lepetit
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 5354
+EP  - 5363
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Guedon_SuGaR_Surface-Aligned_Gaussian_Splatting_for_Efficient_3D_Mesh_Reconstruction_and_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Guedon_SuGaR_Surface-Aligned_Gaussian_Splatting_for_Efficient_3D_Mesh_Reconstruction_and_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Training Like a Medical Resident: Context-Prior Learning Toward Universal Medical Image Segmentation
+AU  - Yunhe Gao
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 11194
+EP  - 11204
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Gao_Training_Like_a_Medical_Resident_Context-Prior_Learning_Toward_Universal_Medical_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Gao_Training_Like_a_Medical_Resident_Context-Prior_Learning_Toward_Universal_Medical_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - WateRF: Robust Watermarks in Radiance Fields for Protection of Copyrights
+AU  - Youngdong Jang
+AU  - Dong In Lee
+AU  - MinHyuk Jang
+AU  - Jong Wook Kim
+AU  - Feng Yang
+AU  - Sangpil Kim
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 12087
+EP  - 12097
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Jang_WateRF_Robust_Watermarks_in_Radiance_Fields_for_Protection_of_Copyrights_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Jang_WateRF_Robust_Watermarks_in_Radiance_Fields_for_Protection_of_Copyrights_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - FoundationPose: Unified 6D Pose Estimation and Tracking of Novel Objects
+AU  - Bowen Wen
+AU  - Wei Yang
+AU  - Jan Kautz
+AU  - Stan Birchfield
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 17868
+EP  - 17879
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Wen_FoundationPose_Unified_6D_Pose_Estimation_and_Tracking_of_Novel_Objects_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Wen_FoundationPose_Unified_6D_Pose_Estimation_and_Tracking_of_Novel_Objects_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - ViT-CoMer: Vision Transformer with Convolutional Multi-scale Feature Interaction for Dense Predictions
+AU  - Chunlong Xia
+AU  - Xinliang Wang
+AU  - Feng Lv
+AU  - Xin Hao
+AU  - Yifeng Shi
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 5493
+EP  - 5502
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Xia_ViT-CoMer_Vision_Transformer_with_Convolutional_Multi-scale_Feature_Interaction_for_Dense_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Xia_ViT-CoMer_Vision_Transformer_with_Convolutional_Multi-scale_Feature_Interaction_for_Dense_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - DMR: Decomposed Multi-Modality Representations for Frames and Events Fusion in Visual Reinforcement Learning
+AU  - Haoran Xu
+AU  - Peixi Peng
+AU  - Guang Tan
+AU  - Yuan Li
+AU  - Xinhai Xu
+AU  - Yonghong Tian
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 26508
+EP  - 26518
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Xu_DMR_Decomposed_Multi-Modality_Representations_for_Frames_and_Events_Fusion_in_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Xu_DMR_Decomposed_Multi-Modality_Representations_for_Frames_and_Events_Fusion_in_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - MobilePortrait: Real-Time One-Shot Neural Head Avatars on Mobile Devices
+AU  - Jianwen Jiang
+AU  - Gaojie Lin
+AU  - Zhengkun Rong
+AU  - Chao Liang
+AU  - Yongming Zhu
+AU  - Jiaqi Yang
+AU  - Tianyun Zhong
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 15920
+EP  - 15929
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Jiang_MobilePortrait_Real-Time_One-Shot_Neural_Head_Avatars_on_Mobile_Devices_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Jiang_MobilePortrait_Real-Time_One-Shot_Neural_Head_Avatars_on_Mobile_Devices_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - VL2Lite: Task-Specific Knowledge Distillation from Large Vision-Language Models to Lightweight Networks
+AU  - Jinseong Jang
+AU  - Chunfei Ma
+AU  - Byeongwon Lee
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 30073
+EP  - 30083
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Jang_VL2Lite_Task-Specific_Knowledge_Distillation_from_Large_Vision-Language_Models_to_Lightweight_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Jang_VL2Lite_Task-Specific_Knowledge_Distillation_from_Large_Vision-Language_Models_to_Lightweight_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Enhancing Video-LLM Reasoning via Agent-of-Thoughts Distillation
+AU  - Yudi Shi
+AU  - Shangzhe Di
+AU  - Qirui Chen
+AU  - Weidi Xie
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 8523
+EP  - 8533
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Shi_Enhancing_Video-LLM_Reasoning_via_Agent-of-Thoughts_Distillation_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Shi_Enhancing_Video-LLM_Reasoning_via_Agent-of-Thoughts_Distillation_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Critic-V: VLM Critics Help Catch VLM Errors in Multimodal Reasoning
+AU  - Di Zhang
+AU  - Jingdi Lei
+AU  - Junxian Li
+AU  - Xunzhi Wang
+AU  - Yujie Liu
+AU  - Zonglin Yang
+AU  - Jiatong Li
+AU  - Weida Wang
+AU  - Suorong Yang
+AU  - Jianbo Wu
+AU  - Peng Ye
+AU  - Wanli Ouyang
+AU  - Dongzhan Zhou
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 9050
+EP  - 9061
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_Critic-V_VLM_Critics_Help_Catch_VLM_Errors_in_Multimodal_Reasoning_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Zhang_Critic-V_VLM_Critics_Help_Catch_VLM_Errors_in_Multimodal_Reasoning_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Post-pre-training for Modality Alignment in Vision-Language Foundation Models
+AU  - Shin'ya Yamaguchi
+AU  - Dewei Feng
+AU  - Sekitoshi Kanai
+AU  - Kazuki Adachi
+AU  - Daiki Chijiwa
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 4256
+EP  - 4266
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Yamaguchi_Post-pre-training_for_Modality_Alignment_in_Vision-Language_Foundation_Models_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Yamaguchi_Post-pre-training_for_Modality_Alignment_in_Vision-Language_Foundation_Models_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - AlignMamba: Enhancing Multimodal Mamba with Local and Global Cross-modal Alignment
+AU  - Yan Li
+AU  - Yifei Xing
+AU  - Xiangyuan Lan
+AU  - Xin Li
+AU  - Haifeng Chen
+AU  - Dongmei Jiang
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 24774
+EP  - 24784
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Li_AlignMamba_Enhancing_Multimodal_Mamba_with_Local_and_Global_Cross-modal_Alignment_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Li_AlignMamba_Enhancing_Multimodal_Mamba_with_Local_and_Global_Cross-modal_Alignment_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Diffusion-4K: Ultra-High-Resolution Image Synthesis with Latent Diffusion Models
+AU  - Jinjin Zhang
+AU  - Qiuyu Huang
+AU  - Junjie Liu
+AU  - Xiefan Guo
+AU  - Di Huang
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 23464
+EP  - 23473
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_Diffusion-4K_Ultra-High-Resolution_Image_Synthesis_with_Latent_Diffusion_Models_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Zhang_Diffusion-4K_Ultra-High-Resolution_Image_Synthesis_with_Latent_Diffusion_Models_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Prometheus: 3D-Aware Latent Diffusion Models for Feed-Forward Text-to-3D Scene Generation
+AU  - Yuanbo Yang
+AU  - Jiahao Shao
+AU  - Xinyang Li
+AU  - Yujun Shen
+AU  - Andreas Geiger
+AU  - Yiyi Liao
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 2857
+EP  - 2869
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Yang_Prometheus_3D-Aware_Latent_Diffusion_Models_for_Feed-Forward_Text-to-3D_Scene_Generation_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Yang_Prometheus_3D-Aware_Latent_Diffusion_Models_for_Feed-Forward_Text-to-3D_Scene_Generation_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - SplatAD: Real-Time Lidar and Camera Rendering with 3D Gaussian Splatting for Autonomous Driving
+AU  - Georg Hess
+AU  - Carl Lindström
+AU  - Maryam Fatemi
+AU  - Christoffer Petersson
+AU  - Lennart Svensson
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 11982
+EP  - 11992
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Hess_SplatAD_Real-Time_Lidar_and_Camera_Rendering_with_3D_Gaussian_Splatting_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Hess_SplatAD_Real-Time_Lidar_and_Camera_Rendering_with_3D_Gaussian_Splatting_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Multi-modal Medical Diagnosis via Large-small Model Collaboration
+AU  - Wanyi Chen
+AU  - Zihua Zhao
+AU  - Jiangchao Yao
+AU  - Ya Zhang
+AU  - Jiajun Bu
+AU  - Haishuai Wang
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 30763
+EP  - 30773
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Chen_Multi-modal_Medical_Diagnosis_via_Large-small_Model_Collaboration_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_Multi-modal_Medical_Diagnosis_via_Large-small_Model_Collaboration_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - T2ISafety: Benchmark for Assessing Fairness, Toxicity, and Privacy in Image Generation
+AU  - Lijun Li
+AU  - Zhelun Shi
+AU  - Xuhao Hu
+AU  - Bowen Dong
+AU  - Yiran Qin
+AU  - Xihui Liu
+AU  - Lu Sheng
+AU  - Jing Shao
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 13381
+EP  - 13392
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Li_T2ISafety_Benchmark_for_Assessing_Fairness_Toxicity_and_Privacy_in_Image_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Li_T2ISafety_Benchmark_for_Assessing_Fairness_Toxicity_and_Privacy_in_Image_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - SGC-Net: Stratified Granular Comparison Network for Open-Vocabulary HOI Detection
+AU  - Xin Lin
+AU  - Chong Shi
+AU  - Zuopeng Yang
+AU  - Haojin Tang
+AU  - Zhili Zhou
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 4539
+EP  - 4549
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Lin_SGC-Net_Stratified_Granular_Comparison_Network_for_Open-Vocabulary_HOI_Detection_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Lin_SGC-Net_Stratified_Granular_Comparison_Network_for_Open-Vocabulary_HOI_Detection_CVPR_2025_paper.pdf
+ER  - 

@@ -175,3 +175,382 @@ BT  - Proceedings of the AAAI Conference on Artificial Intelligence
 DO  - 10.1609/aaai.v40i26.39317
 UR  - https://doi.org/10.1609/aaai.v40i26.39317
 ER  - 
+
+TY  - JOUR
+TI  - MobileInst: Video Instance Segmentation on the Mobile
+AU  - Renhong Zhang
+AU  - Tianheng Cheng
+AU  - Shusheng Yang
+AU  - Haoyi Jiang
+AU  - Shuai Zhang
+AU  - Jiancheng Lyu
+AU  - Xin Li
+AU  - Xiaowen Ying
+AU  - Dashan Gao
+AU  - Wenyu Liu
+AU  - Xinggang Wang
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i7.28555
+UR  - https://doi.org/10.1609/aaai.v38i7.28555
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/28555/29079
+ER  - 
+
+TY  - JOUR
+TI  - Agile-Quant: Activation-Guided Quantization for Faster Inference of LLMs on the Edge
+AU  - Xuan Shen
+AU  - Peiyan Dong
+AU  - Lu Lei
+AU  - Zhenglun Kong
+AU  - Zhengang Li
+AU  - Lin Ming
+AU  - Chao Wu
+AU  - Yanzhi Wang
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i17.29860
+UR  - https://doi.org/10.1609/aaai.v38i17.29860
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/29860/31499
+ER  - 
+
+TY  - JOUR
+TI  - Benchmarking Large Language Models in Retrieval-Augmented Generation
+AU  - Jiawei Chen
+AU  - Hongyu Lin
+AU  - Xianpei Han
+AU  - Le Sun
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i16.29728
+UR  - https://doi.org/10.1609/aaai.v38i16.29728
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/29728/31250
+ER  - 
+
+TY  - JOUR
+TI  - Visual Chain-of-Thought Prompting for Knowledge-Based Visual Reasoning
+AU  - Zhenfang Chen
+AU  - Qinhong Zhou
+AU  - Yikang Shen
+AU  - Yining Hong
+AU  - Zhiqing Sun
+AU  - Dan Gutfreund
+AU  - Chuang Gan
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i2.27888
+UR  - https://doi.org/10.1609/aaai.v38i2.27888
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/27888/27801
+ER  - 
+
+TY  - JOUR
+TI  - Self-Supervised Multi-Modal Knowledge Graph Contrastive Hashing for Cross-Modal Search
+AU  - Meiyu Liang
+AU  - Junping Du
+AU  - Zhengyang Liang
+AU  - Yongwang Xing
+AU  - Wei Huang
+AU  - Zhe Xue
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i12.29280
+UR  - https://doi.org/10.1609/aaai.v38i12.29280
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/29280/30416
+ER  - 
+
+TY  - JOUR
+TI  - Accelerating Text-to-Image Editing via Cache-Enabled Sparse Diffusion Inference
+AU  - Zihao Yu
+AU  - Haoyang Li
+AU  - Fangcheng Fu
+AU  - Xupeng Miao
+AU  - Bin Cui
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i15.29599
+UR  - https://doi.org/10.1609/aaai.v38i15.29599
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/29599/31010
+ER  - 
+
+TY  - JOUR
+TI  - Depth-Guided Robust and Fast Point Cloud Fusion NeRF for Sparse Input Views
+AU  - Shuai Guo
+AU  - Qiuwen Wang
+AU  - Yijie Gao
+AU  - Rong Xie
+AU  - Song Li
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i3.27968
+UR  - https://doi.org/10.1609/aaai.v38i3.27968
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/27968/27955
+ER  - 
+
+TY  - JOUR
+TI  - Large Language Models Are Clinical Reasoners: Reasoning-Aware Diagnosis Framework with Prompt-Generated Rationales
+AU  - Taeyoon Kwon
+AU  - Kai Tzu-iunn Ong
+AU  - Dong-Jin Kang
+AU  - Seungjun Moon
+AU  - Jeong Ryong Lee
+AU  - Dosik Hwang
+AU  - Beomseok Sohn
+AU  - Yongsik Sim
+AU  - Dong Ha Lee
+AU  - Jinyoung Yeo
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i16.29802
+UR  - https://doi.org/10.1609/aaai.v38i16.29802
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/29802/31388
+ER  - 
+
+TY  - JOUR
+TI  - LimeAttack: Local Explainable Method for Textual Hard-Label Adversarial Attack
+AU  - Haiyan Zhu
+AU  - Qinyang Zhao
+AU  - Weiwei Shang
+AU  - Yuren Wu
+AU  - Kai Liu
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i17.29950
+UR  - https://doi.org/10.1609/aaai.v38i17.29950
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/29950/31660
+ER  - 
+
+TY  - JOUR
+TI  - Aspect-Based Sentiment Analysis with Explicit Sentiment Augmentations
+AU  - Jihong Ouyang
+AU  - Zhiyao Yang
+AU  - Silong Liang
+AU  - Bing Wang
+AU  - Yimeng Wang
+AU  - Ximing Li
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i17.29849
+UR  - https://doi.org/10.1609/aaai.v38i17.29849
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/29849/31478
+ER  - 
+
+TY  - JOUR
+TI  - FoX: Formation-Aware Exploration in Multi-Agent Reinforcement Learning
+AU  - Yonghyeon Jo
+AU  - Sunwoo Lee
+AU  - Junghyuk Yeom
+AU  - Seungyul Han
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i12.29196
+UR  - https://doi.org/10.1609/aaai.v38i12.29196
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/29196/30259
+ER  - 
+
+TY  - JOUR
+TI  - Learning to Reweight for Generalizable Graph Neural Network
+AU  - Zhengyu Chen
+AU  - Teng Xiao
+AU  - Kun Kuang
+AU  - Zheqi Lv
+AU  - Min Zhang
+AU  - J. Joshua Yang
+AU  - Chengqiang Lu
+AU  - Hongxia Yang
+AU  - Fei Wu
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i8.28673
+UR  - https://doi.org/10.1609/aaai.v38i8.28673
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/28673/29307
+ER  - 
+
+TY  - JOUR
+TI  - QJL: 1-Bit Quantized JL Transform for KV Cache Quantization with Zero Overhead
+AU  - Amir Zandieh
+AU  - Majid Daliri
+AU  - In‐Su Han
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i24.34773
+UR  - https://doi.org/10.1609/aaai.v39i24.34773
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/34773/36928
+ER  - 
+
+TY  - JOUR
+TI  - ABQ-LLM: Arbitrary-Bit Quantized Inference Acceleration for Large Language Models
+AU  - Chao Zeng
+AU  - Songwei Liu
+AU  - Yusheng Xie
+AU  - Hong Liu
+AU  - Xiaojian Wang
+AU  - Miao Wei
+AU  - Shu Yang
+AU  - Fangmin Chen
+AU  - Xing Mei
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i21.34385
+UR  - https://doi.org/10.1609/aaai.v39i21.34385
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/34385/36540
+ER  - 
+
+TY  - JOUR
+TI  - RMath: A Logic Reasoning-Focused Datasets Toward Mathematical Multistep Reasoning Tasks
+AU  - Ziyi Hu
+AU  - Jun Liu
+AU  - Zhongzhi Liu
+AU  - Yuzhong Liu
+AU  - Zheng Xie
+AU  - Yiping Song
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i22.34585
+UR  - https://doi.org/10.1609/aaai.v39i22.34585
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/34585/36740
+ER  - 
+
+TY  - JOUR
+TI  - LightPROF: A Lightweight Reasoning Framework for Large Language Model on Knowledge Graph
+AU  - Tu Ao
+AU  - Yanhua Yu
+AU  - Yuling Wang
+AU  - Yang Deng
+AU  - Zirui Guo
+AU  - Liang Pang
+AU  - Pinghui Wang
+AU  - Tat‐Seng Chua
+AU  - Xiao Zhang
+AU  - Zhen Cai
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i22.34510
+UR  - https://doi.org/10.1609/aaai.v39i22.34510
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/34510/36665
+ER  - 
+
+TY  - JOUR
+TI  - Harnessing Multimodal Large Language Models for Multimodal Sequential Recommendation
+AU  - Yuyang Ye
+AU  - Zhi Zheng
+AU  - Yishan Shen
+AU  - Tianshu Wang
+AU  - Hengruo Zhang
+AU  - Peijun Zhu
+AU  - Runlong Yu
+AU  - Kai Zhang
+AU  - Hui Xiong
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i12.33426
+UR  - https://doi.org/10.1609/aaai.v39i12.33426
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/33426/35581
+ER  - 
+
+TY  - JOUR
+TI  - DesignEdit: Unify Spatial-Aware Image Editing via Training-free Inpainting with a Multi-Layered Latent Diffusion Framework
+AU  - Yueru Jia
+AU  - Aosong Cheng
+AU  - Yuhui Yuan
+AU  - Chuke Wang
+AU  - Ji Li
+AU  - Huizhu Jia
+AU  - Shanghang Zhang
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i4.32414
+UR  - https://doi.org/10.1609/aaai.v39i4.32414
+ER  - 
+
+TY  - JOUR
+TI  - BloomScene: Lightweight Structured 3D Gaussian Splatting for Crossmodal Scene Generation
+AU  - Xiaolu Hou
+AU  - Mingcheng Li
+AU  - Dingkang Yang
+AU  - Jiawei Chen
+AU  - Ziyun Qian
+AU  - Xiao Guang Zhao
+AU  - Yue Jiang
+AU  - Jinjie Wei
+AU  - Qingyao Xu
+AU  - Lihua Zhang
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i4.32367
+UR  - https://doi.org/10.1609/aaai.v39i4.32367
+ER  - 
+
+TY  - JOUR
+TI  - ProtCLIP: Function-Informed Protein Multi-Modal Learning
+AU  - Hanjing Zhou
+AU  - Mingze Yin
+AU  - Wei Wu
+AU  - Mingyang Li
+AU  - Kun Fu
+AU  - Jintai Chen
+AU  - Jian Wu
+AU  - Zheng Wang
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i21.34456
+UR  - https://doi.org/10.1609/aaai.v39i21.34456
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/34456/36611
+ER  - 
+
+TY  - JOUR
+TI  - Adversarial-Inspired Backdoor Defense via Bridging Backdoor and Adversarial Attacks
+AU  - Jia-Li Yin
+AU  - Weijian Wang
+AU  - Lyhwa
+AU  - Lin Wei
+AU  - Xinghua Li
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i9.33030
+UR  - https://doi.org/10.1609/aaai.v39i9.33030
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/33030/35185
+ER  - 
+
+TY  - JOUR
+TI  - MEDSAGE: Enhancing Robustness of Medical Dialogue Summarization to ASR Errors with LLM-generated Synthetic Dialogues
+AU  - Kuluhan Binici
+AU  - Abhinav Ramesh Kashyap
+AU  - Viktor Schlegel
+AU  - Andy T. Liu
+AU  - Vijay Prakash Dwivedi
+AU  - Thanh-Tung Nguyen
+AU  - Xiaoxue Gao
+AU  - Nancy F. Chen
+AU  - Stefan Winkler
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i22.34518
+UR  - https://doi.org/10.1609/aaai.v39i22.34518
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/34518/36673
+ER  - 
+
+TY  - JOUR
+TI  - LNS2+RL: Combining Multi-agent Reinforcement Learning with Large Neighborhood Search in Multi-agent Path Finding
+AU  - Yutong Wang
+AU  - Tanishq Duhan
+AU  - Jiaoyang Li
+AU  - Guillaume Sartoretti
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i22.34501
+UR  - https://doi.org/10.1609/aaai.v39i22.34501
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/34501/36656
+ER  - 
+
+TY  - JOUR
+TI  - Deep Multi-modal Graph Clustering via Graph Transformer Network
+AU  - Qianqian Wang
+AU  - Haiming Xu
+AU  - Zihao Zhang
+AU  - Wei Feng
+AU  - Quanxue Gao
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i8.32844
+UR  - https://doi.org/10.1609/aaai.v39i8.32844
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/32844/34999
+ER  - 

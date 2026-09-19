@@ -214,3 +214,404 @@ DO  - 10.18653/v1/2026.findings-acl.2116
 UR  - https://aclanthology.org/2026.findings-acl.2116/
 L1  - https://aclanthology.org/2026.findings-acl.2116.pdf
 ER  - 
+
+TY  - CPRO
+TI  - Unlocking Data-free Low-bit Quantization with Matrix Decomposition for KV Cache Compression
+AU  - Peiyu Liu
+AU  - Ze-Feng Gao
+AU  - Xin Zhao
+AU  - Yipeng Ma
+AU  - Tao Wang
+AU  - Ji-Rong Wen
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 2430
+EP  - 2440
+DO  - 10.18653/v1/2024.acl-long.133
+UR  - https://aclanthology.org/2024.acl-long.133/
+L1  - https://aclanthology.org/2024.acl-long.133.pdf
+ER  - 
+
+TY  - CPRO
+TI  - LoRAPrune: Structured Pruning Meets Low-Rank Parameter-Efficient Fine-Tuning
+AU  - Mingyang Zhang
+AU  - Hao Chen
+AU  - Chunhua Shen
+AU  - Zhen Yang
+AU  - Linlin Ou
+AU  - Xinyi Yu
+AU  - Bohan Zhuang
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 3013
+EP  - 3026
+DO  - 10.18653/v1/2024.findings-acl.178
+UR  - https://aclanthology.org/2024.findings-acl.178/
+L1  - https://aclanthology.org/2024.findings-acl.178.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Active Prompting with Chain-of-Thought for Large Language Models
+AU  - Shizhe Diao
+AU  - Pengcheng Wang
+AU  - Yong Lin
+AU  - Rui Pan
+AU  - Xiang Liu
+AU  - Tong Zhang
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 1330
+EP  - 1350
+DO  - 10.18653/v1/2024.acl-long.73
+UR  - https://aclanthology.org/2024.acl-long.73/
+L1  - https://aclanthology.org/2024.acl-long.73.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Self-Alignment for Factuality: Mitigating Hallucinations in LLMs via Self-Evaluation
+AU  - Xiaoying Zhang
+AU  - Baolin Peng
+AU  - Ye Tian
+AU  - Jingyan Zhou
+AU  - Lifeng Jin
+AU  - Linfeng Song
+AU  - Haitao Mi
+AU  - Helen Meng
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 1946
+EP  - 1965
+DO  - 10.18653/v1/2024.acl-long.107
+UR  - https://aclanthology.org/2024.acl-long.107/
+L1  - https://aclanthology.org/2024.acl-long.107.pdf
+ER  - 
+
+TY  - CPRO
+TI  - M-RAG: Reinforcing Large Language Model Performance through Retrieval-Augmented Generation with Multiple Partitions
+AU  - Zheng Wang
+AU  - Shu Teo
+AU  - Jieer Ouyang
+AU  - Yongjun Xu
+AU  - Wei Shi
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 1966
+EP  - 1978
+DO  - 10.18653/v1/2024.acl-long.108
+UR  - https://aclanthology.org/2024.acl-long.108/
+L1  - https://aclanthology.org/2024.acl-long.108.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Advancement in Graph Understanding: A Multimodal Benchmark and Fine-Tuning of Vision-Language Models
+AU  - Qihang Ai
+AU  - Jiafan Li
+AU  - Jincheng Dai
+AU  - Jianwu Zhou
+AU  - Lemao Liu
+AU  - Haiyun Jiang
+AU  - Shuming Shi
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 7485
+EP  - 7501
+DO  - 10.18653/v1/2024.acl-long.404
+UR  - https://aclanthology.org/2024.acl-long.404/
+L1  - https://aclanthology.org/2024.acl-long.404.pdf
+ER  - 
+
+TY  - CPRO
+TI  - UNIMO-G: Unified Image Generation through Multimodal Conditional Diffusion
+AU  - Wei Li
+AU  - Xue Xu
+AU  - Jiachen Liu
+AU  - Xinyan Xiao
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 6173
+EP  - 6188
+DO  - 10.18653/v1/2024.acl-long.335
+UR  - https://aclanthology.org/2024.acl-long.335/
+L1  - https://aclanthology.org/2024.acl-long.335.pdf
+ER  - 
+
+TY  - CPRO
+TI  - RAM-EHR: Retrieval Augmentation Meets Clinical Predictions on Electronic Health Records
+AU  - Ran Xu
+AU  - Wenqi Shi
+AU  - Yue Yu
+AU  - Yuchen Zhuang
+AU  - Bowen Jin
+AU  - May Wang
+AU  - Joyce Ho
+AU  - Carl Yang
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 754
+EP  - 765
+DO  - 10.18653/v1/2024.acl-short.68
+UR  - https://aclanthology.org/2024.acl-short.68/
+L1  - https://aclanthology.org/2024.acl-short.68.pdf
+ER  - 
+
+TY  - CPRO
+TI  - A Comprehensive Study of Jailbreak Attack versus Defense for Large Language Models
+AU  - Zihao Xu
+AU  - Yi Liu
+AU  - Gelei Deng
+AU  - Yuekang Li
+AU  - Stjepan Picek
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 7432
+EP  - 7449
+DO  - 10.18653/v1/2024.findings-acl.443
+UR  - https://aclanthology.org/2024.findings-acl.443/
+L1  - https://aclanthology.org/2024.findings-acl.443.pdf
+ER  - 
+
+TY  - CPRO
+TI  - CodeScope: An Execution-based Multilingual Multitask Multidimensional Benchmark for Evaluating LLMs on Code Understanding and Generation
+AU  - Weixiang Yan
+AU  - Haitian Liu
+AU  - Yunkun Wang
+AU  - Yunzhe Li
+AU  - Qian Chen
+AU  - Wen Wang
+AU  - Tingyu Lin
+AU  - Weishan Zhao
+AU  - Li Zhu
+AU  - Hari Sundaram
+AU  - Shuiguang Deng
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 5511
+EP  - 5558
+DO  - 10.18653/v1/2024.acl-long.301
+UR  - https://aclanthology.org/2024.acl-long.301/
+L1  - https://aclanthology.org/2024.acl-long.301.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Planning Like Human: A Dual-process Framework for Dialogue Planning
+AU  - Tao He
+AU  - Lizi Liao
+AU  - Yixin Cao
+AU  - Yuanxing Liu
+AU  - Ming Liu
+AU  - Zerui Chen
+AU  - Bing Qin
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 4768
+EP  - 4791
+DO  - 10.18653/v1/2024.acl-long.262
+UR  - https://aclanthology.org/2024.acl-long.262/
+L1  - https://aclanthology.org/2024.acl-long.262.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Towards Better Understanding of Contrastive Sentence Representation Learning: A Unified Paradigm for Gradient
+AU  - Mingxin Li
+AU  - Richong Zhang
+AU  - Zhijie Nie
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 14506
+EP  - 14521
+DO  - 10.18653/v1/2024.acl-long.780
+UR  - https://aclanthology.org/2024.acl-long.780/
+L1  - https://aclanthology.org/2024.acl-long.780.pdf
+ER  - 
+
+TY  - CPRO
+TI  - MobiLoRA: Accelerating LoRA-based LLM Inference on Mobile Devices via Context-aware KV Cache Optimization
+AU  - Borui Li
+AU  - Yitao Wang
+AU  - Haoran Ma
+AU  - Ligeng Chen
+AU  - Jun Xiao
+AU  - Shuai Wang
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 23400
+EP  - 23410
+DO  - 10.18653/v1/2025.acl-long.1140
+UR  - https://aclanthology.org/2025.acl-long.1140/
+L1  - https://aclanthology.org/2025.acl-long.1140.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Quaff: Quantized Parameter-Efficient Fine-Tuning under Outlier Spatial Stability Hypothesis
+AU  - Hong Huang
+AU  - Dapeng Wu
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 6481
+EP  - 6496
+DO  - 10.18653/v1/2025.acl-long.325
+UR  - https://aclanthology.org/2025.acl-long.325/
+L1  - https://aclanthology.org/2025.acl-long.325.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Agentic Reasoning: A Streamlined Framework for Enhancing LLM Reasoning with Agentic Tools
+AU  - Junde Wu
+AU  - Jiayuan Zhu
+AU  - Yuyuan Liu
+AU  - Min Xu
+AU  - Yueming Jin
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 28489
+EP  - 28503
+DO  - 10.18653/v1/2025.acl-long.1383
+UR  - https://aclanthology.org/2025.acl-long.1383/
+L1  - https://aclanthology.org/2025.acl-long.1383.pdf
+ER  - 
+
+TY  - CPRO
+TI  - TRACT: Regression-Aware Fine-tuning Meets Chain-of-Thought Reasoning for LLM-as-a-Judge
+AU  - Cheng-Han Chiang
+AU  - Hung-yi Lee
+AU  - Michal Lukasik
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 2934
+EP  - 2952
+DO  - 10.18653/v1/2025.acl-long.147
+UR  - https://aclanthology.org/2025.acl-long.147/
+L1  - https://aclanthology.org/2025.acl-long.147.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Jailbreak Large Vision-Language Models Through Multi-Modal Linkage
+AU  - Yu Wang
+AU  - Xiaofei Zhou
+AU  - Yichen Wang
+AU  - Geyuan Zhang
+AU  - Tianxing He
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 1466
+EP  - 1494
+DO  - 10.18653/v1/2025.acl-long.74
+UR  - https://aclanthology.org/2025.acl-long.74/
+L1  - https://aclanthology.org/2025.acl-long.74.pdf
+ER  - 
+
+TY  - CPRO
+TI  - AlignMMBench: Evaluating Chinese Multimodal Alignment in Large Vision-Language Models
+AU  - Yuhang Wu
+AU  - Wenmeng Yu
+AU  - Yean Cheng
+AU  - Yan Wang
+AU  - Xiaohan Zhang
+AU  - Jiazheng Xu
+AU  - Ming Ding
+AU  - Yuxiao Dong
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 6541
+EP  - 6558
+DO  - 10.18653/v1/2025.acl-long.327
+UR  - https://aclanthology.org/2025.acl-long.327/
+L1  - https://aclanthology.org/2025.acl-long.327.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Segment-Level Diffusion: A Framework for Controllable Long-Form Generation with Diffusion Language Models
+AU  - Xiaochen Zhu
+AU  - Georgi Karadzhov
+AU  - Chenxi Whitehouse
+AU  - Andreas Vlachos
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 4163
+EP  - 4183
+DO  - 10.18653/v1/2025.acl-long.210
+UR  - https://aclanthology.org/2025.acl-long.210/
+L1  - https://aclanthology.org/2025.acl-long.210.pdf
+ER  - 
+
+TY  - CPRO
+TI  - DiaLLMs: EHR-Enhanced Clinical Conversational System for Clinical Test Recommendation and Diagnosis Prediction
+AU  - Weijieying Ren
+AU  - Tianxiang Zhao
+AU  - Lei Wang
+AU  - Tianchun Wang
+AU  - Vasant Honavar
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 25622
+EP  - 25635
+DO  - 10.18653/v1/2025.findings-acl.1313
+UR  - https://aclanthology.org/2025.findings-acl.1313/
+L1  - https://aclanthology.org/2025.findings-acl.1313.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Defense Against Prompt Injection Attack by Leveraging Attack Techniques
+AU  - Yulin Chen
+AU  - Haoran Li
+AU  - Zihao Zheng
+AU  - Dekai Wu
+AU  - Yangqiu Song
+AU  - Bryan Hooi
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 18331
+EP  - 18347
+DO  - 10.18653/v1/2025.acl-long.897
+UR  - https://aclanthology.org/2025.acl-long.897/
+L1  - https://aclanthology.org/2025.acl-long.897.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Ontology-Guided Reverse Thinking Makes Large Language Models Stronger on Knowledge Graph Question Answering
+AU  - Runxuan Liu
+AU  - Bei Luo
+AU  - Jiaqi Li
+AU  - Baoxin Wang
+AU  - Ming Liu
+AU  - Dayong Wu
+AU  - Shijin Wang
+AU  - Bing Qin
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 15269
+EP  - 15284
+DO  - 10.18653/v1/2025.acl-long.741
+UR  - https://aclanthology.org/2025.acl-long.741/
+L1  - https://aclanthology.org/2025.acl-long.741.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Advancing Collaborative Debates with Role Differentiation through Multi-Agent Reinforcement Learning
+AU  - Haoran Li
+AU  - Ziyi Su
+AU  - Yun Xue
+AU  - Zhiliang Tian
+AU  - Yiping Song
+AU  - Minlie Huang
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 22655
+EP  - 22666
+DO  - 10.18653/v1/2025.acl-long.1105
+UR  - https://aclanthology.org/2025.acl-long.1105/
+L1  - https://aclanthology.org/2025.acl-long.1105.pdf
+ER  - 
+
+TY  - CPRO
+TI  - GNN-RAG: Graph Neural Retrieval for Efficient Large Language Model Reasoning on Knowledge Graphs
+AU  - Costas Mavromatis
+AU  - George Karypis
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 16682
+EP  - 16699
+DO  - 10.18653/v1/2025.findings-acl.856
+UR  - https://aclanthology.org/2025.findings-acl.856/
+L1  - https://aclanthology.org/2025.findings-acl.856.pdf
+ER  - 

@@ -1,81 +1,81 @@
 {
-  "generated_at": "2026-09-19T08:53:08",
-  "official_bibtex": 48,
+  "generated_at": "2026-09-19T11:24:27",
+  "official_bibtex": 132,
   "files": {
     "all.bib": {
       "format": "bib",
-      "papers": 48,
-      "bytes": 30322
+      "papers": 132,
+      "bytes": 81597
     },
     "all.ris": {
       "format": "ris",
-      "papers": 48,
-      "bytes": 27080
+      "papers": 132,
+      "bytes": 71903
     },
     "all.md": {
       "format": "md",
-      "papers": 48,
-      "bytes": 20144
+      "papers": 132,
+      "bytes": 53636
     },
     "cvpr.bib": {
       "format": "bib",
-      "papers": 12,
-      "bytes": 6252
+      "papers": 36,
+      "bytes": 17570
     },
     "cvpr.ris": {
       "format": "ris",
-      "papers": 12,
-      "bytes": 8288
+      "papers": 36,
+      "bytes": 23574
     },
     "cvpr.md": {
       "format": "md",
-      "papers": 12,
-      "bytes": 5578
+      "papers": 36,
+      "bytes": 15561
     },
     "aaai.bib": {
       "format": "bib",
-      "papers": 12,
-      "bytes": 7265
+      "papers": 36,
+      "bytes": 21694
     },
     "aaai.ris": {
       "format": "ris",
-      "papers": 12,
-      "bytes": 4852
+      "papers": 36,
+      "bytes": 15728
     },
     "aaai.md": {
       "format": "md",
-      "papers": 12,
-      "bytes": 4549
+      "papers": 36,
+      "bytes": 13505
     },
     "iccv.bib": {
       "format": "bib",
-      "papers": 12,
-      "bytes": 6094
+      "papers": 24,
+      "bytes": 11838
     },
     "iccv.ris": {
       "format": "ris",
-      "papers": 12,
-      "bytes": 8032
+      "papers": 24,
+      "bytes": 15645
     },
     "iccv.md": {
       "format": "md",
-      "papers": 12,
-      "bytes": 5329
+      "papers": 24,
+      "bytes": 10297
     },
     "acl.bib": {
       "format": "bib",
-      "papers": 12,
-      "bytes": 11089
+      "papers": 36,
+      "bytes": 30871
     },
     "acl.ris": {
       "format": "ris",
-      "papers": 12,
-      "bytes": 5905
+      "papers": 36,
+      "bytes": 16953
     },
     "acl.md": {
       "format": "md",
-      "papers": 12,
-      "bytes": 5090
+      "papers": 36,
+      "bytes": 14674
     }
   }
 }

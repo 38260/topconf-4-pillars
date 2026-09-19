@@ -1,0 +1,163 @@
+{
+  "venue": "ACL 2025",
+  "translated_by": "本项目逐篇人工翻译（对照 ACL Anthology 论文页官方摘要）",
+  "translated_at": "2026-09-19",
+  "papers": [
+    {
+      "id": "acl-121-acl-2025.acl-long.1140",
+      "title_zh": "MobiLoRA：通过上下文感知的 KV 缓存优化加速移动设备上基于 LoRA 的大模型推理",
+      "abstract_zh": "在移动设备上以低秩适配（LoRA）部署大语言模型（LLM）很有前景：它既能完成多样的领域专属任务，又能保障隐私与可获得性。本文提出 MobiLoRA，用于加速移动设备上基于 LoRA 的 LLM 推理。鉴于移动设备算力与显存有限，MobiLoRA 聚焦于优化键值（KV）缓存。其关键洞见在于为端侧 LoRA 服务利用两类上下文：语义级上下文（例如共享前缀的提示）与系统级上下文（例如 LLM 请求所在应用的状态，如前台运行或被杀）。具体地，针对语义级上下文，MobiLoRA 提出相似度感知的差分编码，利用不同 LoRA 适配器之间 KV 缓存的 token 级相似性，实现高效存储与复用；此外，MobiLoRA 主张上下文感知的 KV 缓存管理，结合系统级上下文来优化缓存的保留与逐出。我们完整实现了 MobiLoRA，并用真实移动设备负载轨迹与最先进的 LLM 服务框架对比。结果表明，MobiLoRA 在移动设备上把基于 LoRA 的 LLM 推理加速 57.6%。",
+      "topics": ["edge-efficiency", "llm", "architectures"],
+      "keywords": [
+        {"en": "mobile LLM serving", "zh": "移动端大模型服务"},
+        {"en": "context-aware cache management", "zh": "上下文感知缓存管理"},
+        {"en": "similarity-aware delta encoding", "zh": "相似度感知差分编码"},
+        {"en": "LoRA adapters", "zh": "LoRA 适配器"},
+        {"en": "KV cache reuse", "zh": "KV 缓存复用"}
+      ]
+    },
+    {
+      "id": "acl-122-acl-2025.acl-long.325",
+      "title_zh": "Quaff：离群值空间稳定假设下的量化参数高效微调",
+      "abstract_zh": "大语言模型（LLM）在众多领域取得了令人振奋的成果，但把任务专属微调部署到资源受限的个人设备上，仍受阻于高昂的计算与显存需求。量化提供了一条高效路径，但现有方法难以兼顾性能与开销：要么带来高额计算/显存成本，要么无法处理激活离群值——这是量化微调中的关键瓶颈。为此我们提出离群值空间稳定假设（OSSH）：在微调过程中，某些激活离群通道在多次训练迭代间保持空间位置稳定。基于 OSSH，我们提出 Quaff——面向 LLM 的量化参数高效微调框架，通过定向动量缩放优化低精度激活表征。Quaff 用轻量运算只在「不变通道」上动态抑制离群值，省去全精度权重存储与全局重新缩放，同时降低量化误差。在十个基准上的大量实验验证了 OSSH 并证明了 Quaff 的有效性：具体地，在 GPQA 推理基准上，Quaff 相比全精度微调实现 1.73 倍延迟降低与 30% 显存节省，同时在 Phi-3 模型上把准确率提升 0.6%，调和了效率、性能与可部署性三者的权衡。通过让消费者级 GPU（如 RTX 2080 Super）也能做微调且不损失模型能力，Quaff 让个性化 LLM 部署走向普惠。代码见 https://anonymous.4open.science/r/Quaff-B322/。",
+      "topics": ["edge-efficiency", "llm", "architectures"],
+      "keywords": [
+        {"en": "quantized fine-tuning", "zh": "量化微调"},
+        {"en": "outlier spatial stability", "zh": "离群值空间稳定"},
+        {"en": "momentum scaling", "zh": "动量缩放"},
+        {"en": "consumer GPU", "zh": "消费级显卡"},
+        {"en": "activation outliers", "zh": "激活离群值"}
+      ]
+    },
+    {
+      "id": "acl-123-acl-2025.acl-long.1383",
+      "title_zh": "智能体推理：借助智能体工具增强大模型推理的精简框架",
+      "abstract_zh": "我们提出「智能体推理」框架，通过集成外部「使用工具的智能体」来增强大语言模型（LLM）的推理能力。该框架动态调用网页搜索、代码执行与结构化记忆，以解决需要深度研究的复杂问题。我们框架的一项关键创新是 Mind-Map 智能体：它构建结构化知识图谱来存储推理上下文并追踪逻辑关系，从而在需要大量工具使用的长推理链中保持一致性。此外，我们对 Web-Search 智能体做了全面探索，得到一套高效的搜索机制，优于此前所有方法。把本方法部署在 DeepSeek-R1 上后，它在公开模型中创下新的当前最优成绩，并与该领域领先的专有模型 OpenAI Deep Research 表现相当。大量消融实验验证了智能体工具的最优选择，也确认了 Mind-Map 与 Web-Search 两类智能体在增强 LLM 推理上的有效性。代码与数据已公开。",
+      "topics": ["llm", "language-nlp", "architectures"],
+      "keywords": [
+        {"en": "agentic reasoning", "zh": "智能体推理"},
+        {"en": "structured knowledge graph", "zh": "结构化知识图谱"},
+        {"en": "web search agent", "zh": "网页搜索智能体"},
+        {"en": "deep research", "zh": "深度研究"},
+        {"en": "tool integration", "zh": "工具集成"}
+      ]
+    },
+    {
+      "id": "acl-124-acl-2025.acl-long.147",
+      "title_zh": "TRACT：把回归感知微调与思维链推理结合，用于「大模型当评委」",
+      "abstract_zh": "「大模型当评委」（LLM-as-a-judge）范式使用大语言模型（LLM）做自动化文本评测：依据评分细则给输入打一个分数。现有的评委 LLM 微调方法使用交叉熵（CE）损失，忽视了分数预测的数值本质。近期工作通过回归感知微调来解决 LLM 微调的数值预测局限，但并未把思维链（CoT）推理用于分数预测。本文提出 TRACT（带 CoT 的两阶段回归感知微调），把 CoT 推理与回归感知训练结合起来。TRACT 采用两阶段流程：先微调种子 LLM 以生成 CoT，把这些 CoT 作为第二阶段的训练数据；随后用这些自生成的 CoT 重新训练种子 LLM。TRACT 的微调目标对 CoT 推理使用 CE 损失、对分数使用回归感知损失。在四个评委类数据集与两种 LLM 上的实验表明，TRACT 显著优于现有方法；大量消融实验也验证了 TRACT 各组件的有效性。",
+      "topics": ["trustworthy", "llm"],
+      "keywords": [
+        {"en": "LLM-as-a-judge", "zh": "大模型当评委"},
+        {"en": "regression-aware fine-tuning", "zh": "回归感知微调"},
+        {"en": "score prediction", "zh": "分数预测"},
+        {"en": "chain-of-thought", "zh": "思维链"},
+        {"en": "evaluation rubrics", "zh": "评分细则"}
+      ]
+    },
+    {
+      "id": "acl-125-acl-2025.acl-long.74",
+      "title_zh": "通过多模态联动对大型视觉语言模型实施越狱",
+      "abstract_zh": "随着大型视觉语言模型（VLM）快速进步，人们对其潜在滥用与恶用的担忧也在迅速增长。已有研究揭示了 VLM 对越狱攻击的脆弱性：精心构造的输入可诱导模型产出违反伦理与法律标准的内容。然而当前的越狱方法在 GPT-4o 这类前沿模型上常常失效。我们把它归因于两点：有害信息过度暴露，以及缺少隐蔽的恶意引导。本工作提出新的越狱框架——多模态联动（MML）攻击。受密码学启发，MML 在文本与图像模态之间采用「加密—解密」流程，以缓解恶意信息的过度暴露；为隐蔽地把模型输出对齐到有害目标，MML 使用我们称为「邪恶对齐」的技术，把攻击包装在「电子游戏开发」的叙事情境中。大量实验验证了 MML 的有效性：具体地，MML 对 GPT-4o 的越狱成功率在 SafeBench 上达 99.40%、MM-SafeBench 上 98.81%、HADES 数据集上 99.07%。代码见 https://github.com/wangyu-ovo/MML。",
+      "topics": ["multimodal", "trustworthy", "llm"],
+      "keywords": [
+        {"en": "jailbreak attack", "zh": "越狱攻击"},
+        {"en": "multi-modal linkage", "zh": "多模态联动"},
+        {"en": "encryption-decryption analogy", "zh": "加解密类比"},
+        {"en": "narrative camouflage", "zh": "叙事伪装"},
+        {"en": "attack success rate", "zh": "攻击成功率"}
+      ]
+    },
+    {
+      "id": "acl-126-acl-2025.acl-long.327",
+      "title_zh": "AlignMMBench：评测大型视觉语言模型的中文多模态对齐能力",
+      "abstract_zh": "评测大型视觉语言模型（VLM）的对齐能力，是判断其能否胜任「有用助手」的关键。然而现有基准主要用非言语方式（如是/否判断、选择题）考察基础能力。本文填补这一空白，提出 AlignMMBench：它能对对齐能力做更细致的评估，也是首个专为中文视觉情境设计的基准。该基准精心取材于真实场景与互联网资源，覆盖三大类共十三项具体任务，并包含单轮与多轮对话情境。结合提示改写策略后，AlignMMBench 含 1,054 张图像与 4,978 组问答对。为支撑评测流程，我们开发了规则校准的评测器 CritiqueVLM，其评测能力超过 GPT-4。此外我们度量「对齐分数」这一量化指标，用以评估模型在多样提示下的稳健性与稳定性。最后我们评测了代表性 VLM 在 AlignMMBench 上的表现，为不同 VLM 架构的能力与局限提供洞见。评测代码与数据见 https://github.com/THUDM/AlignMMBench。",
+      "topics": ["multimodal", "trustworthy", "language-nlp"],
+      "keywords": [
+        {"en": "Chinese multimodal benchmark", "zh": "中文多模态基准"},
+        {"en": "alignment capability", "zh": "对齐能力"},
+        {"en": "multi-turn dialogue", "zh": "多轮对话"},
+        {"en": "rule-calibrated evaluator", "zh": "规则校准评测器"},
+        {"en": "robustness score", "zh": "稳健性分数"}
+      ]
+    },
+    {
+      "id": "acl-127-acl-2025.acl-long.210",
+      "title_zh": "片段级扩散：用扩散语言模型实现可控长文本生成的框架",
+      "abstract_zh": "扩散模型在文本生成上已显示潜力，却常难以生成长度充足、连贯且上下文准确的文本。token 级扩散没有显式建模词序依赖，且工作于短小的固定输出窗口；段落级扩散则难以为长文本学到稳健的表征。为解决这些问题，我们提出片段级扩散（SLD）：通过文本切分、结合对抗学习与对比学习的稳健表征训练，以及改进的潜空间引导，增强基于扩散的文本生成。SLD 把长文本输出切分为多个潜表征，再用自回归解码器解码，从而简化扩散预测并提升可扩展性。在四个数据集上的实验表明，与其他扩散式和自回归基线相比，SLD 在自动评测与人工评测中都取得可比或更优的流畅度、连贯性与上下文契合度。",
+      "topics": ["generative", "language-nlp"],
+      "keywords": [
+        {"en": "diffusion language model", "zh": "扩散语言模型"},
+        {"en": "long-form text generation", "zh": "长文本生成"},
+        {"en": "segment-level latent", "zh": "片段级潜表征"},
+        {"en": "latent-space guidance", "zh": "潜空间引导"},
+        {"en": "autoregressive decoding", "zh": "自回归解码"}
+      ]
+    },
+    {
+      "id": "acl-128-acl-2025.findings-acl.1313",
+      "title_zh": "DiaLLM：由电子健康档案增强、用于临床检查推荐与诊断预测的临床对话系统",
+      "abstract_zh": "大语言模型（LLM）的最新进展让医疗咨询取得了显著进步。然而现有医学 LLM 忽视了电子健康档案（EHR）的关键作用，且主要聚焦诊断推荐，临床适用性受限。我们提出 DiaLLM——首个把异构 EHR 数据整合进「有临床依据的对话」的医学 LLM，可完成临床检查推荐、结果解读与诊断预测，从而更贴合真实医疗实践。为从 EHR 构造有临床依据的对话，我们设计了临床检查参照（CTR）策略：把每个临床编码映射到其对应描述，并把检查结果归类为「正常」或「异常」。此外，DiaLLM 采用强化学习框架来取证与自动诊断；为处理巨大的动作空间，引入拒绝采样策略以减少冗余、提升探索效率；并设计了确认奖励与类敏感诊断奖励来引导准确的诊断预测。大量实验表明，DiaLLM 在临床检查推荐与诊断预测上均优于基线。代码已在 GitHub 公开。",
+      "topics": ["medical-science", "llm", "rl-decision"],
+      "keywords": [
+        {"en": "clinical test recommendation", "zh": "临床检查推荐"},
+        {"en": "electronic health records", "zh": "电子健康档案"},
+        {"en": "grounded dialogue construction", "zh": "有据对话构造"},
+        {"en": "reject sampling", "zh": "拒绝采样"},
+        {"en": "class-sensitive reward", "zh": "类敏感奖励"}
+      ]
+    },
+    {
+      "id": "acl-129-acl-2025.acl-long.897",
+      "title_zh": "借力攻击技术来防御提示注入攻击",
+      "abstract_zh": "随着技术进步，大语言模型（LLM）在各类自然语言处理任务上表现卓越，支撑起 Microsoft Copilot 这类集成 LLM 的应用。但随着 LLM 持续演进，新的脆弱性不断出现，提示注入攻击尤为突出：这类攻击诱使 LLM 偏离原始输入指令，转而去执行攻击者注入在数据内容（例如检索结果）中的指令。近期攻击方法利用 LLM 的指令跟随能力、以及其难以分辨「注入在数据内容中的指令」这一缺陷，取得很高的攻击成功率（ASR）。在对比攻防方法时我们有趣地发现：二者的设计目标其实相似——都是让模型忽略不想要的指令、转而执行想要的指令。由此我们提出一个直觉性的问题：能否把攻击技术用于防御？本文反转提示注入方法的意图，在此前「免训练攻击方法」的基础上构建新的防御方法：重复攻击流程，但把目标换成原始输入指令而非被注入的指令。大量实验表明，我们的防御技术优于现有防御方案，取得当前最优结果。",
+      "topics": ["trustworthy", "llm"],
+      "keywords": [
+        {"en": "prompt injection defense", "zh": "提示注入防御"},
+        {"en": "instruction hierarchy", "zh": "指令层级"},
+        {"en": "attack-inspired defense", "zh": "攻击启发的防御"},
+        {"en": "retrieved content poisoning", "zh": "检索内容投毒"},
+        {"en": "training-free method", "zh": "免训练方法"}
+      ]
+    },
+    {
+      "id": "acl-130-acl-2025.acl-long.741",
+      "title_zh": "本体引导的逆向思维让大模型在知识图谱问答上更强",
+      "abstract_zh": "大语言模型（LLM）在自然语言处理上能力出众，但在知识图谱问答（KGQA）任务中，对需要多跳推理的问题仍存在回答不好的情况。现有方法依赖实体向量匹配，但「问题的目的」是抽象的，难以与具体实体相匹配；于是很难建立起通向该目的的推理路径，造成信息丢失与冗余。为解决这一问题，受人类逆向思维启发，我们提出本体引导的逆向思考（ORT）——一个从「目的」反向构造推理路径回到「条件」的新框架。ORT 分三个关键阶段：（1）用 LLM 抽取目的标签与条件标签；（2）基于 KG 本体构建标签层面的推理路径；（3）用这些标签推理路径引导知识检索。在 WebQSP 与 CWQ 数据集上的实验表明，ORT 取得当前最优性能，并显著增强 LLM 处理 KGQA 的能力。",
+      "topics": ["language-nlp", "architectures", "llm"],
+      "keywords": [
+        {"en": "knowledge graph question answering", "zh": "知识图谱问答"},
+        {"en": "reverse thinking", "zh": "逆向思维"},
+        {"en": "ontology-guided paths", "zh": "本体引导路径"},
+        {"en": "multi-hop reasoning", "zh": "多跳推理"},
+        {"en": "label reasoning", "zh": "标签推理"}
+      ]
+    },
+    {
+      "id": "acl-131-acl-2025.acl-long.1105",
+      "title_zh": "用多智能体强化学习推进「角色分化」的协作辩论",
+      "abstract_zh": "多智能体协作任务在自然语言应用与生成中表现出众。通过提示各智能体分派明确角色，可以促进协作并在多个 LLM 之间形成能力互补。一种常见策略是采用较为通用的角色分配机制，例如引入「评委」或「总结者」，但这类做法缺少依据任务特性做任务专属的角色定制。另一种策略是基于领域知识与任务特性分解任务，再按各 LLM 的所长分派合适角色（如程序员与测试员），但在某些给定任务中，很难获得与任务特性相关的领域知识，也难以了解不同 LLM 各自的优势。为解决这些问题，我们提出具备自动角色分配能力的多 LLM 协作（MLC）框架。其核心思想是：先随机初始化角色分配，再让角色嵌入与下游任务联合学习。为刻画多个 LLM 在轮流发言中的状态转移，角色嵌入是序列感知的；同时为避免角色收敛，MLC 中的角色分化模块在保证 LLM 团队一致性的前提下，鼓励各 LLM 行为分化，从优化层面引导不同 LLM 发展出互补的能力。在七个数据集上的实验表明，MLC 显著增强了协作与专业化水平，能够协同求解多智能体任务。",
+      "topics": ["rl-decision", "llm", "language-nlp"],
+      "keywords": [
+        {"en": "multi-agent collaboration", "zh": "多智能体协作"},
+        {"en": "automatic role assignment", "zh": "自动角色分配"},
+        {"en": "role embedding", "zh": "角色嵌入"},
+        {"en": "collaborative debate", "zh": "协作辩论"},
+        {"en": "turn-based speaking", "zh": "轮流发言"}
+      ]
+    },
+    {
+      "id": "acl-132-acl-2025.findings-acl.856",
+      "title_zh": "GNN-RAG：面向高效知识图谱大模型推理的图神经检索",
+      "abstract_zh": "知识图谱问答（KGQA）中的检索增强生成（RAG）通过引入从知识图谱检索到的信息来扩充大语言模型（LLM）的上下文。多数最新方法依赖代价高昂的 LLM 调用来生成可执行的关系路径或遍历知识图谱，这在复杂 KGQA 任务（如涉及多跳或多实体的问题）上效率很低。我们提出 GNN-RAG 框架，用轻量的图神经网络（GNN）实现有效且高效的图检索：GNN 学习根据节点与问题的相关性、以及其邻居节点的相关性为节点赋重要性权重，使框架能够有效利用图中更深层的上下文，提升检索性能。GNN-RAG 检索连接「问题实体」与「GNN 候选答案」的最短路径，并把这些信息作为上下文提供给 LLM。实验结果表明，GNN-RAG 在两个广泛使用的 KGQA 基准（WebQSP 与 CWQ）上都能有效检索，用一个 7B 微调 LLM 即可超越或匹敌 GPT-4 的表现；在多跳与多实体问题上尤其出色，答案 F1 比基于 LLM 的检索方法高 8.9–15.5 个百分点；此外它在只用九分之一知识图谱 token 的情况下超越了长上下文推理。代码见 https://github.com/cmavro/GNN-RAG。",
+      "topics": ["architectures", "language-nlp", "edge-efficiency"],
+      "keywords": [
+        {"en": "graph neural retrieval", "zh": "图神经检索"},
+        {"en": "knowledge graph question answering", "zh": "知识图谱问答"},
+        {"en": "shortest path context", "zh": "最短路径上下文"},
+        {"en": "node importance weighting", "zh": "节点重要性加权"},
+        {"en": "token efficiency", "zh": "token 效率"}
+      ]
+    }
+  ]
+}

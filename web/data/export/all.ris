@@ -797,3 +797,1354 @@ DO  - 10.18653/v1/2026.findings-acl.2116
 UR  - https://aclanthology.org/2026.findings-acl.2116/
 L1  - https://aclanthology.org/2026.findings-acl.2116.pdf
 ER  - 
+
+TY  - CPRO
+TI  - MoPE-CLIP: Structured Pruning for Efficient Vision-Language Models with Module-wise Pruning Error Metric
+AU  - Haokun Lin
+AU  - Haoli Bai
+AU  - Zhili Liu
+AU  - Lu Hou
+AU  - Muyi Sun
+AU  - Linqi Song
+AU  - Ying Wei
+AU  - Zhenan Sun
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 27370
+EP  - 27380
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Lin_MoPE-CLIP_Structured_Pruning_for_Efficient_Vision-Language_Models_with_Module-wise_Pruning_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Lin_MoPE-CLIP_Structured_Pruning_for_Efficient_Vision-Language_Models_with_Module-wise_Pruning_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - HMD-Poser: On-Device Real-time Human Motion Tracking from Scalable Sparse Observations
+AU  - Peng Dai
+AU  - Yang Zhang
+AU  - Tao Liu
+AU  - Zhen Fan
+AU  - Tianyuan Du
+AU  - Zhuo Su
+AU  - Xiaozheng Zheng
+AU  - Zeming Li
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 874
+EP  - 884
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Dai_HMD-Poser_On-Device_Real-time_Human_Motion_Tracking_from_Scalable_Sparse_Observations_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Dai_HMD-Poser_On-Device_Real-time_Human_Motion_Tracking_from_Scalable_Sparse_Observations_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - PromptCoT: Align Prompt Distribution via Adapted Chain-of-Thought
+AU  - Junyi Yao
+AU  - Yijiang Liu
+AU  - Zhen Dong
+AU  - Mingfei Guo
+AU  - Helan Hu
+AU  - Kurt Keutzer
+AU  - Li Du
+AU  - Daquan Zhou
+AU  - Shanghang Zhang
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 7027
+EP  - 7037
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Yao_PromptCoT_Align_Prompt_Distribution_via_Adapted_Chain-of-Thought_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Yao_PromptCoT_Align_Prompt_Distribution_via_Adapted_Chain-of-Thought_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Alpha-CLIP: A CLIP Model Focusing on Wherever You Want
+AU  - Zeyi Sun
+AU  - Ye Fang
+AU  - Tong Wu
+AU  - Pan Zhang
+AU  - Yuhang Zang
+AU  - Shu Kong
+AU  - Yuanjun Xiong
+AU  - Dahua Lin
+AU  - Jiaqi Wang
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 13019
+EP  - 13029
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Sun_Alpha-CLIP_A_CLIP_Model_Focusing_on_Wherever_You_Want_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Sun_Alpha-CLIP_A_CLIP_Model_Focusing_on_Wherever_You_Want_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - AV2AV: Direct Audio-Visual Speech to Audio-Visual Speech Translation with Unified Audio-Visual Speech Representation
+AU  - Jeongsoo Choi
+AU  - Se Jin Park
+AU  - Minsu Kim
+AU  - Yong Man Ro
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 27325
+EP  - 27337
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Choi_AV2AV_Direct_Audio-Visual_Speech_to_Audio-Visual_Speech_Translation_with_Unified_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Choi_AV2AV_Direct_Audio-Visual_Speech_to_Audio-Visual_Speech_Translation_with_Unified_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - UFOGen: You Forward Once Large Scale Text-to-Image Generation via Diffusion GANs
+AU  - Yanwu Xu
+AU  - Yang Zhao
+AU  - Zhisheng Xiao
+AU  - Tingbo Hou
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 8196
+EP  - 8206
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Xu_UFOGen_You_Forward_Once_Large_Scale_Text-to-Image_Generation_via_Diffusion_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Xu_UFOGen_You_Forward_Once_Large_Scale_Text-to-Image_Generation_via_Diffusion_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - SuGaR: Surface-Aligned Gaussian Splatting for Efficient 3D Mesh Reconstruction and High-Quality Mesh Rendering
+AU  - Antoine Guédon
+AU  - Vincent Lepetit
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 5354
+EP  - 5363
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Guedon_SuGaR_Surface-Aligned_Gaussian_Splatting_for_Efficient_3D_Mesh_Reconstruction_and_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Guedon_SuGaR_Surface-Aligned_Gaussian_Splatting_for_Efficient_3D_Mesh_Reconstruction_and_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Training Like a Medical Resident: Context-Prior Learning Toward Universal Medical Image Segmentation
+AU  - Yunhe Gao
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 11194
+EP  - 11204
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Gao_Training_Like_a_Medical_Resident_Context-Prior_Learning_Toward_Universal_Medical_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Gao_Training_Like_a_Medical_Resident_Context-Prior_Learning_Toward_Universal_Medical_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - WateRF: Robust Watermarks in Radiance Fields for Protection of Copyrights
+AU  - Youngdong Jang
+AU  - Dong In Lee
+AU  - MinHyuk Jang
+AU  - Jong Wook Kim
+AU  - Feng Yang
+AU  - Sangpil Kim
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 12087
+EP  - 12097
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Jang_WateRF_Robust_Watermarks_in_Radiance_Fields_for_Protection_of_Copyrights_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Jang_WateRF_Robust_Watermarks_in_Radiance_Fields_for_Protection_of_Copyrights_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - FoundationPose: Unified 6D Pose Estimation and Tracking of Novel Objects
+AU  - Bowen Wen
+AU  - Wei Yang
+AU  - Jan Kautz
+AU  - Stan Birchfield
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 17868
+EP  - 17879
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Wen_FoundationPose_Unified_6D_Pose_Estimation_and_Tracking_of_Novel_Objects_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Wen_FoundationPose_Unified_6D_Pose_Estimation_and_Tracking_of_Novel_Objects_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - ViT-CoMer: Vision Transformer with Convolutional Multi-scale Feature Interaction for Dense Predictions
+AU  - Chunlong Xia
+AU  - Xinliang Wang
+AU  - Feng Lv
+AU  - Xin Hao
+AU  - Yifeng Shi
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 5493
+EP  - 5502
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Xia_ViT-CoMer_Vision_Transformer_with_Convolutional_Multi-scale_Feature_Interaction_for_Dense_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Xia_ViT-CoMer_Vision_Transformer_with_Convolutional_Multi-scale_Feature_Interaction_for_Dense_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - DMR: Decomposed Multi-Modality Representations for Frames and Events Fusion in Visual Reinforcement Learning
+AU  - Haoran Xu
+AU  - Peixi Peng
+AU  - Guang Tan
+AU  - Yuan Li
+AU  - Xinhai Xu
+AU  - Yonghong Tian
+PY  - 2024
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 26508
+EP  - 26518
+UR  - https://openaccess.thecvf.com/content/CVPR2024/html/Xu_DMR_Decomposed_Multi-Modality_Representations_for_Frames_and_Events_Fusion_in_CVPR_2024_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2024/papers/Xu_DMR_Decomposed_Multi-Modality_Representations_for_Frames_and_Events_Fusion_in_CVPR_2024_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - MobilePortrait: Real-Time One-Shot Neural Head Avatars on Mobile Devices
+AU  - Jianwen Jiang
+AU  - Gaojie Lin
+AU  - Zhengkun Rong
+AU  - Chao Liang
+AU  - Yongming Zhu
+AU  - Jiaqi Yang
+AU  - Tianyun Zhong
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 15920
+EP  - 15929
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Jiang_MobilePortrait_Real-Time_One-Shot_Neural_Head_Avatars_on_Mobile_Devices_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Jiang_MobilePortrait_Real-Time_One-Shot_Neural_Head_Avatars_on_Mobile_Devices_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - VL2Lite: Task-Specific Knowledge Distillation from Large Vision-Language Models to Lightweight Networks
+AU  - Jinseong Jang
+AU  - Chunfei Ma
+AU  - Byeongwon Lee
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 30073
+EP  - 30083
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Jang_VL2Lite_Task-Specific_Knowledge_Distillation_from_Large_Vision-Language_Models_to_Lightweight_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Jang_VL2Lite_Task-Specific_Knowledge_Distillation_from_Large_Vision-Language_Models_to_Lightweight_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Enhancing Video-LLM Reasoning via Agent-of-Thoughts Distillation
+AU  - Yudi Shi
+AU  - Shangzhe Di
+AU  - Qirui Chen
+AU  - Weidi Xie
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 8523
+EP  - 8533
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Shi_Enhancing_Video-LLM_Reasoning_via_Agent-of-Thoughts_Distillation_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Shi_Enhancing_Video-LLM_Reasoning_via_Agent-of-Thoughts_Distillation_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Critic-V: VLM Critics Help Catch VLM Errors in Multimodal Reasoning
+AU  - Di Zhang
+AU  - Jingdi Lei
+AU  - Junxian Li
+AU  - Xunzhi Wang
+AU  - Yujie Liu
+AU  - Zonglin Yang
+AU  - Jiatong Li
+AU  - Weida Wang
+AU  - Suorong Yang
+AU  - Jianbo Wu
+AU  - Peng Ye
+AU  - Wanli Ouyang
+AU  - Dongzhan Zhou
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 9050
+EP  - 9061
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_Critic-V_VLM_Critics_Help_Catch_VLM_Errors_in_Multimodal_Reasoning_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Zhang_Critic-V_VLM_Critics_Help_Catch_VLM_Errors_in_Multimodal_Reasoning_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Post-pre-training for Modality Alignment in Vision-Language Foundation Models
+AU  - Shin'ya Yamaguchi
+AU  - Dewei Feng
+AU  - Sekitoshi Kanai
+AU  - Kazuki Adachi
+AU  - Daiki Chijiwa
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 4256
+EP  - 4266
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Yamaguchi_Post-pre-training_for_Modality_Alignment_in_Vision-Language_Foundation_Models_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Yamaguchi_Post-pre-training_for_Modality_Alignment_in_Vision-Language_Foundation_Models_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - AlignMamba: Enhancing Multimodal Mamba with Local and Global Cross-modal Alignment
+AU  - Yan Li
+AU  - Yifei Xing
+AU  - Xiangyuan Lan
+AU  - Xin Li
+AU  - Haifeng Chen
+AU  - Dongmei Jiang
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 24774
+EP  - 24784
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Li_AlignMamba_Enhancing_Multimodal_Mamba_with_Local_and_Global_Cross-modal_Alignment_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Li_AlignMamba_Enhancing_Multimodal_Mamba_with_Local_and_Global_Cross-modal_Alignment_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Diffusion-4K: Ultra-High-Resolution Image Synthesis with Latent Diffusion Models
+AU  - Jinjin Zhang
+AU  - Qiuyu Huang
+AU  - Junjie Liu
+AU  - Xiefan Guo
+AU  - Di Huang
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 23464
+EP  - 23473
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_Diffusion-4K_Ultra-High-Resolution_Image_Synthesis_with_Latent_Diffusion_Models_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Zhang_Diffusion-4K_Ultra-High-Resolution_Image_Synthesis_with_Latent_Diffusion_Models_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Prometheus: 3D-Aware Latent Diffusion Models for Feed-Forward Text-to-3D Scene Generation
+AU  - Yuanbo Yang
+AU  - Jiahao Shao
+AU  - Xinyang Li
+AU  - Yujun Shen
+AU  - Andreas Geiger
+AU  - Yiyi Liao
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 2857
+EP  - 2869
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Yang_Prometheus_3D-Aware_Latent_Diffusion_Models_for_Feed-Forward_Text-to-3D_Scene_Generation_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Yang_Prometheus_3D-Aware_Latent_Diffusion_Models_for_Feed-Forward_Text-to-3D_Scene_Generation_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - SplatAD: Real-Time Lidar and Camera Rendering with 3D Gaussian Splatting for Autonomous Driving
+AU  - Georg Hess
+AU  - Carl Lindström
+AU  - Maryam Fatemi
+AU  - Christoffer Petersson
+AU  - Lennart Svensson
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 11982
+EP  - 11992
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Hess_SplatAD_Real-Time_Lidar_and_Camera_Rendering_with_3D_Gaussian_Splatting_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Hess_SplatAD_Real-Time_Lidar_and_Camera_Rendering_with_3D_Gaussian_Splatting_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Multi-modal Medical Diagnosis via Large-small Model Collaboration
+AU  - Wanyi Chen
+AU  - Zihua Zhao
+AU  - Jiangchao Yao
+AU  - Ya Zhang
+AU  - Jiajun Bu
+AU  - Haishuai Wang
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 30763
+EP  - 30773
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Chen_Multi-modal_Medical_Diagnosis_via_Large-small_Model_Collaboration_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_Multi-modal_Medical_Diagnosis_via_Large-small_Model_Collaboration_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - T2ISafety: Benchmark for Assessing Fairness, Toxicity, and Privacy in Image Generation
+AU  - Lijun Li
+AU  - Zhelun Shi
+AU  - Xuhao Hu
+AU  - Bowen Dong
+AU  - Yiran Qin
+AU  - Xihui Liu
+AU  - Lu Sheng
+AU  - Jing Shao
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 13381
+EP  - 13392
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Li_T2ISafety_Benchmark_for_Assessing_Fairness_Toxicity_and_Privacy_in_Image_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Li_T2ISafety_Benchmark_for_Assessing_Fairness_Toxicity_and_Privacy_in_Image_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - SGC-Net: Stratified Granular Comparison Network for Open-Vocabulary HOI Detection
+AU  - Xin Lin
+AU  - Chong Shi
+AU  - Zuopeng Yang
+AU  - Haojin Tang
+AU  - Zhili Zhou
+PY  - 2025
+BT  - IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 4539
+EP  - 4549
+UR  - https://openaccess.thecvf.com/content/CVPR2025/html/Lin_SGC-Net_Stratified_Granular_Comparison_Network_for_Open-Vocabulary_HOI_Detection_CVPR_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/CVPR2025/papers/Lin_SGC-Net_Stratified_Granular_Comparison_Network_for_Open-Vocabulary_HOI_Detection_CVPR_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - SwiftFormer: Efficient Additive Attention for Transformer-based Real-time Mobile Vision Applications
+AU  - Abdelrahman Shaker
+AU  - Muhammad Maaz
+AU  - Hanoona Rasheed
+AU  - Salman Khan
+AU  - Ming-Hsuan Yang
+AU  - Fahad Shahbaz Khan
+PY  - 2023
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 17425
+EP  - 17436
+UR  - https://openaccess.thecvf.com/content/ICCV2023/html/Shaker_SwiftFormer_Efficient_Additive_Attention_for_Transformer-based_Real-time_Mobile_Vision_Applications_ICCV_2023_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2023/papers/Shaker_SwiftFormer_Efficient_Additive_Attention_for_Transformer-based_Real-time_Mobile_Vision_Applications_ICCV_2023_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - SYENet: A Simple Yet Effective Network for Multiple Low-Level Vision Tasks with Real-Time Performance on Mobile Device
+AU  - Weiran Gou
+AU  - Ziyao Yi
+AU  - Yan Xiang
+AU  - Shaoqing Li
+AU  - Zibin Liu
+AU  - Dehui Kong
+AU  - Ke Xu
+PY  - 2023
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 12182
+EP  - 12195
+UR  - https://openaccess.thecvf.com/content/ICCV2023/html/Gou_SYENet_A_Simple_Yet_Effective_Network_for_Multiple_Low-Level_Vision_ICCV_2023_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2023/papers/Gou_SYENet_A_Simple_Yet_Effective_Network_for_Multiple_Low-Level_Vision_ICCV_2023_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - PromptCap: Prompt-Guided Image Captioning for VQA with GPT-3
+AU  - Yushi Hu
+AU  - Hang Hua
+AU  - Zhengyuan Yang
+AU  - Weijia Shi
+AU  - Noah A. Smith
+AU  - Jiebo Luo
+PY  - 2023
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 2963
+EP  - 2975
+UR  - https://openaccess.thecvf.com/content/ICCV2023/html/Hu_PromptCap_Prompt-Guided_Image_Captioning_for_VQA_with_GPT-3_ICCV_2023_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2023/papers/Hu_PromptCap_Prompt-Guided_Image_Captioning_for_VQA_with_GPT-3_ICCV_2023_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Audio-Visual Deception Detection: DOLOS Dataset and Parameter-Efficient Crossmodal Learning
+AU  - Xiaobao Guo
+AU  - Nithish Muthuchamy Selvaraj
+AU  - Zitong Yu
+AU  - Adams Wai-Kin Kong
+AU  - Bingquan Shen
+AU  - Alex Kot
+PY  - 2023
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 22135
+EP  - 22145
+UR  - https://openaccess.thecvf.com/content/ICCV2023/html/Guo_Audio-Visual_Deception_Detection_DOLOS_Dataset_and_Parameter-Efficient_Crossmodal_Learning_ICCV_2023_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2023/papers/Guo_Audio-Visual_Deception_Detection_DOLOS_Dataset_and_Parameter-Efficient_Crossmodal_Learning_ICCV_2023_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation
+AU  - Jay Zhangjie Wu
+AU  - Yixiao Ge
+AU  - Xintao Wang
+AU  - Stan Weixian Lei
+AU  - Yuchao Gu
+AU  - Yufei Shi
+AU  - Wynne Hsu
+AU  - Ying Shan
+AU  - Xiaohu Qie
+AU  - Mike Zheng Shou
+PY  - 2023
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 7623
+EP  - 7633
+UR  - https://openaccess.thecvf.com/content/ICCV2023/html/Wu_Tune-A-Video_One-Shot_Tuning_of_Image_Diffusion_Models_for_Text-to-Video_Generation_ICCV_2023_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2023/papers/Wu_Tune-A-Video_One-Shot_Tuning_of_Image_Diffusion_Models_for_Text-to-Video_Generation_ICCV_2023_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Point-SLAM: Dense Neural Point Cloud-based SLAM
+AU  - Erik Sandström
+AU  - Yue Li
+AU  - Luc Van Gool
+AU  - Martin R. Oswald
+PY  - 2023
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 18433
+EP  - 18444
+UR  - https://openaccess.thecvf.com/content/ICCV2023/html/Sandstrom_Point-SLAM_Dense_Neural_Point_Cloud-based_SLAM_ICCV_2023_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2023/papers/Sandstrom_Point-SLAM_Dense_Neural_Point_Cloud-based_SLAM_ICCV_2023_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Towards Unifying Medical Vision-and-Language Pre-Training via Soft Prompts
+AU  - Zhihong Chen
+AU  - Shizhe Diao
+AU  - Benyou Wang
+AU  - Guanbin Li
+AU  - Xiang Wan
+PY  - 2023
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 23403
+EP  - 23413
+UR  - https://openaccess.thecvf.com/content/ICCV2023/html/Chen_Towards_Unifying_Medical_Vision-and-Language_Pre-Training_via_Soft_Prompts_ICCV_2023_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2023/papers/Chen_Towards_Unifying_Medical_Vision-and-Language_Pre-Training_via_Soft_Prompts_ICCV_2023_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - An Adaptive Model Ensemble Adversarial Attack for Boosting Adversarial Transferability
+AU  - Bin Chen
+AU  - Jiali Yin
+AU  - Shukai Chen
+AU  - Bohao Chen
+AU  - Ximeng Liu
+PY  - 2023
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 4489
+EP  - 4498
+UR  - https://openaccess.thecvf.com/content/ICCV2023/html/Chen_An_Adaptive_Model_Ensemble_Adversarial_Attack_for_Boosting_Adversarial_Transferability_ICCV_2023_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2023/papers/Chen_An_Adaptive_Model_Ensemble_Adversarial_Attack_for_Boosting_Adversarial_Transferability_ICCV_2023_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - A Simple Framework for Open-Vocabulary Segmentation and Detection
+AU  - Hao Zhang
+AU  - Feng Li
+AU  - Xueyan Zou
+AU  - Shilong Liu
+AU  - Chunyuan Li
+AU  - Jianwei Yang
+AU  - Lei Zhang
+PY  - 2023
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 1020
+EP  - 1031
+UR  - https://openaccess.thecvf.com/content/ICCV2023/html/Zhang_A_Simple_Framework_for_Open-Vocabulary_Segmentation_and_Detection_ICCV_2023_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2023/papers/Zhang_A_Simple_Framework_for_Open-Vocabulary_Segmentation_and_Detection_ICCV_2023_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - FLatten Transformer: Vision Transformer using Focused Linear Attention
+AU  - Dongchen Han
+AU  - Xuran Pan
+AU  - Yizeng Han
+AU  - Shiji Song
+AU  - Gao Huang
+PY  - 2023
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 5961
+EP  - 5971
+UR  - https://openaccess.thecvf.com/content/ICCV2023/html/Han_FLatten_Transformer_Vision_Transformer_using_Focused_Linear_Attention_ICCV_2023_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2023/papers/Han_FLatten_Transformer_Vision_Transformer_using_Focused_Linear_Attention_ICCV_2023_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Context-Aware Planning and Environment-Aware Memory for Instruction Following Embodied Agents
+AU  - Byeonghwi Kim
+AU  - Jinyeon Kim
+AU  - Yuyeong Kim
+AU  - Cheolhong Min
+AU  - Jonghyun Choi
+PY  - 2023
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 10936
+EP  - 10946
+UR  - https://openaccess.thecvf.com/content/ICCV2023/html/Kim_Context-Aware_Planning_and_Environment-Aware_Memory_for_Instruction_Following_Embodied_Agents_ICCV_2023_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2023/papers/Kim_Context-Aware_Planning_and_Environment-Aware_Memory_for_Instruction_Following_Embodied_Agents_ICCV_2023_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Open-vocabulary Video Question Answering: A New Benchmark for Evaluating the Generalizability of Video Question Answering Models
+AU  - Dohwan Ko
+AU  - Ji Soo Lee
+AU  - Miso Choi
+AU  - Jaewon Chu
+AU  - Jihwan Park
+AU  - Hyunwoo J. Kim
+PY  - 2023
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 3101
+EP  - 3112
+UR  - https://openaccess.thecvf.com/content/ICCV2023/html/Ko_Open-vocabulary_Video_Question_Answering_A_New_Benchmark_for_Evaluating_the_ICCV_2023_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2023/papers/Ko_Open-vocabulary_Video_Question_Answering_A_New_Benchmark_for_Evaluating_the_ICCV_2023_paper.pdf
+ER  - 
+
+TY  - JOUR
+TI  - MobileInst: Video Instance Segmentation on the Mobile
+AU  - Renhong Zhang
+AU  - Tianheng Cheng
+AU  - Shusheng Yang
+AU  - Haoyi Jiang
+AU  - Shuai Zhang
+AU  - Jiancheng Lyu
+AU  - Xin Li
+AU  - Xiaowen Ying
+AU  - Dashan Gao
+AU  - Wenyu Liu
+AU  - Xinggang Wang
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i7.28555
+UR  - https://doi.org/10.1609/aaai.v38i7.28555
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/28555/29079
+ER  - 
+
+TY  - JOUR
+TI  - Agile-Quant: Activation-Guided Quantization for Faster Inference of LLMs on the Edge
+AU  - Xuan Shen
+AU  - Peiyan Dong
+AU  - Lu Lei
+AU  - Zhenglun Kong
+AU  - Zhengang Li
+AU  - Lin Ming
+AU  - Chao Wu
+AU  - Yanzhi Wang
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i17.29860
+UR  - https://doi.org/10.1609/aaai.v38i17.29860
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/29860/31499
+ER  - 
+
+TY  - JOUR
+TI  - Benchmarking Large Language Models in Retrieval-Augmented Generation
+AU  - Jiawei Chen
+AU  - Hongyu Lin
+AU  - Xianpei Han
+AU  - Le Sun
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i16.29728
+UR  - https://doi.org/10.1609/aaai.v38i16.29728
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/29728/31250
+ER  - 
+
+TY  - JOUR
+TI  - Visual Chain-of-Thought Prompting for Knowledge-Based Visual Reasoning
+AU  - Zhenfang Chen
+AU  - Qinhong Zhou
+AU  - Yikang Shen
+AU  - Yining Hong
+AU  - Zhiqing Sun
+AU  - Dan Gutfreund
+AU  - Chuang Gan
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i2.27888
+UR  - https://doi.org/10.1609/aaai.v38i2.27888
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/27888/27801
+ER  - 
+
+TY  - JOUR
+TI  - Self-Supervised Multi-Modal Knowledge Graph Contrastive Hashing for Cross-Modal Search
+AU  - Meiyu Liang
+AU  - Junping Du
+AU  - Zhengyang Liang
+AU  - Yongwang Xing
+AU  - Wei Huang
+AU  - Zhe Xue
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i12.29280
+UR  - https://doi.org/10.1609/aaai.v38i12.29280
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/29280/30416
+ER  - 
+
+TY  - JOUR
+TI  - Accelerating Text-to-Image Editing via Cache-Enabled Sparse Diffusion Inference
+AU  - Zihao Yu
+AU  - Haoyang Li
+AU  - Fangcheng Fu
+AU  - Xupeng Miao
+AU  - Bin Cui
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i15.29599
+UR  - https://doi.org/10.1609/aaai.v38i15.29599
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/29599/31010
+ER  - 
+
+TY  - JOUR
+TI  - Depth-Guided Robust and Fast Point Cloud Fusion NeRF for Sparse Input Views
+AU  - Shuai Guo
+AU  - Qiuwen Wang
+AU  - Yijie Gao
+AU  - Rong Xie
+AU  - Song Li
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i3.27968
+UR  - https://doi.org/10.1609/aaai.v38i3.27968
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/27968/27955
+ER  - 
+
+TY  - JOUR
+TI  - Large Language Models Are Clinical Reasoners: Reasoning-Aware Diagnosis Framework with Prompt-Generated Rationales
+AU  - Taeyoon Kwon
+AU  - Kai Tzu-iunn Ong
+AU  - Dong-Jin Kang
+AU  - Seungjun Moon
+AU  - Jeong Ryong Lee
+AU  - Dosik Hwang
+AU  - Beomseok Sohn
+AU  - Yongsik Sim
+AU  - Dong Ha Lee
+AU  - Jinyoung Yeo
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i16.29802
+UR  - https://doi.org/10.1609/aaai.v38i16.29802
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/29802/31388
+ER  - 
+
+TY  - JOUR
+TI  - LimeAttack: Local Explainable Method for Textual Hard-Label Adversarial Attack
+AU  - Haiyan Zhu
+AU  - Qinyang Zhao
+AU  - Weiwei Shang
+AU  - Yuren Wu
+AU  - Kai Liu
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i17.29950
+UR  - https://doi.org/10.1609/aaai.v38i17.29950
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/29950/31660
+ER  - 
+
+TY  - JOUR
+TI  - Aspect-Based Sentiment Analysis with Explicit Sentiment Augmentations
+AU  - Jihong Ouyang
+AU  - Zhiyao Yang
+AU  - Silong Liang
+AU  - Bing Wang
+AU  - Yimeng Wang
+AU  - Ximing Li
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i17.29849
+UR  - https://doi.org/10.1609/aaai.v38i17.29849
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/29849/31478
+ER  - 
+
+TY  - JOUR
+TI  - FoX: Formation-Aware Exploration in Multi-Agent Reinforcement Learning
+AU  - Yonghyeon Jo
+AU  - Sunwoo Lee
+AU  - Junghyuk Yeom
+AU  - Seungyul Han
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i12.29196
+UR  - https://doi.org/10.1609/aaai.v38i12.29196
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/29196/30259
+ER  - 
+
+TY  - JOUR
+TI  - Learning to Reweight for Generalizable Graph Neural Network
+AU  - Zhengyu Chen
+AU  - Teng Xiao
+AU  - Kun Kuang
+AU  - Zheqi Lv
+AU  - Min Zhang
+AU  - J. Joshua Yang
+AU  - Chengqiang Lu
+AU  - Hongxia Yang
+AU  - Fei Wu
+PY  - 2024
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v38i8.28673
+UR  - https://doi.org/10.1609/aaai.v38i8.28673
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/28673/29307
+ER  - 
+
+TY  - JOUR
+TI  - QJL: 1-Bit Quantized JL Transform for KV Cache Quantization with Zero Overhead
+AU  - Amir Zandieh
+AU  - Majid Daliri
+AU  - In‐Su Han
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i24.34773
+UR  - https://doi.org/10.1609/aaai.v39i24.34773
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/34773/36928
+ER  - 
+
+TY  - JOUR
+TI  - ABQ-LLM: Arbitrary-Bit Quantized Inference Acceleration for Large Language Models
+AU  - Chao Zeng
+AU  - Songwei Liu
+AU  - Yusheng Xie
+AU  - Hong Liu
+AU  - Xiaojian Wang
+AU  - Miao Wei
+AU  - Shu Yang
+AU  - Fangmin Chen
+AU  - Xing Mei
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i21.34385
+UR  - https://doi.org/10.1609/aaai.v39i21.34385
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/34385/36540
+ER  - 
+
+TY  - JOUR
+TI  - RMath: A Logic Reasoning-Focused Datasets Toward Mathematical Multistep Reasoning Tasks
+AU  - Ziyi Hu
+AU  - Jun Liu
+AU  - Zhongzhi Liu
+AU  - Yuzhong Liu
+AU  - Zheng Xie
+AU  - Yiping Song
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i22.34585
+UR  - https://doi.org/10.1609/aaai.v39i22.34585
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/34585/36740
+ER  - 
+
+TY  - JOUR
+TI  - LightPROF: A Lightweight Reasoning Framework for Large Language Model on Knowledge Graph
+AU  - Tu Ao
+AU  - Yanhua Yu
+AU  - Yuling Wang
+AU  - Yang Deng
+AU  - Zirui Guo
+AU  - Liang Pang
+AU  - Pinghui Wang
+AU  - Tat‐Seng Chua
+AU  - Xiao Zhang
+AU  - Zhen Cai
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i22.34510
+UR  - https://doi.org/10.1609/aaai.v39i22.34510
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/34510/36665
+ER  - 
+
+TY  - JOUR
+TI  - Harnessing Multimodal Large Language Models for Multimodal Sequential Recommendation
+AU  - Yuyang Ye
+AU  - Zhi Zheng
+AU  - Yishan Shen
+AU  - Tianshu Wang
+AU  - Hengruo Zhang
+AU  - Peijun Zhu
+AU  - Runlong Yu
+AU  - Kai Zhang
+AU  - Hui Xiong
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i12.33426
+UR  - https://doi.org/10.1609/aaai.v39i12.33426
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/33426/35581
+ER  - 
+
+TY  - JOUR
+TI  - DesignEdit: Unify Spatial-Aware Image Editing via Training-free Inpainting with a Multi-Layered Latent Diffusion Framework
+AU  - Yueru Jia
+AU  - Aosong Cheng
+AU  - Yuhui Yuan
+AU  - Chuke Wang
+AU  - Ji Li
+AU  - Huizhu Jia
+AU  - Shanghang Zhang
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i4.32414
+UR  - https://doi.org/10.1609/aaai.v39i4.32414
+ER  - 
+
+TY  - JOUR
+TI  - BloomScene: Lightweight Structured 3D Gaussian Splatting for Crossmodal Scene Generation
+AU  - Xiaolu Hou
+AU  - Mingcheng Li
+AU  - Dingkang Yang
+AU  - Jiawei Chen
+AU  - Ziyun Qian
+AU  - Xiao Guang Zhao
+AU  - Yue Jiang
+AU  - Jinjie Wei
+AU  - Qingyao Xu
+AU  - Lihua Zhang
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i4.32367
+UR  - https://doi.org/10.1609/aaai.v39i4.32367
+ER  - 
+
+TY  - JOUR
+TI  - ProtCLIP: Function-Informed Protein Multi-Modal Learning
+AU  - Hanjing Zhou
+AU  - Mingze Yin
+AU  - Wei Wu
+AU  - Mingyang Li
+AU  - Kun Fu
+AU  - Jintai Chen
+AU  - Jian Wu
+AU  - Zheng Wang
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i21.34456
+UR  - https://doi.org/10.1609/aaai.v39i21.34456
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/34456/36611
+ER  - 
+
+TY  - JOUR
+TI  - Adversarial-Inspired Backdoor Defense via Bridging Backdoor and Adversarial Attacks
+AU  - Jia-Li Yin
+AU  - Weijian Wang
+AU  - Lyhwa
+AU  - Lin Wei
+AU  - Xinghua Li
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i9.33030
+UR  - https://doi.org/10.1609/aaai.v39i9.33030
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/33030/35185
+ER  - 
+
+TY  - JOUR
+TI  - MEDSAGE: Enhancing Robustness of Medical Dialogue Summarization to ASR Errors with LLM-generated Synthetic Dialogues
+AU  - Kuluhan Binici
+AU  - Abhinav Ramesh Kashyap
+AU  - Viktor Schlegel
+AU  - Andy T. Liu
+AU  - Vijay Prakash Dwivedi
+AU  - Thanh-Tung Nguyen
+AU  - Xiaoxue Gao
+AU  - Nancy F. Chen
+AU  - Stefan Winkler
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i22.34518
+UR  - https://doi.org/10.1609/aaai.v39i22.34518
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/34518/36673
+ER  - 
+
+TY  - JOUR
+TI  - LNS2+RL: Combining Multi-agent Reinforcement Learning with Large Neighborhood Search in Multi-agent Path Finding
+AU  - Yutong Wang
+AU  - Tanishq Duhan
+AU  - Jiaoyang Li
+AU  - Guillaume Sartoretti
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i22.34501
+UR  - https://doi.org/10.1609/aaai.v39i22.34501
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/34501/36656
+ER  - 
+
+TY  - JOUR
+TI  - Deep Multi-modal Graph Clustering via Graph Transformer Network
+AU  - Qianqian Wang
+AU  - Haiming Xu
+AU  - Zihao Zhang
+AU  - Wei Feng
+AU  - Quanxue Gao
+PY  - 2025
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v39i8.32844
+UR  - https://doi.org/10.1609/aaai.v39i8.32844
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/32844/34999
+ER  - 
+
+TY  - CPRO
+TI  - Unlocking Data-free Low-bit Quantization with Matrix Decomposition for KV Cache Compression
+AU  - Peiyu Liu
+AU  - Ze-Feng Gao
+AU  - Xin Zhao
+AU  - Yipeng Ma
+AU  - Tao Wang
+AU  - Ji-Rong Wen
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 2430
+EP  - 2440
+DO  - 10.18653/v1/2024.acl-long.133
+UR  - https://aclanthology.org/2024.acl-long.133/
+L1  - https://aclanthology.org/2024.acl-long.133.pdf
+ER  - 
+
+TY  - CPRO
+TI  - LoRAPrune: Structured Pruning Meets Low-Rank Parameter-Efficient Fine-Tuning
+AU  - Mingyang Zhang
+AU  - Hao Chen
+AU  - Chunhua Shen
+AU  - Zhen Yang
+AU  - Linlin Ou
+AU  - Xinyi Yu
+AU  - Bohan Zhuang
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 3013
+EP  - 3026
+DO  - 10.18653/v1/2024.findings-acl.178
+UR  - https://aclanthology.org/2024.findings-acl.178/
+L1  - https://aclanthology.org/2024.findings-acl.178.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Active Prompting with Chain-of-Thought for Large Language Models
+AU  - Shizhe Diao
+AU  - Pengcheng Wang
+AU  - Yong Lin
+AU  - Rui Pan
+AU  - Xiang Liu
+AU  - Tong Zhang
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 1330
+EP  - 1350
+DO  - 10.18653/v1/2024.acl-long.73
+UR  - https://aclanthology.org/2024.acl-long.73/
+L1  - https://aclanthology.org/2024.acl-long.73.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Self-Alignment for Factuality: Mitigating Hallucinations in LLMs via Self-Evaluation
+AU  - Xiaoying Zhang
+AU  - Baolin Peng
+AU  - Ye Tian
+AU  - Jingyan Zhou
+AU  - Lifeng Jin
+AU  - Linfeng Song
+AU  - Haitao Mi
+AU  - Helen Meng
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 1946
+EP  - 1965
+DO  - 10.18653/v1/2024.acl-long.107
+UR  - https://aclanthology.org/2024.acl-long.107/
+L1  - https://aclanthology.org/2024.acl-long.107.pdf
+ER  - 
+
+TY  - CPRO
+TI  - M-RAG: Reinforcing Large Language Model Performance through Retrieval-Augmented Generation with Multiple Partitions
+AU  - Zheng Wang
+AU  - Shu Teo
+AU  - Jieer Ouyang
+AU  - Yongjun Xu
+AU  - Wei Shi
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 1966
+EP  - 1978
+DO  - 10.18653/v1/2024.acl-long.108
+UR  - https://aclanthology.org/2024.acl-long.108/
+L1  - https://aclanthology.org/2024.acl-long.108.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Advancement in Graph Understanding: A Multimodal Benchmark and Fine-Tuning of Vision-Language Models
+AU  - Qihang Ai
+AU  - Jiafan Li
+AU  - Jincheng Dai
+AU  - Jianwu Zhou
+AU  - Lemao Liu
+AU  - Haiyun Jiang
+AU  - Shuming Shi
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 7485
+EP  - 7501
+DO  - 10.18653/v1/2024.acl-long.404
+UR  - https://aclanthology.org/2024.acl-long.404/
+L1  - https://aclanthology.org/2024.acl-long.404.pdf
+ER  - 
+
+TY  - CPRO
+TI  - UNIMO-G: Unified Image Generation through Multimodal Conditional Diffusion
+AU  - Wei Li
+AU  - Xue Xu
+AU  - Jiachen Liu
+AU  - Xinyan Xiao
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 6173
+EP  - 6188
+DO  - 10.18653/v1/2024.acl-long.335
+UR  - https://aclanthology.org/2024.acl-long.335/
+L1  - https://aclanthology.org/2024.acl-long.335.pdf
+ER  - 
+
+TY  - CPRO
+TI  - RAM-EHR: Retrieval Augmentation Meets Clinical Predictions on Electronic Health Records
+AU  - Ran Xu
+AU  - Wenqi Shi
+AU  - Yue Yu
+AU  - Yuchen Zhuang
+AU  - Bowen Jin
+AU  - May Wang
+AU  - Joyce Ho
+AU  - Carl Yang
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 754
+EP  - 765
+DO  - 10.18653/v1/2024.acl-short.68
+UR  - https://aclanthology.org/2024.acl-short.68/
+L1  - https://aclanthology.org/2024.acl-short.68.pdf
+ER  - 
+
+TY  - CPRO
+TI  - A Comprehensive Study of Jailbreak Attack versus Defense for Large Language Models
+AU  - Zihao Xu
+AU  - Yi Liu
+AU  - Gelei Deng
+AU  - Yuekang Li
+AU  - Stjepan Picek
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 7432
+EP  - 7449
+DO  - 10.18653/v1/2024.findings-acl.443
+UR  - https://aclanthology.org/2024.findings-acl.443/
+L1  - https://aclanthology.org/2024.findings-acl.443.pdf
+ER  - 
+
+TY  - CPRO
+TI  - CodeScope: An Execution-based Multilingual Multitask Multidimensional Benchmark for Evaluating LLMs on Code Understanding and Generation
+AU  - Weixiang Yan
+AU  - Haitian Liu
+AU  - Yunkun Wang
+AU  - Yunzhe Li
+AU  - Qian Chen
+AU  - Wen Wang
+AU  - Tingyu Lin
+AU  - Weishan Zhao
+AU  - Li Zhu
+AU  - Hari Sundaram
+AU  - Shuiguang Deng
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 5511
+EP  - 5558
+DO  - 10.18653/v1/2024.acl-long.301
+UR  - https://aclanthology.org/2024.acl-long.301/
+L1  - https://aclanthology.org/2024.acl-long.301.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Planning Like Human: A Dual-process Framework for Dialogue Planning
+AU  - Tao He
+AU  - Lizi Liao
+AU  - Yixin Cao
+AU  - Yuanxing Liu
+AU  - Ming Liu
+AU  - Zerui Chen
+AU  - Bing Qin
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 4768
+EP  - 4791
+DO  - 10.18653/v1/2024.acl-long.262
+UR  - https://aclanthology.org/2024.acl-long.262/
+L1  - https://aclanthology.org/2024.acl-long.262.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Towards Better Understanding of Contrastive Sentence Representation Learning: A Unified Paradigm for Gradient
+AU  - Mingxin Li
+AU  - Richong Zhang
+AU  - Zhijie Nie
+PY  - 2024
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 14506
+EP  - 14521
+DO  - 10.18653/v1/2024.acl-long.780
+UR  - https://aclanthology.org/2024.acl-long.780/
+L1  - https://aclanthology.org/2024.acl-long.780.pdf
+ER  - 
+
+TY  - CPRO
+TI  - MobiLoRA: Accelerating LoRA-based LLM Inference on Mobile Devices via Context-aware KV Cache Optimization
+AU  - Borui Li
+AU  - Yitao Wang
+AU  - Haoran Ma
+AU  - Ligeng Chen
+AU  - Jun Xiao
+AU  - Shuai Wang
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 23400
+EP  - 23410
+DO  - 10.18653/v1/2025.acl-long.1140
+UR  - https://aclanthology.org/2025.acl-long.1140/
+L1  - https://aclanthology.org/2025.acl-long.1140.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Quaff: Quantized Parameter-Efficient Fine-Tuning under Outlier Spatial Stability Hypothesis
+AU  - Hong Huang
+AU  - Dapeng Wu
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 6481
+EP  - 6496
+DO  - 10.18653/v1/2025.acl-long.325
+UR  - https://aclanthology.org/2025.acl-long.325/
+L1  - https://aclanthology.org/2025.acl-long.325.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Agentic Reasoning: A Streamlined Framework for Enhancing LLM Reasoning with Agentic Tools
+AU  - Junde Wu
+AU  - Jiayuan Zhu
+AU  - Yuyuan Liu
+AU  - Min Xu
+AU  - Yueming Jin
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 28489
+EP  - 28503
+DO  - 10.18653/v1/2025.acl-long.1383
+UR  - https://aclanthology.org/2025.acl-long.1383/
+L1  - https://aclanthology.org/2025.acl-long.1383.pdf
+ER  - 
+
+TY  - CPRO
+TI  - TRACT: Regression-Aware Fine-tuning Meets Chain-of-Thought Reasoning for LLM-as-a-Judge
+AU  - Cheng-Han Chiang
+AU  - Hung-yi Lee
+AU  - Michal Lukasik
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 2934
+EP  - 2952
+DO  - 10.18653/v1/2025.acl-long.147
+UR  - https://aclanthology.org/2025.acl-long.147/
+L1  - https://aclanthology.org/2025.acl-long.147.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Jailbreak Large Vision-Language Models Through Multi-Modal Linkage
+AU  - Yu Wang
+AU  - Xiaofei Zhou
+AU  - Yichen Wang
+AU  - Geyuan Zhang
+AU  - Tianxing He
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 1466
+EP  - 1494
+DO  - 10.18653/v1/2025.acl-long.74
+UR  - https://aclanthology.org/2025.acl-long.74/
+L1  - https://aclanthology.org/2025.acl-long.74.pdf
+ER  - 
+
+TY  - CPRO
+TI  - AlignMMBench: Evaluating Chinese Multimodal Alignment in Large Vision-Language Models
+AU  - Yuhang Wu
+AU  - Wenmeng Yu
+AU  - Yean Cheng
+AU  - Yan Wang
+AU  - Xiaohan Zhang
+AU  - Jiazheng Xu
+AU  - Ming Ding
+AU  - Yuxiao Dong
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 6541
+EP  - 6558
+DO  - 10.18653/v1/2025.acl-long.327
+UR  - https://aclanthology.org/2025.acl-long.327/
+L1  - https://aclanthology.org/2025.acl-long.327.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Segment-Level Diffusion: A Framework for Controllable Long-Form Generation with Diffusion Language Models
+AU  - Xiaochen Zhu
+AU  - Georgi Karadzhov
+AU  - Chenxi Whitehouse
+AU  - Andreas Vlachos
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 4163
+EP  - 4183
+DO  - 10.18653/v1/2025.acl-long.210
+UR  - https://aclanthology.org/2025.acl-long.210/
+L1  - https://aclanthology.org/2025.acl-long.210.pdf
+ER  - 
+
+TY  - CPRO
+TI  - DiaLLMs: EHR-Enhanced Clinical Conversational System for Clinical Test Recommendation and Diagnosis Prediction
+AU  - Weijieying Ren
+AU  - Tianxiang Zhao
+AU  - Lei Wang
+AU  - Tianchun Wang
+AU  - Vasant Honavar
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 25622
+EP  - 25635
+DO  - 10.18653/v1/2025.findings-acl.1313
+UR  - https://aclanthology.org/2025.findings-acl.1313/
+L1  - https://aclanthology.org/2025.findings-acl.1313.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Defense Against Prompt Injection Attack by Leveraging Attack Techniques
+AU  - Yulin Chen
+AU  - Haoran Li
+AU  - Zihao Zheng
+AU  - Dekai Wu
+AU  - Yangqiu Song
+AU  - Bryan Hooi
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 18331
+EP  - 18347
+DO  - 10.18653/v1/2025.acl-long.897
+UR  - https://aclanthology.org/2025.acl-long.897/
+L1  - https://aclanthology.org/2025.acl-long.897.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Ontology-Guided Reverse Thinking Makes Large Language Models Stronger on Knowledge Graph Question Answering
+AU  - Runxuan Liu
+AU  - Bei Luo
+AU  - Jiaqi Li
+AU  - Baoxin Wang
+AU  - Ming Liu
+AU  - Dayong Wu
+AU  - Shijin Wang
+AU  - Bing Qin
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 15269
+EP  - 15284
+DO  - 10.18653/v1/2025.acl-long.741
+UR  - https://aclanthology.org/2025.acl-long.741/
+L1  - https://aclanthology.org/2025.acl-long.741.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Advancing Collaborative Debates with Role Differentiation through Multi-Agent Reinforcement Learning
+AU  - Haoran Li
+AU  - Ziyi Su
+AU  - Yun Xue
+AU  - Zhiliang Tian
+AU  - Yiping Song
+AU  - Minlie Huang
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 22655
+EP  - 22666
+DO  - 10.18653/v1/2025.acl-long.1105
+UR  - https://aclanthology.org/2025.acl-long.1105/
+L1  - https://aclanthology.org/2025.acl-long.1105.pdf
+ER  - 
+
+TY  - CPRO
+TI  - GNN-RAG: Graph Neural Retrieval for Efficient Large Language Model Reasoning on Knowledge Graphs
+AU  - Costas Mavromatis
+AU  - George Karypis
+PY  - 2025
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 16682
+EP  - 16699
+DO  - 10.18653/v1/2025.findings-acl.856
+UR  - https://aclanthology.org/2025.findings-acl.856/
+L1  - https://aclanthology.org/2025.findings-acl.856.pdf
+ER  - 
