@@ -131,10 +131,14 @@
       前端加「全量语料」第三视图。
       代价与口径：CVPR/ICCV/ACL 目录级记录**不含摘要**（官方摘要在单篇页，48 篇才回源取过），
       所以长尾结果只能给标题/作者/页码/官方链接，界面必须标「未取摘要 · 未翻译」，不得留白冒充缺失。
-- [ ] 7.2 **引用导出（BibTeX / RIS / Markdown）**：三个源的官方引用格式均已实测可得——
-      CVF 目录缓存内嵌 `@InProceedings` 4042 条（重解析即可，零新增请求）；
-      ACL Anthology `<id>.bib` 返回官方条目；AAAI 经 DOI 内容协商拿到 Crossref `@article`
-      （含 volume/ISSN/pages）。落在 `links.bibtex` + 详情页「复制引用」+ 批量导出 .bib。
+- [x] 7.2 **引用导出（BibTeX / RIS / Markdown）**：已完成，且 48/48 全是出版方官方原文，
+      无一条需要本项目渲染兜底——CVF 目录内嵌 `@InProceedings`（4042/2701 条同批解析，
+      零新增请求）、ACL 官方 `<id>.bib`、AAAI 经 DOI 内容协商取 Crossref `@article`。
+      交付：`scripts/fetchlib/citation.py` + `scripts/build_citations.py`（缺引用即非零退出的硬门禁）、
+      `data/citations.json`、`web/data/export/*.{bib,ris,md}`（15 个文件 / 192 KB）、
+      `/api/export?fmt=&ids=|venue=`、详情页「复制」按钮、导出条按当前筛选联动。
+      浏览器实测：48 篇与筛选后 15 篇的导出链接均正确，ACL 条目 892 字符官方原文；
+      剪贴板在无手势的自动化上下文下降级为「已选中，请 Ctrl+C」并提示，不静默失败。
 - [ ] 7.3 **主题 × 支柱矩阵**：一张 11×4 的真实计数表（大模型 23 = CVPR 4/AAAI 4/ICCV 3/ACL 12 等），
       回答「哪个主题在哪个会议更集中」；单元格可点击直接跳到对应筛选。
       口径提醒：分母只有 48 篇精选，是**样本构成**不是会议趋势，界面需这样写。

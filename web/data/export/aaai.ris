@@ -1,0 +1,177 @@
+TY  - JOUR
+TI  - DIAA: A Decoding-Efficient Inference Acceleration Approach for On-Device Large Language Models
+AU  - Hao Tian
+AU  - Sheng Lu
+AU  - Fuwen Tian
+AU  - Guangming Cui
+AU  - Zheng Li
+AU  - Xuyun Zhang
+AU  - Quan Z. Sheng
+AU  - Wanchun Dou
+PY  - 2026
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v40i31.39789
+UR  - https://doi.org/10.1609/aaai.v40i31.39789
+ER  - 
+
+TY  - JOUR
+TI  - Efficient Multimodal Large Language Model via Dynamic KV Cache Quantization
+AU  - Jiahao Fan
+AU  - Chien‐Ming Chen
+PY  - 2026
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v40i25.39241
+UR  - https://doi.org/10.1609/aaai.v40i25.39241
+ER  - 
+
+TY  - JOUR
+TI  - SPAN: Benchmarking and Improving Cross-Calendar Temporal Reasoning of Large Language Models
+AU  - Zhongjian Miao
+AU  - Hao Fu
+AU  - Chen Wei
+PY  - 2026
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v40i42.40884
+UR  - https://doi.org/10.1609/aaai.v40i42.40884
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/40884/44845
+ER  - 
+
+TY  - JOUR
+TI  - Mitigating Hallucinations in Large Language Models via Causal Reasoning
+AU  - Yuangang Li
+AU  - Yiqing Shen
+AU  - Yi Nian
+AU  - Jiechao Gao
+AU  - Ziyi Wang
+AU  - Chenxiao Yu
+AU  - Li Li
+AU  - Jie Wang
+AU  - Xiyang Hu
+AU  - Yue Zhao
+PY  - 2026
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v40i38.40454
+UR  - https://doi.org/10.1609/aaai.v40i38.40454
+ER  - 
+
+TY  - JOUR
+TI  - LiR3AG: A Lightweight Rerank Reasoning Strategy Framework for Retrieval-Augmented Generation
+AU  - Guo Chen
+AU  - Junjie Huang
+AU  - Huaijin Xie
+AU  - Fei Sun
+AU  - Tao Jia
+PY  - 2026
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v40i36.40270
+UR  - https://doi.org/10.1609/aaai.v40i36.40270
+ER  - 
+
+TY  - JOUR
+TI  - Extracting Multimodal Learngene in CLIP: Unveiling the Multimodal Generalizable Knowledge
+AU  - Ruimin Chen
+AU  - Junming Yang
+AU  - Shiyu Xia
+AU  - Xu Yang
+AU  - Xin Geng
+PY  - 2026
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v40i24.39111
+UR  - https://doi.org/10.1609/aaai.v40i24.39111
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/39111/43073
+ER  - 
+
+TY  - JOUR
+TI  - HiTVideo: Hierarchical Tokenizers for Enhancing Text-to-Video Generation with Autoregressive Large Language Models
+AU  - Ziqin Zhou
+AU  - Yifan Yang
+AU  - Yuqing Yang
+AU  - Tianyu He
+AU  - Houwen Peng
+AU  - Kai Qiu
+AU  - Qi Dai
+AU  - Lili Qiu
+AU  - Chong Luo
+AU  - Lingqiao Liu
+PY  - 2026
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v40i16.38399
+UR  - https://doi.org/10.1609/aaai.v40i16.38399
+ER  - 
+
+TY  - JOUR
+TI  - H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation
+AU  - Hongzhe Bi
+AU  - Lingxuan Wu
+AU  - Tianwei Lin
+AU  - Hengkai Tan
+AU  - Zhizhong Su
+AU  - Hang Su
+AU  - Jun Zhu
+PY  - 2026
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v40i22.38875
+UR  - https://doi.org/10.1609/aaai.v40i22.38875
+ER  - 
+
+TY  - JOUR
+TI  - PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis
+AU  - Jiao Xu
+AU  - Junwei Liu
+AU  - Jiangwei Lao
+AU  - Qi Zhu
+AU  - Yunpeng Zhao
+AU  - Congyun Jin
+AU  - Shinan Liu
+AU  - Zhihong Lu
+AU  - Lihe Zhang
+AU  - Xin Chen
+AU  - Jian Wang
+AU  - Ping Wang
+PY  - 2026
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v40i13.38106
+UR  - https://doi.org/10.1609/aaai.v40i13.38106
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/38106/42068
+ER  - 
+
+TY  - JOUR
+TI  - Injection, Attack and Erasure: Revocable Backdoor Attacks via Machine Unlearning
+AU  - Baogang Song
+AU  - Dongdong Zhao
+AU  - Jianwen Xiang
+AU  - Qiben Xu
+AU  - Zizhuo Yu
+PY  - 2026
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v40i30.39747
+UR  - https://doi.org/10.1609/aaai.v40i30.39747
+L1  - https://ojs.aaai.org/index.php/AAAI/article/download/39747/43708
+ER  - 
+
+TY  - JOUR
+TI  - HCPO: Hierarchical Conductor-Based Policy Optimization in Multi-Agent Reinforcement Learning
+AU  - Zejiao Liu
+AU  - Junqi Tu
+AU  - Yitian Hong
+AU  - Luolin Xiong
+AU  - Yaochu Jin
+AU  - Yang Tang
+AU  - Fangfei Li
+PY  - 2026
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v40i35.40199
+UR  - https://doi.org/10.1609/aaai.v40i35.40199
+ER  - 
+
+TY  - JOUR
+TI  - Dual Mamba for Node-Specific Representation Learning: Tackling Over-Smoothing with Selective State Space Modeling
+AU  - Xin He
+AU  - Yili Wang
+AU  - Yiwei Dai
+AU  - Xin Eric Wang
+PY  - 2026
+BT  - Proceedings of the AAAI Conference on Artificial Intelligence
+DO  - 10.1609/aaai.v40i26.39317
+UR  - https://doi.org/10.1609/aaai.v40i26.39317
+ER  - 

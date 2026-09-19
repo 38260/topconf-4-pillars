@@ -98,6 +98,34 @@
     });
   }
 
+  /* ---------- 复制到剪贴板（file:// 属于非安全上下文，须留手写降级） ---------- */
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).then(function () { return true; })
+        .catch(function () { return legacyCopy(text); });
+    }
+    return Promise.resolve(legacyCopy(text));
+  }
+  function legacyCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.cssText = "position:fixed;top:-1000px;opacity:0";
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    if (!ok && document.createRange) {        // last resort: select it for Ctrl+C
+      var range = document.createRange();
+      range.selectNodeContents(ta);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    }
+    ta.remove();
+    return ok;
+  }
+
   /* ---------- 色类映射（Trace Light statusBadgeClass / tagClass 同构） ---------- */
   function pillarBadge(key) { return 'class="pcard" data-pillar="' + esc(key) + '"'; }
   function topicAccent(id, meta) { return 'data-accent="' + esc((meta && meta.accent) || "slate") + '"'; }
@@ -106,7 +134,7 @@
     themePref: themePref, applyTheme: applyTheme, cycleTheme: cycleTheme,
     paintThemeBtn: paintThemeBtn, toast: toast,
     fmtNum: fmtNum, fmtTime: fmtTime, relTime: relTime,
-    esc: esc, highlight: highlight, api: api,
+    esc: esc, highlight: highlight, api: api, copyText: copyText,
     pillarBadge: pillarBadge, topicAccent: topicAccent, SERVED: SERVED
   };
   applyTheme(themePref());

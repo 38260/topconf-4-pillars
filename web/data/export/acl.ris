@@ -1,0 +1,216 @@
+TY  - CPRO
+TI  - VecInfer: Efficient LLM Inference with Low-Bit KV Cache via Outlier-Suppressed Vector Quantization
+AU  - Dingyu Yao
+AU  - Chenxu Yang
+AU  - Zhengyang Tong
+AU  - Zheng Lin
+AU  - Wei Liu
+AU  - Jian Luan
+AU  - Weiping Wang
+PY  - 2026
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 31527
+EP  - 31543
+DO  - 10.18653/v1/2026.acl-long.1454
+UR  - https://aclanthology.org/2026.acl-long.1454/
+L1  - https://aclanthology.org/2026.acl-long.1454.pdf
+ER  - 
+
+TY  - CPRO
+TI  - MobileLLM-Flash: Latency-Guided On-Device LLM Design for Industry Scale Deployment
+AU  - Hanxian Huang
+AU  - Igor Fedorov
+AU  - Andrey Gromov
+AU  - Bernard Beckerman
+AU  - Naveen Suda
+AU  - David Eriksson
+AU  - Maximilian Balandat
+AU  - Rylan Conway
+AU  - Patrick Huber
+AU  - Chinnadhurai Sankar
+AU  - Ayushi Dalmia
+AU  - Zechun Liu
+AU  - Lemeng Wu
+AU  - Tarek Elgamal
+AU  - Adithya Sagar
+AU  - Vikas Chandra
+AU  - Raghuraman Krishnamoorthi
+PY  - 2026
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 749
+EP  - 760
+DO  - 10.18653/v1/2026.acl-industry.51
+UR  - https://aclanthology.org/2026.acl-industry.51/
+L1  - https://aclanthology.org/2026.acl-industry.51.pdf
+ER  - 
+
+TY  - CPRO
+TI  - The Reasoning Trap: How Enhancing LLM Reasoning Amplifies Tool Hallucination
+AU  - Chenlong Yin
+AU  - Zeyang Sha
+AU  - Shiwen Cui
+AU  - Changhua Meng
+AU  - Zechao Li
+PY  - 2026
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 8310
+EP  - 8328
+DO  - 10.18653/v1/2026.acl-long.376
+UR  - https://aclanthology.org/2026.acl-long.376/
+L1  - https://aclanthology.org/2026.acl-long.376.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Why LLM Safety Guardrails Collapse After Fine-tuning: A Similarity Analysis Between Alignment and Fine-tuning Datasets
+AU  - Lei Hsiung
+AU  - Tianyu Pang
+AU  - Yung-Chen Tang
+AU  - Linyue Song
+AU  - Tsung-Yi Ho
+AU  - Pin-Yu Chen
+AU  - Yaoqing Yang
+PY  - 2026
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 16601
+EP  - 16619
+DO  - 10.18653/v1/2026.acl-long.756
+UR  - https://aclanthology.org/2026.acl-long.756/
+L1  - https://aclanthology.org/2026.acl-long.756.pdf
+ER  - 
+
+TY  - CPRO
+TI  - SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning
+AU  - Yongfeng Huang
+AU  - Ruiying Chen
+AU  - James Cheng
+PY  - 2026
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 18423
+EP  - 18442
+DO  - 10.18653/v1/2026.findings-acl.917
+UR  - https://aclanthology.org/2026.findings-acl.917/
+L1  - https://aclanthology.org/2026.findings-acl.917.pdf
+ER  - 
+
+TY  - CPRO
+TI  - “I See What You Did There”: Can Large Vision-Language Models Understand Multimodal Puns?
+AU  - Naen Xu
+AU  - Jiayi Sheng
+AU  - Changjiang Li
+AU  - Chunyi Zhou
+AU  - Yuyuan Li
+AU  - Tianyu Du
+AU  - Jun Wang
+AU  - Zhihui Fu
+AU  - Jinbao Li
+AU  - Shouling Ji
+PY  - 2026
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 9786
+EP  - 9805
+DO  - 10.18653/v1/2026.acl-long.444
+UR  - https://aclanthology.org/2026.acl-long.444/
+L1  - https://aclanthology.org/2026.acl-long.444.pdf
+ER  - 
+
+TY  - CPRO
+TI  - LADR: Locality-Aware Dynamic Rescue for Efficient Text-to-Image Generation with Diffusion Large Language Models
+AU  - Chenglin Wang
+AU  - Yucheng Zhou
+AU  - Shuang Chen
+AU  - Tao Wang
+AU  - Kai Zhang
+PY  - 2026
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 27170
+EP  - 27183
+DO  - 10.18653/v1/2026.acl-long.1251
+UR  - https://aclanthology.org/2026.acl-long.1251/
+L1  - https://aclanthology.org/2026.acl-long.1251.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Biomedical Question Answering via Multi-Level Summarization on a Local Knowledge Graph
+AU  - Lingxiao Guan
+AU  - Yuanhao Huang
+AU  - Jie Liu
+PY  - 2026
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 16338
+EP  - 16364
+DO  - 10.18653/v1/2026.acl-long.743
+UR  - https://aclanthology.org/2026.acl-long.743/
+L1  - https://aclanthology.org/2026.acl-long.743.pdf
+ER  - 
+
+TY  - CPRO
+TI  - From Nodes to Narratives: Explaining Graph Neural Networks with LLMs and Graph Context
+AU  - Peyman Baghershahi
+AU  - Gregoire Fournier
+AU  - Pranav Nyati
+AU  - Sourav Medya
+PY  - 2026
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 41975
+EP  - 41994
+DO  - 10.18653/v1/2026.acl-long.1944
+UR  - https://aclanthology.org/2026.acl-long.1944/
+L1  - https://aclanthology.org/2026.acl-long.1944.pdf
+ER  - 
+
+TY  - CPRO
+TI  - An Exploration of Mamba for Speech Self-Supervised Models
+AU  - Tzu-Quan Lin
+AU  - Heng-Cheng Kuo
+AU  - Tzu-Chieh Wei
+AU  - Hsi-Chun Cheng
+AU  - Chun Chen
+AU  - Hsien-Fu Hsiao
+AU  - Yu Tsao
+AU  - Hung-yi Lee
+PY  - 2026
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 10337
+EP  - 10350
+DO  - 10.18653/v1/2026.acl-long.470
+UR  - https://aclanthology.org/2026.acl-long.470/
+L1  - https://aclanthology.org/2026.acl-long.470.pdf
+ER  - 
+
+TY  - CPRO
+TI  - DPWriter: Reinforcement Learning with Diverse Planning Branching for Creative Writing
+AU  - Qian Cao
+AU  - Yahui Liu
+AU  - Wei Bi
+AU  - Yi Zhao
+AU  - Ruihua Song
+AU  - Xiting Wang
+AU  - Ruiming Tang
+AU  - Guorui Zhou
+AU  - Han Li
+PY  - 2026
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 14224
+EP  - 14250
+DO  - 10.18653/v1/2026.acl-long.647
+UR  - https://aclanthology.org/2026.acl-long.647/
+L1  - https://aclanthology.org/2026.acl-long.647.pdf
+ER  - 
+
+TY  - CPRO
+TI  - SceneLM: 3D-Aware Language Models for Editable 3D Scene Synthesis
+AU  - Xingbo Yao
+AU  - Xiaoyu Chen
+AU  - Doudou Zhang
+AU  - Mingzhi Sheng
+AU  - Boyuan Cao
+AU  - Ying-Cong Chen
+AU  - Hui Xiong
+PY  - 2026
+BT  - Annual Meeting of the Association for Computational Linguistics
+SP  - 42615
+EP  - 42624
+DO  - 10.18653/v1/2026.findings-acl.2116
+UR  - https://aclanthology.org/2026.findings-acl.2116/
+L1  - https://aclanthology.org/2026.findings-acl.2116.pdf
+ER  - 

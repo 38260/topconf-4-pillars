@@ -28,6 +28,8 @@ _SUPP = re.compile(r'href="(/content/[^"]+?supplemental[^"]*?\.pdf)"')
 _CODE = re.compile(r'href="(/content/[^"]+?(?:code|data)[^"]*?\.zip)"')
 _BIB_PAGES = re.compile(r'pages\s*=\s*\{([^}]*)\}')
 _BIB_YEAR = re.compile(r'year\s*=\s*\{(\d{4})\}')
+# CVF prints the official citation entry right in the proceedings index page
+_BIBTEX = re.compile(r'<div class="bibref pre-white-space">(@InProceedings\{.*?\n\})', re.S)
 _ABSTRACT = re.compile(r'<div id="abstract"[^>]*>(.*?)</div>', re.S)
 _COPYRIGHT = re.compile(r'<div id="abstract"[^>]*>.*?</div>', re.S)
 
@@ -59,6 +61,7 @@ def index(venue_key: str, use_cache: bool = True) -> list[dict]:
         code = _CODE.search(block)
         pages = _BIB_PAGES.search(block)
         year_m = _BIB_YEAR.search(block)
+        bib = _BIBTEX.search(block)
 
         records.append(make_record(
             venue=venue_key,
@@ -74,6 +77,8 @@ def index(venue_key: str, use_cache: bool = True) -> list[dict]:
                 "abstract_url": landing,
                 "supp_url": (BASE + supp.group(1)) if supp else "",
                 "code_url": (BASE + code.group(1)) if code else "",
+                # verbatim official citation entry
+                "bibtex": html.unescape(bib.group(1)).strip() if bib else "",
             },
         ))
     return records

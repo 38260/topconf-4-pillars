@@ -164,6 +164,9 @@ def resolve(use_cache: bool = True) -> list[dict]:
             },
             "pages": rec.get("pages") or "",
             "track": rec.get("volume") or "",
+            "venue_full": BY_KEY[rec["venue"]]["full_name"],
+            # official citation text when the publisher embeds it (CVF does)
+            "bibtex": rec.get("bibtex") or "",
             "provenance": {
                 "source": rec["provenance"]["source"],
                 "abstract_source": abs_src,

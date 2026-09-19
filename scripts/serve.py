@@ -19,7 +19,7 @@ import subprocess
 import sys
 import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, urlparse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WEB = os.path.join(ROOT, "web")
@@ -60,7 +60,40 @@ class Handler(BaseHTTPRequestHandler):
                                     "served_at": time.strftime("%Y-%m-%dT%H:%M:%S")})
         if path == "/api/papers":
             return self._json(200, _load_papers())
+        if path == "/api/export":
+            return self._export(parse_qs(urlparse(self.path).query))
         return self._static(path)
+
+    def _export(self, qs) -> None:
+        fmt = (qs.get("fmt") or ["bib"])[0]
+        if fmt not in ("bib", "ris", "md"):
+            return self._json(400, {"error": "fmt must be bib|ris|md"})
+        blob = _load_papers()
+        papers = blob.get("papers", [])
+        ids = (qs.get("ids") or [""])[0]
+        venue = (qs.get("venue") or [""])[0]
+        if ids:
+            want = {i for i in ids.split(",") if i}
+            subset = [p for p in papers if p["id"] in want]
+        elif venue:
+            subset = [p for p in papers if p["venue"] == venue]
+        else:
+            subset = papers
+        if not subset:
+            return self._json(404, {"error": "no papers matched"})
+        if SCRIPTS not in sys.path:
+            sys.path.insert(0, SCRIPTS)
+        from fetchlib import citation
+        text, ctype = citation.render_bundle(subset, fmt)
+        fname = (venue or "selection").lower() + "." + fmt
+        body = text.encode("utf-8")
+        self.send_response(200)
+        self.send_header("Content-Type", ctype)
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Content-Disposition", f'attachment; filename="{fname}"')
+        self.send_header("Cache-Control", "no-store")
+        self.end_headers()
+        self.wfile.write(body)
 
     def do_POST(self):  # noqa: N802
         if urlparse(self.path).path != "/api/refresh":

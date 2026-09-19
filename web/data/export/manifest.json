@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-09-19T08:53:08",
+  "official_bibtex": 48,
+  "files": {
+    "all.bib": {
+      "format": "bib",
+      "papers": 48,
+      "bytes": 30322
+    },
+    "all.ris": {
+      "format": "ris",
+      "papers": 48,
+      "bytes": 27080
+    },
+    "all.md": {
+      "format": "md",
+      "papers": 48,
+      "bytes": 20144
+    },
+    "cvpr.bib": {
+      "format": "bib",
+      "papers": 12,
+      "bytes": 6252
+    },
+    "cvpr.ris": {
+      "format": "ris",
+      "papers": 12,
+      "bytes": 8288
+    },
+    "cvpr.md": {
+      "format": "md",
+      "papers": 12,
+      "bytes": 5578
+    },
+    "aaai.bib": {
+      "format": "bib",
+      "papers": 12,
+      "bytes": 7265
+    },
+    "aaai.ris": {
+      "format": "ris",
+      "papers": 12,
+      "bytes": 4852
+    },
+    "aaai.md": {
+      "format": "md",
+      "papers": 12,
+      "bytes": 4549
+    },
+    "iccv.bib": {
+      "format": "bib",
+      "papers": 12,
+      "bytes": 6094
+    },
+    "iccv.ris": {
+      "format": "ris",
+      "papers": 12,
+      "bytes": 8032
+    },
+    "iccv.md": {
+      "format": "md",
+      "papers": 12,
+      "bytes": 5329
+    },
+    "acl.bib": {
+      "format": "bib",
+      "papers": 12,
+      "bytes": 11089
+    },
+    "acl.ris": {
+      "format": "ris",
+      "papers": 12,
+      "bytes": 5905
+    },
+    "acl.md": {
+      "format": "md",
+      "papers": 12,
+      "bytes": 5090
+    }
+  }
+}

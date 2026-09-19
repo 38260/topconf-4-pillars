@@ -1,0 +1,201 @@
+TY  - CPRO
+TI  - MobileIE: An Extremely Lightweight and Effective ConvNet for Real-Time Image Enhancement on Mobile Devices
+AU  - Hailong Yan
+AU  - Ao Li
+AU  - Xiangtao Zhang
+AU  - Zhe Liu
+AU  - Zenglin Shi
+AU  - Ce Zhu
+AU  - Le Zhang
+PY  - 2025
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 21949
+EP  - 21960
+UR  - https://openaccess.thecvf.com/content/ICCV2025/html/Yan_MobileIE_An_Extremely_Lightweight_and_Effective_ConvNet_for_Real-Time_Image_ICCV_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2025/papers/Yan_MobileIE_An_Extremely_Lightweight_and_Effective_ConvNet_for_Real-Time_Image_ICCV_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - METEOR: Multi-Encoder Collaborative Token Pruning for Efficient Vision Language Models
+AU  - Yuchen Liu
+AU  - Yaoming Wang
+AU  - Bowen Shi
+AU  - Xiaopeng Zhang
+AU  - Wenrui Dai
+AU  - Chenglin Li
+AU  - Hongkai Xiong
+AU  - Qi Tian
+PY  - 2025
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 21492
+EP  - 21504
+UR  - https://openaccess.thecvf.com/content/ICCV2025/html/Liu_METEOR_Multi-Encoder_Collaborative_Token_Pruning_for_Efficient_Vision_Language_Models_ICCV_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_METEOR_Multi-Encoder_Collaborative_Token_Pruning_for_Efficient_Vision_Language_Models_ICCV_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Corvid: Improving Multimodal Large Language Models Towards Chain-of-Thought Reasoning
+AU  - Jingjing Jiang
+AU  - Chao Ma
+AU  - Xurui Song
+AU  - Hanwang Zhang
+AU  - Jun Luo
+PY  - 2025
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 3034
+EP  - 3046
+UR  - https://openaccess.thecvf.com/content/ICCV2025/html/Jiang_Corvid_Improving_Multimodal_Large_Language_Models_Towards_Chain-of-Thought_Reasoning_ICCV_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2025/papers/Jiang_Corvid_Improving_Multimodal_Large_Language_Models_Towards_Chain-of-Thought_Reasoning_ICCV_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Enhancing Spatial Reasoning in Multimodal Large Language Models through Reasoning-based Segmentation
+AU  - Zhenhua Ning
+AU  - Zhuotao Tian
+AU  - Shaoshuai Shi
+AU  - Guangming Lu
+AU  - Daojing He
+AU  - Wenjie Pei
+AU  - Li Jiang
+PY  - 2025
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 7851
+EP  - 7860
+UR  - https://openaccess.thecvf.com/content/ICCV2025/html/Ning_Enhancing_Spatial_Reasoning_in_Multimodal_Large_Language_Models_through_Reasoning-based_ICCV_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2025/papers/Ning_Enhancing_Spatial_Reasoning_in_Multimodal_Large_Language_Models_through_Reasoning-based_ICCV_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Prompt-A-Video: Prompt Your Video Diffusion Model via Preference-Aligned LLM
+AU  - Yatai Ji
+AU  - Jiacheng Zhang
+AU  - Jie Wu
+AU  - Shilong Zhang
+AU  - Shoufa Chen
+AU  - Chongjian Ge
+AU  - Peize Sun
+AU  - Weifeng Chen
+AU  - Wenqi Shao
+AU  - Xuefeng Xiao
+AU  - Weilin Huang
+AU  - Ping Luo
+PY  - 2025
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 18725
+EP  - 18735
+UR  - https://openaccess.thecvf.com/content/ICCV2025/html/Ji_Prompt-A-Video_Prompt_Your_Video_Diffusion_Model_via_Preference-Aligned_LLM_ICCV_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2025/papers/Ji_Prompt-A-Video_Prompt_Your_Video_Diffusion_Model_via_Preference-Aligned_LLM_ICCV_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Dense2MoE: Restructuring Diffusion Transformer to MoE for Efficient Text-to-Image Generation
+AU  - Youwei Zheng
+AU  - Yuxi Ren
+AU  - Xin Xia
+AU  - Xuefeng Xiao
+AU  - Xiaohua Xie
+PY  - 2025
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 18661
+EP  - 18670
+UR  - https://openaccess.thecvf.com/content/ICCV2025/html/Zheng_Dense2MoE_Restructuring_Diffusion_Transformer_to_MoE_for_Efficient_Text-to-Image_Generation_ICCV_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2025/papers/Zheng_Dense2MoE_Restructuring_Diffusion_Transformer_to_MoE_for_Efficient_Text-to-Image_Generation_ICCV_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - SEGS-SLAM: Structure-enhanced 3D Gaussian Splatting SLAM with Appearance Embedding
+AU  - Tianci Wen
+AU  - Zhiang Liu
+AU  - Yongchun Fang
+PY  - 2025
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 28103
+EP  - 28113
+UR  - https://openaccess.thecvf.com/content/ICCV2025/html/Wen_SEGS-SLAM_Structure-enhanced_3D_Gaussian_Splatting_SLAM_with_Appearance_Embedding_ICCV_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2025/papers/Wen_SEGS-SLAM_Structure-enhanced_3D_Gaussian_Splatting_SLAM_with_Appearance_Embedding_ICCV_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - EmbodiedOcc: Embodied 3D Occupancy Prediction for Vision-based Online Scene Understanding
+AU  - Yuqi Wu
+AU  - Wenzhao Zheng
+AU  - Sicheng Zuo
+AU  - Yuanhui Huang
+AU  - Jie Zhou
+AU  - Jiwen Lu
+PY  - 2025
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 26360
+EP  - 26370
+UR  - https://openaccess.thecvf.com/content/ICCV2025/html/Wu_EmbodiedOcc_Embodied_3D_Occupancy_Prediction_for_Vision-based_Online_Scene_Understanding_ICCV_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2025/papers/Wu_EmbodiedOcc_Embodied_3D_Occupancy_Prediction_for_Vision-based_Online_Scene_Understanding_ICCV_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - PathFinder: A Multi-Modal Multi-Agent System for Medical Diagnostic Decision-Making Applied to Histopathology
+AU  - Fatemeh Ghezloo
+AU  - Mehmet Saygin Seyfioglu
+AU  - Rustin Soraki
+AU  - Wisdom O. Ikezogwo
+AU  - Beibin Li
+AU  - Tejoram Vivekanandan
+AU  - Joann G. Elmore
+AU  - Ranjay Krishna
+AU  - Linda Shapiro
+PY  - 2025
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 23431
+EP  - 23441
+UR  - https://openaccess.thecvf.com/content/ICCV2025/html/Ghezloo_PathFinder_A_Multi-Modal_Multi-Agent_System_for_Medical_Diagnostic_Decision-Making_Applied_ICCV_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2025/papers/Ghezloo_PathFinder_A_Multi-Modal_Multi-Agent_System_for_Medical_Diagnostic_Decision-Making_Applied_ICCV_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - TrustMark: Robust Watermarking and Watermark Removal for Arbitrary Resolution Images
+AU  - Tu Bui
+AU  - Shruti Agarwal
+AU  - John Collomosse
+PY  - 2025
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 18629
+EP  - 18639
+UR  - https://openaccess.thecvf.com/content/ICCV2025/html/Bui_TrustMark_Robust_Watermarking_and_Watermark_Removal_for_Arbitrary_Resolution_Images_ICCV_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2025/papers/Bui_TrustMark_Robust_Watermarking_and_Watermark_Removal_for_Arbitrary_Resolution_Images_ICCV_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - Feature Purification Matters: Suppressing Outlier Propagation for Training-Free Open-Vocabulary Semantic Segmentation
+AU  - Shuo Jin
+AU  - Siyue Yu
+AU  - Bingfeng Zhang
+AU  - Mingjie Sun
+AU  - Yi Dong
+AU  - Jimin Xiao
+PY  - 2025
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 20291
+EP  - 20300
+UR  - https://openaccess.thecvf.com/content/ICCV2025/html/Jin_Feature_Purification_Matters_Suppressing_Outlier_Propagation_for_Training-Free_Open-Vocabulary_Semantic_ICCV_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2025/papers/Jin_Feature_Purification_Matters_Suppressing_Outlier_Propagation_for_Training-Free_Open-Vocabulary_Semantic_ICCV_2025_paper.pdf
+ER  - 
+
+TY  - CPRO
+TI  - EA-Vit: Efficient Adaptation for Elastic Vision Transformer
+AU  - Chen Zhu
+AU  - Wangbo Zhao
+AU  - Huiwen Zhang
+AU  - Yuhao Zhou
+AU  - Weidong Tang
+AU  - Shuo Wang
+AU  - Zhihang Yuan
+AU  - Yuzhang Shang
+AU  - Xiaojiang Peng
+AU  - Kai Wang
+AU  - Dawei Yang
+PY  - 2025
+BT  - IEEE/CVF International Conference on Computer Vision
+SP  - 1038
+EP  - 1047
+UR  - https://openaccess.thecvf.com/content/ICCV2025/html/Zhu_EA-Vit_Efficient_Adaptation_for_Elastic_Vision_Transformer_ICCV_2025_paper.html
+L1  - https://openaccess.thecvf.com/content/ICCV2025/papers/Zhu_EA-Vit_Efficient_Adaptation_for_Elastic_Vision_Transformer_ICCV_2025_paper.pdf
+ER  - 

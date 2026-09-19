@@ -22,8 +22,9 @@ python scripts/serve.py            # http://127.0.0.1:8765/
 
 ```bash
 python scripts/fetch_corpus.py     # 拉取四会议官方全量目录 → data/corpus.json
-python scripts/build_papers.py     # 按 data/selection.json 补摘要+翻译 → data/papers.json
-python scripts/build_data.py       # 注入前端 web/data/papers.js
+python scripts/build_papers.py     # 按 data/selection.json 补官方摘要 → data/draft.json
+python scripts/build_citations.py  # 解析官方 BibTeX + 落盘 web/data/export/*
+python scripts/verify.py           # 绕缓存回源逐字核验 → docs/verification-report.md
 python scripts/verify.py           # 抽样回源核验，输出 docs/verification-report.md
 ```
 
@@ -33,7 +34,7 @@ python scripts/verify.py           # 抽样回源核验，输出 docs/verificati
 
 ```
 scripts/fetchlib/   官方源适配器：cvf.py / acl_anthology.py / openalex.py + http.py（缓存重试限速）
-scripts/            fetch_corpus / build_papers / build_data / verify / serve
+scripts/            fetch_corpus / build_papers / build_citations / build_data / verify / serve
 data/               corpus.json（全量目录）· selection.json（精选清单）· papers.json（展示数据）
 web/                index.html + css/ + js/ + data/papers.js（内联快照，file:// 可用）
 docs/               design-references.md · verification-report.md
@@ -50,6 +51,26 @@ TODO.md             全局待办真源，每次完成同步并随代码提交
 | AAAI 2026 | api.openalex.org（Proceedings of AAAI, S4210191458） | 标题 / 作者 / 摘要 / DOI（指向 ojs.aaai.org） |
 
 主题标签（`topics`）是基于真实标题、摘要与关键词的项目内派生分类，**不是**出版方官方学科分类，界面已标注。
+
+## 引用导出（BibTeX / RIS / Markdown）
+
+48 篇**全部为出版方官方 BibTeX 原文**，无一条是拼出来的：
+
+| 支柱 | 引用来源 | 取得方式 |
+|------|----------|----------|
+| CVPR / ICCV | CVF Open Access | 会议目录页内嵌 `@InProceedings`（与 4,042 / 2,701 篇同时解析，零额外请求） |
+| ACL | ACL Anthology | 官方 `<id>.bib` 导出 |
+| AAAI | Crossref | 经 AAAI DOI 内容协商 `Accept: application/x-bibtex`（含 volume / ISSN / pages） |
+
+- 界面：论文详情底部「引用（BibTeX）」可直接复制；顶部导出条按**当前筛选**导出。
+- 离线：`web/data/export/{all,cvpr,aaai,iccv,acl}.{bib,ris,md}` 已随仓库生成，`file://` 也能下载。
+- 服务端：`GET /api/export?fmt=bib|ris|md&ids=...`（或 `&venue=AAAI`）。
+- RIS 与 Markdown 不是出版方原文，由本项目**已核验字段**渲染；导出文件头部会标注官方原文与渲染条目各多少条。
+
+```bash
+python scripts/build_citations.py        # 解析 + 落盘（无引用即失败退出）
+python scripts/build_citations.py --force  # 重新回源解析 ACL / Crossref
+```
 
 ## 如何自行核验真实性
 

@@ -84,8 +84,34 @@
     renderStats();
     renderFilterbar();
     renderView();
+    renderExportBar();
     renderToc();
     syncToc();
+  }
+
+  /* ---------------- 导出（BibTeX 为出版方官方原文，RIS/MD 由已核验字段渲染） ---------------- */
+  function renderExportBar() {
+    var rows = filtered();
+    var bar = $("exportbar");
+    if (!rows.length) { bar.innerHTML = ""; return; }
+    var one = state.venue ? state.venue.toLowerCase() : "all";
+    var ids = rows.map(function (p) { return p.id; }).join(",");
+    var fmts = [["bib", "BibTeX"], ["ris", "RIS"], ["md", "Markdown"]];
+    var links = fmts.map(function (f) {
+      var href = TL.SERVED
+        ? "/api/export?fmt=" + f[0] + (rows.length === state.data.papers.length ? "" : "&ids=" + ids)
+        : "data/export/" + one + "." + f[0];
+      return '<a class="btn" href="' + href + '" download="' + one + '.' + f[0] + '" ' +
+        'title="导出 ' + rows.length + ' 篇的 ' + f[1] + ' 引用">' + f[1] +
+        '<span class="fmt">.' + f[0] + "</span></a>";
+    }).join("");
+    var hint = "";
+    if (!TL.SERVED && rows.length !== state.data.papers.length) {
+      hint = '<span class="hint">当前是离线快照：筛选状态下只能取整份导出（' + one +
+        '.bib 等）。要按筛选导出，请用 <code>python scripts/serve.py</code> 打开。</span>';
+    }
+    bar.innerHTML = '<span class="label">导出引用（' + rows.length + " 篇）</span>" + links +
+      '<span class="hint">BibTeX 取出版方官方原文；RIS / Markdown 由已核验字段渲染。</span>' + hint;
   }
 
   function renderFacts() {
@@ -396,6 +422,16 @@
         return '<a class="btn" href="' + TL.esc(l[1]) + '" target="_blank" rel="noopener">' + l[0] + "</a>";
       }).join("") + "</div></section>" +
 
+      "<section><h3>引用（BibTeX）</h3>" +
+      (p.citation && p.citation.text
+        ? '<div class="cite-head"><span class="tag" data-accent="' + (p.citation.official ? "green" : "slate") + '">' +
+          (p.citation.official ? "出版方官方原文" : "本项目按已核验字段渲染") + "</span>" +
+          '<span style="font-size:11.5px;color:var(--muted)">' + TL.esc(p.citation.origin) + "</span>" +
+          '<button type="button" class="btn" data-act="copy-cite" data-val="' + p.id + '" ' +
+          'style="margin-left:auto;padding:3px 10px;font-size:12px">复制</button></div>' +
+          "<pre class='cite' id='cite-" + p.id + "'>" + TL.esc(p.citation.text) + "</pre>"
+        : '<p style="margin:0;font-size:12.5px;color:var(--muted)">未取到引用条目。</p>') + "</section>" +
+
       "<section><h3>数据溯源</h3><div class='prov'>来源：<b>" + TL.esc(p.provenance.source) +
       "</b> ｜ 摘要取自：" + TL.esc(p.provenance.abstract_source) +
       " ｜ 抓取时间：" + TL.fmtTime(p.provenance.retrieved_at) + "（" + TL.relTime(p.provenance.retrieved_at) + "）" +
@@ -424,6 +460,12 @@
     var act = t.dataset.act, val = t.dataset.val;
     if (act === "open") { e.preventDefault(); openModal(val); return; }
     if (act === "jump") { e.preventDefault(); jumpTo(val); return; }
+    if (act === "copy-cite") {
+      e.preventDefault();
+      TL.copyText((document.getElementById("cite-" + val) || {}).textContent || "")
+        .then(function (ok) { TL.toast(ok ? "BibTeX 已复制到剪贴板" : "浏览器拒绝了剪贴板，已选中文字，按 Ctrl+C 复制", ok ? "ok" : "warn"); });
+      return;
+    }
     if (act === "close" || act === "close-scrim") { if (e.target === t) closeModal(); return; }
     if (act === "venue") { state.venue = state.venue === val ? null : val; state.topic = null; renderAll(); return; }
     if (act === "topic") {
