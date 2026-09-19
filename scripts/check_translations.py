@@ -26,7 +26,7 @@ ALLOW = {
     "hop", "hops", "wiki", "web", "chat", "app", "apps", "e-commerce", "x",
     "tokenizer", "tokenizers", "miou", "iou", "dev", "psnr",
     "prefill", "decode", "post-hoc", "zero-shot", "bit", "val", "test", "alpha",
-    "beta", "gamma", "top-k", "n-gram", "out-of-box",
+    "beta", "gamma", "top-k", "top-1", "top-5", "n-gram", "out-of-box", "iphone",
 }
 
 WORD = re.compile(r"[A-Za-z][A-Za-z\-']*")
