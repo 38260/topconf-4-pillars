@@ -1,0 +1,163 @@
+{
+  "venue": "ACL 2024",
+  "translated_by": "本项目逐篇人工翻译（对照 ACL Anthology 论文页官方摘要）",
+  "translated_at": "2026-09-19",
+  "papers": [
+    {
+      "id": "acl-109-acl-2024.acl-long.133",
+      "title_zh": "用矩阵分解解锁无数据低比特量化以压缩 KV 缓存",
+      "abstract_zh": "键值（KV）缓存是加速大语言模型（LLM）推理的重要技术，但会带来可观的显存开销。为压缩 KV 缓存体积，现有方法往往要么牺牲精度，要么需要额外数据做校准，限制了其在 LLM 部署中的实用性。本文提出 DecoQuant——一种基于张量分解的无数据低比特量化技术，可有效压缩 KV 缓存。核心思路是通过张量分解调整原始矩阵的离群值分布，把量化难度从矩阵本身转移到分解得到的局部张量上。特别地，我们发现离群值主要集中在小的局部张量中，而较大张量的取值范围往往更窄。基于这一发现，我们对大张量施加低比特量化，同时对小张量保持高精度表征。进一步地，我们把该量化方法用于压缩 LLM 的 KV 缓存以加速推理，并为 DecoQuant 量身定制了高效的反量化核函数。大量实验显示 DecoQuant 取得显著的效率收益：在生成质量相当的前提下，显存占用最多降低 75%。",
+      "topics": ["edge-efficiency", "llm", "architectures"],
+      "keywords": [
+        {"en": "data-free quantization", "zh": "无数据量化"},
+        {"en": "tensor decomposition", "zh": "张量分解"},
+        {"en": "KV cache compression", "zh": "KV 缓存压缩"},
+        {"en": "outlier distribution", "zh": "离群值分布"},
+        {"en": "dequantization kernel", "zh": "反量化核函数"}
+      ]
+    },
+    {
+      "id": "acl-110-acl-2024.findings-acl.178",
+      "title_zh": "LoRAPrune：结构化剪枝与低秩参数高效微调的结合",
+      "abstract_zh": "LLaMA、T5 等大语言模型（LLM）通过微调在各类任务上表现卓越。尽管低秩适配（LoRA）已能以很低的成本把这些 LLM 微调到下游任务，其部署仍受限于庞大的模型规模与计算成本。训练后模型剪枝是压缩 LLM 的一条途径，但现有的 LLM 剪枝方法与 LoRA 并不兼容：它们要么对 LLM 做非结构化剪枝，妨碍 LoRA 权重的合并；要么依赖预训练权重的梯度来指导剪枝，带来显著的显存开销。为此我们提出 LoRAPrune——一个在极高显存效率下产出准确的结构化剪枝模型的新框架。具体地，我们先设计「LoRA 引导」的剪枝准则：用 LoRA 自身的权重与梯度（而非预训练权重的梯度）来估计重要性；随后把该准则融入迭代剪枝流程，有效移除冗余通道与注意力头。大量实验表明，在 LLaMA 系列模型上 LoRAPrune 优于现有方法：在 50% 压缩率下，其表现优于 LLM-Pruner，在 WikiText2 上把困惑度降低 4.81、在 PTB 上降低 3.46，同时显存占用减少 52.6%。此外，LoRAPrune 在多个 LLM 上能与半结构化剪枝持平，证明其适用性广泛。代码见 https://github.com/aim-uofa/LoRAPrune。",
+      "topics": ["edge-efficiency", "llm", "architectures"],
+      "keywords": [
+        {"en": "structured pruning", "zh": "结构化剪枝"},
+        {"en": "low-rank adaptation", "zh": "低秩适配"},
+        {"en": "memory-efficient fine-tuning", "zh": "显存高效微调"},
+        {"en": "channel and head removal", "zh": "通道与注意力头移除"},
+        {"en": "importance estimation", "zh": "重要性估计"}
+      ]
+    },
+    {
+      "id": "acl-111-acl-2024.acl-long.73",
+      "title_zh": "面向大语言模型的主动提示与思维链",
+      "abstract_zh": "大语言模型（LLM）规模的增长带来了各类需要推理的复杂任务上的涌现能力，例如算术推理与常识推理。众所周知，任务专属提示的有效设计，对 LLM 产出高质量回答至关重要。其中，带思维链（CoT）推理的「样例式提示」是应对复杂问答任务的有效手段，能显著提升 LLM 表现。但现有 CoT 方法依赖一组固定的人工标注样例，而这些样例对不同任务未必是最有效的。本文提出 Active-Prompt 方法，为不同任务生成任务专属的样例提示（附有人工设计的 CoT 推理）。为此我们解决一个关键问题：如何从任务查询池中确定哪些最值得标注。借鉴相关的不确定性主动学习思想，我们引入若干指标来刻画不确定性，从而挑选最不确定的问题交由人工标注。实验结果证明了我们方法在八个复杂推理任务上的优越性；对不同不确定性指标、池规模、零样本学习以及「准确率—不确定性」关系的进一步分析，也验证了本方法的有效性。",
+      "topics": ["llm", "language-nlp"],
+      "keywords": [
+        {"en": "active prompting", "zh": "主动提示"},
+        {"en": "chain-of-thought", "zh": "思维链"},
+        {"en": "uncertainty estimation", "zh": "不确定性估计"},
+        {"en": "active learning", "zh": "主动学习"},
+        {"en": "example selection", "zh": "样例选择"}
+      ]
+    },
+    {
+      "id": "acl-112-acl-2024.acl-long.107",
+      "title_zh": "面向事实性的自对齐：通过自我评估缓解大模型幻觉",
+      "abstract_zh": "尽管能力出众，大语言模型（LLM）常在事实上不准确——即便它已具备相关知识，仍会出现「幻觉」。为缓解这类幻觉，现有方法通常需要高质量的、人工标注的事实性数据。本工作探索面向事实性的自对齐：利用 LLM 的自我评估能力提供训练信号，把模型引向更符合事实的输出。具体地，我们引入自我评估组件 Self-Eval，提示 LLM 仅基于自身内部知识来校验自己生成回答的事实性；并设计自我知识调优（SK-Tuning），通过改进模型的置信度估计与校准来增强其自我评估能力。随后我们用这些自标注的回答，以直接偏好优化算法微调模型。结果表明，该自对齐方法在 TruthfulQA 与 BioGEN 三个关键知识密集任务上，显著提升了 Llama 系列模型的事实准确率。",
+      "topics": ["llm", "trustworthy"],
+      "keywords": [
+        {"en": "factuality alignment", "zh": "事实性对齐"},
+        {"en": "self-evaluation", "zh": "自我评估"},
+        {"en": "confidence calibration", "zh": "置信度校准"},
+        {"en": "hallucination mitigation", "zh": "幻觉缓解"},
+        {"en": "direct preference optimization", "zh": "直接偏好优化"}
+      ]
+    },
+    {
+      "id": "acl-113-acl-2024.acl-long.108",
+      "title_zh": "M-RAG：以多分区检索增强生成强化大模型表现",
+      "abstract_zh": "检索增强生成（RAG）通过从外部数据库检索相关记忆来增强大语言模型（LLM）。然而现有 RAG 方法通常把所有记忆组织成一整个数据库，可能限制模型对关键记忆的关注并引入噪声。本文提出面向 RAG 的多分区范式（M-RAG），以每个数据库分区作为 RAG 执行的基本单元。基于该范式，我们提出一个新颖框架：利用 LLM 与多智能体强化学习，对不同语言生成任务做显式优化。在覆盖三种语言生成任务、涉及三种不同语言模型架构的七个数据集上开展的充分实验确认，M-RAG 稳定优于各类基线方法：在文本摘要、机器翻译与对话生成上分别取得 11%、8% 与 12% 的提升。",
+      "topics": ["language-nlp", "llm", "rl-decision"],
+      "keywords": [
+        {"en": "retrieval-augmented generation", "zh": "检索增强生成"},
+        {"en": "multiple partitions", "zh": "多分区"},
+        {"en": "multi-agent reinforcement learning", "zh": "多智能体强化学习"},
+        {"en": "text summarization", "zh": "文本摘要"},
+        {"en": "dialogue generation", "zh": "对话生成"}
+      ]
+    },
+    {
+      "id": "acl-114-acl-2024.acl-long.404",
+      "title_zh": "图理解的进展：多模态基准与视觉语言模型的微调",
+      "abstract_zh": "图数据组织对象之间复杂的关系与交互，支撑着各领域的深入分析与决策。本文提出一种交互式、指令式的图数据理解与推理新范式：不采用复杂的图神经网络模型，也不做启发式的「图转文本」指令设计，而是用视觉语言模型（VLM）来编码不同领域中结构各异的图图像。论文首先从多个方面评估公开 VLM 在图学习上的能力；随后发布一个面向多模态图理解与推理的英中双语指令跟随数据集；此外，用该数据集微调 MiniGPT-4 与 LLaVA，相比基线模型取得 5%–15% 的准确率提升，其中表现最好的模型在 GPT 辅助评测中达到与 Gemini 可比的分数。本工作不仅展示了把 VLM 与图数据结合的潜力，也为图数据理解的进展开辟了新路径。",
+      "topics": ["multimodal", "language-nlp", "architectures"],
+      "keywords": [
+        {"en": "graph understanding", "zh": "图理解"},
+        {"en": "instruction-following dataset", "zh": "指令跟随数据集"},
+        {"en": "vision-language model", "zh": "视觉语言模型"},
+        {"en": "bilingual benchmark", "zh": "双语基准"},
+        {"en": "graph-to-image encoding", "zh": "图转图像编码"}
+      ]
+    },
+    {
+      "id": "acl-115-acl-2024.acl-long.335",
+      "title_zh": "UNIMO-G：通过多模态条件扩散实现统一图像生成",
+      "abstract_zh": "现有文生图扩散模型主要从文本提示生成图像。然而文本描述天然简洁，难以忠实合成具有复杂细节的图像，例如特定实体或场景。本文提出 UNIMO-G——一个简洁的多模态条件扩散框架，可在「文本与视觉交错」的多模态提示上运行，展现出兼顾文本驱动与主体驱动的统一图像生成能力。UNIMO-G 由两个核心组件构成：负责编码多模态提示的多模态大语言模型（MLLM），以及基于编码后的多模态输入生成图像的条件去噪扩散网络。我们采用两阶段训练策略有效训练该框架：先在大规模文本—图像对上预训练以获得条件图像生成能力，再用多模态提示做指令微调，达到统一图像生成的水平。我们通过一套精心设计的数据处理流水线（含语言接地与图像分割）来构造多模态提示。UNIMO-G 在文生图与零样本主体驱动合成两方面都表现出色，尤其擅长从含多个图像实体的复杂多模态提示中生成高保真图像。",
+      "topics": ["generative", "multimodal"],
+      "keywords": [
+        {"en": "unified image generation", "zh": "统一图像生成"},
+        {"en": "multimodal conditional diffusion", "zh": "多模态条件扩散"},
+        {"en": "subject-driven synthesis", "zh": "主体驱动合成"},
+        {"en": "instruction tuning", "zh": "指令微调"},
+        {"en": "language grounding", "zh": "语言接地"}
+      ]
+    },
+    {
+      "id": "acl-116-acl-2024.acl-short.68",
+      "title_zh": "RAM-EHR：检索增强遇上电子健康档案临床预测",
+      "abstract_zh": "我们提出 RAM-EHR——一条用于改进电子健康档案（EHR）临床预测的检索增强流水线。RAM-EHR 先汇集多个知识源并把它们转成文本格式，再用稠密检索获取与医学概念相关的信息；这一策略化解了医学概念名称复杂带来的困难。随后，RAM-EHR 用与一致性正则化共同训练的本地 EHR 预测模型做增强，从患者就诊记录与被摘要化的知识中捕获互补信息。在两个 EHR 数据集上的实验显示，RAM-EHR 优于此前的知识增强基线（AUROC 提升 3.4%、AUPR 提升 7.2%），凸显其摘要知识对临床预测任务的有效性。",
+      "topics": ["medical-science", "language-nlp", "llm"],
+      "keywords": [
+        {"en": "electronic health records", "zh": "电子健康档案"},
+        {"en": "dense retrieval", "zh": "稠密检索"},
+        {"en": "clinical prediction", "zh": "临床预测"},
+        {"en": "consistency regularization", "zh": "一致性正则化"},
+        {"en": "knowledge summarization", "zh": "知识摘要"}
+      ]
+    },
+    {
+      "id": "acl-117-acl-2024.findings-acl.443",
+      "title_zh": "大模型越狱攻击与防御的全面研究",
+      "abstract_zh": "大语言模型（LLM）日益成为内容生成的核心，其产出可能对社会造成影响，且已被证明能生成可被视为有害的内容。为降低风险，研究者采用安全训练技术使模型输出对齐社会价值，以抑制恶意内容的生成。然而「越狱」现象——用精心设计的提示诱导模型给出有害回答——依然是重大挑战。本研究对现有的 LLM 越狱攻击及其防御技术做系统分析，在 Vicuna、LLaMA 与 GPT-3.5 Turbo 三种语言模型上细致考察九种攻击技术与七种防御技术，以评估其有效性。我们发现：现有白盒攻击的表现不如通用型技术，而在输入中加入特殊符号会显著影响攻击成功的可能性。本研究强调必须关注 LLM 的安全性层面，并通过公开我们的数据集与测试框架来推动该领域的进一步研究。",
+      "topics": ["trustworthy", "llm"],
+      "keywords": [
+        {"en": "jailbreak attack", "zh": "越狱攻击"},
+        {"en": "safety training", "zh": "安全训练"},
+        {"en": "defense evaluation", "zh": "防御评估"},
+        {"en": "white-box attack", "zh": "白盒攻击"},
+        {"en": "special token injection", "zh": "特殊符号注入"}
+      ]
+    },
+    {
+      "id": "acl-118-acl-2024.acl-long.301",
+      "title_zh": "CodeScope：面向代码理解与生成的执行式多语多任务多维度 LLM 评测基准",
+      "abstract_zh": "大语言模型（LLM）在辅助人类编程与推动编程自动化方面表现卓越。然而，现有评测 LLM 代码理解与生成能力的基准存在严重局限。其一，多数基准聚焦于范围狭窄的流行编程语言与特定任务，而真实软件开发场景迫切需要在多语言、多任务的编程环境下构建系统以满足多样需求；其二，多数基准未考虑生成代码的实际可执行性与执行结果的一致性。为弥合现有基准与实际应用期望之间的落差，我们提出 CodeScope——一个执行式、多语言、多任务、多维度的评测基准，用于全面衡量 LLM 在编码任务上的能力。CodeScope 覆盖 43 种编程语言与 8 类编码任务，并从长度、难度与效率三个维度评估 LLM 的编码表现。为便于对代码生成做基于执行的评测，我们开发了支持 14 种编程语言自动化执行引擎 MultiCodeEngine。最后我们系统评测并分析了八个主流 LLM，表明在代码理解与生成任务上，CodeScope 相比其他基准具有更优的覆盖广度并能带来更大挑战。基准与代码已在 https://github.com/WeixiangYAN/CodeScope 公开。",
+      "topics": ["language-nlp", "trustworthy", "architectures"],
+      "keywords": [
+        {"en": "code generation benchmark", "zh": "代码生成基准"},
+        {"en": "execution-based evaluation", "zh": "基于执行的评测"},
+        {"en": "multilingual programming", "zh": "多语言编程"},
+        {"en": "code executability", "zh": "代码可执行性"},
+        {"en": "evaluation dimensions", "zh": "评测维度"}
+      ]
+    },
+    {
+      "id": "acl-119-acl-2024.acl-long.262",
+      "title_zh": "像人一样规划：面向对话规划的双过程框架",
+      "abstract_zh": "在主动对话中，难点不仅在于生成回复，更在于把对话引导向既定目标；而大语言模型（LLM）由于其被动响应的天性，通常在这类任务上表现不佳。增强 LLM 对话规划的传统做法，从精细的提示工程到接入策略网络，要么存在效率问题，要么效果次优。受心理学中「双过程理论」启发——即存在直觉（快）与分析（慢）两种思维模式——我们提出双过程对话规划框架 DPDP。DPDP 通过两个互补的规划系统体现该理论：面向熟悉情境的本能式策略模型，以及面向复杂新异场景的审议式蒙特卡洛树搜索（MCTS）机制。这一双策略再配合新颖的两阶段训练方案：先用离线强化学习形成稳健的初始策略模型，随后进行 MCTS 增强的在线学习，从而在效率与策略深度之间保持动态平衡。在多样对话任务上的实证评测证实，DPDP 在获得高质量对话与保持运行效率两方面均优于现有方法。",
+      "topics": ["rl-decision", "language-nlp", "llm"],
+      "keywords": [
+        {"en": "proactive dialogue", "zh": "主动对话"},
+        {"en": "dual-process theory", "zh": "双过程理论"},
+        {"en": "Monte Carlo Tree Search", "zh": "蒙特卡洛树搜索"},
+        {"en": "offline reinforcement learning", "zh": "离线强化学习"},
+        {"en": "dialogue planning", "zh": "对话规划"}
+      ]
+    },
+    {
+      "id": "acl-120-acl-2024.acl-long.780",
+      "title_zh": "更好地理解句子表征对比学习：统一的梯度范式",
+      "abstract_zh": "句子表征学习（SRL）是自然语言处理中的关键任务，对比式自监督学习（SSL）目前是主流方法，但其为何如此有效仍不清楚。具体而言，许多工作从理论角度研究了「对比式与非对比式自监督学习」之间的相似性；这种相似性在分类任务上可以成立（两者表现相当），但在排序任务（即 SRL 中的语义文本相似度 STS）上，对比式 SSL 显著优于非对比式 SSL。由此产生两个问题：其一，是什么共性让各种对比损失在 STS 上表现优异？其二，如何让非对比式 SSL 在 STS 上也变得有效？为回答这两个问题，我们从梯度视角切入，发现四种有效的对比损失可以被整合进一个统一范式，该范式依赖三个组成部分：梯度耗散、权重与比值。随后我们深入分析这些成分在优化中所起的作用，并用实验证明它们对模型性能的重要性。最后，通过调节这些成分，我们让非对比式 SSL 在 STS 上也取得出色表现。",
+      "topics": ["architectures", "language-nlp"],
+      "keywords": [
+        {"en": "sentence representation learning", "zh": "句子表征学习"},
+        {"en": "contrastive self-supervised learning", "zh": "对比自监督学习"},
+        {"en": "semantic textual similarity", "zh": "语义文本相似度"},
+        {"en": "gradient dissipation", "zh": "梯度耗散"},
+        {"en": "unified loss paradigm", "zh": "统一损失范式"}
+      ]
+    }
+  ]
+}
