@@ -22,3 +22,5 @@ review_*.txt
 logs_refetch.txt
 logs_verify.txt
 logs_*.txt
+rev*.txt
+logs_serve.txt

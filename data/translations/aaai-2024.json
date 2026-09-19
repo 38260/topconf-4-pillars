@@ -1,0 +1,163 @@
+{
+  "venue": "AAAI 2024",
+  "translated_by": "本项目逐篇人工翻译（对照 OpenAlex 收录的 AAAI 官方记录摘要）",
+  "translated_at": "2026-09-19",
+  "papers": [
+    {
+      "id": "aaai-085-aaai-2024-w1690",
+      "title_zh": "MobileInst：在手机端做视频实例分割",
+      "abstract_zh": "在手机设备上做视频实例分割是一个重要但极难的边缘 AI 问题，主要受制于两点：（1）逐帧像素级实例感知带来的沉重计算与显存开销；（2）目标跟踪所需的复杂启发式规则。为应对这些问题，我们提出 MobileInst——一个面向移动设备视频实例分割的轻量友好框架。首先，MobileInst 采用移动端视觉 Transformer 抽取多层级语义特征，并为掩码核设计了一个高效的、基于查询的双 Transformer 实例解码器，再用语义增强的掩码解码器逐帧生成分割结果。其次，MobileInst 用简单却有效的「核复用」与「核关联」来完成视频实例分割中的目标跟踪；进一步提出时序查询传递以增强核的跟踪能力。我们在 COCO 与 YouTube-VIS 数据集上实验以证明 MobileInst 的优越性，并在骁龙 778G 移动平台的单个 CPU 核上评测推理延迟（不使用任何额外加速手段）。在 COCO 上，MobileInst 在移动 CPU 上取得 31.2 的掩码 AP 与 433 ms 延迟，相比此前最先进方法把延迟降低 50%；在视频实例分割上，它在 YouTube-VIS 2019 与 2021 上分别取得 35.0 AP 与 30.1 AP。",
+      "topics": ["edge-efficiency", "perception", "architectures"],
+      "keywords": [
+        {"en": "video instance segmentation", "zh": "视频实例分割"},
+        {"en": "edge AI", "zh": "边缘 AI"},
+        {"en": "mobile CPU latency", "zh": "移动 CPU 延迟"},
+        {"en": "kernel reuse", "zh": "核复用"},
+        {"en": "query-based decoder", "zh": "基于查询的解码器"}
+      ]
+    },
+    {
+      "id": "aaai-086-aaai-2024-w244",
+      "title_zh": "Agile-Quant：激活引导的量化，加速边缘设备上的大模型推理",
+      "abstract_zh": "大语言模型（LLM）在复杂语言建模任务上表现突出，但其高企的计算与显存需求阻碍了在边缘设备上的广泛使用。于是引入量化来提升 LLM 的端侧效率。近期工作表明 8 比特或更低的权重量化可行且对端到端任务性能影响极小，但激活值仍未被量化；另一方面，主流商用边缘设备也难以有效执行这些低于 8 比特的量化网络。本文提出 Agile-Quant——一个在边缘上加速主流 LLM 推理的「激活引导」量化框架。综合考虑硬件画像与激活分析，我们首先给出一个基础激活量化策略，在任务性能与真实推理速度之间取得平衡；随后利用激活感知的 token 剪枝技术减少离群值及其对注意力的不利影响；最终采用基于 SIMD 的 4 比特乘法器与我们的高效 TRIP 矩阵乘法，实现面向边缘 LLM 的加速器。我们把该框架应用于 LLaMA、OPT、BLOOM 等不同规模的 LLM，激活用 4 或 8 比特、权重用 4 比特量化。实验显示 Agile-Quant 在实现权重与激活同时量化的同时，保持与仅权重量化方法相当的任务性能；并且在 8 比特与 4 比特场景下，相对其 FP16 版本在多种边缘设备上取得最高 2.55 倍的端侧加速，是该方向的开创性进展。",
+      "topics": ["edge-efficiency", "llm", "architectures"],
+      "keywords": [
+        {"en": "activation quantization", "zh": "激活量化"},
+        {"en": "edge inference", "zh": "边缘推理"},
+        {"en": "SIMD accelerator", "zh": "SIMD 加速器"},
+        {"en": "activation-aware token pruning", "zh": "激活感知 token 剪枝"},
+        {"en": "low-bit LLM", "zh": "低比特大模型"}
+      ]
+    },
+    {
+      "id": "aaai-087-aaai-2024-w3",
+      "title_zh": "大语言模型在检索增强生成中的能力评测",
+      "abstract_zh": "检索增强生成（RAG）是缓解大语言模型（LLM）幻觉的一条有前景的路径。然而现有研究缺乏对「RAG 对不同 LLM 的影响」的严格评测，难以定位 RAG 在不同 LLM 上能力短板的所在。本文系统考察 RAG 对大语言模型的影响，分析不同 LLM 在 RAG 所需四项基础能力上的表现：噪声鲁棒性、负例拒绝、信息整合与反事实鲁棒性。为此我们建立检索增强生成基准（RGB），一个中英双语的 RAG 评测语料。RGB 按上述四项基础能力把基准内的样例划分为四个独立测试集。随后我们在 RGB 上评测 6 个具代表性的 LLM，以诊断当前 LLM 应用 RAG 时的挑战。评测显示：尽管 LLM 具备一定程度的噪声鲁棒性，但在负例拒绝、信息整合与处理虚假信息上仍困难重重。这些结果说明，要把 RAG 真正有效地用于 LLM，还有相当长的路要走。",
+      "topics": ["llm", "language-nlp", "trustworthy"],
+      "keywords": [
+        {"en": "retrieval-augmented generation", "zh": "检索增强生成"},
+        {"en": "noise robustness", "zh": "噪声鲁棒性"},
+        {"en": "negative rejection", "zh": "负例拒绝"},
+        {"en": "counterfactual robustness", "zh": "反事实鲁棒性"},
+        {"en": "bilingual benchmark", "zh": "双语基准"}
+      ]
+    },
+    {
+      "id": "aaai-088-aaai-2024-w160",
+      "title_zh": "视觉思维链提示用于基于知识的视觉推理",
+      "abstract_zh": "基于知识的视觉推理仍是艰巨任务：机器不仅要从视觉场景中解读概念与关系，还要把它们与外部世界知识关联，从而对开放世界问题展开一链推理。然而以往工作把视觉感知与语言推理当作两个独立模块，无法在推理的全部阶段同时兼顾两者。为此我们提出面向知识推理的「思维链提示」（VCTP），以迭代式逐步推理的方式让视觉内容与自然语言相互交互。VCTP 含三个阶段：看（see）、想（think）、确认（confirm）。看阶段用视觉感知模型扫描图像并接地视觉概念候选；想阶段用预训练大语言模型（LLM）自适应地从自然语言问题中关注关键视觉概念，随后借助图像描述模型把关键视觉上下文转成文本上下文用于提示，并由 LLM 生成答案；确认阶段进一步让 LLM 生成支撑答案的理由，再经由跨模态分类器校验它与视觉上下文是否一致。我们迭代「想—确认」两阶段，以确保经过验证的理由与答案保持一致。在一系列基于知识的视觉推理数据集上的实验显示，VCTP 有若干优势：1）优于此前的少样本学习基线；2）为每一步推理给出理由，使整个推理过程完全透明可信；3）相比其他微调基线计算效率更高。代码见 https://github.com/UMass-Foundation-Model/VisualCoT.git。",
+      "topics": ["llm", "multimodal", "trustworthy"],
+      "keywords": [
+        {"en": "visual chain-of-thought", "zh": "视觉思维链"},
+        {"en": "knowledge-based visual reasoning", "zh": "基于知识的视觉推理"},
+        {"en": "iterative prompting", "zh": "迭代提示"},
+        {"en": "rationale verification", "zh": "理由校验"},
+        {"en": "cross-modality classifier", "zh": "跨模态分类器"}
+      ]
+    },
+    {
+      "id": "aaai-089-aaai-2024-w393",
+      "title_zh": "自监督多模态知识图谱对比哈希用于跨模态检索",
+      "abstract_zh": "深度跨模态哈希为跨模态检索提供了有效且高效的跨模态统一表征学习方案。但现有方法忽视了模态之间隐含的细粒度多模态知识关联——例如图像中包含文本并未直接描述的信息。为解决这一问题，我们提出面向跨模态检索的自监督多粒度多模态知识图谱对比哈希方法（CMGCH）。首先，为捕获隐含的细粒度跨模态语义关联，我们构建一个多模态知识图谱，把图像与文本之间隐含的多模态知识关系表示为模态间与模态内的语义关联；其次提出跨模态图对比注意力网络，在多模态知识图谱上推理，充分学习隐含的细粒度模态间与模态内知识关系；第三提出跨模态多粒度对比嵌入学习机制，用多头注意力融合全局粗粒度与局部细粒度嵌入，用于模态间与模态内的对比学习，从而增强跨模态统一表征的判别力与语义一致性保持能力。借助模态内与模态间对比的联合训练，不同模态的不变信息与模态特有信息得以在最终的统一跨模态哈希空间中同时保留。在多个跨模态基准数据集上的大量实验表明，所提 CMGCH 优于当前最先进方法。",
+      "topics": ["multimodal", "architectures", "language-nlp"],
+      "keywords": [
+        {"en": "cross-modal hashing", "zh": "跨模态哈希"},
+        {"en": "multi-modal knowledge graph", "zh": "多模态知识图谱"},
+        {"en": "contrastive attention network", "zh": "对比注意力网络"},
+        {"en": "multi-granularity embedding", "zh": "多粒度嵌入"},
+        {"en": "self-supervised learning", "zh": "自监督学习"}
+      ]
+    },
+    {
+      "id": "aaai-090-aaai-2024-w891",
+      "title_zh": "通过缓存启用的稀疏扩散推理加速文本到图像的编辑",
+      "abstract_zh": "随着扩散模型近期取得成功，文本生成图像日益流行并应用广泛。其中，文生图编辑（即持续的文生图生成）备受关注，有望提升生成图像的质量。用户常希望通过几轮扩散推理、对输入文本描述做小幅修改来微调已生成的图像。然而由于许多现有扩散模型推理效率低下，这一编辑过程即便使用 GPU 加速器也十分缓慢。为解决该问题，我们提出 Fast Image Semantically Edit（FISEdit）——一个缓存启用、带稀疏扩散推理的引擎，用于高效的文生图编辑。其核心洞见是利用「输入文本的小幅改动」与「输出图像受影响区域」之间的语义映射：在每一步文本编辑时，FISEdit 能 1）自动识别受影响的图像区域，2）利用缓存中未变化区域的特征图来加速推理。对前者，我们度量在修改后的文本描述下，缓存特征图与即时特征图之间的差异，抽取差异显著的区域并用掩码刻画受影响区域；对后者，我们设计高效的稀疏扩散推理引擎，只对受影响区域计算特征图，其余部分复用已缓存的统计量。最终大量实证结果显示，FISEdit 在 NVIDIA TITAN RTX 与 A100 GPU 上分别比现有方法快 3.4 倍与 4.4 倍，且生成更令人满意的图像。",
+      "topics": ["generative", "edge-efficiency", "llm"],
+      "keywords": [
+        {"en": "image editing acceleration", "zh": "图像编辑加速"},
+        {"en": "sparse diffusion inference", "zh": "稀疏扩散推理"},
+        {"en": "feature-map caching", "zh": "特征图缓存"},
+        {"en": "affected region masking", "zh": "受影响区域掩码"},
+        {"en": "text-to-image generation", "zh": "文本生成图像"}
+      ]
+    },
+    {
+      "id": "aaai-091-aaai-2024-w1470",
+      "title_zh": "深度引导的鲁棒快速点云融合 NeRF：面向稀疏输入视角",
+      "abstract_zh": "在稀疏输入视角下合成新视角，对 AR/VR、自动驾驶等真实应用至关重要。近期方法把深度信息融入 NeRF 以做稀疏输入合成，借助深度先验来理解几何与空间关系。但多数现有工作忽视了深度图中的不准确性，且时间效率较低。为解决这些问题，我们提出面向稀疏输入的深度引导、鲁棒且快速的点云融合 NeRF。我们把辐射场感知为一个显式的特征体素网格：为每个输入视角构建点云，并用矩阵与向量在体素网格内刻画其特征；累加各输入视角的点云以构建整个场景的融合点云；每个体素通过参考全场景点云来确定其密度与外观。借助点云融合与体素网格微调，深度值中的误差会被细化或由其他视角的信息替代。此外，通过有效的向量—矩阵分解，本方法还能实现更快的重建与更紧凑的表示。实验结果凸显了相比最先进基线，我们在性能与时间效率上的优势。",
+      "topics": ["3d-embodied", "generative", "architectures"],
+      "keywords": [
+        {"en": "novel view synthesis", "zh": "新视角合成"},
+        {"en": "sparse input views", "zh": "稀疏输入视角"},
+        {"en": "point cloud fusion", "zh": "点云融合"},
+        {"en": "voxel grid representation", "zh": "体素网格表示"},
+        {"en": "depth prior refinement", "zh": "深度先验修正"}
+      ]
+    },
+    {
+      "id": "aaai-092-aaai-2024-w162",
+      "title_zh": "大语言模型即临床推理者：以提示生成理由构建推理感知的诊断框架",
+      "abstract_zh": "得益于大语言模型（LLM），机器推理近年取得长足进展。然而在临床领域，多数 NLP 驱动的项目仍集中在临床分类或阅读理解上；由于需要临床专家标注推理理由、代价高昂，面向疾病诊断的临床推理被严重探索不足。本工作提出一个「推理感知」的诊断框架：以基于提示的学习把诊断过程理由化，省时省人力，并在这些由提示生成的理由之上学习推理。具体地，我们研究面向疾病诊断的临床推理——由 LLM 生成诊断理由，给出其对所提供患者数据的洞察以及通往诊断的推理路径，即临床思维链（Clinical CoT）。我们在理由生成与疾病诊断两类任务、多种设定下开展大量实验与分析，实证展示 LLM/语言模型的临床推理能力。我们还提出一套新的准则，用于评估机器生成理由在真实临床场景中的可用性，为该领域的后续研究提供便利与助益。",
+      "topics": ["medical-science", "llm", "language-nlp"],
+      "keywords": [
+        {"en": "clinical reasoning", "zh": "临床推理"},
+        {"en": "disease diagnosis", "zh": "疾病诊断"},
+        {"en": "clinical chain-of-thought", "zh": "临床思维链"},
+        {"en": "prompt-based learning", "zh": "基于提示的学习"},
+        {"en": "rationale evaluation criteria", "zh": "理由评估准则"}
+      ]
+    },
+    {
+      "id": "aaai-093-aaai-2024-w1281",
+      "title_zh": "LimeAttack：用局部可解释方法做文本硬标签对抗攻击",
+      "abstract_zh": "自然语言处理模型易受对抗样例攻击。既往文本对抗攻击利用模型内部信息（梯度或置信度分数）来生成对抗样例，但这类信息在现实场景中不可得。因此我们关注更真实也更困难的设定——硬标签攻击：攻击者只能查询模型并得到一个离散的预测标签。现有硬标签攻击算法往往以随机替换来初始化对抗样例，再用复杂的启发式算法优化对抗扰动，因而需要大量模型查询，且攻击成功率受限于初始化的质量。本文提出新的硬标签攻击算法 LimeAttack：先用局部可解释方法近似出词的重要性排序，再采用束搜索寻找最优解。大量实验表明，在相同查询预算下 LimeAttack 的攻击表现优于现有硬标签攻击。我们还在大语言模型与若干防御方法上评估其有效性，结果显示对抗样例仍对 LLM 构成显著威胁；由 LimeAttack 构造的对抗样例迁移性很强，并能有效提升对抗训练下模型的鲁棒性。",
+      "topics": ["trustworthy", "language-nlp", "llm"],
+      "keywords": [
+        {"en": "hard-label attack", "zh": "硬标签攻击"},
+        {"en": "local explainability", "zh": "局部可解释性"},
+        {"en": "beam search", "zh": "束搜索"},
+        {"en": "query budget", "zh": "查询预算"},
+        {"en": "adversarial transferability", "zh": "对抗迁移性"}
+      ]
+    },
+    {
+      "id": "aaai-094-aaai-2024-w367",
+      "title_zh": "属性级情感分析中的显式情感增强",
+      "abstract_zh": "属性级情感分析（ABSA）作为一种细粒度情感分类任务近来备受关注。许多工作通过观点词（如「好」「差」）来考察情感信息。然而 ABSA 数据集中广泛存在隐式情感数据——由于缺少明显的观点词，其情感极性难以判定。为处理隐式情感，本文提出融合显式情感增强的 ABSA 方法（ABSA-ESA），以补充更多情感线索。我们设计一种 ABSA 专属的显式情感生成方法来制造这类增强数据：具体地，用规则构造的数据对 T5 做后训练，并采用三种策略来约束所生成增强样本的情感极性与属性词。在训练过程中，我们使用句法距离加权与不可能性对比正则化，引导模型生成与输入句子极性一致的显式观点词；同时用受约束的束搜索确保增强样本与属性相关。我们在两个 ABSA 基准上测试 ABSA-ESA，结果显示它在隐式与显式情感准确率上均优于当前最优基线。",
+      "topics": ["language-nlp", "architectures"],
+      "keywords": [
+        {"en": "aspect-based sentiment analysis", "zh": "属性级情感分析"},
+        {"en": "implicit sentiment", "zh": "隐式情感"},
+        {"en": "sentiment augmentation", "zh": "情感增强"},
+        {"en": "constrained beam search", "zh": "受约束束搜索"},
+        {"en": "unlikelihood regularization", "zh": "不可能性正则"}
+      ]
+    },
+    {
+      "id": "aaai-095-aaai-2024-w883",
+      "title_zh": "FoX：多智能体强化学习中的队形感知探索",
+      "abstract_zh": "近来深度多智能体强化学习（MARL）因在众多协作型多智能体任务上成功而广受欢迎。但由于智能体的部分可观测性、以及探索空间随智能体数量增加可能指数膨胀，探索在 MARL 中仍是难题。首先，为解决探索空间的规模问题，我们在探索空间上定义一个基于队形的等价关系，只探索不同队形中有意义的状态以缩减搜索空间；随后提出新颖的队形感知探索（FoX）框架，鼓励部分可观测的智能体以多样化的队形访问状态——仅依据自身观测就引导它们充分意识到当前所处队形。数值结果表明，所提 FoX 框架在 Google Research Football（GRF）与稀疏奖励的星际争霸 II 多智能体挑战（SMAC）任务上显著优于最先进的 MARL 算法。",
+      "topics": ["rl-decision", "architectures"],
+      "keywords": [
+        {"en": "multi-agent reinforcement learning", "zh": "多智能体强化学习"},
+        {"en": "formation-aware exploration", "zh": "队形感知探索"},
+        {"en": "partial observability", "zh": "部分可观测"},
+        {"en": "equivalence relation", "zh": "等价关系"},
+        {"en": "sparse reward", "zh": "稀疏奖励"}
+      ]
+    },
+    {
+      "id": "aaai-096-aaai-2024-w582",
+      "title_zh": "为可泛化图神经网络而学习重加权",
+      "abstract_zh": "图神经网络（GNN）在图任务上表现可观。但当测试图与训练图之间存在分布偏移时，现有 GNN 的泛化能力会退化；其根本原因在于多数 GNN 是依据独立同分布（I.I.D.）假设设计的，因而倾向于利用训练集中细微的统计相关性做预测——即便这种相关性是虚假的。本文研究 GNN 在分布外（OOD）设定下的泛化能力。为解决该问题，我们提出「为可泛化 GNN 而学习重加权」（L2R-GNN），增强泛化能力以在分布不同于训练图的未知测试图上取得理想表现。我们提出一种新颖的非线性图解相关方法，能显著提升分布外泛化能力，并在避免样本量被过度削减方面优于以往方法：按相关性的稳定性对图表征变量聚类，图解相关方法学习权重来消除不同簇之间（而非任意两个）变量的相关性。此外，我们基于双层优化设计了一个有效的随机算法，使最优权重与 GNN 参数得以同时学习，并规避过拟合问题。实验显示，在分布偏移下的多种图预测基准上，L2R-GNN 大幅优于基线。",
+      "topics": ["architectures", "trustworthy"],
+      "keywords": [
+        {"en": "graph neural network", "zh": "图神经网络"},
+        {"en": "out-of-distribution generalization", "zh": "分布外泛化"},
+        {"en": "learning to reweight", "zh": "学习重加权"},
+        {"en": "graph decorrelation", "zh": "图解相关"},
+        {"en": "bi-level optimization", "zh": "双层优化"}
+      ]
+    }
+  ]
+}
