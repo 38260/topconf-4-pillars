@@ -1,40 +1,125 @@
 {
   "stats": {
-    "CVPR": {
+    "CVPR 2026": {
+      "venue": "CVPR",
+      "year": 2026,
       "papers": 4042,
       "with_abstract": 0,
       "abstract_coverage": 0.0,
       "duplicate_titles": 0,
       "with_doi": 0,
       "with_pdf": 4042,
-      "with_authors": 4042
+      "with_bibtex": 4042
     },
-    "ICCV": {
-      "papers": 2701,
+    "CVPR 2025": {
+      "venue": "CVPR",
+      "year": 2025,
+      "papers": 2871,
       "with_abstract": 0,
       "abstract_coverage": 0.0,
       "duplicate_titles": 0,
       "with_doi": 0,
-      "with_pdf": 2701,
-      "with_authors": 2701
+      "with_pdf": 2871,
+      "with_bibtex": 2871
     },
-    "ACL": {
-      "papers": 4809,
+    "CVPR 2024": {
+      "venue": "CVPR",
+      "year": 2024,
+      "papers": 2716,
       "with_abstract": 0,
       "abstract_coverage": 0.0,
       "duplicate_titles": 0,
-      "with_doi": 4809,
-      "with_pdf": 4809,
-      "with_authors": 4809
+      "with_doi": 0,
+      "with_pdf": 2715,
+      "with_bibtex": 2716
     },
-    "AAAI": {
+    "AAAI 2026": {
+      "venue": "AAAI",
+      "year": 2026,
       "papers": 4976,
       "with_abstract": 4976,
       "abstract_coverage": 1.0,
       "duplicate_titles": 63,
       "with_doi": 4976,
       "with_pdf": 4976,
-      "with_authors": 4976
+      "with_bibtex": 0
+    },
+    "AAAI 2025": {
+      "venue": "AAAI",
+      "year": 2025,
+      "papers": 3486,
+      "with_abstract": 3486,
+      "abstract_coverage": 1.0,
+      "duplicate_titles": 0,
+      "with_doi": 3486,
+      "with_pdf": 3486,
+      "with_bibtex": 0
+    },
+    "AAAI 2024": {
+      "venue": "AAAI",
+      "year": 2024,
+      "papers": 2867,
+      "with_abstract": 2867,
+      "abstract_coverage": 1.0,
+      "duplicate_titles": 1,
+      "with_doi": 2867,
+      "with_pdf": 2867,
+      "with_bibtex": 0
+    },
+    "ICCV 2025": {
+      "venue": "ICCV",
+      "year": 2025,
+      "papers": 2701,
+      "with_abstract": 0,
+      "abstract_coverage": 0.0,
+      "duplicate_titles": 0,
+      "with_doi": 0,
+      "with_pdf": 2701,
+      "with_bibtex": 2701
+    },
+    "ICCV 2023": {
+      "venue": "ICCV",
+      "year": 2023,
+      "papers": 2156,
+      "with_abstract": 0,
+      "abstract_coverage": 0.0,
+      "duplicate_titles": 0,
+      "with_doi": 0,
+      "with_pdf": 2156,
+      "with_bibtex": 2156
+    },
+    "ACL 2026": {
+      "venue": "ACL",
+      "year": 2026,
+      "papers": 4809,
+      "with_abstract": 0,
+      "abstract_coverage": 0.0,
+      "duplicate_titles": 0,
+      "with_doi": 4809,
+      "with_pdf": 4809,
+      "with_bibtex": 0
+    },
+    "ACL 2025": {
+      "venue": "ACL",
+      "year": 2025,
+      "papers": 3351,
+      "with_abstract": 0,
+      "abstract_coverage": 0.0,
+      "duplicate_titles": 0,
+      "with_doi": 3351,
+      "with_pdf": 3351,
+      "with_bibtex": 0
+    },
+    "ACL 2024": {
+      "venue": "ACL",
+      "year": 2024,
+      "papers": 1952,
+      "with_abstract": 0,
+      "abstract_coverage": 0.0,
+      "duplicate_titles": 0,
+      "with_doi": 1952,
+      "with_pdf": 1952,
+      "with_bibtex": 0
     }
   },
   "pillars": [
@@ -82,5 +167,74 @@
       "source_url": "https://aclanthology.org/events/acl-2026/",
       "accent": "amber"
     }
-  ]
+  ],
+  "editions": [
+    {
+      "venue": "CVPR",
+      "year": 2026,
+      "kind": "cvf",
+      "label": "CVPR 2026"
+    },
+    {
+      "venue": "CVPR",
+      "year": 2025,
+      "kind": "cvf",
+      "label": "CVPR 2025"
+    },
+    {
+      "venue": "CVPR",
+      "year": 2024,
+      "kind": "cvf",
+      "label": "CVPR 2024"
+    },
+    {
+      "venue": "AAAI",
+      "year": 2026,
+      "kind": "openalex",
+      "label": "AAAI 2026"
+    },
+    {
+      "venue": "AAAI",
+      "year": 2025,
+      "kind": "openalex",
+      "label": "AAAI 2025"
+    },
+    {
+      "venue": "AAAI",
+      "year": 2024,
+      "kind": "openalex",
+      "label": "AAAI 2024"
+    },
+    {
+      "venue": "ICCV",
+      "year": 2025,
+      "kind": "cvf",
+      "label": "ICCV 2025"
+    },
+    {
+      "venue": "ICCV",
+      "year": 2023,
+      "kind": "cvf",
+      "label": "ICCV 2023"
+    },
+    {
+      "venue": "ACL",
+      "year": 2026,
+      "kind": "acl",
+      "label": "ACL 2026"
+    },
+    {
+      "venue": "ACL",
+      "year": 2025,
+      "kind": "acl",
+      "label": "ACL 2025"
+    },
+    {
+      "venue": "ACL",
+      "year": 2024,
+      "kind": "acl",
+      "label": "ACL 2024"
+    }
+  ],
+  "total": 35927
 }

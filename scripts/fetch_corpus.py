@@ -13,32 +13,31 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from fetchlib import acl_anthology, cvf, http, openalex  # noqa: E402
-from pillars import PILLARS  # noqa: E402
+from pillars import EDITIONS, PILLARS  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 
 
 def fetch_all(use_cache: bool = True) -> dict:
-    buckets: dict[str, list] = {}
+    """Fetch every edition in pillars.EDITIONS, merged into four venue buckets."""
+    buckets: dict[str, list] = {p["key"]: [] for p in PILLARS}
 
-    for key in ("CVPR", "ICCV"):
-        pillar = next(p for p in PILLARS if p["key"] == key)
-        print(f"[CVF] {pillar['label']} {pillar['year']} …")
-        rows = cvf.index(key, use_cache=use_cache)
+    for ed in EDITIONS:
+        venue, year = ed["venue"], ed["year"]
+        if ed["kind"] == "cvf":
+            print(f"[CVF] {ed['label']} …")
+            rows = cvf.index(venue, year, use_cache=use_cache)
+        elif ed["kind"] == "acl":
+            print(f"[ACL] {ed['label']} volumes …")
+            vols = acl_anthology.discover_volumes(year)
+            print(f"  · {', '.join(vols)}")
+            rows = acl_anthology.index(year, vols, use_cache=use_cache)
+        else:
+            print(f"[OpenAlex] {ed['label']} …")
+            rows = openalex.index(year=year, use_cache=use_cache)
         print(f"  · {len(rows)} papers")
-        buckets[key] = rows
-
-    print("[ACL] discovering volumes …")
-    vols = acl_anthology.discover_volumes()
-    print(f"  · volumes: {', '.join(vols)}")
-    buckets["ACL"] = acl_anthology.index(vols, use_cache=use_cache)
-    print(f"  · {len(buckets['ACL'])} papers")
-
-    pillar = next(p for p in PILLARS if p["key"] == "AAAI")
-    print(f"[OpenAlex] AAAI {pillar['year']} …")
-    buckets["AAAI"] = openalex.index(year=pillar["year"], use_cache=use_cache)
-    print(f"  · {len(buckets['AAAI'])} papers")
+        buckets[venue].extend(rows)
 
     return buckets
 
@@ -55,29 +54,30 @@ def main() -> int:
 
     os.makedirs(DATA, exist_ok=True)
     stats = {}
-    for key, rows in buckets.items():
+    for ed in EDITIONS:
+        rows = [r for r in buckets[ed["venue"]] if r["year"] == ed["year"]]
         with_abs = sum(1 for r in rows if r["abstract"])
-        dup = len(rows) - len({r["title"].lower() for r in rows})
-        stats[key] = {
-            "papers": len(rows),
+        stats[ed["label"]] = {
+            "venue": ed["venue"], "year": ed["year"], "papers": len(rows),
             "with_abstract": with_abs,
             "abstract_coverage": round(with_abs / len(rows), 4) if rows else 0,
-            "duplicate_titles": dup,
+            "duplicate_titles": len(rows) - len({r["title"].lower() for r in rows}),
             "with_doi": sum(1 for r in rows if r["doi"]),
             "with_pdf": sum(1 for r in rows if r["pdf_url"]),
-            "with_authors": sum(1 for r in rows if r["authors"]),
+            "with_bibtex": sum(1 for r in rows if r.get("bibtex")),
         }
-        print(f"{key:5s} papers={stats[key]['papers']:5d} "
-              f"abstract={stats[key]['abstract_coverage']*100:5.1f}% "
-              f"doi={stats[key]['with_doi']} dup_titles={dup}")
+        s = stats[ed["label"]]
+        print(f"{ed['label']:11s} papers={s['papers']:5d} abstract={s['abstract_coverage']*100:5.1f}% "
+              f"doi={s['with_doi']:5d} pdf={s['with_pdf']:5d} bib={s['with_bibtex']:5d} dup={s['duplicate_titles']}")
 
     out = {"stats": stats, "papers": {k: v for k, v in buckets.items()}}
     path = os.path.join(DATA, "corpus.json")
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(out, fh, ensure_ascii=False)
-    print(f"\nwrote {path} ({os.path.getsize(path)/1e6:.1f} MB)")
+    total = sum(s["papers"] for s in stats.values())
+    print(f"\nwrote {path} ({os.path.getsize(path)/1e6:.1f} MB, {total} papers)")
 
-    meta = {"stats": stats, "pillars": PILLARS}
+    meta = {"stats": stats, "pillars": PILLARS, "editions": EDITIONS, "total": total}
     mpath = os.path.join(DATA, "corpus_meta.json")
     with open(mpath, "w", encoding="utf-8") as fh:
         json.dump(meta, fh, ensure_ascii=False, indent=2)

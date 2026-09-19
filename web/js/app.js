@@ -9,6 +9,7 @@
     venue: null,            // 单支柱下钻
     topic: null,            // 主题下钻
     paperId: null,          // 模态框
+    year: null,             // 届次下钻（近三年扩充）
     source: null,           // inline | api
     tocOpen: localStorage.getItem("topconf.toc") !== "0"
   };
@@ -65,6 +66,7 @@
     return state.data.papers.filter(function (p) {
       if (state.venue && p.venue !== state.venue) return false;
       if (state.topic && p.topics.indexOf(state.topic) < 0) return false;
+      if (state.year && String(p.year) !== String(state.year)) return false;
       if (q && haystack(p).indexOf(q) < 0) return false;
       return true;
     });
@@ -81,6 +83,7 @@
   /* ---------------- 渲染 ---------------- */
   function renderAll() {
     renderFacts();
+    renderYearBar();
     renderStats();
     renderFilterbar();
     renderView();
@@ -114,6 +117,32 @@
       '<span class="hint">BibTeX 取出版方官方原文；RIS / Markdown 由已核验字段渲染。</span>' + hint;
   }
 
+  /* ---------------- 届次（2023–2026 共 11 届） ---------------- */
+  function years() {
+    var m = {};
+    state.data.papers.forEach(function (p) { m[p.year] = (m[p.year] || 0) + 1; });
+    return Object.keys(m).map(Number).sort().map(function (y) { return {year: y, n: m[y]}; });
+  }
+
+  function renderYearBar() {
+    var ys = years();
+    var bar = $("yearbar");
+    if (ys.length < 2) { bar.innerHTML = ""; return; }
+    var html = '<span class="label">届次</span>' +
+      '<button type="button" class="chip" data-act="year" data-val="" aria-pressed="' +
+      (!state.year) + '">全部<span class="n">' + state.data.papers.length + "</span></button>" +
+      ys.map(function (y) {
+        return '<button type="button" class="chip" data-act="year" data-val="' + y.year +
+          '" aria-pressed="' + (String(state.year) === String(y.year)) + '">' + y.year +
+          '<span class="n">' + y.n + "</span></button>";
+      }).join("");
+    var ed = {};
+    state.data.papers.forEach(function (p) { ed[p.venue + p.year] = 1; });
+    html += '<span class="span">跨 ' + Object.keys(ed).length + " 届精选 · 官方语料 " +
+      TL.fmtNum((state.data.meta || {}).corpus_total || 0) + " 篇</span>";
+    bar.innerHTML = html;
+  }
+
   function renderFacts() {
     var d = state.data, m = d.meta || {};
     var prov = [];
@@ -141,12 +170,17 @@
     var byVenue = countsBy(function (p) { return [p.venue]; });
     var html = d.pillars.map(function (pl) {
       var on = state.venue === pl.key;
-      var sample = d.papers.filter(function (p) { return p.venue === pl.key; })[0];
+      var mine = d.papers.filter(function (p) { return p.venue === pl.key; });
+      var yrs = mine.map(function (p) { return p.year; }).sort();
+      var span = yrs.length ? (yrs[0] === yrs[yrs.length - 1]
+        ? String(yrs[0]) : yrs[0] + "–" + yrs[yrs.length - 1]) : "";
+      var nEd = Object.keys(mine.reduce(function (a, p) { a[p.year] = 1; return a; }, {})).length;
       return '<button type="button" class="stat' + (on ? " on" : "") + '" data-pillar="' + pl.key +
         '" data-act="venue" data-val="' + pl.key + '" aria-pressed="' + on + '">' +
-        '<span class="k"><i class="dot"></i>' + pl.label + " " + pl.year + "</span>" +
+        '<span class="k"><i class="dot"></i>' + pl.label + " " + span + "</span>" +
         '<span class="v">' + TL.fmtNum(byVenue[pl.key] || 0) + '<span style="font-size:12px;color:var(--muted);font-family:var(--sans);font-weight:400"> 篇</span></span>' +
-        '<span class="s">' + TL.esc(pl.field) + " · " + TL.esc(pl.source.split(" (")[0]) + "</span>" +
+        '<span class="s">' + TL.esc(pl.field) + " · " + nEd + " 届 · " +
+          TL.esc(pl.source.split(" (")[0]) + "</span>" +
         "</button>";
     }).join("");
     var tcount = Object.keys(countsBy(function (p) { return p.topics; })).length;
@@ -167,6 +201,7 @@
       bits.push('<button type="button" class="chip" data-act="topic" data-val="" data-accent="' +
         tm.accent + '" aria-pressed="true">主题：' + TL.esc(tm.label) + " ×</button>");
     }
+    if (state.year) bits.push(chip("届次：" + state.year, "year", "plain"));
     if (state.q) bits.push(chip("搜索：“" + state.q + "”", "q", "plain"));
     if (!bits.length) {
       var cnt = countsBy(function (p) { return p.topics; });
@@ -270,9 +305,12 @@
         if (state.venue && state.venue !== pl.key) return;
         var items = rows.filter(function (p) { return p.venue === pl.key; });
         if (!items.length) return;
+        var ys2 = items.map(function (p) { return p.year; }).sort();
+        var span2 = ys2[0] === ys2[ys2.length - 1] ? String(ys2[0])
+          : ys2[0] + "–" + ys2[ys2.length - 1];
         secs.push('<div class="toc-sec" data-pillar="' + pl.key + '">' +
           '<a class="h" href="#pillar-' + pl.key + '" data-act="jump" data-val="pillar-' + pl.key + '">' +
-          '<i class="dot" aria-hidden="true"></i>' + pl.label + " " + pl.year +
+          '<i class="dot" aria-hidden="true"></i>' + pl.label + " " + span2 +
           '<span class="n">' + items.length + "</span></a>" +
           items.map(function (p) {
             return '<a class="toc-item" href="#card-' + p.id + '" data-act="jump" data-val="card-' + p.id +
@@ -347,7 +385,7 @@
       "<h4>" + TL.highlight(p.title, state.q) + "</h4>" +
       '<p class="tzh">' + TL.highlight(p.title_zh, state.q) + "</p>" +
       '<p class="auth">' + TL.esc(authorsLine(p)) + "</p>" +
-      '<div class="topics">' + p.topics.map(function (t) {
+      '<div class="topics"><span class="yr">' + p.year + "</span>" + p.topics.map(function (t) {
         var tm = topicMeta(t);
         return '<span class="tag" data-accent="' + tm.accent + '">' + TL.esc(tm.label) + "</span>";
       }).join("") + "</div>" +
@@ -468,6 +506,7 @@
     }
     if (act === "close" || act === "close-scrim") { if (e.target === t) closeModal(); return; }
     if (act === "venue") { state.venue = state.venue === val ? null : val; state.topic = null; renderAll(); return; }
+    if (act === "year") { state.year = (!val || String(state.year) === String(val)) ? null : val; renderAll(); return; }
     if (act === "topic") {
       closeModal();
       state.topic = (!val || state.topic === val) ? null : val;
@@ -475,7 +514,7 @@
       renderAll();
       return;
     }
-    if (act === "reset") { state.venue = null; state.topic = null; state.q = ""; $("q").value = ""; syncClear(); renderAll(); return; }
+    if (act === "reset") { state.venue = null; state.topic = null; state.year = null; state.q = ""; $("q").value = ""; syncClear(); renderAll(); return; }
     if (act === "q") { state.q = ""; $("q").value = ""; syncClear(); renderAll(); return; }
   }
 

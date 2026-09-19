@@ -106,6 +106,13 @@ a:hover { text-decoration: underline; }
 .pill.live { border-color: var(--ok); color: var(--ok); }
 .pill.offline { border-color: var(--warn); color: var(--warn); }
 
+/* ---------------- 届次筛选条 ---------------- */
+.yearbar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2); margin-bottom: var(--s-3); }
+.yearbar .label { font-size: 12.5px; color: var(--muted); margin-right: 2px; }
+.yearbar .chip { background: var(--panel); border-color: var(--border); color: var(--text-2); }
+.yearbar .chip[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-strong); }
+.yearbar .span { font-size: 11.5px; color: var(--muted); margin-left: auto; }
+
 /* ---------------- 统计卡：概览即筛选器（Trace Light quickFilter 下钻） ---------------- */
 .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--s-3); margin-bottom: var(--s-6); }
 .stat {
@@ -226,7 +233,8 @@ pre.cite { margin: 0; padding: var(--s-3) var(--s-4); background: var(--panel-2)
 .pcard:active { transform: translateY(0) scale(.995); transition-duration: .06s; }
 @keyframes fade-up { from { opacity: 0; transform: translateY(8px); } }
 
-.pcard .idx { position: absolute; right: var(--s-3); top: var(--s-2); font: 600 20px/1 var(--serif); color: var(--border-strong); opacity: .55; }
+.pcard .idx { position: absolute; right: var(--s-3); top: var(--s-2); font: 600 18px/1 var(--serif); color: var(--border-strong); opacity: .5; }
+.pcard .yr { font-size: 10.5px; font-family: var(--mono); color: var(--st); border: 1px solid currentColor; border-radius: var(--r-sm); padding: 0 5px; opacity: .8; }
 .pcard h4 { margin: 0 0 6px; font-size: 15.5px; line-height: 1.4; font-weight: 600; padding-right: 26px; }
 .pcard .tzh { margin: 0 0 6px; font-size: 12.5px; color: var(--text-2); font-family: var(--serif); }
 .pcard .auth { margin: 0 0 var(--s-2); font-size: 11.5px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

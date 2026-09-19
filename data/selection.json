@@ -1,57 +1,798 @@
 {
-  "comment": "人工精选清单：每会 12 篇。ref 为 data/corpus.json 中的 paper_id（真实官方记录）。primary_topic 与 rationale 是策展判断，摘要中文由 build_papers.py 之后的翻译环节人工补写。",
+  "comment": "人工精选清单：11 届 × 12 篇 = 132 篇（近三年 2023-2026）。ref 为 data/corpus.json 中的 paper_id（真实官方记录）。primary_topic 与 rationale 是策展判断，中文摘要由翻译环节人工补写。",
   "curated_at": "2026-09-18",
   "papers": [
-    {"venue": "CVPR", "ref": "CVPR2026-p1164", "primary_topic": "edge-efficiency", "rationale": "移动端高斯泼溅实时加速的完整系统，边缘侧渲染部署的代表作"},
-    {"venue": "CVPR", "ref": "CVPR2026-p69", "primary_topic": "edge-efficiency", "rationale": "大型视觉语言模型的训练后量化与 QAI 细粒度分析"},
-    {"venue": "CVPR", "ref": "CVPR2026-p613", "primary_topic": "llm", "rationale": "多智能体协作 + 测试时自适应扩展做视觉文档推理"},
-    {"venue": "CVPR", "ref": "CVPR2026-p2342", "primary_topic": "llm", "rationale": "Multi-LoRA 大模型显存高效微调，跨任务重要性迁移"},
-    {"venue": "CVPR", "ref": "CVPR2026-p356", "primary_topic": "multimodal", "rationale": "模态自适应解码缓解多模态大模型跨模态幻觉"},
-    {"venue": "CVPR", "ref": "CVPR2026-p376", "primary_topic": "generative", "rationale": "强化学习驱动的分层组合式文生图，生成+决策交叉"},
-    {"venue": "CVPR", "ref": "CVPR2026-p1054", "primary_topic": "3d-embodied", "rationale": "多视角扩散预训练用于 3D 感知的机器人操作"},
-    {"venue": "CVPR", "ref": "CVPR2026-p757", "primary_topic": "medical-science", "rationale": "先验引导 ROI 推理的脑肿瘤 MRI 分割"},
-    {"venue": "CVPR", "ref": "CVPR2026-p2509", "primary_topic": "trustworthy", "rationale": "解耦防御策略的鲁棒图像水印"},
-    {"venue": "CVPR", "ref": "CVPR2026-p224", "primary_topic": "perception", "rationale": "免训练开放词表语义分割的直接分割范式"},
-    {"venue": "CVPR", "ref": "CVPR2026-p3875", "primary_topic": "rl-decision", "rationale": "多智能体强化学习做视频理解的协作策略规划"},
-    {"venue": "CVPR", "ref": "CVPR2026-p2534", "primary_topic": "architectures", "rationale": "全局-局部图引导的对比学习，统一处理不完整含噪多视图聚类"},
-
-    {"venue": "AAAI", "ref": "aaai-2026-w1632", "primary_topic": "edge-efficiency", "rationale": "端侧大模型解码高效推理加速方案"},
-    {"venue": "AAAI", "ref": "aaai-2026-w3487", "primary_topic": "edge-efficiency", "rationale": "动态 KV Cache 量化实现高效多模态大模型"},
-    {"venue": "AAAI", "ref": "aaai-2026-w4812", "primary_topic": "llm", "rationale": "跨日历时间推理基准，考察大模型时间常识"},
-    {"venue": "AAAI", "ref": "aaai-2026-w1223", "primary_topic": "llm", "rationale": "以因果推理机制缓解大模型幻觉"},
-    {"venue": "AAAI", "ref": "aaai-2026-w996", "primary_topic": "language-nlp", "rationale": "轻量的重排序推理策略框架改进 RAG 检索增强生成"},
-    {"venue": "AAAI", "ref": "aaai-2026-w3928", "primary_topic": "multimodal", "rationale": "从 CLIP 中抽取多模态 Learngene 以复用可泛化知识"},
-    {"venue": "AAAI", "ref": "aaai-2026-w489", "primary_topic": "generative", "rationale": "分层 tokenizer 配合自回归大模型改进文生视频"},
-    {"venue": "AAAI", "ref": "aaai-2026-w662", "primary_topic": "3d-embodied", "rationale": "人类操作数据增强双臂机器人操作"},
-    {"venue": "AAAI", "ref": "aaai-2026-w787", "primary_topic": "medical-science", "rationale": "面向真实临床诊断的多模态医疗大模型"},
-    {"venue": "AAAI", "ref": "aaai-2026-w1569", "primary_topic": "trustworthy", "rationale": "借机器遗忘实现可撤销后门攻击，攻防一体"},
-    {"venue": "AAAI", "ref": "aaai-2026-w627", "primary_topic": "rl-decision", "rationale": "多智能体强化学习的分层指挥者策略优化"},
-    {"venue": "AAAI", "ref": "aaai-2026-w1169", "primary_topic": "architectures", "rationale": "Dual Mamba 选择性状态空间建模缓解图网络过平滑"},
-
-    {"venue": "ICCV", "ref": "ICCV2025-p959", "primary_topic": "edge-efficiency", "rationale": "极轻量 ConvNet 在移动端实时图像增强"},
-    {"venue": "ICCV", "ref": "ICCV2025-p217", "primary_topic": "edge-efficiency", "rationale": "多编码器协同 token 剪枝加速视觉语言模型"},
-    {"venue": "ICCV", "ref": "ICCV2025-p175", "primary_topic": "llm", "rationale": "面向思维链推理改进多模态大模型"},
-    {"venue": "ICCV", "ref": "ICCV2025-p1834", "primary_topic": "multimodal", "rationale": "以推理式分割增强多模态大模型空间推理"},
-    {"venue": "ICCV", "ref": "ICCV2025-p275", "primary_topic": "generative", "rationale": "偏好对齐 LLM 为视频扩散模型写提示"},
-    {"venue": "ICCV", "ref": "ICCV2025-p604", "primary_topic": "generative", "rationale": "把扩散 Transformer 重构为 MoE 做高效文生图"},
-    {"venue": "ICCV", "ref": "ICCV2025-p2522", "primary_topic": "3d-embodied", "rationale": "结构增强的高斯泼溅 SLAM"},
-    {"venue": "ICCV", "ref": "ICCV2025-p578", "primary_topic": "3d-embodied", "rationale": "具身式 3D 占据预测做在线场景理解"},
-    {"venue": "ICCV", "ref": "ICCV2025-p132", "primary_topic": "medical-science", "rationale": "组织病理诊断决策的多模态多智能体系统"},
-    {"venue": "ICCV", "ref": "ICCV2025-p1515", "primary_topic": "trustworthy", "rationale": "任意分辨率图像的鲁棒水印与水印去除"},
-    {"venue": "ICCV", "ref": "ICCV2025-p102", "primary_topic": "perception", "rationale": "抑制离群传播的免训练开放词表语义分割"},
-    {"venue": "ICCV", "ref": "ICCV2025-p422", "primary_topic": "architectures", "rationale": "弹性视觉 Transformer 的高效适配"},
-
-    {"venue": "ACL", "ref": "acl-2026.acl-long.1454", "primary_topic": "edge-efficiency", "rationale": "离群点抑制向量量化做低比特 KV Cache 高效推理"},
-    {"venue": "ACL", "ref": "acl-2026.acl-industry.51", "primary_topic": "edge-efficiency", "rationale": "延迟引导的端侧大模型设计，工业级部署"},
-    {"venue": "ACL", "ref": "acl-2026.acl-long.376", "primary_topic": "llm", "rationale": "揭示增强推理反而放大工具幻觉的推理陷阱"},
-    {"venue": "ACL", "ref": "acl-2026.acl-long.756", "primary_topic": "trustworthy", "rationale": "解释微调后安全护栏崩塌的对齐/微调数据相似度机理"},
-    {"venue": "ACL", "ref": "acl-2026.findings-acl.917", "primary_topic": "language-nlp", "rationale": "自演化多智能体检索增强生成框架用于医学推理"},
-    {"venue": "ACL", "ref": "acl-2026.acl-long.444", "primary_topic": "multimodal", "rationale": "考察大型视觉语言模型能否理解多模态双关"},
-    {"venue": "ACL", "ref": "acl-2026.acl-long.1251", "primary_topic": "generative", "rationale": "扩散大模型文生图的局部感知动态救援加速"},
-    {"venue": "ACL", "ref": "acl-2026.acl-long.743", "primary_topic": "language-nlp", "rationale": "本地知识图谱多级摘要驱动的生物医药问答"},
-    {"venue": "ACL", "ref": "acl-2026.acl-long.1944", "primary_topic": "architectures", "rationale": "用 LLM 与图上下文解释图神经网络节点到叙事"},
-    {"venue": "ACL", "ref": "acl-2026.acl-long.470", "primary_topic": "architectures", "rationale": "探索 Mamba 在语音自监督模型中的表现"},
-    {"venue": "ACL", "ref": "acl-2026.acl-long.647", "primary_topic": "rl-decision", "rationale": "多样化规划分支的强化学习做创意写作"},
-    {"venue": "ACL", "ref": "acl-2026.findings-acl.2116", "primary_topic": "3d-embodied", "rationale": "3D 感知的语言模型做可编辑 3D 场景合成"}
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2026-p1164",
+      "primary_topic": "edge-efficiency",
+      "rationale": "移动端高斯泼溅实时加速的完整系统，边缘侧渲染部署的代表作"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2026-p69",
+      "primary_topic": "edge-efficiency",
+      "rationale": "大型视觉语言模型的训练后量化与 QAI 细粒度分析"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2026-p613",
+      "primary_topic": "llm",
+      "rationale": "多智能体协作 + 测试时自适应扩展做视觉文档推理"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2026-p2342",
+      "primary_topic": "llm",
+      "rationale": "Multi-LoRA 大模型显存高效微调，跨任务重要性迁移"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2026-p356",
+      "primary_topic": "multimodal",
+      "rationale": "模态自适应解码缓解多模态大模型跨模态幻觉"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2026-p376",
+      "primary_topic": "generative",
+      "rationale": "强化学习驱动的分层组合式文生图，生成+决策交叉"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2026-p1054",
+      "primary_topic": "3d-embodied",
+      "rationale": "多视角扩散预训练用于 3D 感知的机器人操作"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2026-p757",
+      "primary_topic": "medical-science",
+      "rationale": "先验引导 ROI 推理的脑肿瘤 MRI 分割"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2026-p2509",
+      "primary_topic": "trustworthy",
+      "rationale": "解耦防御策略的鲁棒图像水印"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2026-p224",
+      "primary_topic": "perception",
+      "rationale": "免训练开放词表语义分割的直接分割范式"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2026-p3875",
+      "primary_topic": "rl-decision",
+      "rationale": "多智能体强化学习做视频理解的协作策略规划"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2026-p2534",
+      "primary_topic": "architectures",
+      "rationale": "全局-局部图引导的对比学习，统一处理不完整含噪多视图聚类"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2026-w1632",
+      "primary_topic": "edge-efficiency",
+      "rationale": "端侧大模型解码高效推理加速方案"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2026-w3487",
+      "primary_topic": "edge-efficiency",
+      "rationale": "动态 KV Cache 量化实现高效多模态大模型"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2026-w4812",
+      "primary_topic": "llm",
+      "rationale": "跨日历时间推理基准，考察大模型时间常识"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2026-w1223",
+      "primary_topic": "llm",
+      "rationale": "以因果推理机制缓解大模型幻觉"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2026-w996",
+      "primary_topic": "language-nlp",
+      "rationale": "轻量的重排序推理策略框架改进 RAG 检索增强生成"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2026-w3928",
+      "primary_topic": "multimodal",
+      "rationale": "从 CLIP 中抽取多模态 Learngene 以复用可泛化知识"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2026-w489",
+      "primary_topic": "generative",
+      "rationale": "分层 tokenizer 配合自回归大模型改进文生视频"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2026-w662",
+      "primary_topic": "3d-embodied",
+      "rationale": "人类操作数据增强双臂机器人操作"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2026-w787",
+      "primary_topic": "medical-science",
+      "rationale": "面向真实临床诊断的多模态医疗大模型"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2026-w1569",
+      "primary_topic": "trustworthy",
+      "rationale": "借机器遗忘实现可撤销后门攻击，攻防一体"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2026-w627",
+      "primary_topic": "rl-decision",
+      "rationale": "多智能体强化学习的分层指挥者策略优化"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2026-w1169",
+      "primary_topic": "architectures",
+      "rationale": "Dual Mamba 选择性状态空间建模缓解图网络过平滑"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2025-p959",
+      "primary_topic": "edge-efficiency",
+      "rationale": "极轻量 ConvNet 在移动端实时图像增强"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2025-p217",
+      "primary_topic": "edge-efficiency",
+      "rationale": "多编码器协同 token 剪枝加速视觉语言模型"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2025-p175",
+      "primary_topic": "llm",
+      "rationale": "面向思维链推理改进多模态大模型"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2025-p1834",
+      "primary_topic": "multimodal",
+      "rationale": "以推理式分割增强多模态大模型空间推理"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2025-p275",
+      "primary_topic": "generative",
+      "rationale": "偏好对齐 LLM 为视频扩散模型写提示"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2025-p604",
+      "primary_topic": "generative",
+      "rationale": "把扩散 Transformer 重构为 MoE 做高效文生图"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2025-p2522",
+      "primary_topic": "3d-embodied",
+      "rationale": "结构增强的高斯泼溅 SLAM"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2025-p578",
+      "primary_topic": "3d-embodied",
+      "rationale": "具身式 3D 占据预测做在线场景理解"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2025-p132",
+      "primary_topic": "medical-science",
+      "rationale": "组织病理诊断决策的多模态多智能体系统"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2025-p1515",
+      "primary_topic": "trustworthy",
+      "rationale": "任意分辨率图像的鲁棒水印与水印去除"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2025-p102",
+      "primary_topic": "perception",
+      "rationale": "抑制离群传播的免训练开放词表语义分割"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2025-p422",
+      "primary_topic": "architectures",
+      "rationale": "弹性视觉 Transformer 的高效适配"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2026.acl-long.1454",
+      "primary_topic": "edge-efficiency",
+      "rationale": "离群点抑制向量量化做低比特 KV Cache 高效推理"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2026.acl-industry.51",
+      "primary_topic": "edge-efficiency",
+      "rationale": "延迟引导的端侧大模型设计，工业级部署"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2026.acl-long.376",
+      "primary_topic": "llm",
+      "rationale": "揭示增强推理反而放大工具幻觉的推理陷阱"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2026.acl-long.756",
+      "primary_topic": "trustworthy",
+      "rationale": "解释微调后安全护栏崩塌的对齐/微调数据相似度机理"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2026.findings-acl.917",
+      "primary_topic": "language-nlp",
+      "rationale": "自演化多智能体检索增强生成框架用于医学推理"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2026.acl-long.444",
+      "primary_topic": "multimodal",
+      "rationale": "考察大型视觉语言模型能否理解多模态双关"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2026.acl-long.1251",
+      "primary_topic": "generative",
+      "rationale": "扩散大模型文生图的局部感知动态救援加速"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2026.acl-long.743",
+      "primary_topic": "language-nlp",
+      "rationale": "本地知识图谱多级摘要驱动的生物医药问答"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2026.acl-long.1944",
+      "primary_topic": "architectures",
+      "rationale": "用 LLM 与图上下文解释图神经网络节点到叙事"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2026.acl-long.470",
+      "primary_topic": "architectures",
+      "rationale": "探索 Mamba 在语音自监督模型中的表现"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2026.acl-long.647",
+      "primary_topic": "rl-decision",
+      "rationale": "多样化规划分支的强化学习做创意写作"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2026.findings-acl.2116",
+      "primary_topic": "3d-embodied",
+      "rationale": "3D 感知的语言模型做可编辑 3D 场景合成"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2024-p2411",
+      "primary_topic": "edge-efficiency",
+      "rationale": "CLIP 模块化剪枝，视觉语言模型压缩的代表做法"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2024-p567",
+      "primary_topic": "edge-efficiency",
+      "rationale": "端侧实时人体动作追踪，稀疏观测下的部署导向"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2024-p976",
+      "primary_topic": "llm",
+      "rationale": "以自适应思维链对齐提示分布"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2024-p322",
+      "primary_topic": "multimodal",
+      "rationale": "Alpha-CLIP：可控注意力区域的 CLIP 变体"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2024-p1629",
+      "primary_topic": "multimodal",
+      "rationale": "音视频语音到语音的直接翻译统一表征"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2024-p2548",
+      "primary_topic": "generative",
+      "rationale": "扩散 GAN 单步大规模文生图"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2024-p2222",
+      "primary_topic": "3d-embodied",
+      "rationale": "表面对齐高斯泼溅做高效三维网格重建"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2024-p2343",
+      "primary_topic": "medical-science",
+      "rationale": "以临床先验上下文学习实现通用医学图像分割"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2024-p218",
+      "primary_topic": "trustworthy",
+      "rationale": "辐射场中的鲁棒版权水印"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2024-p235",
+      "primary_topic": "perception",
+      "rationale": "FoundationPose：统一的新物体六位姿估计与跟踪"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2024-p975",
+      "primary_topic": "architectures",
+      "rationale": "ViT 中引入卷积多尺度特征交互服务密集预测"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2024-p77",
+      "primary_topic": "rl-decision",
+      "rationale": "帧与事件模态分解表征用于视觉强化学习"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2025-p2826",
+      "primary_topic": "edge-efficiency",
+      "rationale": "移动设备上实时的单样本神经头部头像"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2025-p516",
+      "primary_topic": "edge-efficiency",
+      "rationale": "把大型视觉语言模型知识蒸馏到轻量网络"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2025-p59",
+      "primary_topic": "llm",
+      "rationale": "以思维链智能体蒸馏增强视频大模型推理"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2025-p329",
+      "primary_topic": "llm",
+      "rationale": "用视觉语言模型critic捕获多模态推理中的错误"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2025-p2046",
+      "primary_topic": "multimodal",
+      "rationale": "后预训练实现视觉语言基础模型的模态对齐"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2025-p393",
+      "primary_topic": "architectures",
+      "rationale": "多模态 Mamba 结合局部与全局跨模态对齐"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2025-p304",
+      "primary_topic": "generative",
+      "rationale": "超高分辨率图像合成的潜空间扩散"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2025-p209",
+      "primary_topic": "generative",
+      "rationale": "三维感知潜扩散做前馈文生三维场景"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2025-p743",
+      "primary_topic": "3d-embodied",
+      "rationale": "自动驾驶场景的实时激光雷达与相机高斯泼溅渲染"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2025-p2790",
+      "primary_topic": "medical-science",
+      "rationale": "大小模型协作做多模态医学诊断"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2025-p357",
+      "primary_topic": "trustworthy",
+      "rationale": "图像生成中的公平、毒性与隐私综合基准"
+    },
+    {
+      "venue": "CVPR",
+      "ref": "CVPR2025-p39",
+      "primary_topic": "perception",
+      "rationale": "分层粒度比较网络做开放词表人-物交互检测"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2023-p1288",
+      "primary_topic": "edge-efficiency",
+      "rationale": "加法注意力实现移动端实时视觉主干"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2023-p1009",
+      "primary_topic": "edge-efficiency",
+      "rationale": "多低层视觉任务的极简网络并在移动设备实时"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2023-p76",
+      "primary_topic": "llm",
+      "rationale": "提示引导的图像描述增强视觉问答"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2023-p93",
+      "primary_topic": "multimodal",
+      "rationale": "音视频欺骗检测数据集与参数高效跨模态学习"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2023-p874",
+      "primary_topic": "generative",
+      "rationale": "单样本调优图像扩散模型做文生视频"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2023-p605",
+      "primary_topic": "3d-embodied",
+      "rationale": "稠密神经点云 SLAM"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2023-p1118",
+      "primary_topic": "medical-science",
+      "rationale": "以软提示统一医学视觉语言预训练做 X 光诊断"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2023-p2005",
+      "primary_topic": "trustworthy",
+      "rationale": "自适应模型集成对抗攻击提升迁移性"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2023-p938",
+      "primary_topic": "perception",
+      "rationale": "开放词表分割与检测的统一简单框架"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2023-p308",
+      "primary_topic": "architectures",
+      "rationale": "聚焦线性注意力的视觉 Transformer"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2023-p148",
+      "primary_topic": "rl-decision",
+      "rationale": "具身智能体的上下文感知规划与环境记忆"
+    },
+    {
+      "venue": "ICCV",
+      "ref": "ICCV2023-p704",
+      "primary_topic": "language-nlp",
+      "rationale": "开放词表视频问答基准考察泛化性"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2024-w1690",
+      "primary_topic": "edge-efficiency",
+      "rationale": "移动端视频实例分割的完整系统设计"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2024-w244",
+      "primary_topic": "edge-efficiency",
+      "rationale": "激活引导的量化让大模型在边缘设备上更快推理"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2024-w3",
+      "primary_topic": "llm",
+      "rationale": "检索增强生成能力的大模型基准评测"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2024-w160",
+      "primary_topic": "llm",
+      "rationale": "视觉思维链提示增强基于图像的推理"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2024-w393",
+      "primary_topic": "multimodal",
+      "rationale": "多模态知识图谱对比哈希用于跨模态检索"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2024-w891",
+      "primary_topic": "generative",
+      "rationale": "缓存启用稀疏扩散推理加速文生图编辑"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2024-w1470",
+      "primary_topic": "3d-embodied",
+      "rationale": "深度引导的鲁棒快速点云融合 NeRF"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2024-w162",
+      "primary_topic": "medical-science",
+      "rationale": "以提示生成理由做推理感知的临床诊断"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2024-w1281",
+      "primary_topic": "trustworthy",
+      "rationale": "基于局部可解释性的文本硬标签对抗攻击"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2024-w367",
+      "primary_topic": "language-nlp",
+      "rationale": "显式情感增强方面的属性级情感分析"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2024-w883",
+      "primary_topic": "rl-decision",
+      "rationale": "多智能体强化学习中队形感知的探索"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2024-w582",
+      "primary_topic": "architectures",
+      "rationale": "面向可泛化图神经网络的样本重加权"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2025-w1187",
+      "primary_topic": "edge-efficiency",
+      "rationale": "一比特量化 JL 变换实现零开销 KV 缓存量化"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2025-w312",
+      "primary_topic": "edge-efficiency",
+      "rationale": "任意位宽的大模型量化推理加速"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2025-w2804",
+      "primary_topic": "llm",
+      "rationale": "面向数学多步推理的逻辑推理数据集"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2025-w117",
+      "primary_topic": "llm",
+      "rationale": "轻量推理框架让大模型在知识图谱上做推理"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2025-w38",
+      "primary_topic": "multimodal",
+      "rationale": "多模态大模型用于多模态序列推荐"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2025-w813",
+      "primary_topic": "generative",
+      "rationale": "免训练修补分层潜扩散实现空间感知图像编辑"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2025-w3451",
+      "primary_topic": "3d-embodied",
+      "rationale": "轻量结构化高斯泼溅做跨模态场景生成"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2025-w407",
+      "primary_topic": "medical-science",
+      "rationale": "功能信息的蛋白多模态学习"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2025-w469",
+      "primary_topic": "trustworthy",
+      "rationale": "以后门与对抗攻击同源视角做后门防御"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2025-w983",
+      "primary_topic": "language-nlp",
+      "rationale": "用大模型合成对话增强医疗对话摘要抗噪性"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2025-w593",
+      "primary_topic": "rl-decision",
+      "rationale": "多智能体路径规划中结合大邻域搜索与强化学习"
+    },
+    {
+      "venue": "AAAI",
+      "ref": "aaai-2025-w2426",
+      "primary_topic": "architectures",
+      "rationale": "图 Transformer 网络做深度多模态图聚类"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2024.acl-long.133",
+      "primary_topic": "edge-efficiency",
+      "rationale": "矩阵分解解锁无数据低比特 KV 缓存压缩"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2024.findings-acl.178",
+      "primary_topic": "edge-efficiency",
+      "rationale": "结构化剪枝与低秩参数高效微调结合"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2024.acl-long.73",
+      "primary_topic": "llm",
+      "rationale": "主动提示：让模型自选思维链"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2024.acl-long.107",
+      "primary_topic": "llm",
+      "rationale": "以自我评估做事实性自对齐缓解幻觉"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2024.acl-long.108",
+      "primary_topic": "language-nlp",
+      "rationale": "多分区检索增强生成强化大模型表现"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2024.acl-long.404",
+      "primary_topic": "multimodal",
+      "rationale": "图表理解的多模态基准与视觉语言模型微调"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2024.acl-long.335",
+      "primary_topic": "generative",
+      "rationale": "统一多模态条件扩散做图像生成"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2024.acl-short.68",
+      "primary_topic": "medical-science",
+      "rationale": "检索增强用于电子健康档案临床预测"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2024.findings-acl.443",
+      "primary_topic": "trustworthy",
+      "rationale": "越狱攻击与防御的系统性研究"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2024.acl-long.301",
+      "primary_topic": "language-nlp",
+      "rationale": "基于执行的多语多任务代码理解与生成基准"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2024.acl-long.262",
+      "primary_topic": "rl-decision",
+      "rationale": "类人双过程框架做对话规划"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2024.acl-long.780",
+      "primary_topic": "architectures",
+      "rationale": "统一梯度视角理解对比句子表征学习"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2025.acl-long.1140",
+      "primary_topic": "edge-efficiency",
+      "rationale": "上下文感知 KV 缓存优化加速移动端 LoRA 推理"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2025.acl-long.325",
+      "primary_topic": "edge-efficiency",
+      "rationale": "离群值空间稳定假设下的量化参数高效微调"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2025.acl-long.1383",
+      "primary_topic": "llm",
+      "rationale": "以智能体工具增强大模型推理的简洁框架"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2025.acl-long.147",
+      "primary_topic": "trustworthy",
+      "rationale": "回归感知微调改进大模型当评委的思维链"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2025.acl-long.74",
+      "primary_topic": "multimodal",
+      "rationale": "经多模态链路透破大型视觉语言模型"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2025.acl-long.327",
+      "primary_topic": "multimodal",
+      "rationale": "评测大型视觉语言模型的中文多模态对齐"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2025.acl-long.210",
+      "primary_topic": "generative",
+      "rationale": "扩散语言模型的长文本可控片段级生成"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2025.findings-acl.1313",
+      "primary_topic": "medical-science",
+      "rationale": "电子健康档案增强的临床对话系统"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2025.acl-long.897",
+      "primary_topic": "trustworthy",
+      "rationale": "利用攻击技术防御提示注入"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2025.acl-long.741",
+      "primary_topic": "language-nlp",
+      "rationale": "本体引导逆序推理增强知识图谱问答"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2025.acl-long.1105",
+      "primary_topic": "rl-decision",
+      "rationale": "角色分化的多智能体强化学习促进协作辩论"
+    },
+    {
+      "venue": "ACL",
+      "ref": "acl-2025.findings-acl.856",
+      "primary_topic": "architectures",
+      "rationale": "图神经检索高效支撑知识图谱上的大模型推理"
+    }
   ]
 }

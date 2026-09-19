@@ -52,3 +52,22 @@ PILLARS = [
 ]
 
 BY_KEY = {p["key"]: p for p in PILLARS}
+
+# Editions actually fetched. The four pillars above stay the primary axis; the
+# year is a facet (filter + card badge), so 近三年 only adds editions, not pillars.
+EDITIONS = [
+    {"venue": "CVPR", "year": 2026, "kind": "cvf", "label": "CVPR 2026"},
+    {"venue": "CVPR", "year": 2025, "kind": "cvf", "label": "CVPR 2025"},
+    {"venue": "CVPR", "year": 2024, "kind": "cvf", "label": "CVPR 2024"},
+    {"venue": "AAAI", "year": 2026, "kind": "openalex", "label": "AAAI 2026"},
+    {"venue": "AAAI", "year": 2025, "kind": "openalex", "label": "AAAI 2025"},
+    {"venue": "AAAI", "year": 2024, "kind": "openalex", "label": "AAAI 2024"},
+    # ICCV is odd-year: 2023 (Oct 2023) is still inside the three-year window
+    {"venue": "ICCV", "year": 2025, "kind": "cvf", "label": "ICCV 2025"},
+    {"venue": "ICCV", "year": 2023, "kind": "cvf", "label": "ICCV 2023"},
+    {"venue": "ACL", "year": 2026, "kind": "acl", "label": "ACL 2026"},
+    {"venue": "ACL", "year": 2025, "kind": "acl", "label": "ACL 2025"},
+    {"venue": "ACL", "year": 2024, "kind": "acl", "label": "ACL 2024"},
+]
+
+YEARS = sorted({e["year"] for e in EDITIONS})

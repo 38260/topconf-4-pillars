@@ -15,11 +15,8 @@ from .schema import clean, make_record
 
 BASE = "https://openaccess.thecvf.com"
 
-# user asked for "CUPR" -> confirmed as CVPR; ICCV is odd-year so 2025 is its latest edition
-VENUES = {
-    "CVPR": {"code": "CVPR2026", "year": 2026, "label": "CVPR 2026"},
-    "ICCV": {"code": "ICCV2025", "year": 2025, "label": "ICCV 2025"},
-}
+# CVF names each volume folder by conference + year, e.g. CVPR2026 / ICCV2023
+CVF_CODE = {"CVPR": "CVPR", "ICCV": "ICCV"}
 
 _PTITLE = re.compile(r'<dt class="ptitle">\s*<br>\s*<a href="([^"]+)">(.*?)</a>\s*</dt>', re.S)
 _AUTHOR = re.compile(r'name="query_author" value="([^"]*)"')
@@ -34,11 +31,11 @@ _ABSTRACT = re.compile(r'<div id="abstract"[^>]*>(.*?)</div>', re.S)
 _COPYRIGHT = re.compile(r'<div id="abstract"[^>]*>.*?</div>', re.S)
 
 
-def index(venue_key: str, use_cache: bool = True) -> list[dict]:
+def index(venue_key: str, year: int, use_cache: bool = True) -> list[dict]:
     """Return the full paper listing for one CVF proceedings volume."""
-    meta = VENUES[venue_key]
-    url = f"{BASE}/{meta['code']}?day=all"
-    page = http.get(url, tag=f"cvf_index_{meta['code']}", use_cache=use_cache)
+    code = CVF_CODE[venue_key] + str(year)
+    url = f"{BASE}/{code}?day=all"
+    page = http.get(url, tag=f"cvf_index_{code}", use_cache=use_cache)
 
     marks = list(_PTITLE.finditer(page))
     records: list[dict] = []
@@ -58,14 +55,14 @@ def index(venue_key: str, use_cache: bool = True) -> list[dict]:
 
         pdf = _PDF.search(block)
         supp = _SUPP.search(block)
-        code = _CODE.search(block)
+        repo = _CODE.search(block)
         pages = _BIB_PAGES.search(block)
         year_m = _BIB_YEAR.search(block)
         bib = _BIBTEX.search(block)
 
         records.append(make_record(
             venue=venue_key,
-            year=int(year_m.group(1)) if year_m else meta["year"],
+            year=int(year_m.group(1)) if year_m else year,
             title=html.unescape(title),
             authors=authors,
             source="CVF Open Access",
@@ -73,10 +70,11 @@ def index(venue_key: str, use_cache: bool = True) -> list[dict]:
             pdf_url=(BASE + pdf.group(1)) if pdf else "",
             pages=pages.group(1) if pages else "",
             extra={
-                "paper_id": f"{meta['code']}-p{len(records) + 1}",
+                "paper_id": f"{code}-p{len(records) + 1}",
+                "edition": code,
                 "abstract_url": landing,
                 "supp_url": (BASE + supp.group(1)) if supp else "",
-                "code_url": (BASE + code.group(1)) if code else "",
+                "code_url": (BASE + repo.group(1)) if repo else "",
                 # verbatim official citation entry
                 "bibtex": html.unescape(bib.group(1)).strip() if bib else "",
             },

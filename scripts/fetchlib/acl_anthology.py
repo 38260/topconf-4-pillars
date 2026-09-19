@@ -17,27 +17,22 @@ from .schema import clean, make_record
 
 BASE = "https://aclanthology.org"
 NS = {"m": "http://www.loc.gov/mods/v3"}
-YEAR = 2026
+YEAR = 2026   # default; every entry point takes an explicit year too
 
 # main-conference volumes; probed with HTTP so a missing volume never breaks the run
-CANDIDATE_VOLUMES = [
-    f"{YEAR}.acl-long",
-    f"{YEAR}.acl-short",
-    f"{YEAR}.acl-srw",
-    f"{YEAR}.acl-demo",
-    f"{YEAR}.acl-industry",
-    f"{YEAR}.findings-acl",
-]
+def candidate_volumes(year: int) -> list[str]:
+    return [f"{year}.acl-long", f"{year}.acl-short", f"{year}.acl-srw",
+            f"{year}.acl-demo", f"{year}.acl-industry", f"{year}.findings-acl"]
 
 _ID_RE = re.compile(r'href="/volumes/([^"]+)/?"')
 
 
-def discover_volumes() -> list[str]:
-    """Return volume ids actually present under the ACL <YEAR> event page."""
-    page = http.get(f"{BASE}/events/acl-{YEAR}/", tag=f"acl_event_{YEAR}")
-    found = [v for v in _ID_RE.findall(page) if v.startswith(str(YEAR))]
+def discover_volumes(year: int = YEAR) -> list[str]:
+    """Return volume ids actually present under the ACL <year> event page."""
+    page = http.get(f"{BASE}/events/acl-{year}/", tag=f"acl_event_{year}")
+    found = [v for v in _ID_RE.findall(page) if v.startswith(str(year))]
     ordered = sorted(set(found))
-    return ordered or [v for v in CANDIDATE_VOLUMES if volume_exists(v)]
+    return ordered or [v for v in candidate_volumes(year) if volume_exists(v)]
 
 
 def volume_exists(volume_id: str) -> bool:
@@ -83,9 +78,10 @@ def _pages(node) -> str:
     return f"{start}-{end}" if start and end else ""
 
 
-def index(volume_ids: list[str] | None = None, use_cache: bool = True) -> list[dict]:
+def index(year: int = YEAR, volume_ids: list[str] | None = None,
+          use_cache: bool = True) -> list[dict]:
     records: list[dict] = []
-    for vol in (volume_ids or discover_volumes()):
+    for vol in (volume_ids or discover_volumes(year)):
         url = f"{BASE}/volumes/{vol}.xml"
         try:
             xml = http.get(url, tag=f"acl_volume_{vol}", use_cache=use_cache)
@@ -103,7 +99,7 @@ def index(volume_ids: list[str] | None = None, use_cache: bool = True) -> list[d
             url_slug = ids["doi"].split("v1/")[-1] if "v1/" in ids["doi"] else citekey
             records.append(make_record(
                 venue="ACL",
-                year=YEAR,
+                year=year,
                 title=title,
                 authors=_authors(mods),
                 source="ACL Anthology",
