@@ -1,0 +1,163 @@
+{
+  "venue": "ICCV 2023",
+  "translated_by": "本项目逐篇人工翻译（对照 CVF Open Access 官方摘要页）",
+  "translated_at": "2026-09-19",
+  "papers": [
+    {
+      "id": "iccv-073-ICCV2023-p1288",
+      "title_zh": "SwiftFormer：面向实时移动视觉应用的高效加法注意力",
+      "abstract_zh": "自注意力已成为各类视觉任务中捕获全局上下文的事实标准选择。然而它相对图像分辨率的平方级计算复杂度，限制了其在实时应用中的使用，尤其难以部署到资源受限的移动设备。尽管已有混合式方法把卷积与自注意力的优势结合以获得更好的速度—精度折衷，自注意力中昂贵的矩阵乘法仍是瓶颈。本工作提出一种新颖的高效加法注意力机制，用线性逐元素乘法真正替代掉平方级矩阵乘法。我们的设计表明：键—值交互可以被一个线性层替代而不损失任何精度。与此前最先进的方案不同，这种高效的自注意力形式使其可以在网络的每一个阶段使用。基于该高效加法注意力，我们构建了一系列称为 SwiftFormer 的模型，在精度与移动端推理速度两方面同时取得当前最优表现。其小版本在 iPhone 14 上仅需 0.8 ms 延迟即可达到 78.5% 的 ImageNet-1K top-1 准确率，相比 MobileViT-v2 更准且快 2 倍。代码与模型：https://tinyurl.com/5ft8v46w。",
+      "topics": ["edge-efficiency", "architectures"],
+      "keywords": [
+        {"en": "additive attention", "zh": "加法注意力"},
+        {"en": "linear complexity", "zh": "线性复杂度"},
+        {"en": "mobile vision", "zh": "移动端视觉"},
+        {"en": "real-time inference", "zh": "实时推理"},
+        {"en": "mobile latency", "zh": "移动延迟"}
+      ]
+    },
+    {
+      "id": "iccv-074-ICCV2023-p1009",
+      "title_zh": "SYENet：一个简洁而高效的多低层视觉任务网络，移动设备上实时运行",
+      "abstract_zh": "随着 AI 硬件加速器的快速发展，用深度学习方法在手机端解决各类低层视觉任务逐渐成为可能。但仍有两个主要问题待解。其一，多数低层视觉算法是任务专属且彼此独立的，若不做事级时分复用，很难把它们整合进单一网络架构并同时加速；其二，这些网络往往参数量巨大、乘加运算开销高，在算力有限的移动设备上难以达到实时。为应对这两个问题，我们提出仅有 6K 参数的新网络 SYENet。它由两条非对称分支与简单构建块组成，能在移动设备上以实时方式处理多种低层视觉任务。为有效衔接两条非对称分支的输出，我们提出二次连接单元（QCU）；为提升视觉质量，又提出新的回归焦点损失来处理图像。在图像信号处理（ISP）、低光增强（LLE）、超分辨率（SR）等实时应用中，本方法在 Qualcomm 8 Gen 1 移动 SoC 上达到 2K@60FPS 的吞吐，并取得最佳的 PSNR 与视觉质量。特别地，在 MAI 2022 学习型智能手机 ISP 挑战赛中，SYENet 获得最高分。",
+      "topics": ["edge-efficiency", "perception", "architectures"],
+      "keywords": [
+        {"en": "low-level vision", "zh": "低层视觉"},
+        {"en": "image signal processing", "zh": "图像信号处理"},
+        {"en": "mobile SoC", "zh": "移动 SoC"},
+        {"en": "asymmetric branches", "zh": "非对称分支"},
+        {"en": "regression focal loss", "zh": "回归焦点损失"}
+      ]
+    },
+    {
+      "id": "iccv-075-ICCV2023-p76",
+      "title_zh": "PromptCap：用 GPT-3 提示引导图像描述服务视觉问答",
+      "abstract_zh": "基于知识的视觉问答（VQA）所问的问题仅靠图像本身不足以回答，需要世界知识。GPT-3 这类大语言模型（LM）因具备强大的知识检索与推理能力，对该任务尤其有用。为了让 LM 理解图像，已有工作用描述模型把图像转成文本。但把一幅图压缩成单句描述时，该描述哪些视觉实体常常未被明确指定——泛用的图像描述往往缺失 LM 正确回答视觉问题所必需的细节。为应对该挑战，我们提出 PromptCap（提示引导的图像描述），一个作为图像与黑箱 LM 之间更好连接器的描述模型。与通用描述不同，PromptCap 接受一条自然语言提示来控制所生成的描述该写哪些视觉实体；该提示中包含一个描述应当有助于回答的问题。为避免额外标注，PromptCap 用 GPT-3 与既有数据集合成出的样例训练。我们在「用 GPT-3 对图像描述做提示以完成 VQA」的既有流水线上验证其有效性：PromptCap 大幅优于通用描述，并在基于知识的 VQA 任务上取得当前最优准确率（OK-VQA 60.4%，A-OKVQA 59.6%）。在 WebQA 上的零样本结果显示它能良好泛化到未见领域。",
+      "topics": ["llm", "multimodal", "language-nlp"],
+      "keywords": [
+        {"en": "knowledge-based VQA", "zh": "基于知识的视觉问答"},
+        {"en": "prompt-guided captioning", "zh": "提示引导的图像描述"},
+        {"en": "black-box language model", "zh": "黑箱语言模型"},
+        {"en": "image-text connector", "zh": "图文连接器"},
+        {"en": "synthesized training data", "zh": "合成训练数据"}
+      ]
+    },
+    {
+      "id": "iccv-076-ICCV2023-p93",
+      "title_zh": "音视频欺骗检测：DOLOS 数据集与参数高效的跨模态学习",
+      "abstract_zh": "对话中的欺骗检测是一项困难但重要的任务，在商业可信度评估、多媒体反诈、海关安检等诸多领域有关键应用。尽管如此，欺骗检测研究受制于两点：高质量欺骗数据集的缺乏，以及多模态特征难以有效学习。为此我们提出 DOLOS——最大的、含丰富欺骗性对话的综艺问答类欺骗检测数据集。DOLOS 包含 1,675 段视频片段、涉及 213 名受试者，并带有音视频特征标注。我们提供按训练-测试、时长与性别划分的多种协议，以考察不同因素的影响，并在已有欺骗检测方法上完成基准评测。为进一步通过微调更少参数来提升性能，我们提出参数高效的跨模态学习（PECL）：其中的统一时间适配器（UT-Adapter）在基于 Transformer 的架构中探索时间注意力，即插即用的音视频融合模块（PAVF）则汇聚来自音频与视频特征的跨模态信息。基于 DOLOS 丰富的细粒度音视频标注，我们还用多任务学习同时预测欺骗性与音视频特征以增强性能。实验结果既验证了 DOLOS 数据集的质量，也证明了 PECL 的有效性。数据集与源码已公开。",
+      "topics": ["multimodal", "trustworthy", "perception"],
+      "keywords": [
+        {"en": "deception detection", "zh": "欺骗检测"},
+        {"en": "audio-visual fusion", "zh": "音视频融合"},
+        {"en": "parameter-efficient fine-tuning", "zh": "参数高效微调"},
+        {"en": "temporal adapter", "zh": "时间适配器"},
+        {"en": "multi-task learning", "zh": "多任务学习"}
+      ]
+    },
+    {
+      "id": "iccv-077-ICCV2023-p874",
+      "title_zh": "Tune-A-Video：单样本调优图像扩散模型以生成视频",
+      "abstract_zh": "为复现文生图（T2I）的成功，近期工作采用大规模视频数据集训练文本生成视频（T2V）的生成器。尽管结果可观，这类范式计算开销极为高昂。本文提出一个新的 T2V 生成设定——单样本视频调优（One-Shot Video Tuning）：只提供一组「文本—视频」配对。我们的模型建立在用海量图像数据预训练的最先进 T2I 扩散模型之上，并基于两点关键观察：（1）T2I 模型能够生成代表动词概念的静态图像；（2）把 T2I 模型扩展为并发生成多张图像时，内容一致性出奇地好。为进一步学到连续运动，我们提出 Tune-A-Video，其中包含定制化的时空注意力机制与高效的单样本调优策略。推理时采用 DDIM 反演为采样提供结构引导。大量定性与数值实验表明本方法在多种应用上都表现出色。",
+      "topics": ["generative", "multimodal"],
+      "keywords": [
+        {"en": "text-to-video generation", "zh": "文本生成视频"},
+        {"en": "one-shot tuning", "zh": "单样本调优"},
+        {"en": "spatio-temporal attention", "zh": "时空注意力"},
+        {"en": "DDIM inversion", "zh": "DDIM 反演"},
+        {"en": "content consistency", "zh": "内容一致性"}
+      ]
+    },
+    {
+      "id": "iccv-078-ICCV2023-p605",
+      "title_zh": "Point-SLAM：稠密神经点云驱动的同步定位与建图",
+      "abstract_zh": "我们提出一种面向单目 RGBD 输入的稠密神经同步定位与建图（SLAM）方法：它把神经场景表征的特征锚定在一份点云上，而该点云以依赖输入的、数据驱动的方式迭代生成。我们证明：只需最小化基于 RGBD 的重渲染损失，定位与建图都可由同一份基于点的神经场景表征完成。与近期那些把场景特征锚定在稀疏网格上的稠密神经 SLAM 方法不同，我们基于点的方式可以让锚点密度随输入的信息密度动态调整——在细节稀少的区域降低运行时间与显存占用，把更高的点密度留给需要还原精细结构的部位。在 Replica、TUM-RGBD 与 ScanNet 数据集上，本方法在定位、建图与渲染精度三方面要么优于要么可比于现有稠密神经 RGBD SLAM 方法。",
+      "topics": ["3d-embodied", "perception", "architectures"],
+      "keywords": [
+        {"en": "dense neural SLAM", "zh": "稠密神经 SLAM"},
+        {"en": "point cloud anchoring", "zh": "点云锚定"},
+        {"en": "adaptive density", "zh": "自适应密度"},
+        {"en": "re-rendering loss", "zh": "重渲染损失"},
+        {"en": "RGBD odometry", "zh": "RGBD 里程计"}
+      ]
+    },
+    {
+      "id": "iccv-079-ICCV2023-p1118",
+      "title_zh": "借助软提示统一医学视觉语言预训练",
+      "abstract_zh": "医学视觉语言预训练（Med-VLP）能从医学图像与文本中抽取通用表征，因而对许多下游医学任务带来可观提升。实践中按是否使用重量级融合模块，可分两类：融合编码器型因模态间交互充分，在多模态任务上更强；双编码器型因单模态编码能力强，在单模态与跨模态任务上更好。为兼得两类优势，我们提出简洁有效的统一方案 PTUnifier。我们先通过引入视觉提示与文本提示统一输入格式——这些提示充当 DETR 式的查询，在某一模态缺失时协助特征抽取。如此，单个模型即可作为基础模型处理采用不同输入格式的多种任务（仅图像、仅文本、图文配对）。此外我们构建提示池（而非静态提示）以提升多样性与可扩展性，使查询能随不同输入实例而变化。实验表明，我们的方法在很宽的任务谱上取得当前最优结果，覆盖单模态任务（图像/文本分类、文本摘要）、跨模态任务（图生文、图文/文图检索）与多模态任务（视觉问答），证明了方法的有效性。值得注意的是，引入提示这一做法与多数既有 Med-VLP 方法正交，可作为其有益且互补的扩展。源码见 https://anonymous.4open.science/r/ICCV-2023-Submission-PTUnifier/，最终版本将正式释出。",
+      "topics": ["medical-science", "multimodal", "architectures"],
+      "keywords": [
+        {"en": "medical vision-and-language pre-training", "zh": "医学视觉语言预训练"},
+        {"en": "soft prompts", "zh": "软提示"},
+        {"en": "prompt pool", "zh": "提示池"},
+        {"en": "unified encoder", "zh": "统一编码器"},
+        {"en": "cross-modal retrieval", "zh": "跨模态检索"}
+      ]
+    },
+    {
+      "id": "iccv-080-ICCV2023-p2005",
+      "title_zh": "AdaEA：提升对抗迁移性的自适应模型集成攻击",
+      "abstract_zh": "对抗样例的可迁移性使攻击者得以实施黑箱攻击（无需了解目标模型），因此基于迁移的对抗攻击受到广泛关注。以往工作多研究梯度扰动或图像变换，以放大输入关键部位的畸变。这类方法在模型差异有限时可正常工作（例如 CNN 到 CNN），但在差异悬殊的模型间迁移（如 CNN 到 ViT）常常失效。另一条路线是模型集成对抗攻击：把架构多样的代理模型输出融合为集成损失，使生成的对抗样例因能同时欺骗多个模型而更可能迁移到其他模型。然而现有集成攻击只是简单地均匀融合各代理模型输出，因而无法有效捕获并放大对抗样例内在的迁移信息。本文提出自适应集成攻击 AdaEA，通过监控各模型对对抗目标贡献的差异比，自适应地控制每个模型输出的融合权重；并额外引入一个差距缩减滤波器以进一步同步更新方向。最终我们在多个数据集上相对现有集成攻击取得显著提升，且 AdaEA 还能增强已有的基于迁移的攻击方法，进一步证明其有效性与通用性。",
+      "topics": ["trustworthy", "architectures"],
+      "keywords": [
+        {"en": "adversarial transferability", "zh": "对抗迁移性"},
+        {"en": "ensemble attack", "zh": "集成攻击"},
+        {"en": "black-box attack", "zh": "黑箱攻击"},
+        {"en": "surrogate models", "zh": "代理模型"},
+        {"en": "adaptive fusion", "zh": "自适应融合"}
+      ]
+    },
+    {
+      "id": "iccv-081-ICCV2023-p938",
+      "title_zh": "一个用于开放词表分割与检测的简洁框架",
+      "abstract_zh": "本工作提出 OpenSeeD——一个简洁的开放词表分割与检测框架，能从不同的分割与检测数据集中学习。为弥合词表与标注粒度之间的差距，我们首先引入一个预训练文本编码器来编码两项任务中的所有视觉概念，并为其学习一个共享的语义空间；相比只在分割任务上训练的对应方法，这一步就能取得不错的结果。为进一步调和二者，我们识别出两类差异：其一是任务差异——分割需要为前景物体与背景物质都抽取出掩码，而检测只关心前者；其二是数据差异——框标注与掩码标注的空间粒度不同，不能直接互换。我们分别用解耦的前景/背景解码与条件化掩码解码来解决这两个问题。据此我们构建了一个融合上述三项技术的简洁编码器—解码器模型，并在 COCO 与 Objects365 上联合训练。预训练后，该模型在分割与检测两项任务上都表现出可比或更强的零样本迁移能力：在 5 个数据集上超越开放词表实例分割与全景分割的最先进方法，并在 LVIS 与 ODinW 上以相似设定优于既有开放词表检测工作。迁移到具体任务时，它在 COCO 与 ADE20K 的全景分割、ADE20K 与 Cityscapes 的实例分割上均创下新的当前最优结果。最后指出：OpenSeeD 是最早探索「分割与检测联合训练」潜力的工作，我们希望它能作为「用单一模型同时做开放词表分割与检测」的强基线。",
+      "topics": ["perception", "multimodal"],
+      "keywords": [
+        {"en": "open-vocabulary segmentation", "zh": "开放词表分割"},
+        {"en": "open-vocabulary detection", "zh": "开放词表检测"},
+        {"en": "joint training", "zh": "联合训练"},
+        {"en": "decoupled decoding", "zh": "解耦解码"},
+        {"en": "panoptic segmentation", "zh": "全景分割"}
+      ]
+    },
+    {
+      "id": "iccv-082-ICCV2023-p308",
+      "title_zh": "FLatten Transformer：使用聚焦线性注意力的视觉 Transformer",
+      "abstract_zh": "把 Transformer 模型用于视觉任务时，自注意力的平方级计算复杂度是长期存在的难题。线性注意力则通过精心设计的映射函数近似 Softmax，以线性复杂度提供更高效的替代方案。但现有线性注意力方法要么性能明显退化，要么因映射函数引入额外计算开销。本文提出新颖的聚焦线性注意力模块，兼顾高效率与强表达力。具体地，我们先从「聚焦能力」与「特征多样性」两个角度分析线性注意力性能退化的成因；为克服这些局限，我们引入一个简洁而有效的映射函数，以及一个高效的秩恢复模块，在保持低计算复杂度的同时增强自注意力的表达力。大量实验表明，我们的线性注意力模块可应用于多种先进视觉 Transformer，并在多个基准上一致地带来性能提升。代码见 https://github.com/LeapLabTHU/FLatten-Transformer。",
+      "topics": ["architectures", "edge-efficiency"],
+      "keywords": [
+        {"en": "linear attention", "zh": "线性注意力"},
+        {"en": "Vision Transformer", "zh": "视觉 Transformer"},
+        {"en": "rank restoration", "zh": "秩恢复"},
+        {"en": "softmax approximation", "zh": "Softmax 近似"},
+        {"en": "computational complexity", "zh": "计算复杂度"}
+      ]
+    },
+    {
+      "id": "iccv-083-ICCV2023-p148",
+      "title_zh": "面向指令跟随具身智能体的上下文感知规划与环境感知记忆",
+      "abstract_zh": "完成诸如「端一杯水」这类家务任务，需要逐步规划动作，同时维持关于物体空间布局与先前动作后果的知识。然而当前具身 AI 智能体的感知模型常因缺少这类知识而出错：要么依赖对智能体行为的不完美模仿学习，要么使用算法规划器却不知道环境已被先前的动作改变。为解决该问题，我们提出 CPEM 具身智能体（上下文感知规划器 + 环境感知记忆），把先前动作的上下文信息纳入规划，并在环境中维护物体及其状态（例如某物体是否已被移动）的空间布局，同时接入感知模型，以同时改善视觉导航与物体交互。我们观察到：在一个高难度的交互式指令跟随基准上，无论可见环境还是未见环境，该模型在多种指标上都以较大优势取得当前最优的任务成功率（未见环境最高 +10.70%）。",
+      "topics": ["rl-decision", "3d-embodied", "llm"],
+      "keywords": [
+        {"en": "embodied agent", "zh": "具身智能体"},
+        {"en": "instruction following", "zh": "指令跟随"},
+        {"en": "environment-aware memory", "zh": "环境感知记忆"},
+        {"en": "visual navigation", "zh": "视觉导航"},
+        {"en": "object state tracking", "zh": "物体状态跟踪"}
+      ]
+    },
+    {
+      "id": "iccv-084-ICCV2023-p704",
+      "title_zh": "开放词表视频问答：评测视频问答模型泛化性的新基准",
+      "abstract_zh": "视频问答（VideoQA）是一项需要复杂多模态推理的困难任务。与给定若干选项、预测答案的选择题式 VideoQA 不同，开放式 VideoQA 的目标是不限定候选答案地回答问题。然而以往多数 VideoQA 模型把开放式任务形式化为分类任务——把「视频—问题」对分类到一个固定答案集（即闭词表，通常只含高频答案，如前 1,000 个答案）。这导致模型偏向高频答案、在词表外答案上无法泛化。为此我们提出新基准：开放词表视频问答（OVQA），通过纳入罕见与未见答案来衡量 VideoQA 模型的泛化能力。同时为提升模型的泛化力，我们提出一种基于图神经网络（GNN）的软指示器（soft verbalizer），通过聚合相似词的信息来增强对罕见与未见答案的预测。在评测方面，我们改造已有的（闭词表）开放式 VideoQA 模型构建新基线，并通过考虑罕见与未见答案进一步提升其表现。消融实验与定性分析表明，我们的 GNN 软指示器能进一步提升模型性能，在罕见与未见答案上尤其明显。我们希望 OVQA 能成为评估 VideoQA 模型泛化性的指引，并启发后续研究。代码见 https://github.com/mlvlab/OVQA。",
+      "topics": ["language-nlp", "multimodal", "perception"],
+      "keywords": [
+        {"en": "open-vocabulary video QA", "zh": "开放词表视频问答"},
+        {"en": "soft verbalizer", "zh": "软指示器"},
+        {"en": "out-of-vocabulary answers", "zh": "词表外答案"},
+        {"en": "generalizability benchmark", "zh": "泛化性基准"},
+        {"en": "graph neural network", "zh": "图神经网络"}
+      ]
+    }
+  ]
+}
