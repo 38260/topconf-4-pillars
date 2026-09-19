@@ -1,0 +1,163 @@
+{
+  "venue": "AAAI 2025",
+  "translated_by": "本项目逐篇人工翻译（对照 OpenAlex 收录的 AAAI 官方记录摘要）",
+  "translated_at": "2026-09-19",
+  "papers": [
+    {
+      "id": "aaai-097-aaai-2025-w1187",
+      "title_zh": "QJL：零开销的 1 比特量化 JL 变换用于 KV 缓存量化",
+      "abstract_zh": "服务大语言模型需要大量显存，因为键值（KV）缓存中的 Key-Value 嵌入会随序列长度增长。压缩 KV 缓存的有效手段之一是量化。但传统量化方法存在可观的显存开销：每个数据块都要以全精度保存量化常数（至少一个零点与一个缩放因子），视块大小不同，这会给每个量化数额外增加 1 到 2 比特。我们提出 QJL——一种由 Johnson-Lindenstrauss（JL）变换加符号位量化组成的新量化方法。与现有方法不同，QJL 无需保存量化常数，从而彻底消除这部分显存开销。我们针对两个向量的内积提出非对称估计器，并证明：对其中一个向量施加 QJL、另一个向量施加不做量化的标准 JL 变换，即可得到偏差最小的无偏估计。我们还实现了高效的 QJL 草图及其内积估计，并配有为优化计算而写的轻量 CUDA 核函数。在多种 LLM 与 NLP 任务上把 KV 缓存量化到仅 3 比特时，QJL 在不牺牲精度的前提下实现 KV 缓存显存超过 5 倍的降低，同时运行时更快。",
+      "topics": ["edge-efficiency", "llm", "architectures"],
+      "keywords": [
+        {"en": "KV cache quantization", "zh": "KV 缓存量化"},
+        {"en": "Johnson-Lindenstrauss transform", "zh": "Johnson-Lindenstrauss 变换"},
+        {"en": "sign-bit quantization", "zh": "符号位量化"},
+        {"en": "zero overhead", "zh": "零开销"},
+        {"en": "CUDA kernel", "zh": "CUDA 核函数"}
+      ]
+    },
+    {
+      "id": "aaai-098-aaai-2025-w312",
+      "title_zh": "ABQ-LLM：面向大语言模型的任意比特量化推理加速",
+      "abstract_zh": "大语言模型（LLM）革新了自然语言处理任务，但其实际应用受限于巨大的显存与计算需求。训练后量化（PTQ）被视为加速 LLM 推理的有效方法。尽管 PTQ 在 LLM 压缩中日益流行，其部署仍面临两大挑战：一是低比特量化导致性能退化；二是受限于 GPU 上有限的整数计算单元类型，不同精度的量化矩阵运算难以被有效加速。为解决这些问题，我们提出全新的任意比特量化算法与推理框架 ABQ-LLM：它在各种量化设定下都表现优异，并能在 GPU 上实现高效的任意精度量化推理。ABQ-LLM 的关键创新有三：（1）针对 Transformer 块的分布修正方法，缓解权重与激活全量化的分布差异，提升低比特下的性能；（2）比特均衡策略，抵消极低比特（如 2 比特）下非对称分布带来的性能退化；（3）创新的量化加速框架，基于等价二进制张量核心（BTC）重构任意精度组合的量化矩阵乘，摆脱 INT4/INT8 计算单元的限制。ABQ-LLM 能把每一处比特宽度的节省转化为真实的加速收益，在混合精度（如 W6A6、W2A8）下把性能最大化。基于 LLaMA-7B 的 W2A8 量化配置，其 WikiText2 困惑度为 7.59（比 AffineQuant 的 9.76 低 2.17）；相比 SmoothQuant，我们实现 1.6 倍加速提升与 2.7 倍显存压缩收益。",
+      "topics": ["edge-efficiency", "llm", "architectures"],
+      "keywords": [
+        {"en": "arbitrary-bit quantization", "zh": "任意比特量化"},
+        {"en": "post-training quantization", "zh": "训练后量化"},
+        {"en": "mixed precision", "zh": "混合精度"},
+        {"en": "binary tensor core", "zh": "二进制张量核心"},
+        {"en": "distribution correction", "zh": "分布修正"}
+      ]
+    },
+    {
+      "id": "aaai-099-aaai-2025-w2804",
+      "title_zh": "RMath：面向数学多步推理任务的逻辑推理数据集",
+      "abstract_zh": "数学推理能力客观反映语言模型对上下文中隐含知识的理解，而逻辑是探索、表述并建立有效推理的前提。大语言模型（LLM）在以数学推理为代表的复杂推理任务上展现出巨大潜力。然而现有数学数据集要么聚焦常识推理（考察模型的知识应用能力），要么是带有固定运算规则的算术题（考察模型的快速学习能力），缺少「只能靠逻辑推理求解」的数据集。这制约了 LLM 准确理解题目中隐含逻辑关系、并仅依据给定条件推导结论的表现。为应对该挑战，我们构建了专门面向多步推理任务的数据集 Reasoning-Math（RMath）：它以数学推理题考察逻辑推理能力，覆盖直接推理、假设推理与嵌套推理等典型题型。我们还设计了标准化标注方案，把条件的自然语言描述转换为形式化命题，标注内容还包括题目类别、命题真值与命题关系类型。这既减少了解题时因语义误解带来的偏差，也便于引入有理论支撑的逻辑推理方法来增强推理能力。此外，我们为 RMath 提出基于命题逻辑的规范化解题框架，并针对提示微调设计解题流程，引导 LLM 吸收数学逻辑理论、提升推理能力。最后在多个主流 LLM 上对 RMath 做了评测并给出相应结果。",
+      "topics": ["llm", "language-nlp", "trustworthy"],
+      "keywords": [
+        {"en": "mathematical reasoning", "zh": "数学推理"},
+        {"en": "multi-step reasoning", "zh": "多步推理"},
+        {"en": "propositional logic", "zh": "命题逻辑"},
+        {"en": "formal annotation scheme", "zh": "形式化标注方案"},
+        {"en": "logic reasoning benchmark", "zh": "逻辑推理基准"}
+      ]
+    },
+    {
+      "id": "aaai-100-aaai-2025-w117",
+      "title_zh": "LightPROF：面向知识图谱上大语言模型的轻量推理框架",
+      "abstract_zh": "大语言模型（LLM）在文本理解与零样本推理上能力出众，但知识更新的滞后可能导致其推理出错或产生有害结果。知识图谱（KG）通过结构化地组织并连接大量实体与关系，为 LLM 的推理过程提供丰富而可靠的上下文。现有基于 KG 的 LLM 推理方法只以文本形式把 KG 的知识注入提示，忽视了其结构信息；而且它们多依赖闭源模型或大参数开源模型，带来高资源消耗。为此我们提出面向 KGQA 的轻量高效提示学习与推理框架 LightPROF，以参数高效的方式释放 LLM 处理复杂推理任务的潜能。具体地，LightPROF 遵循「检索—嵌入—推理」流程：先通过检索模块从 KG 中准确稳定地取回对应的推理图；再经基于 Transformer 的知识适配器精细抽取并整合 KG 中的事实与结构信息，把这些信息映射到 LLM 的 token 嵌入空间，构造出便于 LLM 用于最终推理的友好提示。此外，LightPROF 只需训练知识适配器，可与任意开源 LLM 兼容。在两个公开 KGQA 基准上的大量实验表明，LightPROF 用小规模 LLM 即可取得更优表现，并且在输入 token 数量与推理耗时两方面优势明显。",
+      "topics": ["language-nlp", "llm", "edge-efficiency"],
+      "keywords": [
+        {"en": "knowledge graph QA", "zh": "知识图谱问答"},
+        {"en": "lightweight reasoning", "zh": "轻量推理"},
+        {"en": "knowledge adapter", "zh": "知识适配器"},
+        {"en": "retrieve-embed-reason", "zh": "检索—嵌入—推理"},
+        {"en": "parameter-efficient tuning", "zh": "参数高效微调"}
+      ]
+    },
+    {
+      "id": "aaai-101-aaai-2025-w38",
+      "title_zh": "用多模态大语言模型赋能多模态序列推荐",
+      "abstract_zh": "大语言模型（LLM）的最新进展在推荐系统（RS）领域展现出显著潜力。现有研究大多把用户行为日志转成文本提示，并借助提示微调等技术让 LLM 完成推荐任务。同时，融合图像、文本等多源数据的多模态推荐系统近来受到关注，这也给「仅依赖文本模态」的既有 LLM 推荐范式带来新挑战。此外，尽管能处理多模态输入的多模态大语言模型（MLLM）已经出现，如何赋予 MLLM 多模态推荐能力仍基本未被探索。为此我们提出多模态大语言模型增强的序列式多模态推荐模型（MLLM-MSR），以捕捉动态的用户偏好，设计了两阶段的用户偏好摘要方法。具体地，先用基于 MLLM 的物品摘要器针对给定物品抽取图像特征并把图像转成文本；随后采用循环式的用户偏好摘要生成范式，基于 LLM 的用户摘要器捕捉用户偏好的动态变化。最后，为让 MLLM 胜任多模态推荐任务，我们用监督微调（SFT）技术微调一个基于 MLLM 的推荐器。在多个数据集上的充分评测验证了 MLLM-MSR 的有效性，展现出捕捉并适应用户偏好演化动态的优越能力。",
+      "topics": ["multimodal", "llm", "architectures"],
+      "keywords": [
+        {"en": "multimodal recommendation", "zh": "多模态推荐"},
+        {"en": "sequential recommendation", "zh": "序列推荐"},
+        {"en": "user preference summarization", "zh": "用户偏好摘要"},
+        {"en": "multimodal LLM", "zh": "多模态大语言模型"},
+        {"en": "supervised fine-tuning", "zh": "监督微调"}
+      ]
+    },
+    {
+      "id": "aaai-102-aaai-2025-w813",
+      "title_zh": "DesignEdit：以免训练修复的多层潜空间扩散框架统一空间感知图像编辑",
+      "abstract_zh": "空间感知图像编辑关注在给定图像中修改元素的位置与尺寸。然而以往工作仍难以兼顾「原编辑区域的背景协调」与「被编辑元素的初始身份保持」，因而很难一次完成复杂的多物体编辑。本文希望以一种简洁直白的方式实现灵活的空间编辑：先修复背景，并设计一个两阶段的多层潜空间扩散框架，让每个元素可以被独立编辑。具体地，我们设计了键掩码自注意力方案并辅以伪影抑制，在去噪过程中实现背景修复，充分利用潜空间扩散模型 Stable Diffusion XL-1.0 的强大生成能力。这套潜空间分解与融合框架能够统一各类空间感知操作，包括移除、缩放、重定位、翻转、增加、相机平移、拉远、遮挡感知编辑与跨图编辑。实验表明，本方法在物体移除上具有更优的修复质量，并在空间感知编辑上具备更强的通用性与更高的精度。",
+      "topics": ["generative", "multimodal", "edge-efficiency"],
+      "keywords": [
+        {"en": "spatial-aware image editing", "zh": "空间感知图像编辑"},
+        {"en": "training-free inpainting", "zh": "免训练图像修复"},
+        {"en": "latent decomposition and fusion", "zh": "潜空间分解与融合"},
+        {"en": "key-masking self-attention", "zh": "键掩码自注意力"},
+        {"en": "multi-object editing", "zh": "多物体编辑"}
+      ]
+    },
+    {
+      "id": "aaai-103-aaai-2025-w3451",
+      "title_zh": "BloomScene：面向跨模态场景生成的轻量结构化三维高斯泼溅",
+      "abstract_zh": "随着虚拟现实应用的普及，三维场景生成成为一个新的挑战性研究前沿。三维场景结构高度复杂，要求输出稠密、连贯且包含所有必要结构。当前许多三维场景生成方法依赖预训练的文本生成图像扩散模型与单目深度估计器，但生成的场景占用大量存储空间，且往往缺乏有效的正则化手段，导致几何畸变。为此我们提出 BloomScene——一种面向跨模态场景生成的轻量结构化三维高斯泼溅方法，可从文本或图像输入创建多样且高质量的三维场景。具体地，我们提出跨模态渐进式场景生成框架，利用增量式点云重建与三维高斯泼溅生成连贯场景；并提出基于分层深度先验的正则化机制，通过对深度精度与平滑度施加多层次约束，增强生成场景的真实感与连续性；最后提出结构化上下文引导的压缩机制，利用结构化哈希网格来建模无组织锚点属性的上下文，显著消除结构冗余、降低存储开销。在多个场景上的大量实验表明，相比若干基线，我们的框架展现出明显的潜力与优势。",
+      "topics": ["3d-embodied", "generative", "multimodal"],
+      "keywords": [
+        {"en": "3D scene generation", "zh": "三维场景生成"},
+        {"en": "structured Gaussian splatting", "zh": "结构化高斯泼溅"},
+        {"en": "hierarchical depth prior", "zh": "分层深度先验"},
+        {"en": "hash grid compression", "zh": "哈希网格压缩"},
+        {"en": "incremental point cloud reconstruction", "zh": "增量点云重建"}
+      ]
+    },
+    {
+      "id": "aaai-104-aaai-2025-w407",
+      "title_zh": "ProtCLIP：功能先验引导的蛋白质多模态学习",
+      "abstract_zh": "把蛋白质序列与生物学描述对齐的多模态预训练范式已学到通用的蛋白质表征，并在多种下游应用中取得可观表现。然而受限于「未能有效利用对齐的蛋白质—文本配对数据」以及「缺少有效的、以功能为先验的预训练范式」，这些工作仍无法复刻语言监督视觉基础模型那样的巨大成功。为解决这些问题，本文用属性驱动的采样策略整理出大规模蛋白质—文本配对数据集 ProtAnno，并提出一种新颖的、以功能为先验的蛋白质预训练范式。具体地，该采样策略依据样本置信度与属性覆盖度决定选取概率，从而在大规模含噪数据面前平衡数据质量与数据量；此外，受蛋白质特有功能机制重要性的启发，所提范式通过两个分段式预训练目标显式建模蛋白质的静态与动态功能片段，以功能先验的方式注入细粒度信息。凭借这些创新，我们开发出 ProtCLIP——一个全面表征功能感知蛋白质嵌入的多模态基础模型。在涵盖蛋白质功能分类、突变效应预测、跨模态转换、语义相似性推断与蛋白质—蛋白质相互作用预测等 5 类的 22 个蛋白质基准上，ProtCLIP 一致取得当前最优表现：五个跨模态转换基准平均提升 75%，GO-CC 达 59.9%、GO-BP 蛋白质功能预测达 39.7%。实验结果验证了 ProtCLIP 作为蛋白质多模态基础模型的巨大潜力。",
+      "topics": ["medical-science", "multimodal", "architectures"],
+      "keywords": [
+        {"en": "protein foundation model", "zh": "蛋白质基础模型"},
+        {"en": "function-informed pre-training", "zh": "功能先验预训练"},
+        {"en": "protein-text pairing", "zh": "蛋白质—文本配对"},
+        {"en": "mutation effect prediction", "zh": "突变效应预测"},
+        {"en": "property-driven sampling", "zh": "属性驱动采样"}
+      ]
+    },
+    {
+      "id": "aaai-105-aaai-2025-w469",
+      "title_zh": "由对抗攻击启发、打通后门与对抗攻击的后门防御",
+      "abstract_zh": "后门攻击与对抗攻击是深度神经网络（DNN）面临的两大安全威胁：前者是训练期的数据投毒攻击，通过向训练样本注入触发模式把后门植入模型；后者是测试期攻击，试图从良性图像生成对抗样例（AE）以误导训练好的模型。以往工作通常把这两类攻击分开研究，二者之间的内在联系很少被探讨。本文聚焦于「把后门攻击与对抗攻击打通」，并在对已植入后门的染毒模型施加对抗攻击时观察到两个有趣现象：1）当触发模式存在时，样本更难被变成对抗样例；2）由后门样本生成的对抗样例，很可能仍被预测为其真实标签。受此启发，我们提出新的后门防御方法 AIBD（对抗启发的后门防御）：利用渐进式 top-q 方案把后门样本隔离出来，并用对抗标签打断后门样本与其目标标签之间的关联。在多个数据集上针对六种最先进后门攻击的大量实验表明，在染毒数据上经 AIBD 训练的模型优于现有防御方法。",
+      "topics": ["trustworthy", "architectures"],
+      "keywords": [
+        {"en": "backdoor defense", "zh": "后门防御"},
+        {"en": "adversarial example", "zh": "对抗样例"},
+        {"en": "trigger pattern", "zh": "触发模式"},
+        {"en": "progressive top-q scheme", "zh": "渐进式 top-q 方案"},
+        {"en": "data poisoning", "zh": "数据投毒"}
+      ]
+    },
+    {
+      "id": "aaai-106-aaai-2025-w983",
+      "title_zh": "MEDSAGE：用大模型合成对话增强医学对话摘要对语音识别错误的鲁棒性",
+      "abstract_zh": "自动语音识别（ASR）系统在把语音转写为文本方面作用关键，但它引入的错误会显著拖累摘要等下游任务的表现。这一问题在临床对话摘要这一低资源领域尤为突出：可用于微调的监督数据稀缺，不得不把 ASR 模型当黑箱使用。而常规数据增强也难以用于提升摘要模型的抗噪能力，因为缺少足够的医学对话录音及对应的 ASR 转写文本。为应对这一挑战，我们提出 MEDSAGE——一种利用大语言模型（LLM）生成合成样本做数据增强的方法。具体地，我们发挥 LLM 的上下文学习能力，依据少量带有录音的医学对话示例，指示 LLM 生成类似 ASR 的错误。实验结果表明，LLM 能够有效刻画 ASR 噪声，把这类含噪数据纳入训练过程后，医学对话摘要系统的鲁棒性与准确率都显著提升。该方法回应了关键应用中 ASR 输出含噪的难题，为提升临床对话摘要的可靠性提供了稳健方案。",
+      "topics": ["language-nlp", "medical-science", "llm"],
+      "keywords": [
+        {"en": "medical dialogue summarization", "zh": "医学对话摘要"},
+        {"en": "ASR noise robustness", "zh": "语音识别噪声鲁棒性"},
+        {"en": "synthetic data augmentation", "zh": "合成数据增强"},
+        {"en": "in-context learning", "zh": "上下文学习"},
+        {"en": "low-resource domain", "zh": "低资源领域"}
+      ]
+    },
+    {
+      "id": "aaai-107-aaai-2025-w593",
+      "title_zh": "LNS2+RL：在多智能体路径规划中把多智能体强化学习与大邻域搜索相结合",
+      "abstract_zh": "多智能体路径规划（MAPF）是物流与仓储管理的关键环节，关注在已知环境中为一组机器人规划无碰撞路径。近期工作提出了新的 MAPF 方法 LNS2：它借助快速但质量偏低的基于优先级的规划器，得到一组不可行路径后通过迭代重规划来修复。与此同时，学界也在推进基于多智能体强化学习（MARL）的 MAPF 算法，让智能体学习去中心化策略，从而在协作上优于此类优先级规划，但不可避免地更慢。本文提出新的 MAPF 算法 LNS2+RL，把 LNS2 与 MARL 这两种不同却互补的特性结合，扬长避短、兼得两者之利。在早期迭代中，LNS2+RL 依靠 MARL 做低层重规划——我们证明这比基于优先级的规划器能消除更多碰撞；此处基于 MARL 的规划器允许智能体推理过去与未来/预测信息，并通过精心设计的课程学习逐步学会协作决策。在规划后期，LNS2+RL 自适应切换到基于优先级的规划以快速消除剩余碰撞，自然地在解的质量与计算效率之间取得折衷。在不同团队规模、世界规模与地图结构的高难任务上开展的充分实验一致表明，LNS2+RL 优于包括 LNS2、LaCAM 与 EECBS 在内的许多 MAPF 算法。在结构复杂的地图上其优势尤为明显：近一半测试任务中 LNS2+RL 成功率超过 50%，而 LaCAM 与 EECBS 降到 0%。",
+      "topics": ["rl-decision", "3d-embodied", "edge-efficiency"],
+      "keywords": [
+        {"en": "multi-agent path finding", "zh": "多智能体路径规划"},
+        {"en": "large neighborhood search", "zh": "大邻域搜索"},
+        {"en": "curriculum learning", "zh": "课程学习"},
+        {"en": "decentralized policy", "zh": "去中心化策略"},
+        {"en": "collision repair", "zh": "碰撞修复"}
+      ]
+    },
+    {
+      "id": "aaai-108-aaai-2025-w2426",
+      "title_zh": "基于图 Transformer 网络的深度多模态图聚类",
+      "abstract_zh": "当前的深度多模态图聚类方法主要依赖图神经网络（GNN）来充分利用属性特征与图结构，包括消息传播与低维特征嵌入。然而这些方法对图结构信息的挖掘仍不够深入，例如节点间关系与最短路径；同时它们也未必能充分发现多模态图数据之间的互补信息。为解决这些问题，我们提出一种新的方法——基于图 Transformer 网络的深度多模态图聚类（DMGC-GTN）。该方法彻底剖析并利用图结构信息：对节点特征施加图平滑，并把多种形式的嵌入纳入 Transformer 架构，从而实现图结构与多模态属性特征的统一嵌入，充分利用多模态图数据内部的互补信息。大量实验证明了我们算法的有效性。",
+      "topics": ["architectures", "multimodal"],
+      "keywords": [
+        {"en": "multi-modal graph clustering", "zh": "多模态图聚类"},
+        {"en": "graph transformer network", "zh": "图 Transformer 网络"},
+        {"en": "graph smoothing", "zh": "图平滑"},
+        {"en": "unified embedding", "zh": "统一嵌入"},
+        {"en": "shortest-path structure", "zh": "最短路径结构"}
+      ]
+    }
+  ]
+}
