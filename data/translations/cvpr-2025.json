@@ -1,0 +1,163 @@
+{
+  "venue": "CVPR 2025",
+  "translated_by": "本项目逐篇人工翻译（对照 CVF Open Access 官方摘要页）",
+  "translated_at": "2026-09-19",
+  "papers": [
+    {
+      "id": "cvpr-061-CVPR2025-p2826",
+      "title_zh": "MobilePortrait：移动设备上实时的单样本神经头部虚拟形象",
+      "abstract_zh": "已有的神经头部虚拟形象方法在肖像动画的画质与动作幅度上进步显著，但这些方法优先考虑效果而忽视计算开销。本文提出 MobilePortrait——一个轻量的单样本神经头部虚拟形象方法，通过在动作建模与图像合成两侧同时引入外部知识来降低学习复杂度，从而在移动设备上实现实时推理。具体地，我们提出显式关键点与隐式关键点混合的关键点表示以精确建模动作，并为其配备预计算的视觉特征来同时增强人脸与背景的合成。凭借这些设计，模型只需以低 FLOPs 的 UNet 作为主干即可达到当前最优性能，计算需求不足原有方法的十分之一。实测表明它在移动设备上可超过 50 FPS，并同时支持视频驱动与音频驱动输入。",
+      "topics": ["edge-efficiency", "generative", "perception"],
+      "keywords": [
+        {"en": "neural head avatar", "zh": "神经头部虚拟形象"},
+        {"en": "mobile inference", "zh": "移动端推理"},
+        {"en": "one-shot animation", "zh": "单样本动画"},
+        {"en": "mixed keypoints", "zh": "混合关键点"},
+        {"en": "audio-driven portrait", "zh": "音频驱动肖像"}
+      ]
+    },
+    {
+      "id": "cvpr-062-CVPR2025-p516",
+      "title_zh": "VL2Lite：从大型视觉语言模型到轻量网络的任务专属知识蒸馏",
+      "abstract_zh": "由于大规模模型的计算需求很高，在资源受限环境中部署高性能神经网络是重大挑战。我们提出 VL2Lite——一个知识蒸馏框架，通过利用视觉语言模型（VLM）丰富的表征知识来提升轻量神经网络在图像分类任务上的表现。VL2Lite 在训练期把来自 VLM 的多模态知识直接融入紧凑模型，有效弥补小网络在计算与建模能力上的不足。通过迁移高层特征与复杂数据表征，我们的方法提升了图像分类的精度与效率，同时不增加推理阶段的计算开销。实验评测显示，VL2Lite 在多个数据集上带来最高 7% 的分类性能提升。该方法回应了「在算力受限环境中部署精确模型」这一难题，在模型复杂度与运行效率之间给出平衡解。",
+      "topics": ["edge-efficiency", "multimodal", "architectures"],
+      "keywords": [
+        {"en": "knowledge distillation", "zh": "知识蒸馏"},
+        {"en": "lightweight network", "zh": "轻量网络"},
+        {"en": "vision-language model", "zh": "视觉语言模型"},
+        {"en": "image classification", "zh": "图像分类"},
+        {"en": "resource-constrained deployment", "zh": "受限资源部署"}
+      ]
+    },
+    {
+      "id": "cvpr-063-CVPR2025-p59",
+      "title_zh": "通过思维链智能体蒸馏增强视频大模型推理",
+      "abstract_zh": "本文研究视频问答（VideoQA）问题——该任务常需多步推理以及对时空动态的深入理解。大型视频语言模型虽在基准上表现良好，却往往缺乏可解释性与时空接地能力。我们提出「思维链智能体蒸馏」（AoTD）：把自动生成的思维链（CoT）纳入指令微调流程来增强模型。具体地，我们借助一个基于智能体的系统把复杂问题拆解为子任务，并用专门的视觉模型逐个处理，其中间结果即被视为推理链；同时引入一个大语言模型（LLM）做校验的机制，以保证生成的思维链可靠。大量实验表明，AoTD 在选择题式与开放式基准上均提升了性能。",
+      "topics": ["llm", "multimodal", "rl-decision"],
+      "keywords": [
+        {"en": "video question answering", "zh": "视频问答"},
+        {"en": "chain-of-thought distillation", "zh": "思维链蒸馏"},
+        {"en": "agent-based decomposition", "zh": "智能体式拆解"},
+        {"en": "spatio-temporal grounding", "zh": "时空接地"},
+        {"en": "instruction tuning", "zh": "指令微调"}
+      ]
+    },
+    {
+      "id": "cvpr-064-CVPR2025-p329",
+      "title_zh": "Critic-V：用视觉语言模型评论家捕获多模态推理中的错误",
+      "abstract_zh": "视觉语言模型（VLM）在多模态推理任务上进步显著，但由于图像理解出现幻觉、推理路径未经打磨等原因，它们仍常生成不准确或无关的回答。为解决这些问题，我们提出受「演员—评论家」范式启发的 Critic-V 框架来提升 VLM 的推理能力。该框架把推理过程与评论过程解耦为两个独立组件：Reasoner 依据视觉与文本输入生成推理路径，Critic 则给出建设性评论以打磨这些路径。在该方案中，Reasoner 按文本提示生成推理性回答，而提示本身可作为策略依据 Critic 的反馈迭代演化。这一交互过程由强化学习框架提供理论支撑——区别在于 Critic 给出的是自然语言评论而非标量奖励，从而以更细腻的反馈提升 Reasoner 处理复杂推理任务的能力。Critic 模型用直接偏好优化（DPO）训练，借助按规则奖励（RBR）排序的评论偏好数据集来强化其评论能力。评测显示 Critic-V 在 8 个基准中的 5 个上显著优于包括 GPT-4V 在内的现有方法，尤其在推理准确率与效率上。Reasoner 的动态文本策略加上偏好优化后 Critic 的建设性反馈，带来更可靠、更上下文敏感的多模态推理过程。该方法为提升 VLM 可靠性提供了有前景的路径，可改善自动驾驶、具身智能等推理密集的真实应用表现。",
+      "topics": ["llm", "multimodal", "trustworthy"],
+      "keywords": [
+        {"en": "actor-critic paradigm", "zh": "演员—评论家范式"},
+        {"en": "reasoning path refinement", "zh": "推理路径打磨"},
+        {"en": "direct preference optimization", "zh": "直接偏好优化"},
+        {"en": "hallucination detection", "zh": "幻觉检测"},
+        {"en": "multimodal reasoning", "zh": "多模态推理"}
+      ]
+    },
+    {
+      "id": "cvpr-065-CVPR2025-p2046",
+      "title_zh": "CLIP-Refine：视觉语言基础模型模态对齐的后预训练",
+      "abstract_zh": "对比语言—图像预训练（CLIP）是构建现代视觉语言基础模型的关键组件。尽管 CLIP 在下游任务上展现出出色的零样本性能，其多模态特征空间仍存在「模态鸿沟」——图像与文本特征簇之间的间隙，这限制了下游任务表现。已有工作试图通过修改预训练或微调来缩小该间隙，却要么受困于大数据袋带来的高昂训练成本，要么造成零样本性能退化。本文提出 CLIP-Refine，一种位于预训练与微调之间的「后预训练」方法，目标是在小规模图文数据集上只训练 1 个轮次就完成特征空间对齐，且不损害零样本性能。为此我们引入两项技术：随机特征对齐（RaFA）与混合对比蒸馏（HyCD）。RaFA 通过最小化图像与文本特征到「从先验分布采样的随机参考向量」的距离，迫使两者服从同一先验分布；HyCD 用「真值图文配对标签」与「预训练 CLIP 输出」共同生成的混合软标签来更新模型，从而在保住已有知识的同时学到用于对齐特征的新知识。在多个分类与检索任务上的大量实验表明，CLIP-Refine 成功缓解模态鸿沟并提升零样本性能。代码见 https://github.com/yshinya6/clip-refine。",
+      "topics": ["multimodal", "architectures"],
+      "keywords": [
+        {"en": "modality gap", "zh": "模态鸿沟"},
+        {"en": "post-pre-training", "zh": "后预训练"},
+        {"en": "feature alignment", "zh": "特征对齐"},
+        {"en": "contrastive distillation", "zh": "对比蒸馏"},
+        {"en": "zero-shot preservation", "zh": "零样本性能保持"}
+      ]
+    },
+    {
+      "id": "cvpr-066-CVPR2025-p393",
+      "title_zh": "AlignMamba：以局部与全局跨模态对齐增强多模态 Mamba",
+      "abstract_zh": "由于模态间天然存在异质性，跨模态对齐对多模态表征融合至关重要。基于 Transformer 的方法在建模模态间关系上已见成效，但其平方级计算复杂度限制了它在长序列或大规模数据上的适用性；近期的 Mamba 类方法虽达到线性复杂度，其顺序扫描机制却在全面建模跨模态关系上带来根本困难。为解决这一局限，我们提出高效且有效的多模态融合方法 AlignMamba。具体地，以最优传输为理论基础，我们引入局部跨模态对齐模块，显式学习不同模态间 token 级的对应关系；并提出基于最大均值差异（MMD）的全局跨模态对齐损失，隐式强制不同模态分布保持一致。经局部与全局对齐后的单模态表征再送入 Mamba 主干，做进一步的跨模态交互与多模态融合。在完整与缺失模态两类融合任务上的大量实验证明了该方法的有效性与高效性：例如在 CMU-MOSI 数据集上，AlignMamba 把分类准确率提升 0.9%，GPU 显存占用降低 20.3%，推理时间减少 83.3%。",
+      "topics": ["architectures", "multimodal", "edge-efficiency"],
+      "keywords": [
+        {"en": "Mamba", "zh": "Mamba 状态空间模型"},
+        {"en": "cross-modal alignment", "zh": "跨模态对齐"},
+        {"en": "optimal transport", "zh": "最优传输"},
+        {"en": "maximum mean discrepancy", "zh": "最大均值差异"},
+        {"en": "linear complexity", "zh": "线性复杂度"}
+      ]
+    },
+    {
+      "id": "cvpr-067-CVPR2025-p304",
+      "title_zh": "Diffusion-4K：用潜空间扩散模型合成超高分辨率图像",
+      "abstract_zh": "本文提出 Diffusion-4K——一个用文生图扩散模型直接合成超高分辨率图像的新框架。核心进展有二：（1）Aesthetic-4K 基准：针对公开可用的 4K 图像合成数据集的缺失，我们构建 Aesthetic-4K 这一超高分辨率图像生成综合基准，通过精挑细选的图像与 GPT-4o 生成的描述整理出高质量 4K 数据集；并引入 GLCM 分数与压缩率两项指标来评估细节，配合 FID、美学分与 CLIPScore 等整体性指标，对超高分辨率图像做全面评估。（2）基于小波的微调：我们提出基于小波的微调方法，可直接用写实 4K 图像训练，适用于多种潜空间扩散模型，并在合成高细节 4K 图像上表现出有效性。因此，当由现代大规模扩散模型（如 SD3-2B 与 Flux-12B）驱动时，Diffusion-4K 在高质量图像合成与文本提示遵循上都表现出色。基于该基准的大量实验结果证明了 Diffusion-4K 在超高分辨率图像合成上的优势。代码见 https://github.com/zhang0jhon/diffusion-4k。",
+      "topics": ["generative", "multimodal"],
+      "keywords": [
+        {"en": "ultra-high-resolution synthesis", "zh": "超高分辨率生成"},
+        {"en": "latent diffusion model", "zh": "潜空间扩散模型"},
+        {"en": "wavelet fine-tuning", "zh": "小波微调"},
+        {"en": "4K benchmark", "zh": "4K 基准"},
+        {"en": "detail evaluation metric", "zh": "细节评估指标"}
+      ]
+    },
+    {
+      "id": "cvpr-068-CVPR2025-p209",
+      "title_zh": "Prometheus：用于前馈式文生三维场景的三维感知潜空间扩散模型",
+      "abstract_zh": "我们提出 Prometheus——一个三维感知的潜空间扩散模型，能在数秒内完成物体级与场景级的文本生成三维。我们把三维场景生成形式化为「在多视角、前馈、像素对齐的三维高斯生成」并置于潜空间扩散范式之中。为保证泛化性，模型构建在预训练的文本生成图像模型之上，只做极少的结构调整，并用大量单视角与多视角数据集的图像进一步训练。此外，我们在三维高斯生成中引入 RGB-D 潜空间，把外观与几何信息解耦，从而以前馈方式高效生成具备更好保真度与几何质量的三维高斯。大量实验结果证明本方法在前馈式三维高斯重建与文本生成三维两方面均有效。",
+      "topics": ["generative", "3d-embodied", "multimodal"],
+      "keywords": [
+        {"en": "text-to-3D scene generation", "zh": "文本生成三维场景"},
+        {"en": "feed-forward generation", "zh": "前馈生成"},
+        {"en": "3D Gaussian splatting", "zh": "三维高斯泼溅"},
+        {"en": "RGB-D latent space", "zh": "RGB-D 潜空间"},
+        {"en": "multi-view consistency", "zh": "多视角一致性"}
+      ]
+    },
+    {
+      "id": "cvpr-069-CVPR2025-p743",
+      "title_zh": "SplatAD：用三维高斯泼溅为自动驾驶做实时激光雷达与相机渲染",
+      "abstract_zh": "保障自动驾驶车辆等自主机器人的安全，需要在多样驾驶场景上做充分测试，而仿真是以低成本、可扩展方式开展这类测试的关键环节。神经渲染方法因能从采集日志以数据驱动方式构建仿真环境而日益流行。然而现有的神经辐射场（NeRF）方法虽能传感器真实感地渲染相机与激光雷达数据，渲染速度却很低，限制了大规模测试的可行性；三维高斯泼溅（3DGS）虽支持实时渲染，但当前方法仅限于相机数据，无法渲染自动驾驶必需的激光雷达数据。为此我们提出 SplatAD——首个对相机与激光雷达数据都能做真实感实时渲染的动态场景 3DGS 方法。SplatAD 精确建模了多项传感器特有现象，如卷帘快门效应、激光雷达强度与光线丢失，并用专门设计的算法优化渲染效率。在三个自动驾驶数据集上的评测表明，SplatAD 达到当前最优的渲染质量：在新视角合成上 PSNR 提升最高 +2、在重建上 +3，同时渲染速度比基于 NeRF 的方法快一个数量级。代码将在论文发表后开源。",
+      "topics": ["3d-embodied", "perception", "edge-efficiency"],
+      "keywords": [
+        {"en": "autonomous driving simulation", "zh": "自动驾驶仿真"},
+        {"en": "lidar rendering", "zh": "激光雷达渲染"},
+        {"en": "3D Gaussian splatting", "zh": "三维高斯泼溅"},
+        {"en": "rolling shutter", "zh": "卷帘快门"},
+        {"en": "real-time rendering", "zh": "实时渲染"}
+      ]
+    },
+    {
+      "id": "cvpr-070-CVPR2025-p2790",
+      "title_zh": "大小模型协作实现多模态医学诊断",
+      "abstract_zh": "医学 AI 的最新进展呈现出「医疗健康领域走向大模型」的清晰趋势。然而由于缺乏足够的模态完整医学数据，为多模态医学诊断构建大模型仍然困难；而现有多数多模态诊断模型规模偏小，特征抽取能力有限。为弥补这一差距，我们提出 AdaCoMed——一个自适应协作学习框架，把现成的医学单模态大模型与多模态小模型协同整合。框架先采用「模态专家混合」（MoME）结构融合来自多个单模态医学大模型的特征，再引入新颖的自适应协作学习机制与一个多模态小模型协同工作。该协作机制由自适应加权策略引导，动态平衡两方面的互补优势：MoME 融合得到的大模型特征，与小模型的跨模态推理能力。在两个具代表性的多模态医学数据集（MIMIC-IV-MM 与 MMIST ccRCC）、涵盖 6 种模态与 4 类诊断任务的实验中，本方法相对最先进基线取得持续提升，是面向真实医学诊断应用的一条可行路径。",
+      "topics": ["medical-science", "multimodal", "llm"],
+      "keywords": [
+        {"en": "multi-modal diagnosis", "zh": "多模态诊断"},
+        {"en": "large-small model collaboration", "zh": "大小模型协作"},
+        {"en": "mixture of modality experts", "zh": "模态专家混合"},
+        {"en": "adaptive weighting", "zh": "自适应加权"},
+        {"en": "incomplete modality data", "zh": "模态缺失数据"}
+      ]
+    },
+    {
+      "id": "cvpr-071-CVPR2025-p357",
+      "title_zh": "T2ISafety：评估图像生成的公平性、毒性与隐私的基准",
+      "abstract_zh": "文本生成图像（T2I）模型进展迅速，已能在众多领域按文本提示生成高质量图像。但这些模型也带来明显的安全隐患，包括生成有害、带偏见或侵犯隐私的内容的风险。当前对 T2I 安全的评估仍处早期：虽有工作针对特定安全维度做评测，许多关键风险仍未被触及。为填补这一空白，我们提出 T2ISafety——一个从毒性、公平性与偏见三个关键域评估 T2I 模型的安全基准。我们围绕这三个域构建了含 12 项任务、44 个类别的细粒度层级体系，并精心收集了对应的 7 万条提示。基于这套分类体系与提示集，我们构建了含 6.8 万张人工标注图像的大规模 T2I 数据集，并训练出一个评测器，能够发现以往工作未能识别的关键风险——连 GPTs 这类超大型专有模型也无法正确检出的风险也在其列。我们在 T2ISafety 上评测了 15 个主流扩散模型，揭示若干隐忧：种族公平方面存在长期未解的问题、倾向生成有毒内容，以及即使采用概念抹除等防御手段、各模型的隐私保护水平差异仍然很大。",
+      "topics": ["trustworthy", "generative"],
+      "keywords": [
+        {"en": "safety benchmark", "zh": "安全基准"},
+        {"en": "toxicity and bias", "zh": "毒性与偏见"},
+        {"en": "fairness evaluation", "zh": "公平性评估"},
+        {"en": "privacy protection", "zh": "隐私保护"},
+        {"en": "concept erasing", "zh": "概念抹除"}
+      ]
+    },
+    {
+      "id": "cvpr-072-CVPR2025-p39",
+      "title_zh": "SGC-Net：面向开放词表人-物交互检测的分层粒度比较网络",
+      "abstract_zh": "近期的开放词表人-物交互（OV-HOI）检测方法主要依赖大语言模型（LLM）生成辅助描述，并利用从 CLIP 蒸馏来的知识去检出未见过的交互类别。尽管有效，这类方法面临两个挑战：（1）特征粒度不足——由于依赖最后一层视觉特征做文本对齐，中间层蕴含的物体级关键细节被忽略；（2）语义相似混淆——CLIP 对某些类别存在固有偏置，而仅基于标签生成的 LLM 描述又无法充分刻画类间相似性。为应对这两个问题，我们提出分层粒度比较网络。首先引入粒度感知对齐模块，把全局语义特征与局部细节聚合起来，打磨交互表征并确保中间视觉特征与文本嵌入稳健对齐；其次开发分层分组比较模块，用 LLM 递归地比较与归类各交互类别，为每个类别生成细粒度且具判别力的描述。在 SWIG-HOI 与 HICO-DET 两个广泛使用的基准上，本方法在 OV-HOI 检测上取得当前最优结果。代码见 https://github.com/Phil0212/SGC-Net。",
+      "topics": ["perception", "multimodal", "llm"],
+      "keywords": [
+        {"en": "open-vocabulary HOI detection", "zh": "开放词表人-物交互检测"},
+        {"en": "granularity-aware alignment", "zh": "粒度感知对齐"},
+        {"en": "hierarchical group comparison", "zh": "分层分组比较"},
+        {"en": "inter-class similarity", "zh": "类间相似性"},
+        {"en": "LLM-generated description", "zh": "大模型生成描述"}
+      ]
+    }
+  ]
+}
