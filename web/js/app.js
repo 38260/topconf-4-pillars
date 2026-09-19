@@ -167,10 +167,17 @@
 
   function renderStats() {
     var d = state.data;
-    var byVenue = countsBy(function (p) { return [p.venue]; });
+    // 统计卡随届次筛选联动（否则选了 2024 还显示三届总量会误导）
+    var byVenue = {};
+    d.papers.forEach(function (p) {
+      if (state.year && String(p.year) !== String(state.year)) return;
+      byVenue[p.venue] = (byVenue[p.venue] || 0) + 1;
+    });
     var html = d.pillars.map(function (pl) {
       var on = state.venue === pl.key;
-      var mine = d.papers.filter(function (p) { return p.venue === pl.key; });
+      var mine = d.papers.filter(function (p) {
+        return p.venue === pl.key && (!state.year || String(p.year) === String(state.year));
+      });
       var yrs = mine.map(function (p) { return p.year; }).sort();
       var span = yrs.length ? (yrs[0] === yrs[yrs.length - 1]
         ? String(yrs[0]) : yrs[0] + "–" + yrs[yrs.length - 1]) : "";
@@ -184,9 +191,12 @@
         "</button>";
     }).join("");
     var tcount = Object.keys(countsBy(function (p) { return p.topics; })).length;
+    var shown = d.papers.filter(function (p) {
+      return !state.year || String(p.year) === String(state.year);
+    }).length;
     html += '<button type="button" class="stat" data-act="reset" style="--st:var(--accent)">' +
       '<span class="k"><i class="dot"></i>全部精选</span>' +
-      '<span class="v" style="color:var(--accent)">' + TL.fmtNum(d.papers.length) +
+      '<span class="v" style="color:var(--accent)">' + TL.fmtNum(shown) +
       '<span style="font-size:12px;color:var(--muted);font-family:var(--sans);font-weight:400"> 篇</span></span>' +
       '<span class="s">跨 ' + tcount + " 个主题 · 清除筛选</span></button>";
     $("stats").innerHTML = html;
