@@ -39,9 +39,12 @@ def check(text: str) -> list[str]:
     text = URL.sub("", text)
     # （original term） after a Chinese term is intentional, not a leak
     text = re.sub(r"（[^（）]*）", " ", text)
+    # metric prefixes glued to a number (top-1, W4A8, 2x) have no Chinese form
+    text = re.sub(r"\b[a-z]{1,6}(?=--?\d)", "", text)
     bad = []
     for w in WORD.findall(text):
-        if w[0].isupper():            # proper nouns, method names, acronyms
+        w = w.rstrip("-'")
+        if not w or w[0].isupper():       # proper nouns, method names, acronyms
             continue
         if w.lower() in ALLOW or len(w) < 3:
             continue
