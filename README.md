@@ -1,12 +1,14 @@
 # 顶会四支柱文献看板 · TopConf Four Pillars
 
-四大顶级会议（CVPR / AAAI / ICCV / ACL）**最新一届**真实论文的 HTML 看板。
+四大顶级会议（CVPR / AAAI / ICCV / ACL）**近三年 11 届**真实论文的 HTML 看板。
 数据全部来自官方或权威开放接口，逐条可回溯核验；摘要提供**人工中文翻译**并保留英文原文对照。
 
-- 顶会：`CVPR 2026`（IEEE/CVF）、`AAAI 2026`、`ICCV 2025`、`ACL 2026`
-- 规模：每会精选 12 篇，共 **48 篇**
+- 顶会：`CVPR`、`AAAI`、`ICCV`、`ACL`（四支柱＝四个会议，年份作为筛选维度）
+- 时间窗：近三年 **11 届** —— CVPR 2024/2025/2026 · AAAI 2024/2025/2026 ·
+  ICCV 2023/2025（奇数年会议）· ACL 2024/2025/2026
+- 规模：每届精选 12 篇，共 **132 篇**；官方语料底数 **35,927 篇**
 - 视图：**四支柱**（一会一柱）+ **主题视图**（深度学习 / 大模型 / 边缘计算与高效推理 / 多模态 …）
-- 导航：sticky 目录侧栏（论文两级直达 + 滚动高亮，顶栏「目录」可折叠）；搜索框快捷键 `/`
+- 导航：sticky 目录侧栏（论文两级直达 + 滚动高亮，顶栏「目录」可折叠）；届次筛选条；搜索框快捷键 `/`
 - 风格：Claude 风格配色，组件设计模式参考 Trace Light（见 `docs/design-references.md`）
 
 ## 快速开始
@@ -43,12 +45,12 @@ TODO.md             全局待办真源，每次完成同步并随代码提交
 
 ## 数据源
 
-| 支柱 | 官方源 | 抓取内容 |
-|------|--------|----------|
-| CVPR 2026 | openaccess.thecvf.com（CVF 开放获取） | 标题 / 作者 / 官方摘要 / PDF / 页码 |
-| ICCV 2025 | openaccess.thecvf.com | 同上 |
-| ACL 2026 | aclanthology.org（ACL Anthology MODS XML） | 同上 |
-| AAAI 2026 | api.openalex.org（Proceedings of AAAI, S4210191458） | 标题 / 作者 / 摘要 / DOI（指向 ojs.aaai.org） |
+| 支柱 | 官方源 | 届次 | 抓取内容 |
+|------|--------|------|----------|
+| CVPR | openaccess.thecvf.com（CVF 开放获取） | 2024 / 2025 / 2026 | 标题 / 作者 / 官方摘要 / PDF / 页码 / 内嵌 BibTeX |
+| ICCV | openaccess.thecvf.com | 2023 / 2025 | 同上 |
+| ACL | aclanthology.org（ACL Anthology MODS XML） | 2024 / 2025 / 2026 | 标题 / 作者 / 官方摘要 / PDF / DOI / 页码 |
+| AAAI | api.openalex.org（Proceedings of AAAI, S4210191458） | 2024 / 2025 / 2026 | 标题 / 作者 / 摘要 / DOI（指向 ojs.aaai.org） |
 
 主题标签（`topics`）是基于真实标题、摘要与关键词的项目内派生分类，**不是**出版方官方学科分类，界面已标注。
 
@@ -78,11 +80,12 @@ python scripts/build_citations.py --force  # 重新回源解析 ACL / Crossref
 
 1. **点链接复核**：卡片详情 → 「论文页」直达 CVF Open Access / ACL Anthology / AAAI DOI 落地页，
    「PDF」直达官方全文；AAAI 另给「OpenAlex 记录」链接。
-2. **跑核验脚本**：`python scripts/verify.py` 会**绕过本地缓存**重新读取 48 篇官方页面，
+2. **跑核验脚本**：`python scripts/verify.py` 会**绕过本地缓存**重新读取 132 篇官方页面，
    把摘要规范化后与仓库内 `data/papers.json` 逐字比对，并检查论文页/PDF 可达性，
    结果写入 `docs/verification-report.md`（含逐篇表格）。
-3. **重放全量语料**：`python scripts/fetch_corpus.py --no-cache` 重新拉取四会议官方目录，
-   与 `data/corpus_meta.json` 的体检数字对比（当前：CVPR 4,042 · ICCV 2,701 · ACL 4,809 · AAAI 4,976）。
+3. **重放全量语料**：`python scripts/fetch_corpus.py --no-cache` 重新拉取 11 届官方目录，
+   与 `data/corpus_meta.json` 的逐届体检数字对比（CVPR 4,042/2,871/2,716 · ICCV 2,701/2,156 ·
+   ACL 4,809/3,351/1,952 · AAAI 4,976/3,486/2,867）。
 
 数据口径的三条坦白：
 

@@ -105,10 +105,9 @@ def json_load(path: str):
 
 
 def write_report(rows, problems) -> None:
-    from pillars import PILLARS
     ok_abs = sum(1 for r in rows if r[2])
     ok_page = sum(1 for r in rows if r[3] == "ok")
-    ok_pdf = sum(1 for r in rows if r[3 + 1] == "ok")
+    ok_pdf = sum(1 for r in rows if r[4] == "ok")
     lines = [
         "# 数据核验报告",
         "",
@@ -119,19 +118,22 @@ def write_report(rows, problems) -> None:
         f"- 结果：{len(rows)} 篇中，摘要逐字一致 **{ok_abs}** 篇，"
         f"论文页可达 **{ok_page}** 篇，PDF 可达 **{ok_pdf}** 篇，异常 **{len(problems)}** 篇。",
         "",
-        "| 会议 | 语料规模（官方全量） | 精选 | 摘要一致 | 论文页可达 | PDF 可达 |",
+        "| 届次 | 官方语料规模 | 精选 | 摘要一致 | 论文页可达 | PDF 可达 |",
         "|---|---|---|---|---|---|",
     ]
     corpus = json_load(os.path.join(DATA, "corpus_meta.json"))["stats"]
-    for pl in PILLARS:
-        k = pl["key"]
-        sub = [r for r in rows if r[0]["venue"] == k]
-        n = len(sub) or 0
+    for ed in json_load(os.path.join(DATA, "corpus_meta.json")).get("editions", []):
+        key, k = ed["label"], (ed["venue"], ed["year"])
+        sub = [r for r in rows if (r[0]["venue"], r[0]["year"]) == k]
+        n = len(sub)
+        if not n:
+            continue
+        cinfo = corpus.get(key, {})
         pdf_ok = sum(1 for r in sub if r[4] == "ok")
         pdf_skip = sum(1 for r in sub if r[4] == "skip")
         pdf_cell = f"{pdf_ok}/{n}" + (f"（{pdf_skip} 篇不适用）" if pdf_skip else "")
         lines.append(
-            f"| {pl['label']} {pl['year']} | {corpus[k]['papers']:,} | {n} | "
+            f"| {key} | {cinfo.get('papers', 0):,} | {n} | "
             f"{sum(1 for r in sub if r[2])}/{n} | "
             f"{sum(1 for r in sub if r[3] == 'ok')}/{n} | {pdf_cell} |")
     lines += ["", "## 逐篇比对", "",
