@@ -25,7 +25,8 @@ ALLOW = {
     "checkpoint", "checkpoints", "benchmark", "baseline", "baselines", "dataset",
     "hop", "hops", "wiki", "web", "chat", "app", "apps", "e-commerce", "x",
     "tokenizer", "tokenizers", "miou", "iou", "dev", "psnr",
-    "prefill", "decode", "post-hoc", "zero-shot", "bit",
+    "prefill", "decode", "post-hoc", "zero-shot", "bit", "val", "test", "alpha",
+    "beta", "gamma", "top-k", "n-gram", "out-of-box",
 }
 
 WORD = re.compile(r"[A-Za-z][A-Za-z\-']*")
@@ -88,8 +89,10 @@ def main() -> int:
     dpath = os.path.join(DATA, "draft.json")
     if os.path.exists(dpath):
         draft = json.load(open(dpath, encoding="utf-8"))
+        # a bare project/code URL is a legitimate way for an abstract to end
+        complete = re.compile(r"([.!?\u201d\u2019)\]]|https?://\S+)\s*$")
         trunc = [p["id"] for p in draft
-                 if not re.search(r"[.!?\u201d\u2019)\]]\s*$", p["abstract"].strip())]
+                 if not complete.search(p["abstract"].strip())]
         short = [p["id"] for p in draft if len(p["abstract"]) < 250]
         if trunc:
             print(f"  ! 英文摘要疑似被截断（{len(trunc)}）: {', '.join(trunc)}")
