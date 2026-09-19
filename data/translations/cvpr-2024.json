@@ -1,0 +1,163 @@
+{
+  "venue": "CVPR 2024",
+  "translated_by": "本项目逐篇人工翻译（对照 CVF Open Access 官方摘要页）",
+  "translated_at": "2026-09-19",
+  "papers": [
+    {
+      "id": "cvpr-049-CVPR2024-p2411",
+      "title_zh": "MoPE-CLIP：以模块化剪枝误差度量实现高效视觉语言模型的结构化剪枝",
+      "abstract_zh": "视觉语言预训练模型在各类下游任务上表现优异，但其庞大的模型体积阻碍了它在算力受限平台上的使用。我们发现：直接换用更小的预训练模型、或对 CLIP 施加基于幅值的剪枝，都会带来灵活性差与性能不佳的问题。已有的 VLP 压缩方法要么采用单模态的压缩度量因而性能受限，要么需要代价高昂的可学习掩码搜索流程。本文首先提出模块化剪枝误差（MoPE）度量——通过在跨模态任务上的性能下降来准确评估 CLIP 各模块的重要性。基于 MoPE 度量，我们提出一个同时适用于「预训练阶段」与「任务专属微调阶段」压缩的统一剪枝框架。在预训练阶段，MoPE-CLIP 有效利用教师模型的知识，在保持强劲零样本能力的同时大幅降低预训练成本；在微调阶段，由宽度到深度的连续剪枝可得到竞争力很强的任务专属模型。两个阶段的大量实验证明了 MoPE 度量的有效性，且 MoPE-CLIP 优于此前最先进的 VLP 压缩方法。",
+      "topics": ["edge-efficiency", "multimodal", "architectures"],
+      "keywords": [
+        {"en": "structured pruning", "zh": "结构化剪枝"},
+        {"en": "vision-language pre-training", "zh": "视觉语言预训练"},
+        {"en": "module importance metric", "zh": "模块重要性度量"},
+        {"en": "model compression", "zh": "模型压缩"},
+        {"en": "zero-shot transfer", "zh": "零样本迁移"}
+      ]
+    },
+    {
+      "id": "cvpr-050-CVPR2024-p567",
+      "title_zh": "HMD-Poser：从可扩展稀疏观测到端侧实时人体动作追踪",
+      "abstract_zh": "在 Meta Quest、PICO 这类独立式 VR 头显（HMD）上实现实时人体动作追踪极具挑战。本文提出 HMD-Poser——首个利用 HMD 与佩戴式惯性测量单元（IMU）的可扩展稀疏观测来恢复全身动作的统一方法。它能支持多种输入组合，例如仅 HMD、HMD+2 个 IMU、HMD+3 个 IMU 等；输入的可扩展性让用户可以在「高追踪精度」与「佩戴轻便」之间自行取舍。HMD-Poser 设计了轻量的时空特征学习网络，保证模型在头显上实时运行；此外还引入在线体型估计以提升关节位置精度。在高难度的 AMASS 数据集上，HMD-Poser 在精度与实时性两方面均取得新的当前最优结果。我们还构建了一个自由舞蹈动作数据集来评估其端侧表现，并考察合成数据与真实采集传感器数据之间的性能差距。最后，我们在商用头显上演示了实时的虚拟形象驱动应用。代码与舞蹈数据集见 https://pico-ai-team.github.io/hmd-poser。",
+      "topics": ["edge-efficiency", "3d-embodied", "perception"],
+      "keywords": [
+        {"en": "on-device motion tracking", "zh": "端侧动作追踪"},
+        {"en": "head-mounted display", "zh": "头戴式显示器"},
+        {"en": "IMU", "zh": "惯性测量单元"},
+        {"en": "full-body pose estimation", "zh": "全身姿态估计"},
+        {"en": "real-time inference", "zh": "实时推理"}
+      ]
+    },
+    {
+      "id": "cvpr-051-CVPR2024-p976",
+      "title_zh": "PromptCoT：通过适配的思维链对齐提示分布",
+      "abstract_zh": "基于扩散的生成模型在产出图像、视频等高保真视觉内容上能力出众，但其性能高度依赖文本输入（即「提示」）的质量。传统的提示工程虽然有效，却需要经验技巧，对新手并不友好。本文提出 PromptCoT——一种能自主为用户打磨提示的增强器。其设计依据是一个观察：越接近训练集中高质量图像文本描述的提示，往往带来越好的生成效果。因此我们用一个只含高质量视觉内容描述的精选文本数据集去微调预训练大语言模型（LLM），使其学到高质量训练文本的分布，从而生成与之对齐的续写与修订来提升原始文本。不过预训练 LLM 有个缺点：容易输出多余或不相关的内容。我们引入思维链（CoT）机制来加强原始提示与其改写版本之间的对齐——CoT 从对齐后的续写与修订中抽取并整合关键信息，基于上下文线索做合理推断，产出更全面细腻的最终输出。考虑计算效率，我们不为每个模型或数据集各配一个专用提示增强 LLM，而是通过适配器实现数据集特定的适配，共享同一个预训练 LLM 作为底座；只需独立微调这些适配器，就能把 PromptCoT 迁移到新数据集，同时几乎不增加训练成本与显存占用。在广泛使用的潜空间扩散模型（图像与视频生成）上评测，关键性能指标均有显著提升。",
+      "topics": ["llm", "generative", "multimodal"],
+      "keywords": [
+        {"en": "prompt engineering", "zh": "提示工程"},
+        {"en": "chain-of-thought", "zh": "思维链"},
+        {"en": "text-to-image generation", "zh": "文本生成图像"},
+        {"en": "adapter tuning", "zh": "适配器微调"},
+        {"en": "diffusion model", "zh": "扩散模型"}
+      ]
+    },
+    {
+      "id": "cvpr-052-CVPR2024-p322",
+      "title_zh": "Alpha-CLIP：一个聚焦于你所指定区域的 CLIP 模型",
+      "abstract_zh": "对比语言—图像预训练（CLIP）在从图像中提取有价值的内容信息方面作用关键，横跨多种任务。它把文本与视觉模态对齐以理解整幅图像，包括那些与具体任务无关的细节。然而若要对图像做更细致的理解与可控编辑，关键在于聚焦于特定兴趣区域——这些区域可由人类或感知模型以点、掩码或框的形式给出。为满足这一需求，我们提出 Alpha-CLIP：一个增强版 CLIP，它带有一条辅助的 alpha 通道用于指示注意力区域，并用我们构造的百万级 RGBA「区域—文本」对进行微调。Alpha-CLIP 既保留了 CLIP 的视觉识别能力，又能精确控制对图像内容的侧重。它在开放世界识别、多模态大语言模型、条件式二维/三维生成等诸多任务上都表现出有效性，有潜力成为图像相关任务的通用工具。",
+      "topics": ["multimodal", "perception", "architectures"],
+      "keywords": [
+        {"en": "CLIP", "zh": "CLIP 对比语言—图像预训练"},
+        {"en": "region-aware attention", "zh": "区域感知注意力"},
+        {"en": "alpha channel guidance", "zh": "alpha 通道引导"},
+        {"en": "open-world recognition", "zh": "开放世界识别"},
+        {"en": "RGBA pre-training", "zh": "RGBA 预训练"}
+      ]
+    },
+    {
+      "id": "cvpr-053-CVPR2024-p1629",
+      "title_zh": "AV2AV：基于统一音视频语音表征的直接音视频语音到音视频语音翻译",
+      "abstract_zh": "本文提出新颖的直接「音视频语音到音视频语音」翻译（AV2AV）框架，其输入与输出都是多模态的（即音频与视觉语音）。借助 AV2AV 可获得两点关键优势：其一，在虚拟会议中人们可以用自己的母语与全球任何人进行近乎真实的交流；与只在音频模态间翻译的语音到语音翻译（A2A）不同，AV2AV 直接在音视频语音之间翻译，从而在译文语音之外同步呈现唇部动作，改善对话体验。其二，可提升口语翻译系统的稳健性：利用音视频语音的互补信息，即使在声学噪声存在时系统也能有效翻译，表现出稳健性能。为缓解缺少平行 AV2AV 翻译数据集的问题，我们提出用纯音频的 A2A 数据集来训练口语翻译系统——方法是通过自监督学习先获得统一的音视频语音表征，再据此训练翻译系统。此外我们提出 AV-Renderer，可并行生成原始音频与视频；它采用零样本说话人建模，因而源音视频语音中的说话人特征能在目标译文中得以保留。在「多对多」语言翻译设定下的大量实验验证了 AV2AV 的有效性。演示页：choijeongsoo.github.io/av2av。",
+      "topics": ["multimodal", "language-nlp", "generative"],
+      "keywords": [
+        {"en": "audio-visual speech translation", "zh": "音视频语音翻译"},
+        {"en": "unified speech representation", "zh": "统一语音表征"},
+        {"en": "self-supervised learning", "zh": "自监督学习"},
+        {"en": "lip synchronization", "zh": "唇动同步"},
+        {"en": "speaker preservation", "zh": "说话人保持"}
+      ]
+    },
+    {
+      "id": "cvpr-054-CVPR2024-p2548",
+      "title_zh": "UFOGen：通过扩散 GAN 实现单次前向的大规模文生图",
+      "abstract_zh": "文本生成图像的扩散模型已展现出把文本提示转化为连贯图像的出色能力，但多步推理带来的计算开销始终是顽疾。为解决这一问题，我们提出 UFOGen——一个为「一步生成」超快文生图而设计的新生成模型。不同于聚焦改进采样器或对扩散模型做蒸馏的常规路线，UFOGen 采用把扩散模型与 GAN 目标融合的混合方法。借助新提出的「扩散—GAN」目标并以预训练扩散模型初始化，UFOGen 能在单步内高效生成以文本描述为条件的高质量图像。除文生图本身，UFOGen 在多种应用上也显示通用性。值得指出的是，UFOGen 是最早支持一步文生图并完成多样下游任务的模型之一，是高效生成模型方向上的一次重要推进。",
+      "topics": ["generative", "edge-efficiency", "architectures"],
+      "keywords": [
+        {"en": "one-step generation", "zh": "单步生成"},
+        {"en": "diffusion GAN", "zh": "扩散生成对抗网络"},
+        {"en": "text-to-image synthesis", "zh": "文本生成图像"},
+        {"en": "inference cost", "zh": "推理开销"},
+        {"en": "knowledge distillation", "zh": "知识蒸馏"}
+      ]
+    },
+    {
+      "id": "cvpr-055-CVPR2024-p2222",
+      "title_zh": "SuGaR：面向高效三维网格重建与高质量网格渲染的表面对齐高斯泼溅",
+      "abstract_zh": "我们提出一种方法，使从三维高斯泼溅中精确且极快地抽取网格成为可能。高斯泼溅近来非常流行，因为它能产出写实的渲染，且训练比 NeRF 快得多。然而要从数百万个微小三维高元中提取网格并不容易：优化后这些高元往往杂乱无章，而此前尚无任何方法做到这一点。我们的第一个关键贡献是一个正则项，促使高元与场景表面对齐；随后利用这种对齐，以泊松重建从高元中提取网格——该方法快速、可扩展且能保留细节，有别于通常从神经 SDF 提取网格所用的 Marching Cubes 算法。最后我们引入一种可选的细化策略：把高元绑定到网格表面，并通过高斯泼溅渲染联合优化这些高元与网格。这使得直接操作网格（而非高元本身）就能轻松编辑、雕刻、动画化与重打光。用我们的方法，几分钟即可得到「可编辑网格 + 写实渲染」，而 SDF 上的最先进方法需要数小时，且我们的渲染质量更高。",
+      "topics": ["3d-embodied", "generative", "perception"],
+      "keywords": [
+        {"en": "3D Gaussian splatting", "zh": "三维高斯泼溅"},
+        {"en": "mesh extraction", "zh": "网格提取"},
+        {"en": "Poisson reconstruction", "zh": "泊松重建"},
+        {"en": "surface alignment regularization", "zh": "表面对齐正则"},
+        {"en": "editable reconstruction", "zh": "可编辑重建"}
+      ]
+    },
+    {
+      "id": "cvpr-056-CVPR2024-p2343",
+      "title_zh": "像住院医那样训练：面向通用医学图像分割的上下文先验学习",
+      "abstract_zh": "临床影像工作流的重心是疾病诊断与管理，这使得医学影像数据集往往与特定临床目标强绑定。其结果是业界长期按任务分别开发分割模型，而未能从广泛的影像队列中汲取共性认知。受放射科住院医培训体系的启发，我们主张转向「通用医学图像分割」范式：借助临床目标、身体部位与成像模态之间的多样性与共性，构建医学图像理解的基础模型。为此我们开发 Hermes——一种上下文先验学习方法，用以应对医学图像分割中的数据异构与标注差异。在一个涵盖 5 种模态（CT、PET、T1、T2 与电影 MRI）与多个身体部位、包含 11 个多样数据集（2,438 幅三维影像）的大规模集合上，我们证明了「单模型处理多任务」时通用范式优于传统范式。通过利用跨任务的协同效应，Hermes 在所有测试数据集上取得当前最优性能，并展现出更好的模型可扩展性。在另外两个数据集上的结果也显示 Hermes 在迁移学习、增量学习与下游任务泛化上表现强劲。Hermes 学到的先验能反映任务与模态之间错综复杂的关系，这与放射科既有的解剖学与成像规律相符。代码已开源。",
+      "topics": ["medical-science", "perception", "architectures"],
+      "keywords": [
+        {"en": "universal medical image segmentation", "zh": "通用医学图像分割"},
+        {"en": "foundation model", "zh": "基础模型"},
+        {"en": "context-prior learning", "zh": "上下文先验学习"},
+        {"en": "multi-modality imaging", "zh": "多模态成像"},
+        {"en": "cross-task synergy", "zh": "跨任务协同"}
+      ]
+    },
+    {
+      "id": "cvpr-057-CVPR2024-p218",
+      "title_zh": "WateRF：辐射场中的鲁棒水印用于版权保护",
+      "abstract_zh": "神经辐射场（NeRF）研究的进展带来广泛领域的应用，但如何保护其版权尚未被深入研究。近来 NeRF 水印被视为安全部署基于 NeRF 的三维表示的关键方案之一，然而现有方法只能作用于隐式或显式 NeRF 表示中的一种。本工作提出一种创新的加水印方法，可通用于 NeRF 的两种表示形式。其做法是微调 NeRF，在渲染过程中嵌入二值信息：具体地，我们提出在 NeRF 空间中使用离散小波变换来加水印；并采用延迟反向传播技术，配合分块（patch-wise）损失，在以最小代价的同时提升渲染质量与比特准确率。我们从容量、不可见性与鲁棒性三个方面评估所嵌入水印在二维渲染图像上的表现。相较对比的最先进方法，我们的方法取得当前最优性能且训练更快。项目页：https://kuai-lab.github.io/cvpr2024waterf/。",
+      "topics": ["trustworthy", "3d-embodied", "generative"],
+      "keywords": [
+        {"en": "NeRF watermarking", "zh": "神经辐射场水印"},
+        {"en": "discrete wavelet transform", "zh": "离散小波变换"},
+        {"en": "copyright protection", "zh": "版权保护"},
+        {"en": "bit accuracy", "zh": "比特准确率"},
+        {"en": "radiance field", "zh": "辐射场"}
+      ]
+    },
+    {
+      "id": "cvpr-058-CVPR2024-p235",
+      "title_zh": "FoundationPose：统一的未知物体六位姿估计与跟踪",
+      "abstract_zh": "我们提出 FoundationPose——一个统一的六位姿估计与跟踪基础模型，同时支持「有模型」与「无模型」两类设定。只要给定物体的 CAD 模型，或采集少量参考图像，它就能在测试时直接作用于新物体而无需微调。由于框架统一，两种设定下下游的位姿估计模块完全相同；而在没有 CAD 模型时，使用神经隐式表示来做高效的新视角合成。大规模合成数据训练辅以大语言模型（LLM）、新颖的基于 Transformer 的架构以及对比学习式建模，带来了强泛化能力。在多个含高难场景与物体的公开数据集上的大量评测表明，我们的统一方法大幅优于各任务上专精的现有方法；尽管假设更少，其结果甚至能与实例级方法相当。项目页：https://nvlabs.github.io/FoundationPose/。",
+      "topics": ["perception", "3d-embodied", "architectures"],
+      "keywords": [
+        {"en": "6D pose estimation", "zh": "六位姿估计"},
+        {"en": "pose tracking", "zh": "位姿跟踪"},
+        {"en": "novel object", "zh": "未知物体"},
+        {"en": "neural implicit representation", "zh": "神经隐式表示"},
+        {"en": "synthetic training", "zh": "合成数据训练"}
+      ]
+    },
+    {
+      "id": "cvpr-059-CVPR2024-p975",
+      "title_zh": "ViT-CoMer：带卷积多尺度特征交互的视觉 Transformer 用于密集预测",
+      "abstract_zh": "尽管视觉 Transformer（ViT）在计算机视觉中取得巨大成功，但由于缺少 patch 内部的信息交互、且特征尺度多样性有限，它在密集预测任务上表现不佳。现有研究大多致力于设计视觉专用的 Transformer 来解决上述问题，但这会引入额外的预训练开销。因此我们提出 ViT-CoMer——一个「免预训练、增强特征」的朴素 ViT 主干，通过卷积多尺度特征交互促成 CNN 与 Transformer 之间的双向交互。与最先进的做法相比，ViT-CoMer 有以下优势：（1）把空间金字塔式的多感受野卷积特征注入 ViT 架构，有效缓解 ViT 局部信息交互有限、特征表征单一的问题；（2）提出简洁高效的 CNN—Transformer 双向融合交互模块，在层级特征间做多尺度融合，有利于处理密集预测任务；（3）在多种密集预测任务、不同框架与多种先进预训练方式下评测 ViT-CoMer 的性能。值得注意的是，ViT-CoMer-L 在 COCO val2017 上不使用额外训练数据即取得 64.3% AP，在 ADE20K val 上取得 62.1% mIoU，两者均可比于当前最优方法。我们希望 ViT-CoMer 能成为密集预测任务的新主干，推动后续研究。代码将发布于 https://github.com/Traffic-X/ViT-CoMer。",
+      "topics": ["architectures", "perception"],
+      "keywords": [
+        {"en": "Vision Transformer", "zh": "视觉 Transformer"},
+        {"en": "dense prediction", "zh": "密集预测"},
+        {"en": "CNN-Transformer fusion", "zh": "CNN 与 Transformer 融合"},
+        {"en": "multi-scale features", "zh": "多尺度特征"},
+        {"en": "pre-training-free backbone", "zh": "免预训练主干"}
+      ]
+    },
+    {
+      "id": "cvpr-060-CVPR2024-p77",
+      "title_zh": "DMR：视觉强化学习中帧与事件融合的分解式多模态表征",
+      "abstract_zh": "我们探索使用两种互补视觉模态的视觉强化学习（RL）：基于帧的 RGB 相机与基于事件的动态视觉传感器（DVS）。现有的多模态视觉 RL 方法常面临一个难题：只能依靠间接的奖励信号而非像素级监督，因而难以从多模态中有效抽取任务相关信息、同时抑制随之增加的噪声。为此我们提出面向视觉 RL 的分解式多模态表征（DMR）框架，把输入显式分解为三类互不相同的成分：融合了任务相关信息的共特征（co-features）、RGB 专属噪声、DVS 专属噪声。共特征代表两种模态中与该 RL 任务相关的全部信息；两个噪声成分各自用数据重建损失加以约束以避免信息泄漏，并与共特征形成对比以最大化二者差异。大量实验表明，通过显式分离不同类型的信息，本方法的策略性能显著优于现有最先进方法。",
+      "topics": ["rl-decision", "multimodal", "perception"],
+      "keywords": [
+        {"en": "event camera (DVS)", "zh": "事件相机（DVS）"},
+        {"en": "visual reinforcement learning", "zh": "视觉强化学习"},
+        {"en": "modality decomposition", "zh": "模态分解"},
+        {"en": "noise suppression", "zh": "噪声抑制"},
+        {"en": "frame-event fusion", "zh": "帧与事件融合"}
+      ]
+    }
+  ]
+}
