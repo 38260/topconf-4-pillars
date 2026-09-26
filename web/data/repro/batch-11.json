@@ -1,0 +1,263 @@
+{
+ "papers": [
+  {
+   "id": "acl-121-acl-2025.acl-long.1140",
+   "github": "https://github.com/EasonWheng/MobiLoRA_experiment",
+   "github_official": false,
+   "github_stars": 2,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "真实移动设备 trace 与 LoRA 推理负载（论文未随代码发布）",
+     "url": null,
+     "accessibility": "private"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "n/a",
+   "reason": "无官方代码仓库（ACL 页面与作者主页均未发布），实验依赖真实手机设备与未公开的移动 trace，仅有第三方复现原型。"
+  },
+  {
+   "id": "acl-122-acl-2025.acl-long.325",
+   "github": "https://github.com/Little0o0/Quaff",
+   "github_official": true,
+   "github_stars": 11,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "HuggingFace 模型与数据集（Phi-3-mini / LLaMA 等微调任务，自动下载）",
+     "url": "https://huggingface.co/datasets",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "官方代码齐备，数据模型均由 HuggingFace 自动下载，7B 以下模型的量化 PEFT 微调单卡即可完成。"
+  },
+  {
+   "id": "acl-123-acl-2025.acl-long.1383",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "Humanity's Last Exam",
+     "url": null,
+     "accessibility": "application"
+    },
+    {
+     "name": "GPQA",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "GAIA",
+     "url": null,
+     "accessibility": "application"
+    },
+    {
+     "name": "FreshWiki",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "single_gpu",
+   "reason": "论文中给出的官方仓库 thewworldofagents/Agentic-Reasoning 已失效(404)，无可用官方代码，需完全自行 reimplement 框架。"
+  },
+  {
+   "id": "acl-124-acl-2025.acl-long.147",
+   "github": "https://github.com/d223302/TRACT",
+   "github_official": true,
+   "github_stars": 24,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "prometheus-eval/Feedback-Collection（训练）",
+     "url": "https://huggingface.co/datasets/prometheus-eval/Feedback-Collection",
+     "accessibility": "public"
+    },
+    {
+     "name": "prometheus-eval/Feedback-Bench（评测）",
+     "url": "https://huggingface.co/datasets/prometheus-eval/Feedback-Bench",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "single_gpu",
+   "reason": "官方代码与公开 HF 数据齐备，但需 LLaMA-Factory 微调 + vLLM 评测的双环境流水线，且 CoT 分数蒸馏流程较繁琐。"
+  },
+  {
+   "id": "acl-125-acl-2025.acl-long.74",
+   "github": "https://github.com/wangyu-ovo/MML",
+   "github_official": true,
+   "github_stars": 35,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "MML 加密图像数据集（作者上传）",
+     "url": "https://drive.google.com/drive/folders/10QlhyFvytmUsapcQf2xBBBsiB9N0zrpl?usp=sharing",
+     "accessibility": "public"
+    },
+    {
+     "name": "SafeBench",
+     "url": "https://github.com/trust-ai/SafeBench",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "官方攻击代码直接可用，攻击图像数据已公开在 Google Drive，仅需单卡推理开源 LVLM（GPT-4V 部分需 API）。"
+  },
+  {
+   "id": "acl-126-acl-2025.acl-long.327",
+   "github": "https://github.com/THUDM/AlignMMBench",
+   "github_official": true,
+   "github_stars": 6,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "AlignMMBench（3000 样本中文多模态对齐基准，随仓库/HF 发布）",
+     "url": "https://github.com/THUDM/AlignMMBench",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "评测基准的官方代码与数据全部公开，评测开源中文 LVLM 单卡可跑，仅对齐打分依赖 GPT-4o API。"
+  },
+  {
+   "id": "acl-127-acl-2025.acl-long.210",
+   "github": "https://github.com/SpaceHunterInf/Segment_Level_Diffusion",
+   "github_official": true,
+   "github_stars": 2,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "ROC Stories 长文故事数据集（仓库内附示例数据）",
+     "url": "https://github.com/SpaceHunterInf/Segment_Level_Diffusion",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "官方实现附完整训练/推理脚本与公开 ROC 数据，模型为 BART/T5 量级的段落级扩散模型，单卡可复现。"
+  },
+  {
+   "id": "acl-128-acl-2025.findings-acl.1313",
+   "github": "https://github.com/WeijieyingRen/DiaLLMs",
+   "github_official": true,
+   "github_stars": 0,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "NHANES 数据集（糖尿病预测）",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "TriNetX 去标识化电子健康记录（代谢/呼吸/循环队列）",
+     "url": null,
+     "accessibility": "private"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "single_gpu",
+   "reason": "官方代码已发布且 NHANES 公开，但核心 EHR 对话实验依赖 TriNetX 机构订阅数据，无权限只能部分复现。"
+  },
+  {
+   "id": "acl-129-acl-2025.acl-long.897",
+   "github": "https://github.com/LukeChen-go/pia-defense-by-attack",
+   "github_official": true,
+   "github_stars": 11,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "仓库自带的注入指令数据 crafted_instruction_data_qa.json",
+     "url": "https://github.com/LukeChen-go/pia-defense-by-attack",
+     "accessibility": "public"
+    },
+    {
+     "name": "StruQ 基线代码与数据",
+     "url": "https://github.com/Sizhe-Chen/StruQ",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "官方实现基于 StruQ 开源代码，数据随仓库公开，只需单卡推理 Llama-3-8B 即可完成攻防评测。"
+  },
+  {
+   "id": "acl-130-acl-2025.acl-long.741",
+   "github": "https://github.com/Runxuan-Liu/ORT",
+   "github_official": true,
+   "github_stars": 6,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "WebQSP（Freebase 子图需自建 Neo4j）",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "ComplexWebQuestions (CWQ)（Freebase 子图需自建 Neo4j）",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "single_gpu",
+   "reason": "官方代码与公开基准齐备，但仓库不含完整数据集，需自行获取 Freebase 子图导入 Neo4j 并依赖商用 LLM API。"
+  },
+  {
+   "id": "acl-131-acl-2025.acl-long.1105",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "ARCDataset",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "MultiWOZ",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "TruthfulQA",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "large_scale",
+   "reason": "论文声明的代码仓库 collaborative-debate/role-differentiation 实际不存在(404)，且多智能体 RL 训练多LLM辩论需要大规模算力。"
+  },
+  {
+   "id": "acl-132-acl-2025.findings-acl.856",
+   "github": "https://github.com/cmavro/GNN-RAG",
+   "github_official": true,
+   "github_stars": 448,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "WebQSP / CWQ / GrailQA（Freebase KGQA 基准，公开但需自行准备图谱）",
+     "url": "https://github.com/cmavro/GNN-RAG",
+     "accessibility": "public"
+    },
+    {
+     "name": "MetaQA（Wikidata 图谱）",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "高星官方代码且作者已附 GNN 检索结果，但完整复现需自备 Freebase/Wikidata 图谱训练 GNN 并跑 LLaMA-8B 级 LLM，环境较重。"
+  }
+ ]
+}

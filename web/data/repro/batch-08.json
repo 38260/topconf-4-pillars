@@ -1,0 +1,283 @@
+{
+ "papers": [
+  {
+   "id": "aaai-085-aaai-2024-w1690",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "COCO",
+     "url": "https://cocodataset.org/",
+     "accessibility": "public"
+    },
+    {
+     "name": "YouTube-VIS",
+     "url": "https://youtube-vos.org/dataset/vis/",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "n/a",
+   "reason": "无官方代码发布（arXiv注明代码可用但至今未见），数据集公开，无法直接复现。"
+  },
+  {
+   "id": "aaai-086-aaai-2024-w244",
+   "github": "https://github.com/shawnricecake/agile-quant",
+   "github_official": true,
+   "github_stars": 5,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "LLaMA-1 (7B-65B权重)",
+     "url": "https://github.com/facebookresearch/llama",
+     "accessibility": "application"
+    },
+    {
+     "name": "OPT",
+     "url": "https://huggingface.co/facebook/opt-6.7b",
+     "accessibility": "public"
+    },
+    {
+     "name": "GSM8K",
+     "url": "https://github.com/openai/grade-school-math",
+     "accessibility": "public"
+    },
+    {
+     "name": "MMLU",
+     "url": "https://github.com/hendrycks/test",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "single_gpu",
+   "reason": "官方代码可用，OPT/BLOOM公开但主实验用LLaMA-1需Meta申请，单卡可运行7B模型。"
+  },
+  {
+   "id": "aaai-087-aaai-2024-w3",
+   "github": "https://github.com/chen700564/RGB",
+   "github_official": true,
+   "github_stars": 378,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "RGB Benchmark（英/中）",
+     "url": "https://github.com/chen700564/RGB",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "官方代码star数高，benchmark数据在仓库内公开，7B模型单卡可跑，API调用可复现。"
+  },
+  {
+   "id": "aaai-088-aaai-2024-w160",
+   "github": "https://github.com/UMass-Foundation-Model/VisualCoT",
+   "github_official": true,
+   "github_stars": 40,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "COCO 2014/2017",
+     "url": "https://cocodataset.org/",
+     "accessibility": "public"
+    },
+    {
+     "name": "OK-VQA",
+     "url": "https://ok-vqa.github.io/",
+     "accessibility": "public"
+    },
+    {
+     "name": "A-OKVQA",
+     "url": "https://github.com/allenai/aokvqa",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "single_gpu",
+   "reason": "官方代码可用，数据集公开；需LLaVA（13B需约24GB显存）推理，单卡可行但资源需求较高。"
+  },
+  {
+   "id": "aaai-089-aaai-2024-w393",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "MSCOCO",
+     "url": "https://cocodataset.org/",
+     "accessibility": "public"
+    },
+    {
+     "name": "Flickr30k",
+     "url": "https://shannon.cs.illinois.edu/DenotationGraph/",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "single_gpu",
+   "reason": "无官方代码发布，数据集公开，需要自行实现多模态知识图谱对比哈希方法，复现难度高。"
+  },
+  {
+   "id": "aaai-090-aaai-2024-w891",
+   "github": "https://github.com/Hankpipi/diffusers-hetu",
+   "github_official": true,
+   "github_stars": 6,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "InstructPix2Pix prompts",
+     "url": "https://github.com/timothybrooks/instruct-pix2pix",
+     "accessibility": "public"
+    },
+    {
+     "name": "FISEdit-Data",
+     "url": "https://github.com/101nobody/FISEdit-Data",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "官方代码可用，数据公开，Stable Diffusion缓存加速推理单卡（8GB显存）即可完成。"
+  },
+  {
+   "id": "aaai-091-aaai-2024-w1470",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "LLFF",
+     "url": "https://github.com/Fyusion/LLFF",
+     "accessibility": "public"
+    },
+    {
+     "name": "DTU",
+     "url": "http://roboimagedata.compute.dtu.dk/",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "single_gpu",
+   "reason": "无官方代码发布，数据集公开；需自行实现深度引导点云融合NeRF架构，复现困难。"
+  },
+  {
+   "id": "aaai-092-aaai-2024-w162",
+   "github": "https://github.com/ktio89/ClinicalCoT",
+   "github_official": true,
+   "github_stars": 1,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "ADNI",
+     "url": "https://adni.loni.usc.edu/",
+     "accessibility": "application"
+    },
+    {
+     "name": "AIBL",
+     "url": "https://aibl.csiro.au/AIBL/",
+     "accessibility": "application"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "single_gpu",
+   "reason": "虽有官方代码（star=1），但核心数据ADNI/AIBL均需申请授权，私有医疗数据获取困难。"
+  },
+  {
+   "id": "aaai-093-aaai-2024-w1281",
+   "github": "https://github.com/zhuhai-ustc/limeattack",
+   "github_official": true,
+   "github_stars": 7,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "SST-2",
+     "url": "https://nlp.stanford.edu/sentiment/",
+     "accessibility": "public"
+    },
+    {
+     "name": "MR（Movie Reviews）",
+     "url": "https://www.cs.cornell.edu/people/pabo/movie-review-data/",
+     "accessibility": "public"
+    },
+    {
+     "name": "AG News",
+     "url": "https://huggingface.co/datasets/ag_news",
+     "accessibility": "public"
+    },
+    {
+     "name": "SNLI",
+     "url": "https://nlp.stanford.edu/projects/snli/",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "官方代码可用，全部使用公开文本分类数据集（GLUE等），BERT级模型单卡即可完成。"
+  },
+  {
+   "id": "aaai-094-aaai-2024-w367",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "SemEval-2014 ABSA（Restaurant/Laptop）",
+     "url": "https://alt.qcri.org/semeval2014/task4/",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "single_gpu",
+   "reason": "无官方代码发布，数据集公开但需自行实现显式情感增强方法，论文中方法细节不易完全复现。"
+  },
+  {
+   "id": "aaai-095-aaai-2024-w883",
+   "github": "https://github.com/hyeon1996/FoX",
+   "github_official": true,
+   "github_stars": 26,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "SMAC（StarCraft Multi-Agent Challenge）",
+     "url": "https://github.com/oxwhirl/smac",
+     "accessibility": "public"
+    },
+    {
+     "name": "Google Research Football（GRF）",
+     "url": "https://github.com/google-research/football",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "single_gpu",
+   "reason": "官方代码可用，环境公开，但SMAC需额外安装StarCraft II本体，GRF也需较大下载，配置稍复杂。"
+  },
+  {
+   "id": "aaai-096-aaai-2024-w582",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "OGB分子数据集（TOX21/BACE/BBBP/HIV/ESOL）",
+     "url": "https://ogb.stanford.edu/",
+     "accessibility": "public"
+    },
+    {
+     "name": "TUDataset（COLLAB/PROTEINS/D&D）",
+     "url": "https://chrsmrrs.github.io/datasets/",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "single_gpu",
+   "reason": "无官方代码（Awesome-Graph-OOD列表中标注N/A），数据集公开，需自行实现重加权GNN泛化方法。"
+  }
+ ]
+}

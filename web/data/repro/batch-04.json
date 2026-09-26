@@ -1,0 +1,310 @@
+{
+ "papers": [
+  {
+   "id": "acl-037-acl-2026.acl-long.1454",
+   "title": "VecInfer: Efficient LLM Inference with Low-Bit KV Cache via Outlier-Suppressed Vector Quantization",
+   "github": "https://github.com/ydyhello/VecInfer",
+   "github_official": true,
+   "github_stars": 11,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "VecInfer 量化码本（作者预生成表，HuggingFace）",
+     "url": "https://huggingface.co/ydydy/vecinfer-codebooks",
+     "accessibility": "public"
+    },
+    {
+     "name": "评测基准 LongBench / MATH / Qasper",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "基座模型 Llama-3.1-8B-Instruct、Mistral-7B-Instruct-v0.3、Qwen2.5-14B-Instruct、Qwen3-8B、DeepSeek-R1-Distill 系列",
+     "url": null,
+     "accessibility": "application"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "single_gpu",
+   "reason": "README 标注 ACL 2026 Main 官方实现（11 star）并给出码本下载，评测数据公开，但需自行编译 CUDA 算子（CUDA 12.4）、生成校准码本并下载受许可限制的 Llama/Qwen 权重，14B 模型单卡跑满"
+  },
+  {
+   "id": "acl-038-acl-2026.acl-industry.51",
+   "title": "MobileLLM-Flash: Latency-Guided On-Device LLM Design for Industry Scale Deployment",
+   "github": "https://github.com/facebookresearch/mobilellm",
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "MobileLLM 系列公开权重（MobileLLM-Pro / MobileLLM-R1-350M 量级）",
+     "url": "https://huggingface.co/facebook/MobileLLM-Pro",
+     "accessibility": "public"
+    },
+    {
+     "name": "工业级预训练语料与 hardware-in-the-loop 延迟测量集群（手机端真机阵列）",
+     "url": null,
+     "accessibility": "private"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "large_scale",
+   "reason": "论文与 arXiv 页面均未发布 Flash 的架构搜索/延迟建模代码，facebookresearch/mobilellm 只是同系列早期模型仓库；复现需亚十亿参数模型继续预训练加真机延迟回环搜索，工业语料不可得"
+  },
+  {
+   "id": "acl-039-acl-2026.acl-long.376",
+   "title": "The Reasoning Trap: How Enhancing LLM Reasoning Amplifies Tool Hallucination",
+   "github": "https://github.com/albert-y1n/Reasoning_Trap",
+   "github_official": true,
+   "github_stars": 3,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "SimpleToolHalluBench（作者自建工具幻觉诊断集，源自 AgentSafetyBench 的 296 个函数，仓库内 data/test_case.json 与 environments.json）",
+     "url": "https://github.com/albert-y1n/Reasoning_Trap",
+     "accessibility": "synthetic"
+    },
+    {
+     "name": "SynTool 与 GSM8K（推理增益对照实验数据）",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "被测模型 Qwen2.5-7B-Instruct、ReCall-7B、DeepSeek-R1-Distill-Qwen-7B、Qwen3-8B/32B",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "作者官方实现（自称 official implementation）含完整基准启动器与启发式/LLM-judge 评测模块，测试用例随仓库分发，只需 OpenAI 兼容推理接口，7B-8B 模型单卡即可复现"
+  },
+  {
+   "id": "acl-040-acl-2026.acl-long.756",
+   "title": "Why LLM Safety Guardrails Collapse After Fine-tuning: A Similarity Analysis Between Alignment and Fine-tuning Datasets",
+   "github": "https://github.com/twweeb/llm-similarity-risk",
+   "github_official": true,
+   "github_stars": 1,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "llm-similarity-risk（作者发布的对齐/微调相似度数据，HuggingFace）",
+     "url": "https://huggingface.co/datasets/hsiung/llm-similarity-risk",
+     "accessibility": "public"
+    },
+    {
+     "name": "下游微调与安全性评测集 UltraChat、Beavertails、List/Pure Bad、Alpaca、SAMSum",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "基座与安全裁判模型 meta-llama/Llama-2-7b-hf、PKU-Alignment/beaver-dam-7b",
+     "url": "https://huggingface.co/meta-llama/Llama-2-7b-hf",
+     "accessibility": "application"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "与作者主页 hsiung.cc/llm-similarity-risk 同名的官方仓库已开放（1 star），数据在 HuggingFace，但脚本示例统一使用 4 卡 DeepSpeed/Accelerate 做对齐与微调，且 Llama-2 权重需 Meta 授权，重活仍依赖 AlignAnything/Booster 等外部仓库"
+  },
+  {
+   "id": "acl-041-acl-2026.findings-acl.917",
+   "title": "SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "医学推理基准 MMLU-Med、MedQA-US、MedMCQA、PubMedQA、BioASQ",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "论文所用五个闭源/商用 LLM 后端（deepseek-v3.1、kimi-k2、qwen3-coder-plus、gemini-2.0-flash、glm-4.0-flash）",
+     "url": null,
+     "accessibility": "private"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "single_gpu",
+   "reason": "ACL 页面与 arXiv 全文均未给出代码或数据仓库链接，多智能体自演化 RAG 流水线需自行重建，且主实验依赖需付费 API 的商用模型，难以严格对齐原文数值"
+  },
+  {
+   "id": "acl-042-acl-2026.acl-long.444",
+   "title": "“I See What You Did There”: Can Large Vision-Language Models Understand Multimodal Puns?",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "MULTIPUN（作者自建的多模态双关语理解基准，含图像与 pun 标注）",
+     "url": null,
+     "accessibility": "application"
+    },
+    {
+     "name": "被测开源/闭源大视觉语言模型（GPT-4o、Gemini、Qwen-VL 等类别）",
+     "url": null,
+     "accessibility": "private"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "n/a",
+   "reason": "ACL Anthology 页面与检索结果均未出现代码或数据仓库，新基准仅见数据集名 MULTIPUN 而未公开下载入口，复现需重建标注流程并调用闭源 VLM 接口"
+  },
+  {
+   "id": "acl-043-acl-2026.acl-long.1251",
+   "title": "LADR: Locality-Aware Dynamic Rescue for Efficient Text-to-Image Generation with Diffusion Large Language Models",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "文生图评测 GenEval、UniGen-Bench、DPG-Bench、T2I-CompBench",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "基座离散扩散语言模型 Lumina-DiMOO",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "single_gpu",
+   "reason": "arXiv v2 全文未提供任何代码或项目页链接，方法虽 training-free 且单张 A100-80G 推理即可，但局部感知动态救援调度必须按论文自行实现才能对齐结果"
+  },
+  {
+   "id": "acl-044-acl-2026.acl-long.743",
+   "title": "Biomedical Question Answering via Multi-Level Summarization on a Local Knowledge Graph",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "Simple English Wikipedia 全量 dump（构建本地图谱）",
+     "url": "https://dumps.wikimedia.org",
+     "accessibility": "public"
+    },
+    {
+     "name": "StatPearls 临床医学文本库",
+     "url": "https://www.statpearls.com/",
+     "accessibility": "public"
+    },
+    {
+     "name": "评测基准 PubMedQA、MedQA、MMLU 医学子集与 GLKB 图谱知识源",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "single_gpu",
+   "reason": "论文（工业实验室署名）未公开任何仓库或构建好的本地知识图谱，复现要从维基 dump 与 StatPearls 重新做实体抽取、摘要分层与图谱索引，检索与重排序组件虽公开但工程量大"
+  },
+  {
+   "id": "acl-045-acl-2026.acl-long.1944",
+   "title": "From Nodes to Narratives: Explaining Graph Neural Networks with LLMs and Graph Context",
+   "github": "https://github.com/pbaghershahi/GSPELL",
+   "github_official": true,
+   "github_stars": 1,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "Cora、WikiCS、Amazon-Product、Liar（各自 YAML 配置）",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "作者预训练权重与缓存特征（Google Drive）",
+     "url": "https://drive.google.com/file/d/18fb80U0An8fTnmgL_oNFCKZCAcsvUzKC/view?usp=sharing",
+     "accessibility": "public"
+    },
+    {
+     "name": "语言模型骨干 meta-llama/Llama-3.1-8B-Instruct 等（需 HF token）",
+     "url": null,
+     "accessibility": "application"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "论文正文直接给出官方参考实现链接，训练/评测脚本、配置与预训练权重齐备，四个图数据集均公开，实验全程在单张 RTX 3090 上完成"
+  },
+  {
+   "id": "acl-046-acl-2026.acl-long.470",
+   "title": "An Exploration of Mamba for Speech Self-Supervised Models",
+   "github": "https://github.com/hckuo145/Mamba-based-HuBERT",
+   "github_official": true,
+   "github_stars": 8,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "LibriSpeech 960 小时全量（预训练）",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "TED-LIUM3（长序列实验）",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "SUPERB 探针任务 PR、SID、ER、IC、SF",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "论文正文明确给出官方仓库（自称 official implementation，含 fairseq-mamba 预训练 run_hubert_*.sh 脚本），语料与 SUPERB 全部公开，硬件为单张 V100，仅需忍受 65 万步预训练的耗时"
+  },
+  {
+   "id": "acl-047-acl-2026.acl-long.647",
+   "title": "DPWriter: Reinforcement Learning with Diverse Planning Branching for Creative Writing",
+   "github": "https://github.com/Aman-4-Real/DPWriter",
+   "github_official": true,
+   "github_stars": 15,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "DPWriterData（作者发布的 SFT/RL 训练与规划数据，HuggingFace）",
+     "url": "https://huggingface.co/datasets/Aman/DPWriterData",
+     "accessibility": "public"
+    },
+    {
+     "name": "长文本创作评测与奖励模型所需初始 checkpoint（仓库说明需自备 initial ckpt）",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "一作官方仓库（15 star）提供 conda 环境、SFT/RL 训练脚本与规划分支和奖励模块，数据已上 HuggingFace，但 LLM 强化学习多阶段训练与长文本生成本质上需多卡集群，README 未给单卡配方"
+  },
+  {
+   "id": "acl-048-acl-2026.findings-acl.2116",
+   "title": "SceneLM: 3D-Aware Language Models for Editable 3D Scene Synthesis",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "论文整理并指令微调所用的五个室内场景数据集（3D 物体布局/RGB 图像对，如 3D-FRONT 一类）",
+     "url": null,
+     "accessibility": "application"
+    },
+    {
+     "name": "对比用的多模态大模型基线（开源 VLM 与闭源 API）",
+     "url": null,
+     "accessibility": "private"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "multi_gpu",
+   "reason": "ACL Anthology 页面与检索结果均无代码或数据链接，方法需对语言模型做指令微调并训练几何预测分支，场景数据集派生自需签协议的 3D 室内数据集，多卡微调门槛高"
+  }
+ ]
+}

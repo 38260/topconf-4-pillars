@@ -1,0 +1,178 @@
+{
+ "papers": [
+  {
+   "id": "cvpr-061-CVPR2025-p2826",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {"name": "VFHQ", "url": null, "accessibility": "public"},
+    {"name": "VoxCeleb2", "url": null, "accessibility": "application"},
+    {"name": "CelebV-HQ", "url": null, "accessibility": "application"},
+    {"name": "HDTF", "url": null, "accessibility": "application"}
+   ],
+   "difficulty": "hard",
+   "compute": "large_scale",
+   "reason": "未找到官方开源代码，论文在8张A100上训练并需手机端部署，VoxCeleb2/CelebV-HQ/HDTF等数据需申请授权"
+  },
+  {
+   "id": "cvpr-062-CVPR2025-p516",
+   "github": "https://github.com/jsjangAI/VL2Lite",
+   "github_official": true,
+   "github_stars": 20,
+   "no_code": false,
+   "datasets": [
+    {"name": "细粒度图像分类数据集(CUB-200-2011、Stanford Cars、DTD等)", "url": "https://github.com/jsjangAI/VL2Lite", "accessibility": "public"}
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "作者官方仓库，蒸馏轻量分类网络，数据均为公开细粒度分类集，单卡即可完成训练"
+  },
+  {
+   "id": "cvpr-063-CVPR2025-p59",
+   "github": "https://github.com/zhengrongz/AoTD",
+   "github_official": true,
+   "github_stars": 61,
+   "no_code": false,
+   "datasets": [
+    {"name": "AoTD视频推理指令数据(用GPT-4o经AoTD流水线自动构造)", "url": "https://github.com/zhengrongz/AoTD", "accessibility": "synthetic"},
+    {"name": "公开视频评测基准(MVBench、NextQA等)", "url": null, "accessibility": "public"}
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "官方代码已发布，但CoT训练数据需调用GPT-4o接口自行构造，蒸馏训练7B级Video-LLM需多卡"
+  },
+  {
+   "id": "cvpr-064-CVPR2025-p329",
+   "github": "https://github.com/kyrieLei/Critic-V",
+   "github_official": true,
+   "github_stars": 18,
+   "no_code": false,
+   "datasets": [
+    {"name": "critique-VQA(Critic-V训练数据)", "url": "https://huggingface.co/datasets/huaXiaKyrie/critique-VQA", "accessibility": "public"}
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "作者官方仓库且训练数据托管HuggingFace公开，但critic与policy多模态LLM的SFT/DPO/RLAIF训练需多卡"
+  },
+  {
+   "id": "cvpr-065-CVPR2025-p2046",
+   "github": "https://github.com/yshinya6/clip-refine",
+   "github_official": true,
+   "github_stars": 41,
+   "no_code": false,
+   "datasets": [
+    {"name": "COCO Caption 2017", "url": "https://cocodataset.org/#home", "accessibility": "public"},
+    {"name": "ImageNet-1K(评测)", "url": "https://huggingface.co/datasets/ILSVRC/imagenet-1k", "accessibility": "application"}
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "官方代码(POSTRE)完整，COCO公开但ImageNet-1K在HuggingFace需授权，CLIP对比式后预训练建议多卡"
+  },
+  {
+   "id": "cvpr-066-CVPR2025-p393",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {"name": "CMU-MOSI", "url": null, "accessibility": "public"},
+    {"name": "CMU-MOSEI", "url": null, "accessibility": "public"}
+   ],
+   "difficulty": "hard",
+   "compute": "n/a",
+   "reason": "arXiv与官方页面均未给出代码仓库，多模态Mamba对齐架构需按论文自行实现"
+  },
+  {
+   "id": "cvpr-067-CVPR2025-p304",
+   "github": "https://github.com/zhang0jhon/diffusion-4k",
+   "github_official": true,
+   "github_stars": 367,
+   "no_code": false,
+   "datasets": [
+    {"name": "Aesthetic-4K", "url": "https://huggingface.co/datasets/zhang0jhon/Aesthetic-4K", "accessibility": "public"},
+    {"name": "Aesthetic-Train-V2", "url": "https://huggingface.co/datasets/zhang0jhon/Aesthetic-Train-V2", "accessibility": "public"}
+   ],
+   "difficulty": "hard",
+   "compute": "large_scale",
+   "reason": "官方代码与4K数据集均公开，但复现需以SD3-2B/Flux-12B为底座做4K分辨率训练，算力要求极高"
+  },
+  {
+   "id": "cvpr-068-CVPR2025-p209",
+   "github": "https://github.com/XDimLab/Prometheus",
+   "github_official": true,
+   "github_stars": 148,
+   "no_code": false,
+   "datasets": [
+    {"name": "SAM-1B(单视图训练数据)", "url": null, "accessibility": "application"},
+    {"name": "MVImgNet", "url": null, "accessibility": "public"},
+    {"name": "Objaverse", "url": null, "accessibility": "public"},
+    {"name": "DL3DV-10K", "url": null, "accessibility": "application"},
+    {"name": "RealEstate10K", "url": null, "accessibility": "public"},
+    {"name": "nuScenes", "url": null, "accessibility": "application"},
+    {"name": "Waymo Open Dataset", "url": null, "accessibility": "application"}
+   ],
+   "difficulty": "hard",
+   "compute": "large_scale",
+   "reason": "官方仓库提供训练脚本，但需聚合SAM-1B、DL3DV、nuScenes等海量多源数据训练3D感知潜在扩散模型，算力门槛高"
+  },
+  {
+   "id": "cvpr-069-CVPR2025-p743",
+   "github": "https://github.com/carlinds/splatad",
+   "github_official": true,
+   "github_stars": 426,
+   "no_code": false,
+   "datasets": [
+    {"name": "PandaSet", "url": null, "accessibility": "application"},
+    {"name": "Argoverse 2", "url": null, "accessibility": "public"},
+    {"name": "nuScenes", "url": null, "accessibility": "application"}
+   ],
+   "difficulty": "medium",
+   "compute": "single_gpu",
+   "reason": "官方仓库已开源雷达/相机光栅化核心，但完整模型需经neurad-studio获取，且nuScenes/PandaSet需注册申请"
+  },
+  {
+   "id": "cvpr-070-CVPR2025-p2790",
+   "github": "https://github.com/Zoew420/AdaCoMed",
+   "github_official": true,
+   "github_stars": 47,
+   "no_code": false,
+   "datasets": [
+    {"name": "VQA-RAD", "url": null, "accessibility": "public"}
+   ],
+   "difficulty": "medium",
+   "compute": "single_gpu",
+   "reason": "官方代码且VQA-RAD可公开获取、单卡可跑，但大小模型协作框架依赖调用闭源LLM API完成路由与诊断"
+  },
+  {
+   "id": "cvpr-071-CVPR2025-p357",
+   "github": "https://github.com/adwardlee/t2i_safety",
+   "github_official": true,
+   "github_stars": 34,
+   "no_code": false,
+   "datasets": [
+    {"name": "T2ISafety/ImageGuard训练测试集", "url": "https://huggingface.co/datasets/OpenSafetyLab/t2i_safety_dataset", "accessibility": "public"},
+    {"name": "T2ISafety评测数据", "url": "https://huggingface.co/datasets/OpenSafetyLab/t2isafety_evaluation", "accessibility": "public"},
+    {"name": "ImageGuard模型权重", "url": "https://huggingface.co/OpenSafetyLab/ImageGuard", "accessibility": "public"}
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "基准prompt与68K人工标注图像在HuggingFace全部公开，ImageGuard评估器单卡可训可评"
+  },
+  {
+   "id": "cvpr-072-CVPR2025-p39",
+   "github": "https://github.com/Phil0212/SGC-Net",
+   "github_official": true,
+   "github_stars": 17,
+   "no_code": false,
+   "datasets": [
+    {"name": "HICO-DET", "url": "https://github.com/YueLiao/PPDM", "accessibility": "public"},
+    {"name": "SWIG-HOI", "url": "https://github.com/scwangdyd/large_vocabulary_hoi_detection", "accessibility": "public"}
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "官方代码含训练/评测脚本与两个公开HOI数据集准备指引，但DETR类检测器训练需多卡，描述生成依赖GPT API"
+  }
+ ]
+}

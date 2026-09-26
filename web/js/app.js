@@ -393,11 +393,19 @@
     return bits.join(" · ");
   }
 
+  function repoSlug(url) {
+    var m = /github\.com\/([^/]+\/[^/#?]+)/i.exec(url || "");
+    return m ? m[1] : (url || "");
+  }
+
   function reproSection(p) {
     var e = reproEntry(p);
     var d = reproDiff(p), dm = diffMeta(d);
     var html = '<section><h3>复现情报 <span class="tag" data-accent="' + dm.accent + '">' +
-      dm.label + "</span></h3>";
+      dm.label + '</span>' +
+      (e ? '<button type="button" class="btn" data-act="diff" data-val="' + d +
+        '" style="margin-left:auto;padding:3px 10px;font-size:12px;font-weight:400">看同难度论文 →</button>' : "") +
+      "</h3>";
     if (!e) {
       html += '<p style="margin:0;font-size:12.5px;color:var(--muted)">外部调研未确认到该论文的公开仓库与数据集信息。</p></section>';
       return html;
@@ -405,7 +413,10 @@
     html += '<div class="repro-kv">';
     html += '<div class="k">代码</div><div class="v">' +
       (e.github ? '<a href="' + TL.esc(e.github) + '" target="_blank" rel="noopener">' +
-        TL.esc(repoLabel(e)) + "</a>" : "未找到公开实现") + "</div>";
+        TL.esc(repoSlug(e.github)) + "</a> <span class=\"rl-m\">" +
+        (e.github_official ? "官方仓库" : "第三方实现") +
+        (e.github_stars ? " · ★ " + TL.fmtNum(e.github_stars) : "") + "</span>"
+        : '<span class="rl none">未找到公开实现（需按论文自行复现）</span>') + "</div>";
     if (e.datasets && e.datasets.length) {
       html += '<div class="k">数据集</div><div class="v">' + e.datasets.map(function (ds) {
         var acc = ACCESS_LABEL[ds.accessibility] || "";
@@ -419,10 +430,11 @@
         TL.esc(COMPUTE_LABEL[e.compute] || e.compute) + "</div>";
     }
     if (e.reason) {
-      html += '<div class="k">理由</div><div class="v">' + TL.esc(e.reason) + "</div>";
+      html += '<div class="k">判定理由</div><div class="v">' + TL.esc(e.reason) + "</div>";
     }
     html += "</div>";
-    html += '<p style="margin:8px 0 0;font-size:11.5px;color:var(--muted)">来自本项目外部调研，非出版方信息；星标为调研时的约数。</p>';
+    html += '<p style="margin:8px 0 0;font-size:11.5px;color:var(--muted)">三要素口径：官方代码是否公开 × 数据集可得性 × 算力需求；' +
+      "来自本项目外部调研，非出版方信息，星标为调研时约数。</p>";
     return html + "</section>";
   }
 
@@ -615,6 +627,11 @@
 
   function card(p) {
     var kws = (p.keywords || []).slice(0, 3);
+    var e = reproEntry(p);
+    var dm = e && e.difficulty ? diffMeta(e.difficulty) : null;
+    var reproTag = dm ? '<span class="tag" data-accent="' + dm.accent + '" title="复现难度（官方代码+数据集+算力三要素，外部调研派生）：' +
+      dm.label + (e.github ? "，有" + (e.github_official ? "官方" : "第三方") + "代码" : "，未找到公开代码") +
+      '">复现·' + dm.label.replace("复现", "") + "</span>" : "";
     return '<article id="card-' + p.id + '" ' + TL.pillarBadge(p.venue) + ' tabindex="0" role="button" ' +
       'data-act="open" data-val="' + p.id + '" aria-label="查看 ' + TL.esc(p.title) + '">' +
       favBtn(p) +
@@ -622,7 +639,7 @@
       "<h4>" + TL.highlight(p.title, state.q) + "</h4>" +
       '<p class="tzh">' + TL.highlight(p.title_zh, state.q) + "</p>" +
       '<p class="auth">' + TL.esc(authorsLine(p)) + "</p>" +
-      '<div class="topics"><span class="yr">' + p.year + "</span>" + p.topics.map(function (t) {
+      '<div class="topics"><span class="yr">' + p.year + "</span>" + reproTag + p.topics.map(function (t) {
         var tm = topicMeta(t);
         return '<span class="tag" data-accent="' + tm.accent + '">' + TL.esc(tm.label) + "</span>";
       }).join("") + "</div>" +
@@ -677,6 +694,8 @@
     if (p.links.doi) links.push(["DOI", "https://doi.org/" + p.links.doi]);
     if (p.links.extra) links.push(["补充材料", p.links.extra]);
     if (p.links.record) links.push(["OpenAlex 记录", p.links.record]);
+    var re = reproEntry(p);
+    if (re && re.github) links.push([re.github_official ? "GitHub（官方代码）" : "GitHub（第三方实现）", re.github]);
 
     var html = '<div class="modal-scrim" data-act="close-scrim"><div class="modal" data-pillar="' +
       p.venue + '" role="dialog" aria-modal="true" aria-labelledby="m-title">' +
@@ -789,6 +808,7 @@
     if (act === "diff") {
       state.diff = (!val || state.diff === val) ? null : val;
       if (state.view !== "repro") { state.view = "repro"; syncViewTabs(); }
+      if (state.paperId) closeModal();
       renderView(); renderToc(); return;
     }
   }

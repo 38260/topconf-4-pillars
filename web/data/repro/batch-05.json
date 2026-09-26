@@ -1,0 +1,168 @@
+{
+ "papers": [
+  {
+   "id": "cvpr-049-CVPR2024-p2411",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {"name": "MSCOCO 5K retrieval test set", "url": null, "accessibility": "public"},
+    {"name": "ImageNet 等零样本分类基准", "url": null, "accessibility": "public"}
+   ],
+   "difficulty": "hard",
+   "compute": "n/a",
+   "reason": "未找到作者官方代码仓库(arXiv/GitHub 检索均无)，虽评估用的 MSCOCO/ImageNet 数据公开，但需按论文从零复现剪枝与蒸馏流程"
+  },
+  {
+   "id": "cvpr-050-CVPR2024-p567",
+   "github": "https://github.com/Pico-AI-Team/HMD-Poser",
+   "github_official": true,
+   "github_stars": 46,
+   "no_code": false,
+   "datasets": [
+    {"name": "AMASS 运动捕捉数据", "url": "https://amass.is.tue.mpg.de/", "accessibility": "application"},
+    {"name": "SMPL+H/Mano 人体模型", "url": "https://mano.is.tue.mpg.de/", "accessibility": "application"},
+    {"name": "PICO-FreeDancing 头显传感器数据集(官方发布)", "url": "https://drive.google.com/file/d/1xEj3J0vJilx-jPCPbbsX6a6IF9LQ5URu/view?usp=drive_link", "accessibility": "public"}
+   ],
+   "difficulty": "medium",
+   "compute": "single_gpu",
+   "reason": "Pico 官方训练测试代码已开源且单卡可训，但 AMASS 与 SMPL 模型需注册申请才能下载"
+  },
+  {
+   "id": "cvpr-051-CVPR2024-p976",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [],
+   "difficulty": "hard",
+   "compute": "n/a",
+   "reason": "GitHub 检索无该 CVPR2024 论文的官方或第三方实现(同名 PromptCoT 仓库属另一篇 2025 论文)，且依赖 SDXL 等文生图模型的推理级联，复现门槛高"
+  },
+  {
+   "id": "cvpr-052-CVPR2024-p322",
+   "github": "https://github.com/SunzeY/AlphaCLIP",
+   "github_official": true,
+   "github_stars": 875,
+   "no_code": false,
+   "datasets": [
+    {"name": "MaskImageNet (官方发布的带 alpha 遮罩数据)", "url": "https://huggingface.co/datasets/Zery/MaskImageNet", "accessibility": "public"},
+    {"name": "ImageNet/COCO/Pascal-5i 等微调评测集", "url": null, "accessibility": "public"}
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "作者官方仓库、权重与遮罩数据公开，推理单卡可行，但论文级微调需多卡分布式训练"
+  },
+  {
+   "id": "cvpr-053-CVPR2024-p1629",
+   "github": "https://github.com/choijeongsoo/av2av",
+   "github_official": true,
+   "github_stars": 48,
+   "no_code": false,
+   "datasets": [
+    {"name": "LRS3 唇读语料", "url": "https://mmai.io/datasets/lip_reading", "accessibility": "public"},
+    {"name": "MuST-C v2 中文-英语音翻译语料", "url": null, "accessibility": "application"}
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "官方代码与预处理脚本齐全、LRS3 可下载，但需按论文流程做大规模音视频多阶段训练且 MuST-C 需签署授权协议"
+  },
+  {
+   "id": "cvpr-054-CVPR2024-p2548",
+   "github": "https://github.com/xuyanwu/SIDDMs-UFOGen",
+   "github_official": false,
+   "github_stars": 20,
+   "no_code": true,
+   "datasets": [
+    {"name": "LAION-Aesthetics 子集(论文内部筛选 6 亿图文)", "url": null, "accessibility": "public"},
+    {"name": "ImageNet 256 (Kaggle 镜像，用于小规模验证)", "url": "https://www.kaggle.com/datasets/dimensi0n/imagenet-256", "accessibility": "public"}
+   ],
+   "difficulty": "hard",
+   "compute": "large_scale",
+   "reason": "NVIDIA 未发布官方训练代码(仅第三方实现和 diffusers 社区管线)，论文训练依赖数亿级图文数据与数百卡算力"
+  },
+  {
+   "id": "cvpr-055-CVPR2024-p2222",
+   "github": "https://github.com/Anttwo/SuGaR",
+   "github_official": true,
+   "github_stars": 3517,
+   "no_code": false,
+   "datasets": [
+    {"name": "NeRF synthetic 合成场景", "url": null, "accessibility": "public"},
+    {"name": "Tanks & Temples / Mip-NeRF 360 (COLMAP 采集数据)", "url": null, "accessibility": "public"}
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "官方 PyTorch 实现成熟、文档完善，输入为公开采集场景，单卡几分钟即可完成重建管线"
+  },
+  {
+   "id": "cvpr-056-CVPR2024-p2343",
+   "github": "https://github.com/yhygao/universal-medical-image-segmentation",
+   "github_official": true,
+   "github_stars": 84,
+   "no_code": false,
+   "datasets": [
+    {"name": "11 个公开 3D 医学分割集(AMOS/BCV/CHAOS/MSD 等, 2438 例)", "url": null, "accessibility": "public"}
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "作者官方代码并提供各数据集预处理脚本，数据均公开，但 11 个数据集的通用分割训练需多卡长时间运行"
+  },
+  {
+   "id": "cvpr-057-CVPR2024-p218",
+   "github": "https://github.com/kuai-lab/cvpr2024_WateRF",
+   "github_official": true,
+   "github_stars": 20,
+   "no_code": false,
+   "datasets": [
+    {"name": "NeRF synthetic 场景数据", "url": "https://drive.google.com/drive/folders/128yBriW1IG_3NJ5Rp7APSTZsJqdJdfc1", "accessibility": "public"},
+    {"name": "TensoRF 预训练权重", "url": "https://github.com/apchenstu/TensoRF", "accessibility": "public"}
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "官方实现含全部场景权重，基于 TensoRF 在公开 NeRF 合成数据上逐场景训练，单卡即可完成"
+  },
+  {
+   "id": "cvpr-058-CVPR2024-p235",
+   "github": "https://github.com/NVlabs/FoundationPose",
+   "github_official": true,
+   "github_stars": 3597,
+   "no_code": false,
+   "datasets": [
+    {"name": "FoundationPose 合成训练数据(官方发布)", "url": "https://drive.google.com/drive/folders/1s4pB6p4ApfWMiMjmTXOFco8dHbNXikp-?usp=sharing", "accessibility": "public"},
+    {"name": "YCB-Video / LINEMOD / BOP 评测集", "url": "https://bop.felk.cvut.cz/leaderboards/pose-estimation-unseen-bop23/core-datasets/", "accessibility": "public"}
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "官方代码权重与数据齐备，但推理显存要求高(需改配置适配 4090)且完整复现训练需多卡大规模合成渲染"
+  },
+  {
+   "id": "cvpr-059-CVPR2024-p975",
+   "github": "https://github.com/Traffic-X/ViT-CoMer",
+   "github_official": true,
+   "github_stars": 346,
+   "no_code": false,
+   "datasets": [
+    {"name": "ImageNet-1K 预训练", "url": null, "accessibility": "public"},
+    {"name": "COCO 检测/实例分割 + ADE20K 语义分割", "url": "https://paperswithcode.com/sota/object-detection-on-coco-minival?p=vit-comer-vision-transformer-with", "accessibility": "public"}
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "官方实现与下游配置齐全、数据公开，但 ImageNet 级主干预训练需多卡 GPU 集群"
+  },
+  {
+   "id": "cvpr-060-CVPR2024-p77",
+   "github": "https://github.com/kyoran/DMR",
+   "github_official": true,
+   "github_stars": 31,
+   "no_code": false,
+   "datasets": [
+    {"name": "CARLA 仿真器生成的 RGB+事件模态 RL 环境数据", "url": "https://github.com/carla-simulator/carla/releases", "accessibility": "synthetic"}
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "README 明确为官方代码，事件相机数据由 CARLA 仿真自动生成无需外部授权，单卡可完成训练评测"
+  }
+ ]
+}

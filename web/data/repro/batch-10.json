@@ -1,0 +1,175 @@
+{
+ "papers": [
+  {
+   "id": "acl-109-acl-2024.acl-long.133",
+   "github": "https://github.com/lpyhdzx/DecoQuant_code",
+   "github_official": true,
+   "github_stars": 4,
+   "no_code": false,
+   "datasets": [
+    {"name": "Data-free（无需校准数据集），评测用 GSM8K/HellaSwag/TruthfulQA 等公开基准", "url": "https://github.com/openai/grade-school-math", "accessibility": "public"},
+    {"name": "Llama-2-7B/13B、Mistral-7B 等模型权重", "url": "https://huggingface.co/meta-llama", "accessibility": "application"}
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "一作维护的官方仓库存在但仅4 star，方法免校准数据、只做KV cache低比特量化推理，公开模型+单卡即可复现"
+  },
+  {
+   "id": "acl-110-acl-2024.findings-acl.178",
+   "github": "https://github.com/aim-uofa/LoRAPrune",
+   "github_official": true,
+   "github_stars": 63,
+   "no_code": false,
+   "datasets": [
+    {"name": "Alpaca（剪枝指令数据）", "url": "https://github.com/tatsu-lab/stanford_alpaca", "accessibility": "public"},
+    {"name": "WikiText2 / Winogrande / GSM8K / PIQA 等公开评测集", "url": null, "accessibility": "public"},
+    {"name": "LLaMA-2-7B/13B 基座模型权重（需申请）", "url": "https://huggingface.co/meta-llama", "accessibility": "application"}
+   ],
+   "difficulty": "medium",
+   "compute": "single_gpu",
+   "reason": "官方开源完整训练代码，剪枝数据公开，但基座Llama-2权重需HF申请，7B剪枝+LoRA恢复训练需大显存GPU"
+  },
+  {
+   "id": "acl-111-acl-2024.acl-long.73",
+   "github": "https://github.com/shizhediao/active-prompt",
+   "github_official": true,
+   "github_stars": 249,
+   "no_code": false,
+   "datasets": [
+    {"name": "GSM8K", "url": "https://github.com/openai/grade-school-math", "accessibility": "public"},
+    {"name": "CommonSenseQA / StrategyQA / SVAMP 等推理基准", "url": null, "accessibility": "public"}
+   ],
+   "difficulty": "easy",
+   "compute": "n/a",
+   "reason": "官方代码，全公开数据集，方法为训练式主动学习选样例+调用商用LLM API推理，无需本地GPU训练"
+  },
+  {
+   "id": "acl-112-acl-2024.acl-long.107",
+   "github": "https://github.com/zhangxy-2019/Self-Alignment-for-Factuality",
+   "github_official": true,
+   "github_stars": 5,
+   "no_code": false,
+   "datasets": [
+    {"name": "ShareGen（FactScore 事实性长文数据）", "url": "https://github.com/shengyin1224/FActScore", "accessibility": "public"},
+    {"name": "ELI5", "url": null, "accessibility": "public"},
+    {"name": "Llama-2 基座模型权重", "url": "https://huggingface.co/meta-llama", "accessibility": "application"}
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "有官方代码但star很少，需按FactScore流程自建事实性数据并对13B级模型做多轮自我评估RL微调，显存需求超单卡"
+  },
+  {
+   "id": "acl-113-acl-2024.acl-long.108",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {"name": "StrategyQA / HotpotQA / 2WikiMultihopQA / MuSiQue 等多跳问答集", "url": null, "accessibility": "public"},
+    {"name": "Llama-2-13B / Vicuna-13B 模型权重", "url": "https://huggingface.co/meta-llama", "accessibility": "application"}
+   ],
+   "difficulty": "hard",
+   "compute": "single_gpu",
+   "reason": "arXiv/ACL页面与GitHub搜索均未找到官方代码仓库（论文亦未给出代码链接），只能依据论文自行重实现多分区推理流程"
+  },
+  {
+   "id": "acl-114-acl-2024.acl-long.404",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {"name": "论文自建多模态图理解基准（GraphBench，约1.1万样本，未检索到公开发布渠道）", "url": null, "accessibility": "private"},
+    {"name": "微调所用视觉语言模型（LLaVA 等）", "url": null, "accessibility": "public"}
+   ],
+   "difficulty": "hard",
+   "compute": "multi_gpu",
+   "reason": "搜索ACL PDF/arXiv/SemanticScholar/GitHub均无官方代码与数据发布链接，基准图-问题数据不可得，复现需自建数据并微调7B级VLM"
+  },
+  {
+   "id": "acl-115-acl-2024.acl-long.335",
+   "github": "https://github.com/Weili-NLP/UNIMO-G",
+   "github_official": false,
+   "github_stars": 88,
+   "no_code": false,
+   "datasets": [
+    {"name": "LAION-COCO 等大规模图文对（论文两阶段预训练数据，阿里内部混合数据未公开）", "url": "https://laion.ai/blog/laion-coco/", "accessibility": "public"},
+    {"name": "MS-COCO / GenEval 评测", "url": null, "accessibility": "public"},
+    {"name": "UNIMO-G 模型权重（通义官方经 ModelScope 释出，GitHub 无官方训练仓库）", "url": "https://modelscope.cn/models", "accessibility": "application"}
+   ],
+   "difficulty": "hard",
+   "compute": "large_scale",
+   "reason": "无官方GitHub代码，Weili-NLP仓库仅为社区复现；两阶段训练基于大规模私有图文数据与MLLM+扩散联合训练，算力门槛极高"
+  },
+  {
+   "id": "acl-116-acl-2024.acl-short.68",
+   "github": "https://github.com/ritaranx/RAM-EHR",
+   "github_official": true,
+   "github_stars": 42,
+   "no_code": false,
+   "datasets": [
+    {"name": "MIMIC-III（需 PhysioNet 资质培训与DUA申请）", "url": "https://physionet.org/content/mimiciii/", "accessibility": "application"},
+    {"name": "MIMIC-IV", "url": "https://physionet.org/content/mimiciv/", "accessibility": "application"}
+   ],
+   "difficulty": "medium",
+   "compute": "single_gpu",
+   "reason": "官方代码开源，但核心临床数据集MIMIC需资质申请与数据使用协议，通过后RAG推理流程单卡可跑"
+  },
+  {
+   "id": "acl-117-acl-2024.findings-acl.443",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {"name": "论文承诺发布的越狱攻击/防御数据集与测试框架（未检索到实际仓库链接）", "url": null, "accessibility": "private"},
+    {"name": "Aegis 安全数据集（论文防御模型训练所用，公开）", "url": "https://github.com/automorphic-ai/aegis", "accessibility": "public"},
+    {"name": "Llama-2-7B/13B/70B、GPT系列被测模型", "url": "https://huggingface.co/meta-llama", "accessibility": "application"}
+   ],
+   "difficulty": "hard",
+   "compute": "large_scale",
+   "reason": "未找到官方代码仓库，评测横跨多种攻击/防御组合与70B级模型+商用API，官方数据集链接也未释出，复现成本很高"
+  },
+  {
+   "id": "acl-118-acl-2024.acl-long.301",
+   "github": "https://github.com/WeixiangYAN/CodeScope",
+   "github_official": true,
+   "github_stars": 105,
+   "no_code": false,
+   "datasets": [
+    {"name": "CodeScope 基准（8620题、188语言任务，随仓库公开）", "url": "https://github.com/WeixiangYAN/CodeScope", "accessibility": "public"}
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "官方评测代码与基准数据全部公开，只需对开源代码LLM做推理+沙箱执行，单卡即可完成子集评测"
+  },
+  {
+   "id": "acl-119-acl-2024.acl-long.262",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {"name": "ESConv（情感支持对话公开数据）", "url": null, "accessibility": "public"},
+    {"name": "论文使用的个性化/规划相关公开数据集", "url": null, "accessibility": "public"}
+   ],
+   "difficulty": "hard",
+   "compute": "multi_gpu",
+   "reason": "arXiv页面与GitHub搜索均未见官方代码，双过程框架涉及GPT-4 API调用与LLM微调，仅凭论文难以完整复现"
+  },
+  {
+   "id": "acl-120-acl-2024.acl-long.780",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {"name": "MS MARCO / AllNLI 等句向量训练数据", "url": null, "accessibility": "public"},
+    {"name": "STS12-STS18 / SICK / STS-B 等评测集", "url": null, "accessibility": "public"}
+   ],
+   "difficulty": "hard",
+   "compute": "single_gpu",
+   "reason": "论文（arXiv:2402.18281）未给出代码链接，GitHub亦无官方或第三方实现，理论统一范式需从零按公式重推实现，尽管算力仅需单卡"
+  }
+ ]
+}
