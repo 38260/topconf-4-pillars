@@ -272,7 +272,8 @@ pre.cite { margin: 0; padding: var(--s-3) var(--s-4); background: var(--panel-2)
 .fav-modal { margin-left: auto; border: 1px solid var(--border); background: var(--panel-2); }
 .fav-inline { margin-left: auto; border: 1px solid var(--border); background: var(--panel-2); opacity: .55; }
 .repro-row:hover .fav-inline, .fav-inline:focus, .fav-inline.on { opacity: 1; }
-.fav-toggle[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-strong); }
+.segmented button .n { margin-left: 5px; font: 600 10.5px/1 var(--mono); color: var(--star, #b07d1a); background: var(--panel-2); border: 1px solid var(--border); border-radius: 999px; padding: 2px 6px; vertical-align: 1px; }
+.segmented button[aria-pressed="true"] .n { background: var(--accent-soft); border-color: var(--accent-ring); color: var(--accent-strong); }
 @media (hover: none) { .pcard .fav, .fav-inline { opacity: 1; } }
 
 /* ---------------- 复现情报视图 ---------------- */

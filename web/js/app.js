@@ -12,7 +12,6 @@
     year: null,             // 届次下钻（近三年扩充）
     diff: null,             // 复现难度下钻（repro 视图）
     favs: loadFavs(),       // 收藏的论文 id（localStorage 持久化）
-    favOnly: false,         // 只看收藏
     source: null,           // inline | api
     tocOpen: localStorage.getItem("topconf.toc") !== "0"
   };
@@ -78,7 +77,7 @@
       if (state.venue && p.venue !== state.venue) return false;
       if (state.topic && p.topics.indexOf(state.topic) < 0) return false;
       if (state.year && String(p.year) !== String(state.year)) return false;
-      if (state.favOnly && !isFav(p.id)) return false;
+      if (state.view === "fav" && !isFav(p.id)) return false;
       if (q && haystack(p).indexOf(q) < 0) return false;
       return true;
     });
@@ -179,9 +178,6 @@
       }).join("");
     var ed = {};
     state.data.papers.forEach(function (p) { ed[p.venue + p.year] = 1; });
-    html += '<button type="button" class="chip fav-toggle" data-act="favonly" aria-pressed="' +
-      state.favOnly + '" title="只看收藏的论文">★ 收藏<span class="n">' + state.favs.length +
-      "</span></button>";
     html += '<span class="span">跨 ' + Object.keys(ed).length + " 届精选 · 官方语料 " +
       TL.fmtNum((state.data.meta || {}).corpus_total || 0) + " 篇</span>";
     bar.innerHTML = html;
@@ -256,7 +252,6 @@
         tm.accent + '" aria-pressed="true">主题：' + TL.esc(tm.label) + " ×</button>");
     }
     if (state.year) bits.push(chip("届次：" + state.year, "year", "plain"));
-    if (state.favOnly) bits.push(chip("只看收藏", "favonly", "plain"));
     if (state.q) bits.push(chip("搜索：“" + state.q + "”", "q", "plain"));
     if (!bits.length) {
       var cnt = countsBy(function (p) { return p.topics; });
@@ -282,7 +277,32 @@
   function renderView() {
     if (state.view === "topics") return renderTopics();
     if (state.view === "repro") return renderRepro();
+    if (state.view === "fav") return renderFav();
     return renderPillars();
+  }
+
+  /* ---------------- 收藏视图 ---------------- */
+  function renderFav() {
+    var root = $("view-root");
+    var rows = filtered();
+    // 最新收藏排最前
+    rows.sort(function (a, b) { return state.favs.indexOf(b.id) - state.favs.indexOf(a.id); });
+    var html = '<div class="section-head"><h2>我的收藏</h2>' +
+      '<span class="note">收藏保存在本机浏览器（localStorage），点论文卡右上角 ★ 收藏 / 取消；可用届次与搜索进一步筛选</span>' +
+      '<span class="rule"></span></div>';
+    if (!state.favs.length) {
+      root.innerHTML = html + '<div class="empty" style="margin-top:24px"><h3>还没有收藏</h3>' +
+        '<div>在「四支柱」「主题视图」「复现情报」或详情弹窗里点 ★，即可收进这里。</div>' +
+        '<button type="button" class="btn" data-act="goto-pillars" style="margin-top:var(--s-4)">去逛逛四支柱</button></div>';
+      return;
+    }
+    if (!rows.length) {
+      root.innerHTML = html + '<div class="empty" style="margin-top:24px"><h3>当前筛选下没有收藏</h3>' +
+        '<div>已收藏 ' + state.favs.length + ' 篇，但都不符合当前届次 / 支柱 / 搜索条件。</div>' +
+        '<button type="button" class="btn" data-act="reset" style="margin-top:var(--s-4)">清除筛选</button></div>';
+      return;
+    }
+    root.innerHTML = html + '<div class="card-grid">' + rows.map(card).join("") + "</div>";
   }
 
   function renderPillars() {
@@ -504,6 +524,21 @@
               TL.esc(tocLabel(p)) + "</a>";
           }).join("") + "</div>");
       });
+    } else if (state.view === "fav") {
+      var frows = rows.slice().sort(function (a, b) {
+        return state.favs.indexOf(b.id) - state.favs.indexOf(a.id);
+      });
+      if (frows.length) {
+        secs.push('<div class="toc-sec" data-accent="amber">' +
+          '<a class="h" href="#view-root" data-act="jump" data-val="view-root">' +
+          '<i class="dot" aria-hidden="true" style="--st:var(--tc-fg)"></i>我的收藏' +
+          '<span class="n">' + frows.length + "</span></a>" +
+          frows.map(function (p) {
+            return '<a class="toc-item" href="#card-' + p.id + '" data-act="jump" data-val="card-' + p.id +
+              '" data-card="' + p.id + '"><span class="rk">' + p.venue + "</span>" +
+              TL.esc(tocLabel(p)) + "</a>";
+          }).join("") + "</div>");
+      }
     } else if (state.view === "repro") {
       DIFFS.forEach(function (d) {
         if (state.diff && state.diff !== d.key) return;
@@ -743,13 +778,13 @@
       e.preventDefault();
       var on = toggleFav(val);
       syncFavBtns(val);
-      renderYearBar();
-      if (state.favOnly) { renderView(); renderToc(); }
-      TL.toast(on ? "已收藏，点届次栏「★ 收藏」可只看收藏" : "已取消收藏", on ? "ok" : null);
+      syncViewTabs();
+      if (state.view === "fav") { renderView(); renderToc(); }
+      TL.toast(on ? "已收藏，可在顶栏「收藏」标签查看" : "已取消收藏", on ? "ok" : null);
       return;
     }
-    if (act === "favonly") { state.favOnly = !state.favOnly; renderAll(); return; }
-    if (act === "reset") { state.venue = null; state.topic = null; state.year = null; state.diff = null; state.favOnly = false; state.q = ""; $("q").value = ""; syncClear(); renderAll(); return; }
+    if (act === "goto-pillars") { state.view = "pillars"; syncViewTabs(); renderView(); renderFilterbar(); renderToc(); return; }
+    if (act === "reset") { state.venue = null; state.topic = null; state.year = null; state.diff = null; state.q = ""; $("q").value = ""; syncClear(); renderAll(); return; }
     if (act === "q") { state.q = ""; $("q").value = ""; syncClear(); renderAll(); return; }
     if (act === "diff") {
       state.diff = (!val || state.diff === val) ? null : val;
@@ -762,6 +797,10 @@
     $("view-pillars").setAttribute("aria-pressed", String(state.view === "pillars"));
     $("view-topics").setAttribute("aria-pressed", String(state.view === "topics"));
     $("view-repro").setAttribute("aria-pressed", String(state.view === "repro"));
+    var n = $("view-fav-n");
+    n.textContent = state.favs.length;
+    n.hidden = !state.favs.length;
+    $("view-fav").setAttribute("aria-pressed", String(state.view === "fav"));
   }
   function syncClear() { $("q-clear").hidden = !state.q; }
 
