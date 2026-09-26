@@ -17,6 +17,7 @@ venv/
 .DS_Store
 Thumbs.db
 desktop.ini
+.workbuddy/
 logs_draft.txt
 review_*.txt
 logs_refetch.txt

@@ -1,0 +1,145 @@
+[
+ {
+  "id": "cvpr-049-CVPR2024-p2411",
+  "title": "MoPE-CLIP: Structured Pruning for Efficient Vision-Language Models with Module-wise Pruning Error Metric",
+  "venue": "CVPR",
+  "year": 2024,
+  "official": "https://openaccess.thecvf.com/content/CVPR2024/html/Lin_MoPE-CLIP_Structured_Pruning_for_Efficient_Vision-Language_Models_with_Module-wise_Pruning_CVPR_2024_paper.html",
+  "topics": [
+   "edge-efficiency",
+   "multimodal",
+   "architectures"
+  ]
+ },
+ {
+  "id": "cvpr-050-CVPR2024-p567",
+  "title": "HMD-Poser: On-Device Real-time Human Motion Tracking from Scalable Sparse Observations",
+  "venue": "CVPR",
+  "year": 2024,
+  "official": "https://openaccess.thecvf.com/content/CVPR2024/html/Dai_HMD-Poser_On-Device_Real-time_Human_Motion_Tracking_from_Scalable_Sparse_Observations_CVPR_2024_paper.html",
+  "topics": [
+   "edge-efficiency",
+   "3d-embodied",
+   "perception"
+  ]
+ },
+ {
+  "id": "cvpr-051-CVPR2024-p976",
+  "title": "PromptCoT: Align Prompt Distribution via Adapted Chain-of-Thought",
+  "venue": "CVPR",
+  "year": 2024,
+  "official": "https://openaccess.thecvf.com/content/CVPR2024/html/Yao_PromptCoT_Align_Prompt_Distribution_via_Adapted_Chain-of-Thought_CVPR_2024_paper.html",
+  "topics": [
+   "llm",
+   "generative",
+   "multimodal"
+  ]
+ },
+ {
+  "id": "cvpr-052-CVPR2024-p322",
+  "title": "Alpha-CLIP: A CLIP Model Focusing on Wherever You Want",
+  "venue": "CVPR",
+  "year": 2024,
+  "official": "https://openaccess.thecvf.com/content/CVPR2024/html/Sun_Alpha-CLIP_A_CLIP_Model_Focusing_on_Wherever_You_Want_CVPR_2024_paper.html",
+  "topics": [
+   "multimodal",
+   "perception",
+   "architectures"
+  ]
+ },
+ {
+  "id": "cvpr-053-CVPR2024-p1629",
+  "title": "AV2AV: Direct Audio-Visual Speech to Audio-Visual Speech Translation with Unified Audio-Visual Speech Representation",
+  "venue": "CVPR",
+  "year": 2024,
+  "official": "https://openaccess.thecvf.com/content/CVPR2024/html/Choi_AV2AV_Direct_Audio-Visual_Speech_to_Audio-Visual_Speech_Translation_with_Unified_CVPR_2024_paper.html",
+  "topics": [
+   "multimodal",
+   "language-nlp",
+   "generative"
+  ]
+ },
+ {
+  "id": "cvpr-054-CVPR2024-p2548",
+  "title": "UFOGen: You Forward Once Large Scale Text-to-Image Generation via Diffusion GANs",
+  "venue": "CVPR",
+  "year": 2024,
+  "official": "https://openaccess.thecvf.com/content/CVPR2024/html/Xu_UFOGen_You_Forward_Once_Large_Scale_Text-to-Image_Generation_via_Diffusion_CVPR_2024_paper.html",
+  "topics": [
+   "generative",
+   "edge-efficiency",
+   "architectures"
+  ]
+ },
+ {
+  "id": "cvpr-055-CVPR2024-p2222",
+  "title": "SuGaR: Surface-Aligned Gaussian Splatting for Efficient 3D Mesh Reconstruction and High-Quality Mesh Rendering",
+  "venue": "CVPR",
+  "year": 2024,
+  "official": "https://openaccess.thecvf.com/content/CVPR2024/html/Guedon_SuGaR_Surface-Aligned_Gaussian_Splatting_for_Efficient_3D_Mesh_Reconstruction_and_CVPR_2024_paper.html",
+  "topics": [
+   "3d-embodied",
+   "generative",
+   "perception"
+  ]
+ },
+ {
+  "id": "cvpr-056-CVPR2024-p2343",
+  "title": "Training Like a Medical Resident: Context-Prior Learning Toward Universal Medical Image Segmentation",
+  "venue": "CVPR",
+  "year": 2024,
+  "official": "https://openaccess.thecvf.com/content/CVPR2024/html/Gao_Training_Like_a_Medical_Resident_Context-Prior_Learning_Toward_Universal_Medical_CVPR_2024_paper.html",
+  "topics": [
+   "medical-science",
+   "perception",
+   "architectures"
+  ]
+ },
+ {
+  "id": "cvpr-057-CVPR2024-p218",
+  "title": "WateRF: Robust Watermarks in Radiance Fields for Protection of Copyrights",
+  "venue": "CVPR",
+  "year": 2024,
+  "official": "https://openaccess.thecvf.com/content/CVPR2024/html/Jang_WateRF_Robust_Watermarks_in_Radiance_Fields_for_Protection_of_Copyrights_CVPR_2024_paper.html",
+  "topics": [
+   "trustworthy",
+   "3d-embodied",
+   "generative"
+  ]
+ },
+ {
+  "id": "cvpr-058-CVPR2024-p235",
+  "title": "FoundationPose: Unified 6D Pose Estimation and Tracking of Novel Objects",
+  "venue": "CVPR",
+  "year": 2024,
+  "official": "https://openaccess.thecvf.com/content/CVPR2024/html/Wen_FoundationPose_Unified_6D_Pose_Estimation_and_Tracking_of_Novel_Objects_CVPR_2024_paper.html",
+  "topics": [
+   "perception",
+   "3d-embodied",
+   "architectures"
+  ]
+ },
+ {
+  "id": "cvpr-059-CVPR2024-p975",
+  "title": "ViT-CoMer: Vision Transformer with Convolutional Multi-scale Feature Interaction for Dense Predictions",
+  "venue": "CVPR",
+  "year": 2024,
+  "official": "https://openaccess.thecvf.com/content/CVPR2024/html/Xia_ViT-CoMer_Vision_Transformer_with_Convolutional_Multi-scale_Feature_Interaction_for_Dense_CVPR_2024_paper.html",
+  "topics": [
+   "architectures",
+   "perception"
+  ]
+ },
+ {
+  "id": "cvpr-060-CVPR2024-p77",
+  "title": "DMR: Decomposed Multi-Modality Representations for Frames and Events Fusion in Visual Reinforcement Learning",
+  "venue": "CVPR",
+  "year": 2024,
+  "official": "https://openaccess.thecvf.com/content/CVPR2024/html/Xu_DMR_Decomposed_Multi-Modality_Representations_for_Frames_and_Events_Fusion_in_CVPR_2024_paper.html",
+  "topics": [
+   "rl-decision",
+   "multimodal",
+   "perception"
+  ]
+ }
+]

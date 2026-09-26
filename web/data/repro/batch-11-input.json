@@ -1,0 +1,143 @@
+[
+ {
+  "id": "acl-121-acl-2025.acl-long.1140",
+  "title": "MobiLoRA: Accelerating LoRA-based LLM Inference on Mobile Devices via Context-aware KV Cache Optimization",
+  "venue": "ACL",
+  "year": 2025,
+  "official": "https://aclanthology.org/2025.acl-long.1140/",
+  "topics": [
+   "edge-efficiency",
+   "llm",
+   "architectures"
+  ]
+ },
+ {
+  "id": "acl-122-acl-2025.acl-long.325",
+  "title": "Quaff: Quantized Parameter-Efficient Fine-Tuning under Outlier Spatial Stability Hypothesis",
+  "venue": "ACL",
+  "year": 2025,
+  "official": "https://aclanthology.org/2025.acl-long.325/",
+  "topics": [
+   "edge-efficiency",
+   "llm",
+   "architectures"
+  ]
+ },
+ {
+  "id": "acl-123-acl-2025.acl-long.1383",
+  "title": "Agentic Reasoning: A Streamlined Framework for Enhancing LLM Reasoning with Agentic Tools",
+  "venue": "ACL",
+  "year": 2025,
+  "official": "https://aclanthology.org/2025.acl-long.1383/",
+  "topics": [
+   "llm",
+   "language-nlp",
+   "architectures"
+  ]
+ },
+ {
+  "id": "acl-124-acl-2025.acl-long.147",
+  "title": "TRACT: Regression-Aware Fine-tuning Meets Chain-of-Thought Reasoning for LLM-as-a-Judge",
+  "venue": "ACL",
+  "year": 2025,
+  "official": "https://aclanthology.org/2025.acl-long.147/",
+  "topics": [
+   "trustworthy",
+   "llm"
+  ]
+ },
+ {
+  "id": "acl-125-acl-2025.acl-long.74",
+  "title": "Jailbreak Large Vision-Language Models Through Multi-Modal Linkage",
+  "venue": "ACL",
+  "year": 2025,
+  "official": "https://aclanthology.org/2025.acl-long.74/",
+  "topics": [
+   "multimodal",
+   "trustworthy",
+   "llm"
+  ]
+ },
+ {
+  "id": "acl-126-acl-2025.acl-long.327",
+  "title": "AlignMMBench: Evaluating Chinese Multimodal Alignment in Large Vision-Language Models",
+  "venue": "ACL",
+  "year": 2025,
+  "official": "https://aclanthology.org/2025.acl-long.327/",
+  "topics": [
+   "multimodal",
+   "trustworthy",
+   "language-nlp"
+  ]
+ },
+ {
+  "id": "acl-127-acl-2025.acl-long.210",
+  "title": "Segment-Level Diffusion: A Framework for Controllable Long-Form Generation with Diffusion Language Models",
+  "venue": "ACL",
+  "year": 2025,
+  "official": "https://aclanthology.org/2025.acl-long.210/",
+  "topics": [
+   "generative",
+   "language-nlp"
+  ]
+ },
+ {
+  "id": "acl-128-acl-2025.findings-acl.1313",
+  "title": "DiaLLMs: EHR-Enhanced Clinical Conversational System for Clinical Test Recommendation and Diagnosis Prediction",
+  "venue": "ACL",
+  "year": 2025,
+  "official": "https://aclanthology.org/2025.findings-acl.1313/",
+  "topics": [
+   "medical-science",
+   "llm",
+   "rl-decision"
+  ]
+ },
+ {
+  "id": "acl-129-acl-2025.acl-long.897",
+  "title": "Defense Against Prompt Injection Attack by Leveraging Attack Techniques",
+  "venue": "ACL",
+  "year": 2025,
+  "official": "https://aclanthology.org/2025.acl-long.897/",
+  "topics": [
+   "trustworthy",
+   "llm"
+  ]
+ },
+ {
+  "id": "acl-130-acl-2025.acl-long.741",
+  "title": "Ontology-Guided Reverse Thinking Makes Large Language Models Stronger on Knowledge Graph Question Answering",
+  "venue": "ACL",
+  "year": 2025,
+  "official": "https://aclanthology.org/2025.acl-long.741/",
+  "topics": [
+   "language-nlp",
+   "architectures",
+   "llm"
+  ]
+ },
+ {
+  "id": "acl-131-acl-2025.acl-long.1105",
+  "title": "Advancing Collaborative Debates with Role Differentiation through Multi-Agent Reinforcement Learning",
+  "venue": "ACL",
+  "year": 2025,
+  "official": "https://aclanthology.org/2025.acl-long.1105/",
+  "topics": [
+   "rl-decision",
+   "llm",
+   "language-nlp"
+  ]
+ },
+ {
+  "id": "acl-132-acl-2025.findings-acl.856",
+  "title": "GNN-RAG: Graph Neural Retrieval for Efficient Large Language Model Reasoning on Knowledge Graphs",
+  "venue": "ACL",
+  "year": 2025,
+  "official": "https://aclanthology.org/2025.findings-acl.856/",
+  "topics": [
+   "architectures",
+   "language-nlp",
+   "edge-efficiency"
+  ]
+ }
+]

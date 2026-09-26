@@ -1,0 +1,141 @@
+[
+ {
+  "id": "acl-109-acl-2024.acl-long.133",
+  "title": "Unlocking Data-free Low-bit Quantization with Matrix Decomposition for KV Cache Compression",
+  "venue": "ACL",
+  "year": 2024,
+  "official": "https://aclanthology.org/2024.acl-long.133/",
+  "topics": [
+   "edge-efficiency",
+   "llm",
+   "architectures"
+  ]
+ },
+ {
+  "id": "acl-110-acl-2024.findings-acl.178",
+  "title": "LoRAPrune: Structured Pruning Meets Low-Rank Parameter-Efficient Fine-Tuning",
+  "venue": "ACL",
+  "year": 2024,
+  "official": "https://aclanthology.org/2024.findings-acl.178/",
+  "topics": [
+   "edge-efficiency",
+   "llm",
+   "architectures"
+  ]
+ },
+ {
+  "id": "acl-111-acl-2024.acl-long.73",
+  "title": "Active Prompting with Chain-of-Thought for Large Language Models",
+  "venue": "ACL",
+  "year": 2024,
+  "official": "https://aclanthology.org/2024.acl-long.73/",
+  "topics": [
+   "llm",
+   "language-nlp"
+  ]
+ },
+ {
+  "id": "acl-112-acl-2024.acl-long.107",
+  "title": "Self-Alignment for Factuality: Mitigating Hallucinations in LLMs via Self-Evaluation",
+  "venue": "ACL",
+  "year": 2024,
+  "official": "https://aclanthology.org/2024.acl-long.107/",
+  "topics": [
+   "llm",
+   "trustworthy"
+  ]
+ },
+ {
+  "id": "acl-113-acl-2024.acl-long.108",
+  "title": "M-RAG: Reinforcing Large Language Model Performance through Retrieval-Augmented Generation with Multiple Partitions",
+  "venue": "ACL",
+  "year": 2024,
+  "official": "https://aclanthology.org/2024.acl-long.108/",
+  "topics": [
+   "language-nlp",
+   "llm",
+   "rl-decision"
+  ]
+ },
+ {
+  "id": "acl-114-acl-2024.acl-long.404",
+  "title": "Advancement in Graph Understanding: A Multimodal Benchmark and Fine-Tuning of Vision-Language Models",
+  "venue": "ACL",
+  "year": 2024,
+  "official": "https://aclanthology.org/2024.acl-long.404/",
+  "topics": [
+   "multimodal",
+   "language-nlp",
+   "architectures"
+  ]
+ },
+ {
+  "id": "acl-115-acl-2024.acl-long.335",
+  "title": "UNIMO-G: Unified Image Generation through Multimodal Conditional Diffusion",
+  "venue": "ACL",
+  "year": 2024,
+  "official": "https://aclanthology.org/2024.acl-long.335/",
+  "topics": [
+   "generative",
+   "multimodal"
+  ]
+ },
+ {
+  "id": "acl-116-acl-2024.acl-short.68",
+  "title": "RAM-EHR: Retrieval Augmentation Meets Clinical Predictions on Electronic Health Records",
+  "venue": "ACL",
+  "year": 2024,
+  "official": "https://aclanthology.org/2024.acl-short.68/",
+  "topics": [
+   "medical-science",
+   "language-nlp",
+   "llm"
+  ]
+ },
+ {
+  "id": "acl-117-acl-2024.findings-acl.443",
+  "title": "A Comprehensive Study of Jailbreak Attack versus Defense for Large Language Models",
+  "venue": "ACL",
+  "year": 2024,
+  "official": "https://aclanthology.org/2024.findings-acl.443/",
+  "topics": [
+   "trustworthy",
+   "llm"
+  ]
+ },
+ {
+  "id": "acl-118-acl-2024.acl-long.301",
+  "title": "CodeScope: An Execution-based Multilingual Multitask Multidimensional Benchmark for Evaluating LLMs on Code Understanding and Generation",
+  "venue": "ACL",
+  "year": 2024,
+  "official": "https://aclanthology.org/2024.acl-long.301/",
+  "topics": [
+   "language-nlp",
+   "trustworthy",
+   "architectures"
+  ]
+ },
+ {
+  "id": "acl-119-acl-2024.acl-long.262",
+  "title": "Planning Like Human: A Dual-process Framework for Dialogue Planning",
+  "venue": "ACL",
+  "year": 2024,
+  "official": "https://aclanthology.org/2024.acl-long.262/",
+  "topics": [
+   "rl-decision",
+   "language-nlp",
+   "llm"
+  ]
+ },
+ {
+  "id": "acl-120-acl-2024.acl-long.780",
+  "title": "Towards Better Understanding of Contrastive Sentence Representation Learning: A Unified Paradigm for Gradient",
+  "venue": "ACL",
+  "year": 2024,
+  "official": "https://aclanthology.org/2024.acl-long.780/",
+  "topics": [
+   "architectures",
+   "language-nlp"
+  ]
+ }
+]

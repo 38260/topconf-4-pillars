@@ -1,0 +1,144 @@
+[
+ {
+  "id": "cvpr-001-CVPR2026-p1164",
+  "title": "Seele: A Unified Acceleration Framework for Real-Time Gaussian Splatting on Mobile Devices",
+  "venue": "CVPR",
+  "year": 2026,
+  "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhu_Seele_A_Unified_Acceleration_Framework_for_Real-Time_Gaussian_Splatting_on_CVPR_2026_paper.html",
+  "topics": [
+   "edge-efficiency",
+   "3d-embodied",
+   "architectures"
+  ]
+ },
+ {
+  "id": "cvpr-002-CVPR2026-p69",
+  "title": "Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients",
+  "venue": "CVPR",
+  "year": 2026,
+  "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Xiang_Fine-Grained_Post-Training_Quantization_for_Large_Vision_Language_Models_with_Quantization-Aware_CVPR_2026_paper.html",
+  "topics": [
+   "edge-efficiency",
+   "multimodal",
+   "llm"
+  ]
+ },
+ {
+  "id": "cvpr-003-CVPR2026-p613",
+  "title": "Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling",
+  "venue": "CVPR",
+  "year": 2026,
+  "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Yu_Visual_Document_Understanding_and_Reasoning_A_Multi-Agent_Collaboration_Framework_with_CVPR_2026_paper.html",
+  "topics": [
+   "llm",
+   "multimodal",
+   "rl-decision"
+  ]
+ },
+ {
+  "id": "cvpr-004-CVPR2026-p2342",
+  "title": "TaskIT: Memory-Efficient Fine-Tuning of Multi-LoRA LLMs via Cross-Task Importance Transfer",
+  "venue": "CVPR",
+  "year": 2026,
+  "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Fang_TaskIT_Memory-Efficient_Fine-Tuning_of_Multi-LoRA_LLMs_via_Cross-Task_Importance_Transfer_CVPR_2026_paper.html",
+  "topics": [
+   "llm",
+   "edge-efficiency",
+   "architectures"
+  ]
+ },
+ {
+  "id": "cvpr-005-CVPR2026-p356",
+  "title": "MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models",
+  "venue": "CVPR",
+  "year": 2026,
+  "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Chung_MAD_Modality-Adaptive_Decoding_for_Mitigating_Cross-Modal_Hallucinations_in_Multimodal_Large_CVPR_2026_paper.html",
+  "topics": [
+   "multimodal",
+   "trustworthy",
+   "llm"
+  ]
+ },
+ {
+  "id": "cvpr-006-CVPR2026-p376",
+  "title": "HiCoGen: Hierarchical Compositional Text-to-Image Generation in Diffusion Models via Reinforcement Learning",
+  "venue": "CVPR",
+  "year": 2026,
+  "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Yang_HiCoGen_Hierarchical_Compositional_Text-to-Image_Generation_in_Diffusion_Models_via_Reinforcement_CVPR_2026_paper.html",
+  "topics": [
+   "generative",
+   "rl-decision",
+   "llm"
+  ]
+ },
+ {
+  "id": "cvpr-007-CVPR2026-p1054",
+  "title": "DiffuView: Multi-View Diffusion Pretraining for 3D Aware Robotic Manipulation",
+  "venue": "CVPR",
+  "year": 2026,
+  "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_DiffuView_Multi-View_Diffusion_Pretraining_for_3D_Aware_Robotic_Manipulation_CVPR_2026_paper.html",
+  "topics": [
+   "3d-embodied",
+   "generative",
+   "architectures"
+  ]
+ },
+ {
+  "id": "cvpr-008-CVPR2026-p757",
+  "title": "PGR-Net: Prior-Guided ROI Reasoning Network for Brain Tumor MRI Segmentation",
+  "venue": "CVPR",
+  "year": 2026,
+  "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Lu_PGR-Net_Prior-Guided_ROI_Reasoning_Network_for_Brain_Tumor_MRI_Segmentation_CVPR_2026_paper.html",
+  "topics": [
+   "medical-science",
+   "perception",
+   "architectures"
+  ]
+ },
+ {
+  "id": "cvpr-009-CVPR2026-p2509",
+  "title": "Decoupling Defense Strategies for Robust Image Watermarking",
+  "venue": "CVPR",
+  "year": 2026,
+  "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Chen_Decoupling_Defense_Strategies_for_Robust_Image_Watermarking_CVPR_2026_paper.html",
+  "topics": [
+   "trustworthy",
+   "generative",
+   "architectures"
+  ]
+ },
+ {
+  "id": "cvpr-010-CVPR2026-p224",
+  "title": "Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation",
+  "venue": "CVPR",
+  "year": 2026,
+  "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_Direct_Segmentation_without_Logits_Optimization_for_Training-Free_Open-Vocabulary_Semantic_Segmentation_CVPR_2026_paper.html",
+  "topics": [
+   "perception",
+   "multimodal",
+   "architectures"
+  ]
+ },
+ {
+  "id": "cvpr-011-CVPR2026-p3875",
+  "title": "VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning",
+  "venue": "CVPR",
+  "year": 2026,
+  "official": "https://openaccess.thecvf.com/content/CVPR2026/html/Chen_VideoChat-M1_Collaborative_Policy_Planning_for_Video_Understanding_via_Multi-Agent_Reinforcement_CVPR_2026_paper.html",
+  "topics": [
+   "rl-decision",
+   "llm",
+   "multimodal"
+  ]
+ },
+ {
+  "id": "cvpr-012-CVPR2026-p2534",
+  "title": "Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data",
+  "venue": "CVPR",
+  "year": 2026,
+  "official": "https://openaccess.thecvf.com/content/CVPR2026/html/He_Global-Graph_Guided_and_Local-Graph_Weighted_Contrastive_Learning_for_Unified_Clustering_CVPR_2026_paper.html",
+  "topics": [
+   "architectures"
+  ]
+ }
+]

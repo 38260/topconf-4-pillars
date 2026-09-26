@@ -1,0 +1,143 @@
+[
+ {
+  "id": "aaai-085-aaai-2024-w1690",
+  "title": "MobileInst: Video Instance Segmentation on the Mobile",
+  "venue": "AAAI",
+  "year": 2024,
+  "official": "https://doi.org/10.1609/aaai.v38i7.28555",
+  "topics": [
+   "edge-efficiency",
+   "perception",
+   "architectures"
+  ]
+ },
+ {
+  "id": "aaai-086-aaai-2024-w244",
+  "title": "Agile-Quant: Activation-Guided Quantization for Faster Inference of LLMs on the Edge",
+  "venue": "AAAI",
+  "year": 2024,
+  "official": "https://doi.org/10.1609/aaai.v38i17.29860",
+  "topics": [
+   "edge-efficiency",
+   "llm",
+   "architectures"
+  ]
+ },
+ {
+  "id": "aaai-087-aaai-2024-w3",
+  "title": "Benchmarking Large Language Models in Retrieval-Augmented Generation",
+  "venue": "AAAI",
+  "year": 2024,
+  "official": "https://doi.org/10.1609/aaai.v38i16.29728",
+  "topics": [
+   "llm",
+   "language-nlp",
+   "trustworthy"
+  ]
+ },
+ {
+  "id": "aaai-088-aaai-2024-w160",
+  "title": "Visual Chain-of-Thought Prompting for Knowledge-Based Visual Reasoning",
+  "venue": "AAAI",
+  "year": 2024,
+  "official": "https://doi.org/10.1609/aaai.v38i2.27888",
+  "topics": [
+   "llm",
+   "multimodal",
+   "trustworthy"
+  ]
+ },
+ {
+  "id": "aaai-089-aaai-2024-w393",
+  "title": "Self-Supervised Multi-Modal Knowledge Graph Contrastive Hashing for Cross-Modal Search",
+  "venue": "AAAI",
+  "year": 2024,
+  "official": "https://doi.org/10.1609/aaai.v38i12.29280",
+  "topics": [
+   "multimodal",
+   "architectures",
+   "language-nlp"
+  ]
+ },
+ {
+  "id": "aaai-090-aaai-2024-w891",
+  "title": "Accelerating Text-to-Image Editing via Cache-Enabled Sparse Diffusion Inference",
+  "venue": "AAAI",
+  "year": 2024,
+  "official": "https://doi.org/10.1609/aaai.v38i15.29599",
+  "topics": [
+   "generative",
+   "edge-efficiency",
+   "llm"
+  ]
+ },
+ {
+  "id": "aaai-091-aaai-2024-w1470",
+  "title": "Depth-Guided Robust and Fast Point Cloud Fusion NeRF for Sparse Input Views",
+  "venue": "AAAI",
+  "year": 2024,
+  "official": "https://doi.org/10.1609/aaai.v38i3.27968",
+  "topics": [
+   "3d-embodied",
+   "generative",
+   "architectures"
+  ]
+ },
+ {
+  "id": "aaai-092-aaai-2024-w162",
+  "title": "Large Language Models Are Clinical Reasoners: Reasoning-Aware Diagnosis Framework with Prompt-Generated Rationales",
+  "venue": "AAAI",
+  "year": 2024,
+  "official": "https://doi.org/10.1609/aaai.v38i16.29802",
+  "topics": [
+   "medical-science",
+   "llm",
+   "language-nlp"
+  ]
+ },
+ {
+  "id": "aaai-093-aaai-2024-w1281",
+  "title": "LimeAttack: Local Explainable Method for Textual Hard-Label Adversarial Attack",
+  "venue": "AAAI",
+  "year": 2024,
+  "official": "https://doi.org/10.1609/aaai.v38i17.29950",
+  "topics": [
+   "trustworthy",
+   "language-nlp",
+   "llm"
+  ]
+ },
+ {
+  "id": "aaai-094-aaai-2024-w367",
+  "title": "Aspect-Based Sentiment Analysis with Explicit Sentiment Augmentations",
+  "venue": "AAAI",
+  "year": 2024,
+  "official": "https://doi.org/10.1609/aaai.v38i17.29849",
+  "topics": [
+   "language-nlp",
+   "architectures"
+  ]
+ },
+ {
+  "id": "aaai-095-aaai-2024-w883",
+  "title": "FoX: Formation-Aware Exploration in Multi-Agent Reinforcement Learning",
+  "venue": "AAAI",
+  "year": 2024,
+  "official": "https://doi.org/10.1609/aaai.v38i12.29196",
+  "topics": [
+   "rl-decision",
+   "architectures"
+  ]
+ },
+ {
+  "id": "aaai-096-aaai-2024-w582",
+  "title": "Learning to Reweight for Generalizable Graph Neural Network",
+  "venue": "AAAI",
+  "year": 2024,
+  "official": "https://doi.org/10.1609/aaai.v38i8.28673",
+  "topics": [
+   "architectures",
+   "trustworthy"
+  ]
+ }
+]

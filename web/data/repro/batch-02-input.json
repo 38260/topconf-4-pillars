@@ -1,0 +1,142 @@
+[
+ {
+  "id": "aaai-013-aaai-2026-w1632",
+  "title": "DIAA: A Decoding-Efficient Inference Acceleration Approach for On-Device Large Language Models",
+  "venue": "AAAI",
+  "year": 2026,
+  "official": "https://doi.org/10.1609/aaai.v40i31.39789",
+  "topics": [
+   "edge-efficiency",
+   "llm",
+   "architectures"
+  ]
+ },
+ {
+  "id": "aaai-014-aaai-2026-w3487",
+  "title": "Efficient Multimodal Large Language Model via Dynamic KV Cache Quantization",
+  "venue": "AAAI",
+  "year": 2026,
+  "official": "https://doi.org/10.1609/aaai.v40i25.39241",
+  "topics": [
+   "edge-efficiency",
+   "multimodal",
+   "llm"
+  ]
+ },
+ {
+  "id": "aaai-015-aaai-2026-w4812",
+  "title": "SPAN: Benchmarking and Improving Cross-Calendar Temporal Reasoning of Large Language Models",
+  "venue": "AAAI",
+  "year": 2026,
+  "official": "https://doi.org/10.1609/aaai.v40i42.40884",
+  "topics": [
+   "llm",
+   "trustworthy",
+   "language-nlp"
+  ]
+ },
+ {
+  "id": "aaai-016-aaai-2026-w1223",
+  "title": "Mitigating Hallucinations in Large Language Models via Causal Reasoning",
+  "venue": "AAAI",
+  "year": 2026,
+  "official": "https://doi.org/10.1609/aaai.v40i38.40454",
+  "topics": [
+   "llm",
+   "trustworthy",
+   "language-nlp"
+  ]
+ },
+ {
+  "id": "aaai-017-aaai-2026-w996",
+  "title": "LiR3AG: A Lightweight Rerank Reasoning Strategy Framework for Retrieval-Augmented Generation",
+  "venue": "AAAI",
+  "year": 2026,
+  "official": "https://doi.org/10.1609/aaai.v40i36.40270",
+  "topics": [
+   "language-nlp",
+   "llm",
+   "edge-efficiency"
+  ]
+ },
+ {
+  "id": "aaai-018-aaai-2026-w3928",
+  "title": "Extracting Multimodal Learngene in CLIP: Unveiling the Multimodal Generalizable Knowledge",
+  "venue": "AAAI",
+  "year": 2026,
+  "official": "https://doi.org/10.1609/aaai.v40i24.39111",
+  "topics": [
+   "multimodal",
+   "architectures",
+   "edge-efficiency"
+  ]
+ },
+ {
+  "id": "aaai-019-aaai-2026-w489",
+  "title": "HiTVideo: Hierarchical Tokenizers for Enhancing Text-to-Video Generation with Autoregressive Large Language Models",
+  "venue": "AAAI",
+  "year": 2026,
+  "official": "https://doi.org/10.1609/aaai.v40i16.38399",
+  "topics": [
+   "generative",
+   "llm",
+   "multimodal"
+  ]
+ },
+ {
+  "id": "aaai-020-aaai-2026-w662",
+  "title": "H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation",
+  "venue": "AAAI",
+  "year": 2026,
+  "official": "https://doi.org/10.1609/aaai.v40i22.38875",
+  "topics": [
+   "3d-embodied",
+   "generative",
+   "rl-decision"
+  ]
+ },
+ {
+  "id": "aaai-021-aaai-2026-w787",
+  "title": "PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis",
+  "venue": "AAAI",
+  "year": 2026,
+  "official": "https://doi.org/10.1609/aaai.v40i13.38106",
+  "topics": [
+   "medical-science",
+   "multimodal",
+   "llm"
+  ]
+ },
+ {
+  "id": "aaai-022-aaai-2026-w1569",
+  "title": "Injection, Attack and Erasure: Revocable Backdoor Attacks via Machine Unlearning",
+  "venue": "AAAI",
+  "year": 2026,
+  "official": "https://doi.org/10.1609/aaai.v40i30.39747",
+  "topics": [
+   "trustworthy",
+   "architectures"
+  ]
+ },
+ {
+  "id": "aaai-023-aaai-2026-w627",
+  "title": "HCPO: Hierarchical Conductor-Based Policy Optimization in Multi-Agent Reinforcement Learning",
+  "venue": "AAAI",
+  "year": 2026,
+  "official": "https://doi.org/10.1609/aaai.v40i35.40199",
+  "topics": [
+   "rl-decision",
+   "architectures"
+  ]
+ },
+ {
+  "id": "aaai-024-aaai-2026-w1169",
+  "title": "Dual Mamba for Node-Specific Representation Learning: Tackling Over-Smoothing with Selective State Space Modeling",
+  "venue": "AAAI",
+  "year": 2026,
+  "official": "https://doi.org/10.1609/aaai.v40i26.39317",
+  "topics": [
+   "architectures"
+  ]
+ }
+]

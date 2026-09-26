@@ -1,0 +1,143 @@
+[
+ {
+  "id": "cvpr-061-CVPR2025-p2826",
+  "title": "MobilePortrait: Real-Time One-Shot Neural Head Avatars on Mobile Devices",
+  "venue": "CVPR",
+  "year": 2025,
+  "official": "https://openaccess.thecvf.com/content/CVPR2025/html/Jiang_MobilePortrait_Real-Time_One-Shot_Neural_Head_Avatars_on_Mobile_Devices_CVPR_2025_paper.html",
+  "topics": [
+   "edge-efficiency",
+   "generative",
+   "perception"
+  ]
+ },
+ {
+  "id": "cvpr-062-CVPR2025-p516",
+  "title": "VL2Lite: Task-Specific Knowledge Distillation from Large Vision-Language Models to Lightweight Networks",
+  "venue": "CVPR",
+  "year": 2025,
+  "official": "https://openaccess.thecvf.com/content/CVPR2025/html/Jang_VL2Lite_Task-Specific_Knowledge_Distillation_from_Large_Vision-Language_Models_to_Lightweight_CVPR_2025_paper.html",
+  "topics": [
+   "edge-efficiency",
+   "multimodal",
+   "architectures"
+  ]
+ },
+ {
+  "id": "cvpr-063-CVPR2025-p59",
+  "title": "Enhancing Video-LLM Reasoning via Agent-of-Thoughts Distillation",
+  "venue": "CVPR",
+  "year": 2025,
+  "official": "https://openaccess.thecvf.com/content/CVPR2025/html/Shi_Enhancing_Video-LLM_Reasoning_via_Agent-of-Thoughts_Distillation_CVPR_2025_paper.html",
+  "topics": [
+   "llm",
+   "multimodal",
+   "rl-decision"
+  ]
+ },
+ {
+  "id": "cvpr-064-CVPR2025-p329",
+  "title": "Critic-V: VLM Critics Help Catch VLM Errors in Multimodal Reasoning",
+  "venue": "CVPR",
+  "year": 2025,
+  "official": "https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_Critic-V_VLM_Critics_Help_Catch_VLM_Errors_in_Multimodal_Reasoning_CVPR_2025_paper.html",
+  "topics": [
+   "llm",
+   "multimodal",
+   "trustworthy"
+  ]
+ },
+ {
+  "id": "cvpr-065-CVPR2025-p2046",
+  "title": "Post-pre-training for Modality Alignment in Vision-Language Foundation Models",
+  "venue": "CVPR",
+  "year": 2025,
+  "official": "https://openaccess.thecvf.com/content/CVPR2025/html/Yamaguchi_Post-pre-training_for_Modality_Alignment_in_Vision-Language_Foundation_Models_CVPR_2025_paper.html",
+  "topics": [
+   "multimodal",
+   "architectures"
+  ]
+ },
+ {
+  "id": "cvpr-066-CVPR2025-p393",
+  "title": "AlignMamba: Enhancing Multimodal Mamba with Local and Global Cross-modal Alignment",
+  "venue": "CVPR",
+  "year": 2025,
+  "official": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_AlignMamba_Enhancing_Multimodal_Mamba_with_Local_and_Global_Cross-modal_Alignment_CVPR_2025_paper.html",
+  "topics": [
+   "architectures",
+   "multimodal",
+   "edge-efficiency"
+  ]
+ },
+ {
+  "id": "cvpr-067-CVPR2025-p304",
+  "title": "Diffusion-4K: Ultra-High-Resolution Image Synthesis with Latent Diffusion Models",
+  "venue": "CVPR",
+  "year": 2025,
+  "official": "https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_Diffusion-4K_Ultra-High-Resolution_Image_Synthesis_with_Latent_Diffusion_Models_CVPR_2025_paper.html",
+  "topics": [
+   "generative",
+   "multimodal"
+  ]
+ },
+ {
+  "id": "cvpr-068-CVPR2025-p209",
+  "title": "Prometheus: 3D-Aware Latent Diffusion Models for Feed-Forward Text-to-3D Scene Generation",
+  "venue": "CVPR",
+  "year": 2025,
+  "official": "https://openaccess.thecvf.com/content/CVPR2025/html/Yang_Prometheus_3D-Aware_Latent_Diffusion_Models_for_Feed-Forward_Text-to-3D_Scene_Generation_CVPR_2025_paper.html",
+  "topics": [
+   "generative",
+   "3d-embodied",
+   "multimodal"
+  ]
+ },
+ {
+  "id": "cvpr-069-CVPR2025-p743",
+  "title": "SplatAD: Real-Time Lidar and Camera Rendering with 3D Gaussian Splatting for Autonomous Driving",
+  "venue": "CVPR",
+  "year": 2025,
+  "official": "https://openaccess.thecvf.com/content/CVPR2025/html/Hess_SplatAD_Real-Time_Lidar_and_Camera_Rendering_with_3D_Gaussian_Splatting_CVPR_2025_paper.html",
+  "topics": [
+   "3d-embodied",
+   "perception",
+   "edge-efficiency"
+  ]
+ },
+ {
+  "id": "cvpr-070-CVPR2025-p2790",
+  "title": "Multi-modal Medical Diagnosis via Large-small Model Collaboration",
+  "venue": "CVPR",
+  "year": 2025,
+  "official": "https://openaccess.thecvf.com/content/CVPR2025/html/Chen_Multi-modal_Medical_Diagnosis_via_Large-small_Model_Collaboration_CVPR_2025_paper.html",
+  "topics": [
+   "medical-science",
+   "multimodal",
+   "llm"
+  ]
+ },
+ {
+  "id": "cvpr-071-CVPR2025-p357",
+  "title": "T2ISafety: Benchmark for Assessing Fairness, Toxicity, and Privacy in Image Generation",
+  "venue": "CVPR",
+  "year": 2025,
+  "official": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_T2ISafety_Benchmark_for_Assessing_Fairness_Toxicity_and_Privacy_in_Image_CVPR_2025_paper.html",
+  "topics": [
+   "trustworthy",
+   "generative"
+  ]
+ },
+ {
+  "id": "cvpr-072-CVPR2025-p39",
+  "title": "SGC-Net: Stratified Granular Comparison Network for Open-Vocabulary HOI Detection",
+  "venue": "CVPR",
+  "year": 2025,
+  "official": "https://openaccess.thecvf.com/content/CVPR2025/html/Lin_SGC-Net_Stratified_Granular_Comparison_Network_for_Open-Vocabulary_HOI_Detection_CVPR_2025_paper.html",
+  "topics": [
+   "perception",
+   "multimodal",
+   "llm"
+  ]
+ }
+]

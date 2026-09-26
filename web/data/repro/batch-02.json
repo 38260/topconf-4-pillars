@@ -1,0 +1,269 @@
+{
+ "papers": [
+  {
+   "id": "aaai-013-aaai-2026-w1632",
+   "title": "DIAA: A Decoding-Efficient Inference Acceleration Approach for On-Device Large Language Models",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [],
+   "difficulty": "hard",
+   "compute": "single_gpu",
+   "reason": "仅检索到 AAAI/ACM 页面，无官方或第三方代码；论文只在 NVIDIA Jetson 端侧平台上做实验，未公布可下载的评测数据，需自行重建 LUT 草稿与动态 token 树，复现门槛高。"
+  },
+  {
+   "id": "aaai-014-aaai-2026-w3487",
+   "title": "Efficient Multimodal Large Language Model via Dynamic KV Cache Quantization",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "LLaVA-1.5 (7B/13B) 与 Qwen-VL 模型权重及图像描述/VQA/图文检索多模态基准",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "single_gpu",
+   "reason": "未找到任何官方仓库或第三方实现，需自行在多模态模型中实现 per-channel/per-token 混合量化与动态分组，无代码是主要障碍（模型与基准本身公开，算力单卡即可）。"
+  },
+  {
+   "id": "aaai-015-aaai-2026-w4812",
+   "title": "SPAN: Benchmarking and Improving Cross-Calendar Temporal Reasoning of Large Language Models",
+   "github": "https://github.com/miaozhongjian/span",
+   "github_official": true,
+   "github_stars": 0,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "SPAN 跨历法时间推理基准（随仓库发布，含 baselines.py 与评测协议）",
+     "url": "https://github.com/miaozhongjian/span",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "作者官方仓库已放出评测协议、基线脚本与基准数据，代码与数据齐备；但对齐论文结果需跑 Llama-3.3-70B、DeepSeek-V3、Qwen-2.5-72B 等大模型及闭源 API，算力偏高。"
+  },
+  {
+   "id": "aaai-016-aaai-2026-w1223",
+   "title": "Mitigating Hallucinations in Large Language Models via Causal Reasoning",
+   "github": "https://github.com/MrLYG/CDCR-SFT",
+   "github_official": true,
+   "github_stars": 12,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "CLADDER / WIQA / HaluEval（仓库 data/ 目录已含测试集）",
+     "url": "https://github.com/MrLYG/CDCR-SFT",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "官方仓库含代码与三个公开基准数据，模型均为 7B/8B 开源权重；但因果推理数据构造 + SFT 训练在原论文用 4 张 A40，非单卡可完成。"
+  },
+  {
+   "id": "aaai-017-aaai-2026-w996",
+   "title": "LiR3AG: A Lightweight Rerank Reasoning Strategy Framework for Retrieval-Augmented Generation",
+   "github": "https://github.com/WinstonCHEN1/LiR3AG",
+   "github_official": true,
+   "github_stars": 5,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "HotpotQA",
+     "url": "https://hotpotqa.github.io/",
+     "accessibility": "public"
+    },
+    {
+     "name": "2WikiMultiHopQA",
+     "url": "https://github.com/Alab-NII/2wikimultihop",
+     "accessibility": "public"
+    },
+    {
+     "name": "MultiHop-RAG",
+     "url": "https://github.com/yixuantt/MultiHop-RAG",
+     "accessibility": "public"
+    },
+    {
+     "name": "MuSiQue",
+     "url": "https://github.com/StonyBrookNLP/musique",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "官方仓库提供环境、复现与推理脚本，四个 RAG 基准全部公开可直接下载，用 Ollama + FAISS 跑 14B 级模型即可复现，属轻量重排推理框架。"
+  },
+  {
+   "id": "aaai-018-aaai-2026-w3928",
+   "title": "Extracting Multimodal Learngene in CLIP: Unveiling the Multimodal Generalizable Knowledge",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "CC3M / CC12M（LAION 风格网络图文对）",
+     "url": null,
+     "accessibility": "application"
+    },
+    {
+     "name": "MSCOCO / Flickr30k（检索与描述）",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "ImageNet / CIFAR-100 / Food-101 / Oxford-IIIT PET（分类与迁移）",
+     "url": null,
+     "accessibility": "application"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "multi_gpu",
+   "reason": "arXiv 与 GitHub 检索均未见官方代码仓库（同名 learngene 项目属于其它工作），且实验需在 8 张 Ascend 910B 上大规模训练，CC 系列与 ImageNet 还需签协议获取。"
+  },
+  {
+   "id": "aaai-019-aaai-2026-w489",
+   "title": "HiTVideo: Hierarchical Tokenizers for Enhancing Text-to-Video Generation with Autoregressive Large Language Models",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "Pexels 视频数据",
+     "url": "https://www.pexels.com/search/videos/videos",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "large_scale",
+   "reason": "官方项目页 Code 标注为 Coming Soon，代码尚未发布；同时需要训练 3D 因果 VAE 分层 tokenizer 加 Llama-3B 自回归视频模型，显存与训练成本都很高。"
+  },
+  {
+   "id": "aaai-020-aaai-2026-w662",
+   "title": "H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation",
+   "github": "https://github.com/HongzheBi/H_RDT",
+   "github_official": true,
+   "github_stars": 160,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "EgoDex 人类第一视角操作数据（预训练阶段）",
+     "url": "https://openreview.net/forum?id=FFxkFMU89E",
+     "accessibility": "public"
+    },
+    {
+     "name": "RoboTwin 2.0 双臂机器人数据与基准",
+     "url": "https://robotwin-platform.github.io/",
+     "accessibility": "public"
+    },
+    {
+     "name": "H-RDT 预训练权重",
+     "url": "https://huggingface.co/embodiedfoundation/H-RDT",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "官方仓库含完整预训练/微调与推理脚本，数据（EgoDex、RoboTwin 2.0）与 HuggingFace 权重均可下载；但 1B 级扩散策略基座的人手数据预训练需要多卡集群，且真机评测依赖硬件。"
+  },
+  {
+   "id": "aaai-021-aaai-2026-w787",
+   "title": "PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis",
+   "github": "https://github.com/AQ-MedAI/PulseMind",
+   "github_official": true,
+   "github_stars": 21,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "MediScope 精选子集 + MedDiagnose / MedDiagnose-plus / CMtMedQA-test 基准",
+     "url": "https://huggingface.co/datasets/AQ-MedAI/PulseMind",
+     "accessibility": "public"
+    },
+    {
+     "name": "PulseMind-72B 模型权重",
+     "url": "https://huggingface.co/AQ-MedAI/PulseMind-72B",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "AAAI 2026 Oral 官方仓库提供评测代码、HuggingFace 基准与 72B 权重；但仓库只有评测脚本，完整 MediScope 数据分批释出，72B 多模态模型评测必须多卡。"
+  },
+  {
+   "id": "aaai-022-aaai-2026-w1569",
+   "title": "Injection, Attack and Erasure: Revocable Backdoor Attacks via Machine Unlearning",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "CIFAR-10",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "ImageNet",
+     "url": null,
+     "accessibility": "application"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "multi_gpu",
+   "reason": "AAAI 与 arXiv/GitHub 检索均未找到官方或第三方实现，需自行串联后门注入、触发器攻击与遗忘学习擦除三阶段并在 ImageNet 上训练，工作量与算力都不低。"
+  },
+  {
+   "id": "aaai-023-aaai-2026-w627",
+   "title": "HCPO: Hierarchical Conductor-Based Policy Optimization in Multi-Agent Reinforcement Learning",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "SMAC（StarCraftII 多智能体挑战）",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "Multi-agent MuJoCo",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "Multi-agent Particle Environment",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "multi_gpu",
+   "reason": "三个基准环境本身开源可下载，但论文未发布任何代码仓库， conductor 分层结构与单调性优化需从零实现并在 SMAC/MA-MuJoCo 上做长周期训练调参。"
+  },
+  {
+   "id": "aaai-024-aaai-2026-w1169",
+   "title": "Dual Mamba for Node-Specific Representation Learning: Tackling Over-Smoothing with Selective State Space Modeling",
+   "github": "https://github.com/hexin5515/DMbaGCN",
+   "github_official": true,
+   "github_stars": 3,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "CoraFull / Pubmed / Photo / CS / Physics / Computers 引文与商品共现图（代码运行时自动下载）",
+     "url": "https://github.com/hexin5515/DMbaGCN",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "官方实现一条命令即可跑通，图数据集由 PyTorch Geometric 自动下载，论文实验仅用单张 L40 48G，属于小模型单卡复现。"
+  }
+ ]
+}

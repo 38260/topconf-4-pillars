@@ -1,0 +1,141 @@
+[
+ {
+  "id": "iccv-073-ICCV2023-p1288",
+  "title": "SwiftFormer: Efficient Additive Attention for Transformer-based Real-time Mobile Vision Applications",
+  "venue": "ICCV",
+  "year": 2023,
+  "official": "https://openaccess.thecvf.com/content/ICCV2023/html/Shaker_SwiftFormer_Efficient_Additive_Attention_for_Transformer-based_Real-time_Mobile_Vision_Applications_ICCV_2023_paper.html",
+  "topics": [
+   "edge-efficiency",
+   "architectures"
+  ]
+ },
+ {
+  "id": "iccv-074-ICCV2023-p1009",
+  "title": "SYENet: A Simple Yet Effective Network for Multiple Low-Level Vision Tasks with Real-Time Performance on Mobile Device",
+  "venue": "ICCV",
+  "year": 2023,
+  "official": "https://openaccess.thecvf.com/content/ICCV2023/html/Gou_SYENet_A_Simple_Yet_Effective_Network_for_Multiple_Low-Level_Vision_ICCV_2023_paper.html",
+  "topics": [
+   "edge-efficiency",
+   "perception",
+   "architectures"
+  ]
+ },
+ {
+  "id": "iccv-075-ICCV2023-p76",
+  "title": "PromptCap: Prompt-Guided Image Captioning for VQA with GPT-3",
+  "venue": "ICCV",
+  "year": 2023,
+  "official": "https://openaccess.thecvf.com/content/ICCV2023/html/Hu_PromptCap_Prompt-Guided_Image_Captioning_for_VQA_with_GPT-3_ICCV_2023_paper.html",
+  "topics": [
+   "llm",
+   "multimodal",
+   "language-nlp"
+  ]
+ },
+ {
+  "id": "iccv-076-ICCV2023-p93",
+  "title": "Audio-Visual Deception Detection: DOLOS Dataset and Parameter-Efficient Crossmodal Learning",
+  "venue": "ICCV",
+  "year": 2023,
+  "official": "https://openaccess.thecvf.com/content/ICCV2023/html/Guo_Audio-Visual_Deception_Detection_DOLOS_Dataset_and_Parameter-Efficient_Crossmodal_Learning_ICCV_2023_paper.html",
+  "topics": [
+   "multimodal",
+   "trustworthy",
+   "perception"
+  ]
+ },
+ {
+  "id": "iccv-077-ICCV2023-p874",
+  "title": "Tune-A-Video: One-Shot Tuning of Image Diffusion Models for Text-to-Video Generation",
+  "venue": "ICCV",
+  "year": 2023,
+  "official": "https://openaccess.thecvf.com/content/ICCV2023/html/Wu_Tune-A-Video_One-Shot_Tuning_of_Image_Diffusion_Models_for_Text-to-Video_Generation_ICCV_2023_paper.html",
+  "topics": [
+   "generative",
+   "multimodal"
+  ]
+ },
+ {
+  "id": "iccv-078-ICCV2023-p605",
+  "title": "Point-SLAM: Dense Neural Point Cloud-based SLAM",
+  "venue": "ICCV",
+  "year": 2023,
+  "official": "https://openaccess.thecvf.com/content/ICCV2023/html/Sandstrom_Point-SLAM_Dense_Neural_Point_Cloud-based_SLAM_ICCV_2023_paper.html",
+  "topics": [
+   "3d-embodied",
+   "perception",
+   "architectures"
+  ]
+ },
+ {
+  "id": "iccv-079-ICCV2023-p1118",
+  "title": "Towards Unifying Medical Vision-and-Language Pre-Training via Soft Prompts",
+  "venue": "ICCV",
+  "year": 2023,
+  "official": "https://openaccess.thecvf.com/content/ICCV2023/html/Chen_Towards_Unifying_Medical_Vision-and-Language_Pre-Training_via_Soft_Prompts_ICCV_2023_paper.html",
+  "topics": [
+   "medical-science",
+   "multimodal",
+   "architectures"
+  ]
+ },
+ {
+  "id": "iccv-080-ICCV2023-p2005",
+  "title": "An Adaptive Model Ensemble Adversarial Attack for Boosting Adversarial Transferability",
+  "venue": "ICCV",
+  "year": 2023,
+  "official": "https://openaccess.thecvf.com/content/ICCV2023/html/Chen_An_Adaptive_Model_Ensemble_Adversarial_Attack_for_Boosting_Adversarial_Transferability_ICCV_2023_paper.html",
+  "topics": [
+   "trustworthy",
+   "architectures"
+  ]
+ },
+ {
+  "id": "iccv-081-ICCV2023-p938",
+  "title": "A Simple Framework for Open-Vocabulary Segmentation and Detection",
+  "venue": "ICCV",
+  "year": 2023,
+  "official": "https://openaccess.thecvf.com/content/ICCV2023/html/Zhang_A_Simple_Framework_for_Open-Vocabulary_Segmentation_and_Detection_ICCV_2023_paper.html",
+  "topics": [
+   "perception",
+   "multimodal"
+  ]
+ },
+ {
+  "id": "iccv-082-ICCV2023-p308",
+  "title": "FLatten Transformer: Vision Transformer using Focused Linear Attention",
+  "venue": "ICCV",
+  "year": 2023,
+  "official": "https://openaccess.thecvf.com/content/ICCV2023/html/Han_FLatten_Transformer_Vision_Transformer_using_Focused_Linear_Attention_ICCV_2023_paper.html",
+  "topics": [
+   "architectures",
+   "edge-efficiency"
+  ]
+ },
+ {
+  "id": "iccv-083-ICCV2023-p148",
+  "title": "Context-Aware Planning and Environment-Aware Memory for Instruction Following Embodied Agents",
+  "venue": "ICCV",
+  "year": 2023,
+  "official": "https://openaccess.thecvf.com/content/ICCV2023/html/Kim_Context-Aware_Planning_and_Environment-Aware_Memory_for_Instruction_Following_Embodied_Agents_ICCV_2023_paper.html",
+  "topics": [
+   "rl-decision",
+   "3d-embodied",
+   "llm"
+  ]
+ },
+ {
+  "id": "iccv-084-ICCV2023-p704",
+  "title": "Open-vocabulary Video Question Answering: A New Benchmark for Evaluating the Generalizability of Video Question Answering Models",
+  "venue": "ICCV",
+  "year": 2023,
+  "official": "https://openaccess.thecvf.com/content/ICCV2023/html/Ko_Open-vocabulary_Video_Question_Answering_A_New_Benchmark_for_Evaluating_the_ICCV_2023_paper.html",
+  "topics": [
+   "language-nlp",
+   "multimodal",
+   "perception"
+  ]
+ }
+]

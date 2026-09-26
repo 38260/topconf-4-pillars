@@ -1,0 +1,145 @@
+[
+ {
+  "id": "acl-037-acl-2026.acl-long.1454",
+  "title": "VecInfer: Efficient LLM Inference with Low-Bit KV Cache via Outlier-Suppressed Vector Quantization",
+  "venue": "ACL",
+  "year": 2026,
+  "official": "https://aclanthology.org/2026.acl-long.1454/",
+  "topics": [
+   "edge-efficiency",
+   "llm",
+   "architectures"
+  ]
+ },
+ {
+  "id": "acl-038-acl-2026.acl-industry.51",
+  "title": "MobileLLM-Flash: Latency-Guided On-Device LLM Design for Industry Scale Deployment",
+  "venue": "ACL",
+  "year": 2026,
+  "official": "https://aclanthology.org/2026.acl-industry.51/",
+  "topics": [
+   "edge-efficiency",
+   "llm",
+   "architectures"
+  ]
+ },
+ {
+  "id": "acl-039-acl-2026.acl-long.376",
+  "title": "The Reasoning Trap: How Enhancing LLM Reasoning Amplifies Tool Hallucination",
+  "venue": "ACL",
+  "year": 2026,
+  "official": "https://aclanthology.org/2026.acl-long.376/",
+  "topics": [
+   "llm",
+   "trustworthy",
+   "rl-decision"
+  ]
+ },
+ {
+  "id": "acl-040-acl-2026.acl-long.756",
+  "title": "Why LLM Safety Guardrails Collapse After Fine-tuning: A Similarity Analysis Between Alignment and Fine-tuning Datasets",
+  "venue": "ACL",
+  "year": 2026,
+  "official": "https://aclanthology.org/2026.acl-long.756/",
+  "topics": [
+   "trustworthy",
+   "llm"
+  ]
+ },
+ {
+  "id": "acl-041-acl-2026.findings-acl.917",
+  "title": "SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning",
+  "venue": "ACL",
+  "year": 2026,
+  "official": "https://aclanthology.org/2026.findings-acl.917/",
+  "topics": [
+   "medical-science",
+   "llm",
+   "language-nlp"
+  ]
+ },
+ {
+  "id": "acl-042-acl-2026.acl-long.444",
+  "title": "“I See What You Did There”: Can Large Vision-Language Models Understand Multimodal Puns?",
+  "venue": "ACL",
+  "year": 2026,
+  "official": "https://aclanthology.org/2026.acl-long.444/",
+  "topics": [
+   "multimodal",
+   "language-nlp",
+   "trustworthy"
+  ]
+ },
+ {
+  "id": "acl-043-acl-2026.acl-long.1251",
+  "title": "LADR: Locality-Aware Dynamic Rescue for Efficient Text-to-Image Generation with Diffusion Large Language Models",
+  "venue": "ACL",
+  "year": 2026,
+  "official": "https://aclanthology.org/2026.acl-long.1251/",
+  "topics": [
+   "generative",
+   "edge-efficiency",
+   "multimodal"
+  ]
+ },
+ {
+  "id": "acl-044-acl-2026.acl-long.743",
+  "title": "Biomedical Question Answering via Multi-Level Summarization on a Local Knowledge Graph",
+  "venue": "ACL",
+  "year": 2026,
+  "official": "https://aclanthology.org/2026.acl-long.743/",
+  "topics": [
+   "language-nlp",
+   "medical-science",
+   "llm"
+  ]
+ },
+ {
+  "id": "acl-045-acl-2026.acl-long.1944",
+  "title": "From Nodes to Narratives: Explaining Graph Neural Networks with LLMs and Graph Context",
+  "venue": "ACL",
+  "year": 2026,
+  "official": "https://aclanthology.org/2026.acl-long.1944/",
+  "topics": [
+   "architectures",
+   "trustworthy",
+   "language-nlp"
+  ]
+ },
+ {
+  "id": "acl-046-acl-2026.acl-long.470",
+  "title": "An Exploration of Mamba for Speech Self-Supervised Models",
+  "venue": "ACL",
+  "year": 2026,
+  "official": "https://aclanthology.org/2026.acl-long.470/",
+  "topics": [
+   "architectures",
+   "language-nlp",
+   "edge-efficiency"
+  ]
+ },
+ {
+  "id": "acl-047-acl-2026.acl-long.647",
+  "title": "DPWriter: Reinforcement Learning with Diverse Planning Branching for Creative Writing",
+  "venue": "ACL",
+  "year": 2026,
+  "official": "https://aclanthology.org/2026.acl-long.647/",
+  "topics": [
+   "rl-decision",
+   "generative",
+   "llm"
+  ]
+ },
+ {
+  "id": "acl-048-acl-2026.findings-acl.2116",
+  "title": "SceneLM: 3D-Aware Language Models for Editable 3D Scene Synthesis",
+  "venue": "ACL",
+  "year": 2026,
+  "official": "https://aclanthology.org/2026.findings-acl.2116/",
+  "topics": [
+   "3d-embodied",
+   "multimodal",
+   "generative"
+  ]
+ }
+]

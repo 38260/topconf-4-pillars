@@ -1,0 +1,278 @@
+{
+ "papers": [
+  {
+   "id": "iccv-073-ICCV2023-p1288",
+   "github": "https://github.com/Amshaker/SwiftFormer",
+   "github_official": true,
+   "github_stars": 317,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "ImageNet-1K",
+     "url": "http://image-net.org",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "作者官方仓库、代码与预训练权重齐全，ImageNet 公开可下，但要复现论文精度需按 README 用 8~16 卡 DDP 跑完整训练，仅推理则单卡足够。"
+  },
+  {
+   "id": "iccv-074-ICCV2023-p1009",
+   "github": "https://github.com/sanechips-multimedia/syenet",
+   "github_official": true,
+   "github_stars": 68,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "DIV2K（超分训练/测试，含 Set5/Set14/BSD100/Urban100）",
+     "url": "https://data.vision.ee.ethz.ch/cvl/DIV2K/",
+     "accessibility": "public"
+    },
+    {
+     "name": "LOL 低光照数据集",
+     "url": "https://huggingface.co/datasets/geekyrakshit/LoL-Dataset",
+     "accessibility": "public"
+    },
+    {
+     "name": "MAI21 / MAI22 ISP  RAW 数据集",
+     "url": null,
+     "accessibility": "application"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "官方实现公开且模型轻量（面向移动端），单卡即可训练 SR 与低光任务，公开数据充足；只有 ISP 管线的 MAI21 数据需签协议获取。"
+  },
+  {
+   "id": "iccv-075-ICCV2023-p76",
+   "github": "https://github.com/Yushi-Hu/PromptCap",
+   "github_official": true,
+   "github_stars": 89,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "OK-VQA",
+     "url": "https://github.com/prdwb/okvqa-release",
+     "accessibility": "public"
+    },
+    {
+     "name": "A-OKVQA",
+     "url": "https://github.com/allenai/aokvqa",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "single_gpu",
+   "reason": "官方代码与 VQA 数据均公开、任务只需推理，但原方法主干依赖已停服的 OpenAI Codex/GPT-3 接口，需换成开源 LLM 才能完整跑通。"
+  },
+  {
+   "id": "iccv-076-ICCV2023-p93",
+   "github": "https://github.com/NMS05/Audio-Visual-Deception-Detection-DOLOS-Dataset-and-Parameter-Efficient-Crossmodal-Learning",
+   "github_official": true,
+   "github_stars": 36,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "DOLOS（自建音视频欺骗检测数据集）",
+     "url": "https://rose1.ntu.edu.sg/dataset/DOLOS/",
+     "accessibility": "application"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "single_gpu",
+   "reason": "官方仓库随论文发布、参数高效模型单卡可训，但核心是作者自建 DOLOS，官网下载需先接受使用协议并申请标注，数据获取是主要阻碍。"
+  },
+  {
+   "id": "iccv-077-ICCV2023-p874",
+   "github": "https://github.com/showlab/Tune-A-Video",
+   "github_official": true,
+   "github_stars": 4364,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "任意单段自采/网络视频（one-shot 微调输入，无需标注数据集）",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "Stable Diffusion v1.4 / v2.1 预训练权重",
+     "url": "https://huggingface.co/CompVis/stable-diffusion-v1-4",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "官方仓库高星、脚本与 Gradio 演示完备，只需一段视频加公开的 SD 权重即可单卡微调，无数据授权障碍，显存 10~15GB 足够。"
+  },
+  {
+   "id": "iccv-078-ICCV2023-p605",
+   "github": "https://github.com/eriksandstroem/Point-SLAM",
+   "github_official": true,
+   "github_stars": 486,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "Replica",
+     "url": "https://github.com/facebookresearch/replica-dataset",
+     "accessibility": "public"
+    },
+    {
+     "name": "TUM-RGBD",
+     "url": "https://cove.thecvf.com/datasets/867",
+     "accessibility": "public"
+    },
+    {
+     "name": "ScanNet",
+     "url": "http://www.scan-net.org/ScanNet/",
+     "accessibility": "application"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "官方代码带数据下载脚本，Replica 与 TUM-RGBD 可直接公开下载，SLAM 单卡逐序列运行，主要成本是 CUDA 扩展与旧版依赖的环境编译。"
+  },
+  {
+   "id": "iccv-079-ICCV2023-p1118",
+   "github": "https://github.com/zhjohnchan/PTUnifier",
+   "github_official": true,
+   "github_stars": 78,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "MIMIC-CXR",
+     "url": "https://physionet.org/content/mimic-cxr/",
+     "accessibility": "application"
+    },
+    {
+     "name": "ROCO（放射影像图文）",
+     "url": "https://github.com/razorx89/roco-dataset",
+     "accessibility": "public"
+    },
+    {
+     "name": "下游评测集 VQA-RAD / SLAKE / ImageCLEF 等",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "multi_gpu",
+   "reason": "虽有官方代码与 checkpoint，但复现预训练必须拿到需 PhysioNet 资质申请的 MIMIC-CXR，并多卡重跑百万级医学图文对比预训练，数据与算力双重受限。"
+  },
+  {
+   "id": "iccv-080-ICCV2023-p2005",
+   "github": "https://github.com/CHENBIN99/AdaEA",
+   "github_official": true,
+   "github_stars": 45,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "ImageNet-1K（迁移评测）",
+     "url": "http://image-net.org",
+     "accessibility": "public"
+    },
+    {
+     "name": "CIFAR-10 / CIFAR-100",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "官方代码公开，攻击为白盒/黑盒迁移实验，全部使用公开的预训练代理模型与标准分类数据，作者单张 RTX A6000 即完成，单卡可复现。"
+  },
+  {
+   "id": "iccv-081-ICCV2023-p938",
+   "github": "https://github.com/IDEA-Research/OpenSeeD",
+   "github_official": true,
+   "github_stars": 764,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "COCO（OVOD 训练与评测）",
+     "url": "https://cocodataset.org/",
+     "accessibility": "public"
+    },
+    {
+     "name": "Objects365（基础类训练）",
+     "url": "https://www.objects365.org/download.html",
+     "accessibility": "application"
+    },
+    {
+     "name": "ADE20K / PASCAL / Cityscapes / BDD / SUN / ODinW（OVSS 与开放词表评测）",
+     "url": "https://ade20k.csail.mit.edu/",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "IDEA 官方实现且权重齐备，但 README 训练命令为 8 卡，需同时准备 COCO+Objects365 的大规模检测/分割数据，工程与算力负担都不小。"
+  },
+  {
+   "id": "iccv-082-ICCV2023-p308",
+   "github": "https://github.com/LeapLabTHU/FLatten-Transformer",
+   "github_official": true,
+   "github_stars": 448,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "ImageNet-1K",
+     "url": "http://image-net.org",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "官方 PyTorch 代码与预训练权重可得、数据公开，但要复现 83%+ 精度需按 README 用 8 卡跑满数百 epoch，512 高分辨率分割实验更吃资源。"
+  },
+  {
+   "id": "iccv-083-ICCV2023-p148",
+   "github": "https://github.com/snumprlab/capeam",
+   "github_official": true,
+   "github_stars": 16,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "ALFRED（Room-to-Room 指令任务）",
+     "url": "https://github.com/askforalfred/alfred",
+     "accessibility": "public"
+    },
+    {
+     "name": "Habitat-Matterport3D 场景资产",
+     "url": null,
+     "accessibility": "application"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "single_gpu",
+   "reason": "官方实现公开、评测单卡即可跑，但强依赖 FILM 权重与 habitat-lab v0.1.5 + PyTorch 1.8 旧环境，还需授权的 Matterport3D 场景和 GPT-3 生成的低级指令。"
+  },
+  {
+   "id": "iccv-084-ICCV2023-p704",
+   "github": "https://github.com/mlvlab/OVQA",
+   "github_official": true,
+   "github_stars": 18,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "OVQA 基准标注 + 预处理 CLIP 视觉特征与 checkpoint",
+     "url": "https://drive.google.com/drive/folders/1HcrMsINkNcRUfnZMd15l9AH0R9X4qvQG",
+     "accessibility": "public"
+    },
+    {
+     "name": "ActivityNet-QA / MSVD-QA / TGIF-QA / MSRVTT-QA 原视频",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "DeBERTa-v2-xlarge 语言编码器",
+     "url": "https://huggingface.co/microsoft/deberta-v2-xlarge",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "multi_gpu",
+   "reason": "官方仓库直接给出标注、预提特征和权重，数据无授权障碍，但训练脚本是 4 卡分布式且主干为 DeBERTa-xlarge，单卡复现成本偏高。"
+  }
+ ]
+}

@@ -4,15 +4,26 @@
 
   var state = {
     data: null,
-    view: "pillars",        // pillars | topics
+    view: "pillars",        // pillars | topics | repro
     q: "",
     venue: null,            // 单支柱下钻
     topic: null,            // 主题下钻
     paperId: null,          // 模态框
     year: null,             // 届次下钻（近三年扩充）
+    diff: null,             // 复现难度下钻（repro 视图）
+    favs: loadFavs(),       // 收藏的论文 id（localStorage 持久化）
+    favOnly: false,         // 只看收藏
     source: null,           // inline | api
     tocOpen: localStorage.getItem("topconf.toc") !== "0"
   };
+
+  var FAV_KEY = "topconf.favs";
+  function loadFavs() {
+    try {
+      var a = JSON.parse(localStorage.getItem(FAV_KEY));
+      return Array.isArray(a) ? a : [];
+    } catch (e) { return []; }
+  }
 
   var el = {};
   function $(id) { return document.getElementById(id); }
@@ -67,9 +78,39 @@
       if (state.venue && p.venue !== state.venue) return false;
       if (state.topic && p.topics.indexOf(state.topic) < 0) return false;
       if (state.year && String(p.year) !== String(state.year)) return false;
+      if (state.favOnly && !isFav(p.id)) return false;
       if (q && haystack(p).indexOf(q) < 0) return false;
       return true;
     });
+  }
+
+  /* ---------------- 收藏 ---------------- */
+  var STAR_SVG = '<svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">' +
+    '<path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z" ' +
+    'fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>';
+  function isFav(id) { return state.favs.indexOf(id) >= 0; }
+  function toggleFav(id) {
+    var i = state.favs.indexOf(id), on = i < 0;
+    if (on) state.favs.push(id); else state.favs.splice(i, 1);
+    try { localStorage.setItem(FAV_KEY, JSON.stringify(state.favs)); } catch (e) {}
+    return on;
+  }
+  function syncFavBtns(id) {
+    document.querySelectorAll('[data-act="fav"]').forEach(function (b) {
+      if (b.dataset.val !== id) return;
+      var on = isFav(id);
+      b.classList.toggle("on", on);
+      b.setAttribute("aria-pressed", String(on));
+      b.setAttribute("aria-label", on ? "取消收藏" : "收藏");
+      b.querySelector("path").setAttribute("fill", on ? "currentColor" : "none");
+    });
+  }
+  function favBtn(p, cls) {
+    var on = isFav(p.id);
+    return '<button type="button" class="fav' + (cls ? " " + cls : "") + (on ? " on" : "") +
+      '" data-act="fav" data-val="' + p.id + '" aria-pressed="' + on + '" ' +
+      'aria-label="' + (on ? "取消收藏 " : "收藏 ") + TL.esc(p.title_zh || p.title) + '" ' +
+      'title="' + (on ? "取消收藏" : "收藏") + '">' + STAR_SVG + "</button>";
   }
 
   function countsBy(fn) {
@@ -138,6 +179,9 @@
       }).join("");
     var ed = {};
     state.data.papers.forEach(function (p) { ed[p.venue + p.year] = 1; });
+    html += '<button type="button" class="chip fav-toggle" data-act="favonly" aria-pressed="' +
+      state.favOnly + '" title="只看收藏的论文">★ 收藏<span class="n">' + state.favs.length +
+      "</span></button>";
     html += '<span class="span">跨 ' + Object.keys(ed).length + " 届精选 · 官方语料 " +
       TL.fmtNum((state.data.meta || {}).corpus_total || 0) + " 篇</span>";
     bar.innerHTML = html;
@@ -212,6 +256,7 @@
         tm.accent + '" aria-pressed="true">主题：' + TL.esc(tm.label) + " ×</button>");
     }
     if (state.year) bits.push(chip("届次：" + state.year, "year", "plain"));
+    if (state.favOnly) bits.push(chip("只看收藏", "favonly", "plain"));
     if (state.q) bits.push(chip("搜索：“" + state.q + "”", "q", "plain"));
     if (!bits.length) {
       var cnt = countsBy(function (p) { return p.topics; });
@@ -236,6 +281,7 @@
 
   function renderView() {
     if (state.view === "topics") return renderTopics();
+    if (state.view === "repro") return renderRepro();
     return renderPillars();
   }
 
@@ -295,6 +341,136 @@
     root.innerHTML = html;
   }
 
+  /* ---------------- 复现情报视图 ---------------- */
+  var DIFFS = [
+    { key: "easy",    label: "易复现", en: "EASY",    accent: "green" },
+    { key: "medium",  label: "中等",   en: "MEDIUM",  accent: "amber" },
+    { key: "hard",    label: "困难",   en: "HARD",    accent: "rose" },
+    { key: "unknown", label: "未查明", en: "N/A",     accent: "slate" }
+  ];
+  var COMPUTE_LABEL = {
+    single_gpu: "单卡可跑", multi_gpu: "多卡训练",
+    large_scale: "大规模算力", n_a: "无需完整训练"
+  };
+  var ACCESS_LABEL = { public: "公开下载", application: "需申请", private: "私有数据", synthetic: "合成数据" };
+
+  function reproEntry(p) {
+    var r = window.REPRO_DATA;
+    return (r && r.papers && r.papers[p.id]) || null;
+  }
+  function reproDiff(p) {
+    var e = reproEntry(p);
+    return (e && e.difficulty) ? e.difficulty : "unknown";
+  }
+  function diffMeta(key) {
+    for (var i = 0; i < DIFFS.length; i++) if (DIFFS[i].key === key) return DIFFS[i];
+    return DIFFS[DIFFS.length - 1];
+  }
+  function repoLabel(e) {
+    if (!e.github) return "";
+    var bits = [e.github_official ? "官方仓库" : "第三方实现"];
+    if (e.github_stars) bits.push("★ " + TL.fmtNum(e.github_stars));
+    return bits.join(" · ");
+  }
+
+  function reproSection(p) {
+    var e = reproEntry(p);
+    var d = reproDiff(p), dm = diffMeta(d);
+    var html = '<section><h3>复现情报 <span class="tag" data-accent="' + dm.accent + '">' +
+      dm.label + "</span></h3>";
+    if (!e) {
+      html += '<p style="margin:0;font-size:12.5px;color:var(--muted)">外部调研未确认到该论文的公开仓库与数据集信息。</p></section>';
+      return html;
+    }
+    html += '<div class="repro-kv">';
+    html += '<div class="k">代码</div><div class="v">' +
+      (e.github ? '<a href="' + TL.esc(e.github) + '" target="_blank" rel="noopener">' +
+        TL.esc(repoLabel(e)) + "</a>" : "未找到公开实现") + "</div>";
+    if (e.datasets && e.datasets.length) {
+      html += '<div class="k">数据集</div><div class="v">' + e.datasets.map(function (ds) {
+        var acc = ACCESS_LABEL[ds.accessibility] || "";
+        var t = TL.esc(ds.name) + (acc ? '<span class="rl-m">' + acc + "</span>" : "");
+        return ds.url ? '<a href="' + TL.esc(ds.url) + '" target="_blank" rel="noopener">' + t + "</a>"
+                      : "<span>" + t + "</span>";
+      }).join("、") + "</div>";
+    }
+    if (e.compute) {
+      html += '<div class="k">算力</div><div class="v">' +
+        TL.esc(COMPUTE_LABEL[e.compute] || e.compute) + "</div>";
+    }
+    if (e.reason) {
+      html += '<div class="k">理由</div><div class="v">' + TL.esc(e.reason) + "</div>";
+    }
+    html += "</div>";
+    html += '<p style="margin:8px 0 0;font-size:11.5px;color:var(--muted)">来自本项目外部调研，非出版方信息；星标为调研时的约数。</p>';
+    return html + "</section>";
+  }
+
+  function renderRepro() {
+    var rows = filtered();
+    var root = $("view-root");
+    if (!rows.length) return emptyState();
+    var dist = {};
+    rows.forEach(function (p) { var d = reproDiff(p); dist[d] = (dist[d] || 0) + 1; });
+    var html = '<div class="section-head"><h2>复现情报</h2>' +
+      '<span class="note">GitHub 仓库、数据集可得性与算力需求的外部调研；易＝官方代码+公开数据+单卡可跑，中＝有代码但数据受限或需多卡，难＝无官方代码或算力/数据门槛高</span>' +
+      '<span class="rule"></span></div>';
+    html += '<div class="diffbar" role="group" aria-label="按复现难度筛选"><span class="label">难度筛选</span>' +
+      '<button type="button" class="chip" data-act="diff" data-val="" aria-pressed="' + (!state.diff) +
+      '">全部<span class="n">' + rows.length + "</span></button>" +
+      DIFFS.filter(function (d) { return dist[d.key]; }).map(function (d) {
+        return '<button type="button" class="chip" data-accent="' + d.accent + '" data-act="diff" data-val="' +
+          d.key + '" aria-pressed="' + (state.diff === d.key) + '">' + d.label +
+          '<span class="n">' + dist[d.key] + "</span></button>";
+      }).join("") + "</div>";
+    DIFFS.forEach(function (d) {
+      if (state.diff && state.diff !== d.key) return;
+      var items = rows.filter(function (p) { return reproDiff(p) === d.key; });
+      if (!items.length) return;
+      html += '<section class="repro-group" data-accent="' + d.accent + '" id="rdiff-' + d.key + '">' +
+        '<header class="group-head"><span class="dot" aria-hidden="true"></span>' +
+        "<h3>" + d.label + '</h3><span class="en">' + d.en + "</span>" +
+        '<span class="n">' + items.length + " 篇</span></header>" +
+        '<div class="repro-list">' + items.map(reproRow).join("") + "</div></section>";
+    });
+    root.innerHTML = html;
+  }
+
+  function reproRow(p) {
+    var e = reproEntry(p);
+    var d = reproDiff(p), dm = diffMeta(d);
+    var links = "";
+    if (e && e.github) {
+      links += '<a class="rl" href="' + TL.esc(e.github) + '" target="_blank" rel="noopener" title="' +
+        TL.esc(repoLabel(e)) + '">GitHub<span class="rl-m">' + TL.esc(e.github_official ? "官方" : "第三方") +
+        (e.github_stars ? " ★" + TL.fmtNum(e.github_stars) : "") + "</span></a>";
+    } else {
+      links += '<span class="rl none">未找到公开仓库</span>';
+    }
+    ((e && e.datasets) || []).slice(0, 3).forEach(function (ds) {
+      var acc = ACCESS_LABEL[ds.accessibility] || "";
+      links += ds.url
+        ? '<a class="rl" href="' + TL.esc(ds.url) + '" target="_blank" rel="noopener">' + TL.esc(ds.name) +
+          (acc ? '<span class="rl-m">' + acc + "</span>" : "") + "</a>"
+        : '<span class="rl">' + TL.esc(ds.name) + (acc ? '<span class="rl-m">' + acc + "</span>" : "") + "</span>";
+    });
+    var comp = e && e.compute ? (COMPUTE_LABEL[e.compute] || e.compute) : "";
+    return '<article id="card-' + p.id + '" class="repro-row" data-pillar="' + TL.esc(p.venue) +
+      '" data-accent="' + dm.accent + '">' +
+      '<div class="repro-top"><span class="yr">' + TL.esc(p.venue) + " " + p.year + "</span>" +
+      '<span class="tag" data-accent="' + dm.accent + '">' + dm.label + "</span>" +
+      (comp ? '<span class="rl-m">' + comp + "</span>" : "") +
+      favBtn(p, "fav-inline") +
+      '<button type="button" class="repro-open" data-act="open" data-val="' + p.id + '">详情</button></div>' +
+      '<h4><a href="#card-' + p.id + '" data-act="open" data-val="' + p.id + '">' +
+      TL.highlight(p.title, state.q) + "</a></h4>" +
+      '<p class="tzh">' + TL.highlight(p.title_zh, state.q) + "</p>" +
+      '<div class="repro-links">' + links + "</div>" +
+      (e && e.reason ? '<p class="repro-why">' + TL.esc(e.reason) + "</p>" :
+        (e ? "" : '<p class="repro-why dim">外部调研未确认到公开仓库与数据集信息。</p>')) +
+      "</article>";
+  }
+
   /* ---------------- 目录侧栏 ---------------- */
   function tocLabel(p) {
     var s = p.title_zh || p.title || "";
@@ -325,6 +501,21 @@
           items.map(function (p) {
             return '<a class="toc-item" href="#card-' + p.id + '" data-act="jump" data-val="card-' + p.id +
               '" data-card="' + p.id + '"><span class="rk">' + String(p.rank).padStart(2, "0") + "</span>" +
+              TL.esc(tocLabel(p)) + "</a>";
+          }).join("") + "</div>");
+      });
+    } else if (state.view === "repro") {
+      DIFFS.forEach(function (d) {
+        if (state.diff && state.diff !== d.key) return;
+        var items = rows.filter(function (p) { return reproDiff(p) === d.key; });
+        if (!items.length) return;
+        secs.push('<div class="toc-sec" data-accent="' + d.accent + '">' +
+          '<a class="h" href="#rdiff-' + d.key + '" data-act="jump" data-val="rdiff-' + d.key + '">' +
+          '<i class="dot" aria-hidden="true" style="--st:var(--tc-fg)"></i>' + d.label +
+          '<span class="n">' + items.length + "</span></a>" +
+          items.map(function (p) {
+            return '<a class="toc-item" href="#card-' + p.id + '" data-act="jump" data-val="card-' + p.id +
+              '" data-card="' + p.id + '"><span class="rk">' + p.venue + "</span>" +
               TL.esc(tocLabel(p)) + "</a>";
           }).join("") + "</div>");
       });
@@ -391,6 +582,7 @@
     var kws = (p.keywords || []).slice(0, 3);
     return '<article id="card-' + p.id + '" ' + TL.pillarBadge(p.venue) + ' tabindex="0" role="button" ' +
       'data-act="open" data-val="' + p.id + '" aria-label="查看 ' + TL.esc(p.title) + '">' +
+      favBtn(p) +
       '<span class="idx">' + String(p.rank).padStart(2, "0") + "</span>" +
       "<h4>" + TL.highlight(p.title, state.q) + "</h4>" +
       '<p class="tzh">' + TL.highlight(p.title_zh, state.q) + "</p>" +
@@ -421,6 +613,24 @@
   }
 
   /* ---------------- 详情模态框 ---------------- */
+  // 打开时锁背景滚动并补偿滚动条宽度；关闭时原样恢复。
+  function lockScroll(on) {
+    var de = document.documentElement;
+    var probe = document.querySelector(".wrap") || document.body;
+    if (on) {
+      // 先量、再锁、再量：滚动条消失/留存的行为各浏览器不一致，
+      // 用真实宽度差补 padding，才能保证背景内容宽度一格不跳。
+      var before = probe.getBoundingClientRect().width;
+      de.classList.add("modal-open");
+      var after = probe.getBoundingClientRect().width;
+      var pad = parseFloat(getComputedStyle(de).paddingRight) || 0;
+      de.style.paddingRight = Math.max(0, pad + (after - before)) + "px";
+    } else {
+      de.classList.remove("modal-open");
+      de.style.paddingRight = "";
+    }
+  }
+
   function openModal(id) {
     var p = state.data.papers.filter(function (x) { return x.id === id; })[0];
     if (!p) return;
@@ -443,6 +653,7 @@
       (p.pages ? "<span>pp. " + TL.esc(p.pages) + "</span>" : "") +
       (p.track ? "<span>" + TL.esc(p.track) + "</span>" : "") +
       (p.citations !== undefined && p.citations !== null ? "<span>OpenAlex 被引 " + TL.esc(p.citations) + "</span>" : "") +
+      favBtn(p, "fav-modal") +
       "</div></div><div class='modal-body'>" +
 
       "<section><h3>中文摘要（人工翻译）</h3><p class='abs-zh'>" + TL.esc(p.abstract_zh) + "</p></section>" +
@@ -465,6 +676,8 @@
 
       "<section><h3>作者（" + p.authors.length + " 人）</h3><ul class='auth-list'>" +
       p.authors.map(function (a) { return "<li>" + TL.esc(a) + "</li>"; }).join("") + "</ul></section>" +
+
+      reproSection(p) +
 
       "<section><h3>官方链接</h3><div class='link-row'>" + links.filter(function (l) { return l[1]; }).map(function (l) {
         return '<a class="btn" href="' + TL.esc(l[1]) + '" target="_blank" rel="noopener">' + l[0] + "</a>";
@@ -490,7 +703,9 @@
 
       "</div></div></div>";
     $("modal-root").innerHTML = html;
-    document.body.style.overflow = "hidden";
+    // 锁背景滚动：class 交给 CSS（html.modal-open），滚动条宽度写进 --sbw 做等宽补偿，
+    // 否则滚动条消失会让整页横向抖 15px。
+    lockScroll(true);
     var btn = $("modal-root").querySelector(".modal-close");
     if (btn) btn.focus();
   }
@@ -498,7 +713,7 @@
   function closeModal() {
     state.paperId = null;
     $("modal-root").innerHTML = "";
-    document.body.style.overflow = "";
+    lockScroll(false);
   }
 
   /* ---------------- 事件（单点委托，Trace Light 的 data-act 约定） ---------------- */
@@ -524,13 +739,29 @@
       renderAll();
       return;
     }
-    if (act === "reset") { state.venue = null; state.topic = null; state.year = null; state.q = ""; $("q").value = ""; syncClear(); renderAll(); return; }
+    if (act === "fav") {
+      e.preventDefault();
+      var on = toggleFav(val);
+      syncFavBtns(val);
+      renderYearBar();
+      if (state.favOnly) { renderView(); renderToc(); }
+      TL.toast(on ? "已收藏，点届次栏「★ 收藏」可只看收藏" : "已取消收藏", on ? "ok" : null);
+      return;
+    }
+    if (act === "favonly") { state.favOnly = !state.favOnly; renderAll(); return; }
+    if (act === "reset") { state.venue = null; state.topic = null; state.year = null; state.diff = null; state.favOnly = false; state.q = ""; $("q").value = ""; syncClear(); renderAll(); return; }
     if (act === "q") { state.q = ""; $("q").value = ""; syncClear(); renderAll(); return; }
+    if (act === "diff") {
+      state.diff = (!val || state.diff === val) ? null : val;
+      if (state.view !== "repro") { state.view = "repro"; syncViewTabs(); }
+      renderView(); renderToc(); return;
+    }
   }
 
   function syncViewTabs() {
     $("view-pillars").setAttribute("aria-pressed", String(state.view === "pillars"));
     $("view-topics").setAttribute("aria-pressed", String(state.view === "topics"));
+    $("view-repro").setAttribute("aria-pressed", String(state.view === "repro"));
   }
   function syncClear() { $("q-clear").hidden = !state.q; }
 

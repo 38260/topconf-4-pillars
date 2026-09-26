@@ -1,0 +1,289 @@
+{
+ "papers": [
+  {
+   "id": "cvpr-001-CVPR2026-p1164",
+   "title": "Seele: A Unified Acceleration Framework for Real-Time Gaussian Splatting on Mobile Devices",
+   "github": "https://github.com/SJTU-MVCLab/SeeLe",
+   "github_official": true,
+   "github_stars": 58,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "MipNeRF360 场景数据集",
+     "url": "https://jonbarron.info/mipnerf360/",
+     "accessibility": "public"
+    },
+    {
+     "name": "Tank & Temple 场景（仓库 README 给出的网盘下载）",
+     "url": "https://drive.google.com/file/d/1xfqSLFSLvx5IrpEZU62dw7xm1YZHiyYu/view",
+     "accessibility": "public"
+    },
+    {
+     "name": "3D Gaussian Splatting 参考实现/场景预处理",
+     "url": "https://github.com/graphdeco-inria/gaussian-splatting",
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "single_gpu",
+   "reason": "官方代码与公开场景数据齐备、训练只需单卡，但论文核心指标要在 NVIDIA AGX Orin 移动端 SoC 上编译 CUDA/嵌入式内核实测实时性，缺该硬件难以完整复现。"
+  },
+  {
+   "id": "cvpr-002-CVPR2026-p69",
+   "title": "Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients",
+   "github": "https://github.com/ucas-xiang/QIG",
+   "github_official": true,
+   "github_stars": 25,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "COCO 校准集（ShareGPT4V 版本图文对）",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "Pileval 校准数据与 MMMU 评测基准",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "被量化模型权重：InternVL2-8B、LLaVA-OneVision-Qwen2-7B-OV",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "作者发布官方仓库，PTQ 属免训练方法，校准与评测数据、7B/8B 开源权重均可直接下载，单张 24GB 级显卡即可完成量化与评测。"
+  },
+  {
+   "id": "cvpr-003-CVPR2026-p613",
+   "title": "Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling",
+   "github": "https://github.com/YU-deep/MACT",
+   "github_official": true,
+   "github_stars": 18,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "文档理解基准：DocVQA、DUDE、SlideVQA、MMLongBench-Doc、VisualMRC、InfographicVQA",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "图表/表格基准：ChartQA、CharXiv、TableVQA-Bench、TableBench",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "推理类基准：ScienceQA、MathVista、Math-Vision、MathVerse、RealWorldQA",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "single_gpu",
+   "reason": "论文写明的官方仓库 README 仍是\"录用后开源\"占位、未放出可运行代码，且多智能体+逐智能体自适应 test-time scaling 需自行搭建多个 VLM 推理管线，评测集虽公开但调用成本不小。"
+  },
+  {
+   "id": "cvpr-004-CVPR2026-p2342",
+   "title": "TaskIT: Memory-Efficient Fine-Tuning of Multi-LoRA LLMs via Cross-Task Importance Transfer",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [],
+   "difficulty": "hard",
+   "compute": "single_gpu",
+   "reason": "CVF 与聚合列表中均未检索到官方或第三方实现，摘要只提到\"单模态与跨模态基准\"而未给出数据集名称与链接，需自行复现跨任务重要性预测、分块显存预测器与 DP 调度器，判为难。"
+  },
+  {
+   "id": "cvpr-005-CVPR2026-p356",
+   "title": "MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models",
+   "github": "https://github.com/top-yun/MAD",
+   "github_official": true,
+   "github_stars": 15,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "AVHBench（跨模态幻觉基准，ICLR'25 官方仓库）",
+     "url": "https://github.com/kaist-ami/AVHBench",
+     "accessibility": "public"
+    },
+    {
+     "name": "CMM 跨模态误配幻觉基准",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "easy",
+   "compute": "single_gpu",
+   "reason": "官方实现已开源，方法只改解码过程、无需训练，AVHBench 与 CMM 两个评测集均公开，单卡跑多模态模型推理即可复现。"
+  },
+  {
+   "id": "cvpr-006-CVPR2026-p376",
+   "title": "HiCoGen: Hierarchical Compositional Text-to-Image Generation in Diffusion Models via Reinforcement Learning",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "HiCoPrompt（论文自建分层组合提示集，未确认已释出）",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "DrawBench、T2I-CompBench、T2I-CompBench++、DPG-Bench、LongBench-T2I",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "FLUX 基座扩散模型权重",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "multi_gpu",
+   "reason": "arXiv/OpenReview 与 CVPR 代码合集均无官方仓库，需在 FLUX 上复现分层奖励建模与 RL 微调（多卡训练）并自建 HiCoPrompt 提示集，门槛高。"
+  },
+  {
+   "id": "cvpr-007-CVPR2026-p1054",
+   "title": "DiffuView: Multi-View Diffusion Pretraining for 3D Aware Robotic Manipulation",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "预训练语料 RH20T、Real10K 等真实机器人视频/多视图数据",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "ScanNet 场景数据（需签署许可后下载）",
+     "url": null,
+     "accessibility": "application"
+    },
+    {
+     "name": "下游评测：LIBERO、Meta-World、MvBench 及真机实验",
+     "url": null,
+     "accessibility": "private"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "multi_gpu",
+   "reason": "未找到任何公开代码，论文实现需 8 张 A100 做多视图扩散预训练，且真机操作与部分 3D 数据（ScanNet 需申请、自采机器人数据）不可得。"
+  },
+  {
+   "id": "cvpr-008-CVPR2026-p757",
+   "title": "PGR-Net: Prior-Guided ROI Reasoning Network for Brain Tumor MRI Segmentation",
+   "github": "https://github.com/CNU-MedAI-Lab/PGR-Net",
+   "github_official": true,
+   "github_stars": 3,
+   "no_code": false,
+   "datasets": [
+    {
+     "name": "Medical Segmentation Decathlon Task01 (brain_tumor)",
+     "url": "http://medicaldecathlon.com/",
+     "accessibility": "public"
+    },
+    {
+     "name": "BraTS 2019 / BraTS 2023（需注册并同意数据许可）",
+     "url": null,
+     "accessibility": "application"
+    }
+   ],
+   "difficulty": "medium",
+   "compute": "single_gpu",
+   "reason": "官方 PyTorch 实现已放出且单卡（论文用 RTX 2080Ti）可训，但 BraTS 数据需注册申请获取，仓库 star 很低、文档未给数据下载路径，预处理需自行对齐。"
+  },
+  {
+   "id": "cvpr-009-CVPR2026-p2509",
+   "title": "Decoupling Defense Strategies for Robust Image Watermarking",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "MS-COCO 自然图像",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "DiffusionDB 生成图像",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "single_gpu",
+   "reason": "arXiv 正文无代码发布声明、CVPR2026 代码合集亦未收录，虽然数据公开且单卡（RTX 4090）可训，但需完全自行实现解耦防御水印框架与攻击组合。"
+  },
+  {
+   "id": "cvpr-010-CVPR2026-p224",
+   "title": "Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation",
+   "github": "https://github.com/liblacklucy/DSLO",
+   "github_official": true,
+   "github_stars": 0,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "VOC20/VOC21、COCO-Stuff/COCO-Obj、Pascal-Context 59/60、ADE20K",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "Cityscapes（需注册申请后下载）",
+     "url": null,
+     "accessibility": "application"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "single_gpu",
+   "reason": "论文声明的代码仓库目前为空、无任何实现，方法虽为免训练推理且八个基准公开，但仍须自行复现无 logits 优化的直接分割流程。"
+  },
+  {
+   "id": "cvpr-011-CVPR2026-p3875",
+   "title": "VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "LongVideoBench、Video-MME、MLVU、Video Holmes、Video MMMU、MMR-V、VSIBench、Charades-STA",
+     "url": null,
+     "accessibility": "public"
+    },
+    {
+     "name": "基座模型 Qwen3-8B 权重与 RL 训练数据",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "multi_gpu",
+   "reason": "未检索到官方或第三方代码，多智能体协同策略需基于 Qwen3-8B 做 RL 训练（论文用 8 张 A100 80G），显存与调参成本远超单卡。"
+  },
+  {
+   "id": "cvpr-012-CVPR2026-p2534",
+   "title": "Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data",
+   "github": null,
+   "github_official": false,
+   "github_stars": null,
+   "no_code": true,
+   "datasets": [
+    {
+     "name": "ALOI、DHA、LandUse-21、ProteinFold 多视图聚类基准",
+     "url": null,
+     "accessibility": "public"
+    }
+   ],
+   "difficulty": "hard",
+   "compute": "single_gpu",
+   "reason": "arXiv 页面与代码合集均未给出仓库链接，虽然基准小而公开、单卡可跑，但全局图引导+局部图加权对比框架与全部消融需从零实现。"
+  }
+ ]
+}

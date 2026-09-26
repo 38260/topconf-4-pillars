@@ -1,0 +1,144 @@
+[
+ {
+  "id": "aaai-097-aaai-2025-w1187",
+  "title": "QJL: 1-Bit Quantized JL Transform for KV Cache Quantization with Zero Overhead",
+  "venue": "AAAI",
+  "year": 2025,
+  "official": "https://doi.org/10.1609/aaai.v39i24.34773",
+  "topics": [
+   "edge-efficiency",
+   "llm",
+   "architectures"
+  ]
+ },
+ {
+  "id": "aaai-098-aaai-2025-w312",
+  "title": "ABQ-LLM: Arbitrary-Bit Quantized Inference Acceleration for Large Language Models",
+  "venue": "AAAI",
+  "year": 2025,
+  "official": "https://doi.org/10.1609/aaai.v39i21.34385",
+  "topics": [
+   "edge-efficiency",
+   "llm",
+   "architectures"
+  ]
+ },
+ {
+  "id": "aaai-099-aaai-2025-w2804",
+  "title": "RMath: A Logic Reasoning-Focused Datasets Toward Mathematical Multistep Reasoning Tasks",
+  "venue": "AAAI",
+  "year": 2025,
+  "official": "https://doi.org/10.1609/aaai.v39i22.34585",
+  "topics": [
+   "llm",
+   "language-nlp",
+   "trustworthy"
+  ]
+ },
+ {
+  "id": "aaai-100-aaai-2025-w117",
+  "title": "LightPROF: A Lightweight Reasoning Framework for Large Language Model on Knowledge Graph",
+  "venue": "AAAI",
+  "year": 2025,
+  "official": "https://doi.org/10.1609/aaai.v39i22.34510",
+  "topics": [
+   "language-nlp",
+   "llm",
+   "edge-efficiency"
+  ]
+ },
+ {
+  "id": "aaai-101-aaai-2025-w38",
+  "title": "Harnessing Multimodal Large Language Models for Multimodal Sequential Recommendation",
+  "venue": "AAAI",
+  "year": 2025,
+  "official": "https://doi.org/10.1609/aaai.v39i12.33426",
+  "topics": [
+   "multimodal",
+   "llm",
+   "architectures"
+  ]
+ },
+ {
+  "id": "aaai-102-aaai-2025-w813",
+  "title": "DesignEdit: Unify Spatial-Aware Image Editing via Training-free Inpainting with a Multi-Layered Latent Diffusion Framework",
+  "venue": "AAAI",
+  "year": 2025,
+  "official": "https://doi.org/10.1609/aaai.v39i4.32414",
+  "topics": [
+   "generative",
+   "multimodal",
+   "edge-efficiency"
+  ]
+ },
+ {
+  "id": "aaai-103-aaai-2025-w3451",
+  "title": "BloomScene: Lightweight Structured 3D Gaussian Splatting for Crossmodal Scene Generation",
+  "venue": "AAAI",
+  "year": 2025,
+  "official": "https://doi.org/10.1609/aaai.v39i4.32367",
+  "topics": [
+   "3d-embodied",
+   "generative",
+   "multimodal"
+  ]
+ },
+ {
+  "id": "aaai-104-aaai-2025-w407",
+  "title": "ProtCLIP: Function-Informed Protein Multi-Modal Learning",
+  "venue": "AAAI",
+  "year": 2025,
+  "official": "https://doi.org/10.1609/aaai.v39i21.34456",
+  "topics": [
+   "medical-science",
+   "multimodal",
+   "architectures"
+  ]
+ },
+ {
+  "id": "aaai-105-aaai-2025-w469",
+  "title": "Adversarial-Inspired Backdoor Defense via Bridging Backdoor and Adversarial Attacks",
+  "venue": "AAAI",
+  "year": 2025,
+  "official": "https://doi.org/10.1609/aaai.v39i9.33030",
+  "topics": [
+   "trustworthy",
+   "architectures"
+  ]
+ },
+ {
+  "id": "aaai-106-aaai-2025-w983",
+  "title": "MEDSAGE: Enhancing Robustness of Medical Dialogue Summarization to ASR Errors with LLM-generated Synthetic Dialogues",
+  "venue": "AAAI",
+  "year": 2025,
+  "official": "https://doi.org/10.1609/aaai.v39i22.34518",
+  "topics": [
+   "language-nlp",
+   "medical-science",
+   "llm"
+  ]
+ },
+ {
+  "id": "aaai-107-aaai-2025-w593",
+  "title": "LNS2+RL: Combining Multi-agent Reinforcement Learning with Large Neighborhood Search in Multi-agent Path Finding",
+  "venue": "AAAI",
+  "year": 2025,
+  "official": "https://doi.org/10.1609/aaai.v39i22.34501",
+  "topics": [
+   "rl-decision",
+   "3d-embodied",
+   "edge-efficiency"
+  ]
+ },
+ {
+  "id": "aaai-108-aaai-2025-w2426",
+  "title": "Deep Multi-modal Graph Clustering via Graph Transformer Network",
+  "venue": "AAAI",
+  "year": 2025,
+  "official": "https://doi.org/10.1609/aaai.v39i8.32844",
+  "topics": [
+   "architectures",
+   "multimodal"
+  ]
+ }
+]
