@@ -3,6 +3,9 @@ data/raw/
 data/corpus.json
 logs_fetch.txt
 
+# 本机收藏（个人使用状态，不进仓库；想让收藏随仓库走就删掉这一行）
+data/favs.json
+
 *.tmp
 
 # Python

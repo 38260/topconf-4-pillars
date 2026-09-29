@@ -18,6 +18,8 @@
   ICCV 2023/2025（奇数年会议）· ACL 2024/2025/2026
 - 规模：每届精选 12 篇，共 **132 篇**；官方语料底数 **35,927 篇**
 - 视图：**四支柱**（一会一柱）+ **主题视图**（深度学习 / 大模型 / 边缘计算与高效推理 / 多模态 …）
+- 收藏：卡片 / 详情页 ★ 一键收藏，独立标签页汇总；收藏**落盘到 `data/favs.json`**，
+  换浏览器、换端口、清浏览器缓存都不会丢（`file://` 直开时退化为只存本机浏览器，界面会明说）
 - 导航：sticky 目录侧栏（论文两级直达 + 滚动高亮，顶栏「目录」可折叠）；届次筛选条；搜索框快捷键 `/`
 - 风格：Claude 风格配色，组件设计模式参考 Trace Light（见 `docs/design-references.md`）
 
@@ -50,7 +52,7 @@ python scripts/verify.py           # 抽样回源核验，输出 docs/verificati
 ```
 scripts/fetchlib/   官方源适配器：cvf.py / acl_anthology.py / openalex.py + http.py（缓存重试限速）
 scripts/            fetch_corpus / build_papers / build_citations / build_data / verify / serve
-data/               corpus.json（全量目录）· selection.json（精选清单）· papers.json（展示数据）
+data/               corpus.json（全量目录）· selection.json（精选清单）· papers.json（展示数据）· favs.json（本机收藏）
 web/                index.html + css/ + js/ + data/papers.js（内联快照，file:// 可用）
 docs/               design-references.md · verification-report.md
 TODO.md             全局待办真源，每次完成同步并随代码提交
@@ -86,6 +88,22 @@ TODO.md             全局待办真源，每次完成同步并随代码提交
 python scripts/build_citations.py        # 解析 + 落盘（无引用即失败退出）
 python scripts/build_citations.py --force  # 重新回源解析 ACL / Crossref
 ```
+
+## 收藏（持久化）
+
+收藏**不放在浏览器里**，而是由本地服务写进项目内的 `data/favs.json`：
+
+| 接口 | 作用 |
+|------|------|
+| `GET /api/favs` | 读收藏 → `{exists, ids, updated_at}` |
+| `POST /api/favs` | 覆盖写收藏；若服务端时间戳更新则返回 `409` + 现存数据，由前端采纳 |
+
+- 落盘方式：先写 `favs.json.tmp` 再 `os.replace` 覆盖，中途断电也不会留下半截文件。
+- 前端策略：本地服务那份为准，浏览器 `localStorage` 只是镜像（同时兜住 `file://` 模式）。
+  两端各带毫秒级 `updated_at`，**旧的一方不会覆盖新的一方**；服务端没有文件时自动把浏览器里
+  已有的旧收藏迁过去。
+- 想清空收藏：界面逐个取消即可；也可以直接删 `data/favs.json`。
+- `data/favs.json` 默认已 gitignore（属个人使用状态）。若希望收藏跟着仓库走，删掉 `.gitignore` 里那一行。
 
 ## 如何自行核验真实性
 

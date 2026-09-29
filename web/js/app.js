@@ -2,6 +2,33 @@
 (function () {
   "use strict";
 
+  /* ---------------- 收藏存储 ----------------
+     顺序很重要：FAV_KEY 必须先赋值，再调用 readLocalFavs()。
+     var 只提升声明、不提升赋值，早先“先调用、后赋值”的写法会让键名变成 undefined，
+     于是每次刷新都读回空数组 —— 收藏根本撑不过一次页面刷新。
+     另外 localStorage 按「协议 + 端口」隔离：换端口（start.bat 8790）、换浏览器、清缓存
+     都会让收藏凭空消失。所以服务模式下真源是服务端 data/favs.json，localStorage 退化为
+     镜像 + file:// 模式下的唯一存储；updated_at 用来判新旧，避免两端互相覆盖。 */
+  var FAV_KEY = "topconf.favs";
+  var FAV_AT_KEY = "topconf.favs.at";
+  function readLocalFavs() {
+    var ids = [], at = 0;
+    try {
+      var raw = JSON.parse(localStorage.getItem(FAV_KEY));
+      if (Array.isArray(raw)) ids = raw.filter(function (x) { return typeof x === "string" && x; });
+    } catch (e) {}
+    try { at = parseInt(localStorage.getItem(FAV_AT_KEY), 10) || 0; } catch (e) { at = 0; }
+    return { ids: ids, updated_at: at };
+  }
+  function writeLocalFavs(ids, at) {
+    try {
+      localStorage.setItem(FAV_KEY, JSON.stringify(ids));
+      localStorage.setItem(FAV_AT_KEY, String(at || 0));
+    } catch (e) { /* 隐私模式 / 禁用存储时忽略，不影响服务端那份 */ }
+  }
+
+  var localFavs = readLocalFavs();
+
   var state = {
     data: null,
     view: "pillars",        // pillars | topics | repro
@@ -11,17 +38,75 @@
     paperId: null,          // 模态框
     year: null,             // 届次下钻（近三年扩充）
     diff: null,             // 复现难度下钻（repro 视图）
-    favs: loadFavs(),       // 收藏的论文 id（localStorage 持久化）
+    favs: localFavs.ids,    // 收藏 id：以本地服务 data/favs.json 为准，localStorage 只是镜像
+    favsAt: localFavs.updated_at,
     source: null,           // inline | api
     tocOpen: localStorage.getItem("topconf.toc") !== "0"
   };
 
-  var FAV_KEY = "topconf.favs";
-  function loadFavs() {
-    try {
-      var a = JSON.parse(localStorage.getItem(FAV_KEY));
-      return Array.isArray(a) ? a : [];
-    } catch (e) { return []; }
+  function adoptFavs(ids, at) {
+    state.favs = (ids || []).slice();
+    state.favsAt = at || 0;
+    writeLocalFavs(state.favs, state.favsAt);
+    syncFavBtns(null);
+    syncViewTabs();
+    if (state.view === "fav" && state.data) { renderView(); renderToc(); }
+  }
+  /* 启动时与本地服务对齐：服务端新→采纳，本机新→推送，没有文件→迁移本机收藏 */
+  function syncFavsFromServer() {
+    if (!TL.SERVED) return;
+    TL.api("/api/favs").then(function (s) {
+      var sIds = Array.isArray(s.ids) ? s.ids : [];
+      var sAt = s.updated_at || 0;
+      if (!s.exists) {
+        if (!state.favs.length) return;
+        if (!state.favsAt) state.favsAt = Date.now();
+        writeLocalFavs(state.favs, state.favsAt);
+        pushFavs();
+        TL.toast("已把本机浏览器的 " + state.favs.length + " 篇收藏写入 data/favs.json", "ok");
+        return;
+      }
+      if (state.favsAt > sAt) { pushFavs(); return; }
+      if (sAt > state.favsAt) { adoptFavs(sIds, sAt); return; }
+      var merged = sIds.slice();
+      state.favs.forEach(function (id) { if (merged.indexOf(id) < 0) merged.push(id); });
+      if (merged.length !== sIds.length) {          // 时间戳相同：并集兜底，绝不丢
+        state.favs = merged; state.favsAt = Date.now();
+        writeLocalFavs(state.favs, state.favsAt);
+        pushFavs();
+      } else if (merged.length !== state.favs.length) {
+        adoptFavs(sIds, sAt);
+      }
+    }).catch(function (e) {
+      TL.toast("读不到本地服务的收藏，暂用本机浏览器那份：" + e.message, "warn");
+    });
+  }
+  var favTimer = null;
+  function pushFavs() {
+    if (!TL.SERVED) return;                          // file:// 下没有服务端可写
+    clearTimeout(favTimer);                          // 连点 ★ 只落一次盘
+    favTimer = setTimeout(function () {
+      var ids = state.favs.slice(), at = state.favsAt;
+      fetch("/api/favs", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ids: ids, updated_at: at })
+      }).then(function (r) {
+        return r.json().catch(function () { return null; })
+          .then(function (d) { return { status: r.status, body: d }; });
+      }).then(function (res) {
+        if (res.status === 409 && res.body && Array.isArray(res.body.ids)) {
+          adoptFavs(res.body.ids, res.body.updated_at);
+          TL.toast("本地服务那份更新，已按它对齐（" + res.body.ids.length + " 篇）", "warn");
+          return;
+        }
+        if (res.status !== 200) throw new Error("HTTP " + res.status);
+        state.favsAt = (res.body && res.body.updated_at) || at;
+        writeLocalFavs(state.favs, state.favsAt);
+      }).catch(function (e) {
+        TL.toast("收藏已存在本机浏览器，但写入 data/favs.json 失败：" + e.message, "warn");
+      });
+    }, 350);
   }
 
   var el = {};
@@ -91,16 +176,19 @@
   function toggleFav(id) {
     var i = state.favs.indexOf(id), on = i < 0;
     if (on) state.favs.push(id); else state.favs.splice(i, 1);
-    try { localStorage.setItem(FAV_KEY, JSON.stringify(state.favs)); } catch (e) {}
+    state.favsAt = Date.now();
+    writeLocalFavs(state.favs, state.favsAt);   // 先写镜像（file:// 模式下的唯一存储），再推服务端
+    pushFavs();
     return on;
   }
-  function syncFavBtns(id) {
+  function syncFavBtns(id) {                    // id 传 null 表示全量刷新
     document.querySelectorAll('[data-act="fav"]').forEach(function (b) {
-      if (b.dataset.val !== id) return;
-      var on = isFav(id);
+      if (id && b.dataset.val !== id) return;
+      var on = isFav(b.dataset.val);
       b.classList.toggle("on", on);
       b.setAttribute("aria-pressed", String(on));
       b.setAttribute("aria-label", on ? "取消收藏" : "收藏");
+      b.setAttribute("title", on ? "取消收藏" : "收藏");
       b.querySelector("path").setAttribute("fill", on ? "currentColor" : "none");
     });
   }
@@ -130,6 +218,7 @@
     renderExportBar();
     renderToc();
     syncToc();
+    syncViewTabs();          // 顶栏「收藏」角标随收藏数刷新（启动时也要刷新）
   }
 
   /* ---------------- 导出（BibTeX 为出版方官方原文，RIS/MD 由已核验字段渲染） ---------------- */
@@ -282,14 +371,25 @@
   }
 
   /* ---------------- 收藏视图 ---------------- */
+  function favNote() {
+    return TL.SERVED
+      ? "收藏落盘在本地服务 data/favs.json，换浏览器 / 换端口 / 清缓存都不会丢；点论文卡右上角 ★ 收藏 / 取消"
+      : "当前是 file:// 直开，收藏只存在本机浏览器；用 start.bat 打开即可写入 data/favs.json，换浏览器也不丢";
+  }
   function renderFav() {
     var root = $("view-root");
     var rows = filtered();
     // 最新收藏排最前
     rows.sort(function (a, b) { return state.favs.indexOf(b.id) - state.favs.indexOf(a.id); });
+    var known = {}, missing = 0;
+    if (state.data) {
+      state.data.papers.forEach(function (p) { known[p.id] = 1; });
+      state.favs.forEach(function (id) { if (!known[id]) missing++; });
+    }
     var html = '<div class="section-head"><h2>我的收藏</h2>' +
-      '<span class="note">收藏保存在本机浏览器（localStorage），点论文卡右上角 ★ 收藏 / 取消；可用届次与搜索进一步筛选</span>' +
-      '<span class="rule"></span></div>';
+      '<span class="note">' + TL.esc(favNote()) +
+      (missing ? "；另有 " + missing + " 条不在当前精选数据中（清单调整过），已保留但无法显示" : "") +
+      '</span><span class="rule"></span></div>';
     if (!state.favs.length) {
       root.innerHTML = html + '<div class="empty" style="margin-top:24px"><h3>还没有收藏</h3>' +
         '<div>在「四支柱」「主题视图」「复现情报」或详情弹窗里点 ★，即可收进这里。</div>' +
@@ -799,7 +899,8 @@
       syncFavBtns(val);
       syncViewTabs();
       if (state.view === "fav") { renderView(); renderToc(); }
-      TL.toast(on ? "已收藏，可在顶栏「收藏」标签查看" : "已取消收藏", on ? "ok" : null);
+      TL.toast(on ? (TL.SERVED ? "已收藏，写入 data/favs.json" : "已收藏（仅本机浏览器，用 start.bat 打开可落盘）")
+                  : "已取消收藏", on ? "ok" : null);
       return;
     }
     if (act === "goto-pillars") { state.view = "pillars"; syncViewTabs(); renderView(); renderFilterbar(); renderToc(); return; }
@@ -872,6 +973,7 @@
       $("btn-refresh").disabled = true;
       $("btn-refresh").title = "需通过 python scripts/serve.py 打开才能回源刷新";
     }
+    syncFavsFromServer();    // 先与本地服务对齐收藏，再渲染（避免闪一下再变）
     loadData();
   }
 
