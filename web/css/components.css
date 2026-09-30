@@ -167,6 +167,8 @@ a:hover { text-decoration: underline; }
 .toc-sec { margin-bottom: var(--s-2); }
 .toc-sec > a.h { display: flex; align-items: center; gap: 6px; padding: 5px var(--s-2); font-size: 12.5px; font-weight: 600; color: var(--text); border-radius: var(--r-sm); }
 .toc-sec > a.h:hover { background: var(--panel-2); text-decoration: none; }
+/* 分组标题跟随滚动高亮（复现情报的 易/中/难 三段、四支柱的柱头等同款） */
+.toc-sec > a.h.on { background: var(--accent-soft); color: var(--accent-strong); box-shadow: inset 3px 0 0 var(--st, var(--accent)); }
 .toc-sec .n { margin-left: auto; font: 400 11px/1 var(--mono); color: var(--muted); }
 .toc a.toc-item { display: block; padding: 3px var(--s-2) 3px 20px; font-size: 12px; line-height: 1.45; color: var(--text-2); border-radius: var(--r-sm); border-left: 2px solid transparent; }
 .toc a.toc-item:hover { background: var(--panel-2); color: var(--text); text-decoration: none; }
@@ -281,9 +283,13 @@ pre.cite { margin: 0; padding: var(--s-3) var(--s-4); background: var(--panel-2)
 .diffbar .label { font-size: 12.5px; color: var(--muted); margin-right: 2px; }
 .repro-group { margin-bottom: var(--s-8); scroll-margin-top: calc(var(--topbar-h) + var(--s-3)); }
 .repro-list { display: flex; flex-direction: column; gap: var(--s-3); }
-.repro-row { background: var(--panel); border: 1px solid var(--border); border-left: 3px solid var(--tc-fg, var(--accent)); border-radius: var(--r-lg); padding: var(--s-4) var(--s-5); transition: border-color .15s, box-shadow .15s; }
+.repro-row { background: var(--panel); border: 1px solid var(--border); border-left: 3px solid var(--tc-fg, var(--accent)); border-radius: var(--r-lg); padding: var(--s-4) var(--s-5); transition: border-color .15s, box-shadow .15s;
+  /* 与 .pcard 同款锚点补偿：目录跳转后标题不被 sticky 顶栏盖住（原先漏了这条，
+     导致复现情报视图里点目录条目会滚到卡片被顶栏遮住的位置） */
+  scroll-margin-top: calc(var(--topbar-h) + var(--s-6)); }
 .repro-row:hover { box-shadow: var(--shadow); }
-.repro-row.flash { animation: fade-up .4s ease; }
+/* 目录跳转后的短暂高亮（复现行与论文卡同款，此前 .repro-row 只挂了无效的 fade-up） */
+.repro-row.flash { animation: flash 1.1s ease; border-color: var(--st, var(--accent)); }
 .repro-top { display: flex; align-items: center; flex-wrap: wrap; gap: var(--s-2); margin-bottom: var(--s-2); }
 .repro-top .yr { font: 600 11px/1 var(--mono); color: var(--st, var(--accent)); letter-spacing: .04em; }
 .repro-open { margin-left: auto; padding: 3px 10px; font-size: 12px; border: 1px solid var(--border); border-radius: var(--r-sm); background: var(--panel-2); color: var(--text-2); cursor: pointer; }

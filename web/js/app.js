@@ -690,8 +690,21 @@
   function jumpTo(target) {
     var node = document.getElementById(target);
     if (!node) return;
-    node.scrollIntoView({ behavior: "smooth", block: "start" });
-    if (node.classList.contains("pcard")) {
+    /* 自己算目标位置，不用 scrollIntoView —— 后者与 .pcard / .repro-row 上的
+       scroll-margin-top 相互作用时会把目标甩到视口外很远（实测复现行偏 -823px）。
+       这里统一按「目标顶边落在 sticky 顶栏下方」定位，任何视图行为一致。 */
+    var sc = document.scrollingElement || document.documentElement;
+    var topbar = document.querySelector(".topbar");
+    var tbH = topbar ? topbar.getBoundingClientRect().height : 0;
+    var y = sc.scrollTop + node.getBoundingClientRect().top - tbH - 16;
+    var max = sc.scrollHeight - sc.clientHeight;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if ("scrollBehavior" in document.documentElement && !reduce) {
+      window.scrollTo({ top: Math.max(0, Math.min(y, max)), behavior: "smooth" });
+    } else {
+      sc.scrollTop = Math.max(0, Math.min(y, max));
+    }
+    if (node.matches(".pcard, .repro-row")) {
       node.classList.remove("flash");
       void node.offsetWidth;                       /* restart the animation */
       node.classList.add("flash");
@@ -705,24 +718,69 @@
     if (b) b.setAttribute("aria-expanded", String(state.tocOpen));
   }
 
-  /* 滚动时同步目录高亮：取最靠近顶栏下沿的那张卡/组 */
+  /* 滚动时同步目录高亮。判据按优先级取第一档命中的：
+      ① 横跨视口中线的那篇 —— 视觉上就是「正在看这篇」；
+      ② 落在顶栏下沿以下的第一篇；
+      ③ 最后一篇（滚到底时末篇可能整篇在标记线上方，此时它就是正在看的）。
+     早先用「最靠近顶栏下沿」的单一判据，在最后一屏装不下两篇时会卡在尴尬位置
+     （实测末屏：倒数第三篇顶边 -17，而屏幕正中那篇在 +173 却不高亮）。 */
   function spy() {
     var nav = $("toc");
     if (!nav || !state.tocOpen) return;
-    var line = (parseInt(getComputedStyle(document.documentElement).getPropertyValue("--topbar-h"), 10) || 62) + 90;
-    var best = null, bestTop = -Infinity;
+    var tbH = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--topbar-h"), 10) || 62;
+    var line = tbH + 90;                                   /* ② 的标记线 */
+    var mid = (window.innerHeight || document.documentElement.clientHeight) / 2;
+    var entries = [];
     nav.querySelectorAll("[data-card]").forEach(function (a) {
       var card = document.getElementById("card-" + a.dataset.card);
-      if (!card) return;
-      var top = card.getBoundingClientRect().top;
-      if (top <= line && top > bestTop) { bestTop = top; best = a; }
+      if (card) entries.push({ a: a, r: card.getBoundingClientRect() });
     });
-    if (!best) {
-      var first = nav.querySelector("[data-card]");
-      if (first) { best = first; }
+    var best = null;
+    for (var i = 0; i < entries.length; i++) {              /* ① */
+      if (entries[i].r.top <= mid && entries[i].r.bottom > mid) { best = entries[i].a; break; }
     }
+    if (!best) {                                            /* ② */
+      for (var j = 0; j < entries.length; j++) {
+        if (entries[j].r.top > line) { best = entries[j].a; break; }
+      }
+    }
+    if (!best && entries.length) best = entries[entries.length - 1].a;   /* ③ */
     nav.querySelectorAll(".toc-item.on").forEach(function (a) { a.classList.remove("on"); });
     if (best) best.classList.add("on");
+
+    /* 分组标题取「最后一个已越过标记线的分组块」。
+       必须用 a.h 的 href 指向的真实块（#pillar-x / #topic-x / #rdiff-x）来判定，
+       不能汇总 [data-card] —— 主题视图未下钻时目录里一条 [data-card] 都没有，
+       那样 curSec 会永远兜底到第一个分组，标题恒定不变（实测过）。 */
+    var curSec = null;
+    nav.querySelectorAll(".toc-sec").forEach(function (sec) {
+      var h = sec.querySelector("a.h");
+      if (!h) return;
+      var anchor = (h.getAttribute("href") || "").replace(/^#/, "");
+      var block = anchor && document.getElementById(anchor);
+      if (!block) return;
+      if (block.getBoundingClientRect().top <= line) curSec = sec;
+    });
+    if (!curSec) curSec = nav.querySelector(".toc-sec");   /* 还没滚过第一条：认第一个分组 */
+    nav.querySelectorAll("a.h.on").forEach(function (a) { a.classList.remove("on"); });
+    var head = curSec && curSec.querySelector("a.h");
+    if (head) head.classList.add("on");
+
+    scrollTocTo(best);
+  }
+
+  /* 目录栏自身是 overflow:auto：滚到最底下几篇时，高亮项会被滚出可视区，
+     看起来就像「高亮没跟上」。把当前项拉回可见即可。用 scrollTop 直接赋值
+     （别用 scrollIntoView），避免它在滚动事件里连锁驱动页面滚动。 */
+  function scrollTocTo(a) {
+    var nav = $("toc");
+    if (!nav || !a) return;
+    var nr = nav.getBoundingClientRect(), ar = a.getBoundingClientRect();
+    var pad = 8;
+    var delta = 0;
+    if (ar.top < nr.top + pad) delta = ar.top - nr.top - pad;
+    else if (ar.bottom > nr.bottom - pad) delta = ar.bottom - nr.bottom + pad;
+    if (delta) nav.scrollTop += delta;
   }
 
   function card(p) {
@@ -945,11 +1003,17 @@
       if (state.tocOpen) spy();
     });
     var spyQueued = false;
-    window.addEventListener("scroll", function () {
+    function queueSpy() {
       if (spyQueued) return;
       spyQueued = true;
       requestAnimationFrame(function () { spyQueued = false; spy(); });
-    }, { passive: true });
+    }
+    window.addEventListener("scroll", queueSpy, { passive: true });
+    /* 目录栏是 overscroll-behavior:contain 的独立滚动容器，它自己的滚动窗口
+       （用户用滚轮在目录栏上滚、或 scrollTocTo 把它滚起来时）主窗口收不到事件，
+       高亮就会停在旧位置。所以它也要单独挂监听。 */
+    var tocEl = $("toc");
+    if (tocEl) tocEl.addEventListener("scroll", queueSpy, { passive: true });
     var timer = null;
     el.q.addEventListener("input", function () {
       clearTimeout(timer);
