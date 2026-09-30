@@ -889,7 +889,10 @@
     if (act === "topic") {
       closeModal();
       state.topic = (!val || state.topic === val) ? null : val;
-      if (val) { state.view = "topics"; syncViewTabs(); }
+      /* 主题 chip 只有在「四支柱」视图里才兼作入口（下钻 → 主题视图）。
+         在「复现情报 / 收藏 / 主题视图」里它就是一个筛选器，点一下必须就地过滤，
+         不能把用户踢出当前视图 —— 在复现情报里被踢走就看不到复现信息了。 */
+      if (val && state.view === "pillars") { state.view = "topics"; syncViewTabs(); }
       renderAll();
       return;
     }
